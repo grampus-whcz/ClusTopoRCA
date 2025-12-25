@@ -1,0 +1,161 @@
+{
+    "data": [
+        {
+            "id": 1066341150,
+            "apiId": "as-sadj1sjytz",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 138,
+            "completionTokens": 370,
+            "totalTokens": 508,
+            "cost": 0.00388320,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765686558000
+        },
+        {
+            "id": 1066340982,
+            "apiId": "as-3326tsk02w",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 487,
+            "completionTokens": 1673,
+            "totalTokens": 2160,
+            "cost": 0.01722960,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765686548000
+        },
+        {
+            "id": 1066340262,
+            "apiId": "as-yyj7xewnjp",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 111,
+            "completionTokens": 375,
+            "totalTokens": 486,
+            "cost": 0.00386640,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765686507000
+        },
+        {
+            "id": 1066340016,
+            "apiId": "as-qtbmvc4bpk",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 500,
+            "completionTokens": 3127,
+            "totalTokens": 3627,
+            "cost": 0.03121920,
+            "ip": "36.103.203.3",
+            "openaiKeyId": 149014,
+            "createTime": 1765686495000
+        },
+        {
+            "id": 1066338986,
+            "apiId": "as-am6pmvdui7",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 134,
+            "completionTokens": 402,
+            "totalTokens": 536,
+            "cost": 0.00418080,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765686421000
+        },
+        {
+            "id": 1066338860,
+            "apiId": "as-g6na4xecqk",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 69870,
+            "completionTokens": 2538,
+            "totalTokens": 72408,
+            "cost": 0.19205280,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765686410000
+        },
+        {
+            "id": 1066306145,
+            "apiId": "as-s700khet40",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 1282,
+            "completionTokens": 1026,
+            "totalTokens": 2308,
+            "cost": 0.01292640,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765684308000
+        },
+        {
+            "id": 1066305818,
+            "apiId": "as-e9e5cwpy1e",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 2763,
+            "completionTokens": 2748,
+            "totalTokens": 5511,
+            "cost": 0.03301200,
+            "ip": "36.103.203.2",
+            "openaiKeyId": 149014,
+            "createTime": 1765684283000
+        },
+        {
+            "id": 1066304705,
+            "apiId": "as-68sqszwxpq",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 566,
+            "completionTokens": 1278,
+            "totalTokens": 1844,
+            "cost": 0.01362720,
+            "ip": "36.103.203.3",
+            "openaiKeyId": 149014,
+            "createTime": 1765684219000
+        },
+        {
+            "id": 1066304134,
+            "apiId": "as-18nsasx47p",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 200,
+            "completionTokens": 340,
+            "totalTokens": 540,
+            "cost": 0.00374400,
+            "ip": "36.103.203.3",
+            "openaiKeyId": 149014,
+            "createTime": 1765684188000
+        },
+        {
+            "id": 1066303945,
+            "apiId": "as-idy2wnb03m",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 619,
+            "completionTokens": 2694,
+            "totalTokens": 3313,
+            "cost": 0.02734800,
+            "ip": "36.103.203.3",
+            "openaiKeyId": 149014,
+            "createTime": 1765684179000
+        },
+        {
+            "id": 1066302420,
+            "apiId": "as-dfeevcv0pr",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 241,
+            "completionTokens": 444,
+            "totalTokens": 685,
+            "cost": 0.00484080,
+            "ip": "36.103.203.3",
+            "openaiKeyId": 149014,
+            "createTime": 1765684082000
+        },
+        {
+            "id": 1066302277,
+            "apiId": "as-ucygie31dz",
+            "model": "deepseek-r1-250528",
+            "promptTokens": 55578,
+            "completionTokens": 1734,
+            "totalTokens": 57312,
+            "cost": 0.15003360,
+            "ip": "36.103.203.3",
+            "openaiKeyId": 149014,
+            "createTime": 1765684070000
+        }
+    ],
+    "totalRecords": 3671
+}

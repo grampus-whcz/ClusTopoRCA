@@ -1,0 +1,2 @@
+total_tasks,total_solved_tasks,correct_rate_percent,total_input_tokens,total_output_tokens,total_tokens,total_candidates,total_score_sum,global_avg_score
+135,13,9.6296,5228693,2467143,7695836,522,36.32,0.069579

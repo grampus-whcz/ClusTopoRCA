@@ -1,0 +1,152 @@
+import re
+import csv
+import json
+from collections import defaultdict
+
+# 配置路径
+file_path = "/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_extracted_tasks_info_1_135.md"
+task_csv = "/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_task_summary.csv"
+global_csv = "/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_global_summary.csv"
+
+# Patterns
+token_pattern = re.compile(r'==gpt-4o=====================input Tokens: (\d+), output Tokens: (\d+)')
+score_pattern = re.compile(r"Candidate \d+: Score: ([\d.]+)")
+task_line_pattern = re.compile(r'^\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}.*task_\d+')
+
+tasks = defaultdict(lambda: {'input_tokens': 0, 'output_tokens': 0, 'scores': []})
+current_task = None
+
+with open(file_path, 'r', encoding='utf-8') as f:
+    for line in f:
+        stripped = line.strip()
+
+        if task_line_pattern.match(stripped):
+            current_task = stripped
+            continue
+
+        if current_task is None:
+            continue
+
+        m = token_pattern.search(line)
+        if m:
+            tasks[current_task]['input_tokens'] += int(m.group(1))
+            tasks[current_task]['output_tokens'] += int(m.group(2))
+            continue
+
+        m = score_pattern.search(line)
+        if m:
+            tasks[current_task]['scores'].append(float(m.group(1)))
+
+# 准备任务级数据
+task_rows = []
+all_scores = []
+solved_task_count = 0  # 新增：记录被完全解决的任务数
+
+print("\n" + "="*80)
+print("📊 TASK-BY-TASK SUMMARY")
+print("="*80)
+
+for task_id, stats in tasks.items():
+    input_t = stats['input_tokens']
+    output_t = stats['output_tokens']
+    total_t = input_t + output_t
+    scores = stats['scores']
+    num_candidates = len(scores)
+    
+    # === 新增：统计 perfect candidates (score == 1.0) ===
+    perfect_candidates = [s for s in scores if abs(s - 1.0) < 1e-6]  # 容忍浮点误差
+    num_perfect = len(perfect_candidates)
+    is_solved = num_perfect >= 1
+    if is_solved:
+        solved_task_count += 1
+
+    max_score = max(scores) if scores else 0.0
+    avg_score = sum(scores) / num_candidates if num_candidates > 0 else 0.0
+    sum_score = sum(scores)
+
+    all_scores.extend(scores)
+
+    row = {
+        'task_id': task_id,
+        'input_tokens': input_t,
+        'output_tokens': output_t,
+        'total_tokens': total_t,
+        'num_candidates': num_candidates,
+        'num_perfect_candidates': num_perfect,  # ✅ 新增
+        'is_solved': is_solved,                # ✅ 新增（布尔值）
+        'max_score': round(max_score, 6),
+        'avg_score': round(avg_score, 6),
+        'sum_score': round(sum_score, 6),
+        'all_scores': json.dumps(scores)
+    }
+    task_rows.append(row)
+
+    # 打印到终端
+    print(f"\n🔹 Task: {task_id}")
+    print(f"   Input Tokens:           {input_t:,}")
+    print(f"   Output Tokens:          {output_t:,}")
+    print(f"   Total Tokens:           {total_t:,}")
+    print(f"   Candidates:             {num_candidates}")
+    print(f"   Perfect (score=1.0):    {num_perfect}")
+    print(f"   Is Solved (≥1 perfect): {'✅ Yes' if is_solved else '❌ No'}")
+    print(f"   Scores:                 {scores}")
+    print(f"   Max Score:              {max_score:.6f}")
+    print(f"   Avg Score:              {avg_score:.6f}")
+    print(f"   Sum Score:              {sum_score:.6f}")
+
+# 全局统计
+total_tasks = len(task_rows)
+total_input = sum(row['input_tokens'] for row in task_rows)
+total_output = sum(row['output_tokens'] for row in task_rows)
+total_tokens = total_input + total_output
+total_candidates = len(all_scores)
+total_score_sum = sum(all_scores)
+global_avg_score = total_score_sum / total_candidates if total_candidates > 0 else 0.0
+
+# === 新增：Correct Rate ===
+correct_rate = (solved_task_count / total_tasks * 100) if total_tasks > 0 else 0.0
+
+global_row = {
+    'total_tasks': total_tasks,
+    'total_solved_tasks': solved_task_count,
+    'correct_rate_percent': round(correct_rate, 4),  # 保留4位小数
+    'total_input_tokens': total_input,
+    'total_output_tokens': total_output,
+    'total_tokens': total_tokens,
+    'total_candidates': total_candidates,
+    'total_score_sum': round(total_score_sum, 6),
+    'global_avg_score': round(global_avg_score, 6)
+}
+
+# 打印全局汇总
+print("\n" + "="*80)
+print("📈 GLOBAL SUMMARY")
+print("="*80)
+print(f"Total Tasks:                {total_tasks}")
+print(f"Total Solved Tasks:         {solved_task_count}")
+print(f"Correct Rate (%):           {correct_rate:.4f}%")
+print("-" * 80)
+print(f"Total Candidates:           {total_candidates}")
+print(f"Total Input Tokens:         {total_input:,}")
+print(f"Total Output Tokens:        {total_output:,}")
+print(f"Total Tokens:               {total_tokens:,}")
+print(f"Sum of All Scores:          {total_score_sum:.6f}")
+print(f"Global Average Score:       {global_avg_score:.6f}")
+print("="*80)
+
+# 保存 task_summary.csv
+with open(task_csv, 'w', newline='', encoding='utf-8') as f:
+    if task_rows:
+        writer = csv.DictWriter(f, fieldnames=task_rows[0].keys())
+        writer.writeheader()
+        writer.writerows(task_rows)
+
+# 保存 global_summary.csv
+with open(global_csv, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.DictWriter(f, fieldnames=global_row.keys())
+    writer.writeheader()
+    writer.writerow(global_row)
+
+print(f"\n✅ Results saved to:")
+print(f"   - Task-level:   {task_csv}")
+print(f"   - Global-level: {global_csv}")
