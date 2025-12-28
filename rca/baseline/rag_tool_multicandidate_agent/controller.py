@@ -23,17 +23,7 @@ The issue you are going to solve is:
 
 {objective}
 
-Solve the issue step-by-step. In each step, your response must strictly follow the JSON format below:
-
-{format}
-
-Let's begin."""
-
-format = """{
-    "analysis": "None" if this is the first step; otherwise, provide your analysis of the previous tool execution result, including what was done and what can be inferred.",
-    "completed": "False",
-    "instruction": "An atomic, clear instruction for the next tool execution. Example: 'Execute anomaly detection on service user-service for metrics CPU and latency between 14:30 and 15:00.' Do NOT include multi-step plans."
-}"""
+Solve the issue step-by-step. Let's begin."""
 
 summary = """Now, you have decided to finish your reasoning process. You should now provide the final answer to the issue. The candidates of possible root cause components and reasons are provided to you. The root cause components and reasons must be selected from the provided candidates.
 
@@ -156,7 +146,6 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
     # Build initial system prompt
     system_prompt = system.format(
         objective=objective,
-        format=format,
         agent=ap.rules,
         background=bp.schema
     )
