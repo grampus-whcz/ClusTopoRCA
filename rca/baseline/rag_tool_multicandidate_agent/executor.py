@@ -103,7 +103,7 @@ You MUST respond ONLY with a JSON object containing the following keys:
 """
         return LocalScriptToolAgent, SCRIPT_DIR, BASE_DIR, clustering_query
     elif dataset in ("Market/cloudbed-1", "Market/cloudbed-2"):
-        from camel.agents.tool_agents.Market_local_script_tool_agent_5tools_fast import LocalScriptToolAgent
+        from camel.agents.tool_agents.Market_local_script_tool_agent_5tools_fast_new import LocalScriptToolAgent
         SCRIPT_DIR = "/root/shared-nvme/work/timeSeries/OmniTransfer_new/Market_utils"
         BASE_DIR = "/root/shared-nvme/work/timeSeries/OmniTransfer_new"
         

@@ -550,7 +550,7 @@ def Market_parse_rca_task(task_description: str, cloudbed: str):
     output_suffix = f"{start_dt.strftime('%H%M')}_{end_dt.strftime('%H%M')}"
 
     # --- Load offline normal window from CSV based on online timestamps and cloudbed ---
-    csv_path = f"/root/shared-nvme/work/timeSeries/OmniTransfer_new/Market_utils/{cloudbed}_record_with_normal_intervals_new.csv"
+    csv_path = f"/root/shared-nvme/work/timeSeries/OmniTransfer_new/Market_utils/{cloudbed}_record_with_normal_intervals_new_new.csv"
     if not os.path.exists(csv_path):
         raise FileNotFoundError(f"CSV file for {cloudbed} not found at {csv_path}")
 

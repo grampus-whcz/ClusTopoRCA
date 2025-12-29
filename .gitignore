@@ -4,6 +4,7 @@ dataset/
 test/
 api_config.yaml
 faiss_index_postmortem/
+faiss_index_postmortem_old/
 rca/baseline/rag_agent/
 RAG/
 
