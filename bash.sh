@@ -9,8 +9,8 @@
 # python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-1 --controller_max_step 1 --start_idx 21  --end_idx 71
 
 
-# nohup bash bash.sh >> Market_cloudbed-2_deepseek-r1-250528_7.log 2>&1 &
-python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1 --start_idx 1  --end_idx 10
+# nohup bash bash.sh >> Market_cloudbed-2_deepseek-r1-250528.log 2>&1 &
+python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1 --start_idx 16  --end_idx 16
 
 # nohup bash bash.sh >> Bank_cloudbed-1_deepseek-r1-250528.log 2>&1 &
 # python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1 --start_idx 2  --end_idx 2

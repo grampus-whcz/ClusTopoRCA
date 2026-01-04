@@ -176,3 +176,11 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 
 ## Disclaimer
 The recommended models in this Repo are just examples, used to explore the potential of agent systems with the paper at ICLR2025. Users can replace the models in this Repo according to their needs. When using the recommended models in this Repo, you need to comply with the licenses of these models respectively. Microsoft shall not be held liable for any infringement of third-party rights resulting from your usage of this repo. Users agree to defend, indemnify and hold Microsoft harmless from and against all damages, costs, and attorneys' fees in connection with any claims arising from this Repo. If anyone believes that this Repo infringes on your rights, please notify the project owner email.
+
+
+
+# 方法1：快速加载pkl
+python -c "import pickle; data=pickle.load(open('index.pkl','rb')); print(f'记录数：{len(data)}')"
+
+# 方法2：快速加载faiss索引
+python -c "import faiss; idx=faiss.read_index('index.faiss'); print(f'记录数：{idx.ntotal}')"
