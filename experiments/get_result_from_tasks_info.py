@@ -4,12 +4,12 @@ import json
 from collections import defaultdict
 
 # 配置路径
-file_path = "/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_extracted_tasks_info_1_135.md"
-task_csv = "/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_task_summary.csv"
-global_csv = "/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_global_summary.csv"
+file_path = "/root/shared-nvme/work/agent/OpenRCA/experiments/Telecom/deepseek-r1-250528/Telecom_all_RAG_deepseek-r1-250528_extracted_tasks_info.md"
+task_csv = "/root/shared-nvme/work/agent/OpenRCA/experiments/Telecom/deepseek-r1-250528/Telecom_all_RAG_deepseek-r1-250528_task_summary.csv"
+global_csv = "/root/shared-nvme/work/agent/OpenRCA/experiments/Telecom/deepseek-r1-250528/Telecom_all_RAG_deepseek-r1-250528_global_summary.csv"
 
 # Patterns
-token_pattern = re.compile(r'==gpt-4o=====================input Tokens: (\d+), output Tokens: (\d+)')
+token_pattern = re.compile(r'==deepseek-r1-250528=====================input Tokens: (\d+), output Tokens: (\d+)')
 score_pattern = re.compile(r"Candidate \d+: Score: ([\d.]+)")
 task_line_pattern = re.compile(r'^\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}.*task_\d+')
 

@@ -5,8 +5,8 @@ def extract_task_info(input_file):
     task_header_pattern = re.compile(r'^\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}_#\d+-\d+:\s*task_\d+$')
     
     # 匹配需要提取的行
-    # token_pattern = re.compile(r'\|\s*INFO\s+\|\s*rca\.api_router:AI_chat_completion:\d+\s*-\s*==gpt-4o=====================input Tokens:')
-    token_pattern = re.compile(r'\|\s*INFO\s+\|\s*rca\.api_router:AI_chat_completion:\d+\s*-\s*==gpt-4o=====================input Tokens:')
+    # token_pattern = re.compile(r'\|\s*INFO\s+\|\s*rca\.api_router:AI_chat_completion:\d+\s*-\s*==deepseek-r1-250528=====================input Tokens:')
+    token_pattern = re.compile(r'\|\s*INFO\s+\|\s*rca\.api_router:AI_chat_completion:\d+\s*-\s*==deepseek-r1-250528=====================input Tokens:')
 
     scoring_patterns = {
         'scoring': re.compile(r'\|\s*INFO\s+\|\s*__main__:main:\d+\s*-\s*Candidate \d+:\s*Scoring Points:'),
@@ -70,8 +70,8 @@ def write_to_output_file(tasks, output_file):
 
 
 if __name__ == '__main__':
-    input_path = '/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_clean.md'
-    output_path = '/root/shared-nvme/work/agent/OpenRCA/experiments/gpt-4o/Bank_gpt-4o_extracted_tasks_info_1_135.md'
+    input_path = '/root/shared-nvme/work/agent/OpenRCA/experiments/Bank/deepseek-r1-250528/Bank_all_RAG_deepseek-r1-250528.log'
+    output_path = '/root/shared-nvme/work/agent/OpenRCA/experiments/Bank/deepseek-r1-250528/Bank_all_RAG_deepseek-r1-250528_extracted_tasks_info.md'
 
     tasks = extract_task_info(input_path)
     write_to_output_file(tasks, output_path)
