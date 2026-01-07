@@ -8,6 +8,10 @@ faiss_index_postmortem_old/
 rca/baseline/rag_agent/
 RAG/
 
+# exclude
+!experiments/
+!experiments/**
+
 # Mac
 .DS_Store
 
