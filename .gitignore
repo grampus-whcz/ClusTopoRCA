@@ -7,6 +7,7 @@ faiss_index_postmortem/
 faiss_index_postmortem_old/
 rca/baseline/rag_agent/
 RAG/
+*.log
 
 # exclude
 !experiments/
@@ -73,7 +74,7 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
+
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
