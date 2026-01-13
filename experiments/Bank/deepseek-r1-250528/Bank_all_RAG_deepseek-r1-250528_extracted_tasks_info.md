@@ -1,4 +1,19 @@
 ################################################################################
+2026-01-12_16-05-20_#0-0: task_1
+################################################################################
+2026-01-12 16:06:07.820 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 70056, output Tokens: 1198, total: 71254
+2026-01-12 16:06:17.443 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 149, output Tokens: 333, total: 482
+2026-01-12 16:07:43.068 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4508, output Tokens: 2832, total: 7340
+2026-01-12 16:07:53.576 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 193, output Tokens: 396, total: 589
+2026-01-12 16:10:00.280 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4359, output Tokens: 3500, total: 7859
+2026-01-12 16:10:00.310 | INFO     | __main__:main:133 - Candidate 1: Passed Criteria: []
+2026-01-12 16:10:00.310 | INFO     | __main__:main:134 - Candidate 1: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 16:10:00.311 | INFO     | __main__:main:135 - Candidate 1: Score: 0.0
+2026-01-12 16:10:00.311 | INFO     | __main__:main:133 - Candidate 2: Passed Criteria: []
+2026-01-12 16:10:00.311 | INFO     | __main__:main:134 - Candidate 2: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 16:10:00.311 | INFO     | __main__:main:135 - Candidate 2: Score: 0.0
+
+################################################################################
 2026-01-05_15-53-20_#1-0: task_6
 ################################################################################
 2026-01-05 15:54:16.206 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 41807, output Tokens: 1646, total: 43453

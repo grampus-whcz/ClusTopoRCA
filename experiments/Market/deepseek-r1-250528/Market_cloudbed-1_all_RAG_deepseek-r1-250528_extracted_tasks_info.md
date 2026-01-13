@@ -1,4 +1,29 @@
 ################################################################################
+2026-01-12_16-17-00_#0-0: task_6
+################################################################################
+2026-01-12 16:17:40.131 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 2401, output Tokens: 1447, total: 3848
+2026-01-12 16:17:48.903 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 87, output Tokens: 286, total: 373
+2026-01-12 16:20:55.162 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4939, output Tokens: 1923, total: 6862
+2026-01-12 16:21:04.228 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 78, output Tokens: 326, total: 404
+2026-01-12 16:22:15.179 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4981, output Tokens: 1896, total: 6877
+2026-01-12 16:22:23.446 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 107, output Tokens: 285, total: 392
+2026-01-12 16:24:15.878 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 5047, output Tokens: 3312, total: 8359
+2026-01-12 16:24:24.673 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 108, output Tokens: 339, total: 447
+2026-01-12 16:31:00.569 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 5007, output Tokens: 3413, total: 8420
+2026-01-12 16:31:00.615 | INFO     | __main__:main:133 - Candidate 1: Passed Criteria: []
+2026-01-12 16:31:00.616 | INFO     | __main__:main:134 - Candidate 1: Failed Criteria: ['container read I/O load', 'shippingservice-1']
+2026-01-12 16:31:00.616 | INFO     | __main__:main:135 - Candidate 1: Score: 0.0
+2026-01-12 16:31:00.616 | INFO     | __main__:main:133 - Candidate 2: Passed Criteria: []
+2026-01-12 16:31:00.616 | INFO     | __main__:main:134 - Candidate 2: Failed Criteria: ['container read I/O load', 'shippingservice-1']
+2026-01-12 16:31:00.616 | INFO     | __main__:main:135 - Candidate 2: Score: 0.0
+2026-01-12 16:31:00.617 | INFO     | __main__:main:133 - Candidate 3: Passed Criteria: []
+2026-01-12 16:31:00.617 | INFO     | __main__:main:134 - Candidate 3: Failed Criteria: ['container read I/O load', 'shippingservice-1']
+2026-01-12 16:31:00.617 | INFO     | __main__:main:135 - Candidate 3: Score: 0.0
+2026-01-12 16:31:00.617 | INFO     | __main__:main:133 - Candidate 4: Passed Criteria: []
+2026-01-12 16:31:00.618 | INFO     | __main__:main:134 - Candidate 4: Failed Criteria: ['container read I/O load', 'shippingservice-1']
+2026-01-12 16:31:00.618 | INFO     | __main__:main:135 - Candidate 4: Score: 0.0
+
+################################################################################
 2026-01-05_07-45-04_#1-0: task_1
 ################################################################################
 2026-01-05 07:46:42.785 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 2795, output Tokens: 2337, total: 5132

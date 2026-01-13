@@ -1,2 +1,2 @@
 total_tasks,total_pseudo_solved_tasks,total_actual_solved_tasks,total_partial_actual_solved_tasks,total_solved_tasks,actual_correct_rate_percent,partial_correct_rate_percent,total_correct_rate_percent,total_input_tokens,total_output_tokens,total_tokens,total_candidates,total_score_sum,sum_max_scores,sum_avg_scores,sum_pseudo_scores,global_avg_score
-135,25,18,24,42,13.3333,17.7778,31.1111,8960286,128472,9088758,527,41.58,28.25,10.191131,29.08,0.078899
+136,25,18,24,42,13.2353,17.6471,30.8824,9057355,128958,9186313,529,41.58,28.25,10.191131,29.08,0.078601

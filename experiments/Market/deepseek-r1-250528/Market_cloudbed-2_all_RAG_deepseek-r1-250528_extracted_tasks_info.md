@@ -1,4 +1,29 @@
 ################################################################################
+2026-01-12_16-31-02_#0-0: task_3
+################################################################################
+2026-01-12 16:32:25.852 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 2517, output Tokens: 3331, total: 5848
+2026-01-12 16:33:13.252 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 144, output Tokens: 2026, total: 2170
+2026-01-12 16:35:18.851 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 5034, output Tokens: 3080, total: 8114
+2026-01-12 16:35:27.574 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 121, output Tokens: 280, total: 401
+2026-01-12 16:36:52.671 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4651, output Tokens: 2533, total: 7184
+2026-01-12 16:37:01.808 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 129, output Tokens: 316, total: 445
+2026-01-12 16:38:27.805 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 5058, output Tokens: 2871, total: 7929
+2026-01-12 16:38:35.991 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 110, output Tokens: 294, total: 404
+2026-01-12 16:40:58.083 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4907, output Tokens: 3927, total: 8834
+2026-01-12 16:40:58.112 | INFO     | __main__:main:133 - Candidate 1: Passed Criteria: []
+2026-01-12 16:40:58.112 | INFO     | __main__:main:134 - Candidate 1: Failed Criteria: ['recommendationservice2-0', 'node-6']
+2026-01-12 16:40:58.112 | INFO     | __main__:main:135 - Candidate 1: Score: 0.0
+2026-01-12 16:40:58.113 | INFO     | __main__:main:133 - Candidate 2: Passed Criteria: []
+2026-01-12 16:40:58.113 | INFO     | __main__:main:134 - Candidate 2: Failed Criteria: ['recommendationservice2-0', 'node-6']
+2026-01-12 16:40:58.113 | INFO     | __main__:main:135 - Candidate 2: Score: 0.0
+2026-01-12 16:40:58.113 | INFO     | __main__:main:133 - Candidate 3: Passed Criteria: []
+2026-01-12 16:40:58.113 | INFO     | __main__:main:134 - Candidate 3: Failed Criteria: ['recommendationservice2-0', 'node-6']
+2026-01-12 16:40:58.114 | INFO     | __main__:main:135 - Candidate 3: Score: 0.0
+2026-01-12 16:40:58.114 | INFO     | __main__:main:133 - Candidate 4: Passed Criteria: []
+2026-01-12 16:40:58.114 | INFO     | __main__:main:134 - Candidate 4: Failed Criteria: ['recommendationservice2-0', 'node-6']
+2026-01-12 16:40:58.114 | INFO     | __main__:main:135 - Candidate 4: Score: 0.0
+
+################################################################################
 2026-01-04_22-32-04_#1-0: task_3
 ################################################################################
 2026-01-04 22:33:32.880 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 2517, output Tokens: 3194, total: 5711

@@ -1,4 +1,24 @@
 ################################################################################
+2026-01-12_16-10-02_#0-0: task_2
+################################################################################
+2026-01-12 16:11:50.646 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 9218, output Tokens: 1153, total: 10371
+2026-01-12 16:11:59.489 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 149, output Tokens: 284, total: 433
+2026-01-12 16:13:18.657 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4064, output Tokens: 1924, total: 5988
+2026-01-12 16:13:33.100 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 110, output Tokens: 518, total: 628
+2026-01-12 16:14:17.289 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 3825, output Tokens: 1561, total: 5386
+2026-01-12 16:14:24.840 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 201, output Tokens: 269, total: 470
+2026-01-12 16:16:58.416 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 4138, output Tokens: 5419, total: 9557
+2026-01-12 16:16:58.446 | INFO     | __main__:main:133 - Candidate 1: Passed Criteria: ['CPU fault']
+2026-01-12 16:16:58.446 | INFO     | __main__:main:134 - Candidate 1: Failed Criteria: []
+2026-01-12 16:16:58.446 | INFO     | __main__:main:135 - Candidate 1: Score: 1.0
+2026-01-12 16:16:58.446 | INFO     | __main__:main:133 - Candidate 2: Passed Criteria: []
+2026-01-12 16:16:58.447 | INFO     | __main__:main:134 - Candidate 2: Failed Criteria: ['CPU fault']
+2026-01-12 16:16:58.447 | INFO     | __main__:main:135 - Candidate 2: Score: 0.0
+2026-01-12 16:16:58.447 | INFO     | __main__:main:133 - Candidate 3: Passed Criteria: []
+2026-01-12 16:16:58.447 | INFO     | __main__:main:134 - Candidate 3: Failed Criteria: ['CPU fault']
+2026-01-12 16:16:58.447 | INFO     | __main__:main:135 - Candidate 3: Score: 0.0
+
+################################################################################
 2026-01-04_15-08-28_#1-0: task_4
 ################################################################################
 2026-01-04 15:09:19.099 | INFO     | rca.api_router:AI_chat_completion:77 - ==deepseek-r1-250528=====================input Tokens: 12377, output Tokens: 1280, total: 13657

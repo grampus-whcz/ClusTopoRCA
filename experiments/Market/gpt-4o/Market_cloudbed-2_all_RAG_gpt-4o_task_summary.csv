@@ -1,4 +1,5 @@
 task_id,input_tokens,output_tokens,total_tokens,num_candidates,num_perfect_candidates,is_actually_solved,is_partially_solved,max_score,avg_score,sum_score,pseudo_sum_score,all_scores
+2026-01-12_15-54-54_#0-0: task_3,22355,654,23009,4,0,False,False,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0]"
 2026-01-07_09-06-51_#1-0: task_3,22160,651,22811,4,0,False,False,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0]"
 2026-01-07_09-06-51_#2-0: task_2,21996,745,22741,4,0,False,False,0.0,0.0,0.0,0.0,"[0.0, 0.0, 0.0, 0.0]"
 2026-01-07_09-06-51_#3-0: task_6,12891,405,13296,2,0,False,False,0.0,0.0,0.0,0.0,"[0.0, 0.0]"

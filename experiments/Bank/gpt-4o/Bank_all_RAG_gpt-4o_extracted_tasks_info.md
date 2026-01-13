@@ -1,4 +1,24 @@
 ################################################################################
+2026-01-12_15-52-06_#0-0: task_1
+################################################################################
+2026-01-12 15:52:20.544 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 66709, output Tokens: 255, total: 66964
+2026-01-12 15:52:22.104 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 162, output Tokens: 27, total: 189
+2026-01-12 15:52:33.888 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 4442, output Tokens: 40, total: 4482
+2026-01-12 15:52:35.192 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 195, output Tokens: 39, total: 234
+2026-01-12 15:52:36.899 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 4193, output Tokens: 56, total: 4249
+2026-01-12 15:52:38.210 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 65, output Tokens: 24, total: 89
+2026-01-12 15:52:39.688 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 4031, output Tokens: 35, total: 4066
+2026-01-12 15:52:39.715 | INFO     | __main__:main:133 - Candidate 1: Passed Criteria: []
+2026-01-12 15:52:39.715 | INFO     | __main__:main:134 - Candidate 1: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 15:52:39.716 | INFO     | __main__:main:135 - Candidate 1: Score: 0.0
+2026-01-12 15:52:39.716 | INFO     | __main__:main:133 - Candidate 2: Passed Criteria: []
+2026-01-12 15:52:39.716 | INFO     | __main__:main:134 - Candidate 2: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 15:52:39.716 | INFO     | __main__:main:135 - Candidate 2: Score: 0.0
+2026-01-12 15:52:39.716 | INFO     | __main__:main:133 - Candidate 3: Passed Criteria: []
+2026-01-12 15:52:39.717 | INFO     | __main__:main:134 - Candidate 3: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 15:52:39.717 | INFO     | __main__:main:135 - Candidate 3: Score: 0.0
+
+################################################################################
 2026-01-06_21-29-34_#1-0: task_6
 ################################################################################
 2026-01-06 21:29:45.193 | INFO     | rca.api_router:AI_chat_completion:77 - ==gpt-4o=====================input Tokens: 39883, output Tokens: 349, total: 40232

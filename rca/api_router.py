@@ -1,7 +1,8 @@
 import os
+import sys
 import yaml
 import time
-from loguru import logger
+
 
 def load_config(config_path="rca/api_config.yaml"):
     configs = dict(os.environ)
@@ -50,8 +51,53 @@ def Anthropic_chat_completion(messages, temperature):
     return client.messages.create(
         model=configs["MODEL"],
         messages=messages,
-        temperature=temperature
-    ).content
+        temperature=temperature,
+        max_tokens=2048  # 补充Anthropic必要参数
+    ).content[0].text  # 修正Anthropic返回值提取逻辑
+
+# 新增：GLM-4.7 (Coding端点) 调用函数
+def GLM_chat_completion(logger, messages, temperature):
+    from zhipuai import ZhipuAI
+    
+    # 初始化GLM客户端（从配置文件读取密钥和端点）
+    client = ZhipuAI(
+        api_key=configs["API_KEY"],
+        base_url=configs.get("API_BASE", "https://open.bigmodel.cn/api/coding/paas/v4")  # 默认使用Coding端点
+    )
+    
+    try:
+        # 建议的Token配置（适配128K上限）
+        max_input_tokens = 120000  # 输入上限
+        max_output_tokens = configs.get("MAX_TOKENS", 8192)  # 输出上限
+        
+        full_response = client.chat.completions.create(
+            model=configs["MODEL"],
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_output_tokens,  # 控制输出长度
+            top_p=0.95,
+            # 可选：设置输入Token上限（部分SDK支持）
+            # max_input_tokens=max_input_tokens
+        )
+        
+        # 提取回复内容
+        response_content = full_response.choices[0].message.content
+        
+        # 记录token使用情况（如果有返回）
+        if hasattr(full_response, 'usage') and full_response.usage:
+            prompt_tokens = full_response.usage.prompt_tokens
+            completion_tokens = full_response.usage.completion_tokens
+            total_tokens = full_response.usage.total_tokens
+            logger.info(f"=={configs['MODEL']}=====================input Tokens: {prompt_tokens}, output Tokens: {completion_tokens}, total: {total_tokens}")
+        
+        # 预警：接近128K上限时提示
+        if (prompt_tokens + completion_tokens) > 120000:
+            logger.warning("Token使用量接近128K上限，建议精简输入内容")    
+        
+        return response_content
+    except Exception as e:
+        logger.error(f"GLM调用失败: {str(e)}")
+        raise e  # 抛出异常让外层重试逻辑处理
 
 # for 3-rd party API which is compatible with OpenAI API (with different 'API_BASE')
 def AI_chat_completion(logger, messages, temperature):    
@@ -112,6 +158,8 @@ def get_chat_completion(logger, messages, temperature=0.0):
             return Anthropic_chat_completion(messages, temperature)
         elif configs["SOURCE"] == "Ollama":
             return Ollama_chat_completion(messages, temperature)
+        elif configs["SOURCE"] == "GLM":
+            return GLM_chat_completion(logger, messages, temperature)
         else:
             raise ValueError("Invalid SOURCE in api_config file.")
     

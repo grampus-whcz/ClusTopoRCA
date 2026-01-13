@@ -1,4 +1,19 @@
 ################################################################################
+2026-01-12_18-45-57_#0-0: task_1
+################################################################################
+2026-01-12 18:46:51.422 | INFO     | rca.api_router:AI_chat_completion:77 - ==qwen3-235b-a22b-instruct-2507=====================input Tokens: 87243, output Tokens: 321, total: 87564
+2026-01-12 18:46:55.138 | INFO     | rca.api_router:AI_chat_completion:77 - ==qwen3-235b-a22b-instruct-2507=====================input Tokens: 195, output Tokens: 34, total: 229
+2026-01-12 18:47:10.122 | INFO     | rca.api_router:AI_chat_completion:77 - ==qwen3-235b-a22b-instruct-2507=====================input Tokens: 4838, output Tokens: 48, total: 4886
+2026-01-12 18:47:14.352 | INFO     | rca.api_router:AI_chat_completion:77 - ==qwen3-235b-a22b-instruct-2507=====================input Tokens: 245, output Tokens: 48, total: 293
+2026-01-12 18:47:20.005 | INFO     | rca.api_router:AI_chat_completion:77 - ==qwen3-235b-a22b-instruct-2507=====================input Tokens: 4548, output Tokens: 35, total: 4583
+2026-01-12 18:47:20.029 | INFO     | __main__:main:133 - Candidate 1: Passed Criteria: []
+2026-01-12 18:47:20.029 | INFO     | __main__:main:134 - Candidate 1: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 18:47:20.029 | INFO     | __main__:main:135 - Candidate 1: Score: 0.0
+2026-01-12 18:47:20.030 | INFO     | __main__:main:133 - Candidate 2: Passed Criteria: []
+2026-01-12 18:47:20.030 | INFO     | __main__:main:134 - Candidate 2: Failed Criteria: ['2021-03-04 14:57:00']
+2026-01-12 18:47:20.030 | INFO     | __main__:main:135 - Candidate 2: Score: 0.0
+
+################################################################################
 2026-01-06_10-57-20_#1-0: task_6
 ################################################################################
 2026-01-06 10:58:01.592 | INFO     | rca.api_router:AI_chat_completion:77 - ==qwen3-235b-a22b-instruct-2507=====================input Tokens: 52079, output Tokens: 336, total: 52415
