@@ -2,9 +2,40 @@
 
 ## ====================================================================
 
+## GLM 4.6
+# nohup bash experiments_a.sh >> Bank_all_RAG_glm-4.6.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1 --start_idx 0  --end_idx 135
+
+# nohup bash experiments_a.sh >> Telecom_all_RAG_glm-4.6.log 2>&1 &
+python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1 --start_idx 0  --end_idx 50
+
+# nohup bash experiments_a.sh >> Market_cloudbed-1_all_RAG_glm-4.6.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-1 --controller_max_step 1 --start_idx 0  --end_idx 69
+
+# nohup bash experiments_a.sh >> Market_cloudbed-2_all_RAG_glm-4.6.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1 --start_idx 0  --end_idx 77
+
+
+## ====================================================================
+
+## GLM 4.5
+# nohup bash experiments_a.sh >> Bank_all_RAG_glm-4.5.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1 --start_idx 0  --end_idx 135
+
+# nohup bash experiments_a.sh >> Telecom_all_RAG_glm-4.5.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1 --start_idx 0  --end_idx 50
+
+# nohup bash experiments_a.sh >> Market_cloudbed-1_all_RAG_glm-4.5.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-1 --controller_max_step 1 --start_idx 0  --end_idx 69
+
+# nohup bash experiments_a.sh >> Market_cloudbed-2_all_RAG_glm-4.5.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1 --start_idx 0  --end_idx 77
+
+## ====================================================================
+
 ## GLM 4.7
 # nohup bash experiments_a.sh >> Bank_all_RAG_glm-4.7.log 2>&1 &
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1 --start_idx 1  --end_idx 135
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1 --start_idx 1  --end_idx 135
 
 # nohup bash experiments_a.sh >> Telecom_all_RAG_glm-4.7.log 2>&1 &
 # python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1 --start_idx 0  --end_idx 50

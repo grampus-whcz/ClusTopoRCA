@@ -1,0 +1,9 @@
+data_type,task_difficulty,total_tasks,total_actual_solved_tasks,total_partial_actual_solved_tasks,total_solved_tasks,total_actual_solved_tasks_rate,total_partial_actual_solved_tasks_rate,total_solved_tasks_rate
+全量数据,easy,24,12,0,12,0.5,0.0,0.5
+全量数据,medium,18,7,8,15,0.388889,0.444444,0.833333
+全量数据,hard,9,0,6,6,0.0,0.666667,0.666667
+全量数据,unknown,0,0,0,0,0.0,0.0,0.0
+排除训练集后,easy,21,11,0,11,0.52381,0.0,0.52381
+排除训练集后,medium,17,7,8,15,0.411765,0.470588,0.882353
+排除训练集后,hard,8,0,6,6,0.0,0.75,0.75
+排除训练集后,unknown,0,0,0,0,0.0,0.0,0.0

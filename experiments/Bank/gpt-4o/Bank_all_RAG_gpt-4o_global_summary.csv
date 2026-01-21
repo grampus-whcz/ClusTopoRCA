@@ -1,2 +1,3 @@
-total_tasks,total_pseudo_solved_tasks,total_actual_solved_tasks,total_partial_actual_solved_tasks,total_solved_tasks,actual_correct_rate_percent,partial_correct_rate_percent,total_correct_rate_percent,total_input_tokens,total_output_tokens,total_tokens,total_candidates,total_score_sum,sum_max_scores,sum_avg_scores,sum_pseudo_scores,global_avg_score
-136,26,14,27,41,10.2941,19.8529,30.1471,7275110,81723,7356833,533,48.34,26.0,10.425663,29.84,0.090694
+data_type,total_tasks,total_pseudo_solved_tasks,total_actual_solved_tasks,total_partial_actual_solved_tasks,total_solved_tasks,total_actual_solved_tasks_rate,total_partial_actual_solved_tasks_rate,total_solved_tasks_rate,actual_correct_rate_percent,partial_correct_rate_percent,total_correct_rate_percent,total_input_tokens,total_output_tokens,total_tokens,total_candidates,total_score_sum,sum_max_scores,sum_avg_scores,sum_pseudo_scores,global_avg_score
+全量数据,136,26,14,27,41,0.102941,0.198529,0.301471,10.2941,19.8529,30.1471,7275110,81723,7356833,533,48.34,26.0,10.425663,29.84,0.090694
+排除训练集后,106,23,12,20,32,0.113208,0.188679,0.301887,11.3208,18.8679,30.1887,5792699,65142,5857841,429,41.67,20.83,8.329663,24.17,0.097133

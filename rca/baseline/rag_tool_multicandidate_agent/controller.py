@@ -120,7 +120,7 @@ def extract_time_from_context(context: str):
     return None
 
 
-def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_step=15, max_turn=3) -> tuple:
+def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_step=15, max_turn=3, rag_k=5) -> tuple:
     # Step 0: Parse time info once for reference
     try:
         time_info = ""
@@ -219,14 +219,17 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
 
     for cluster_id, cluster_desc in clusters:
         logger.info(f"controller Processing {cluster_id}: {cluster_desc}")
+        logger.info(f"RAG rag_k: {rag_k}")
 
         # --- RAG ---
         rag_context = ""
+        
+        ## RAG core logic start
         try:
             refined_query = summarize_observation_for_rag(cluster_desc, logger)
             logger.info(f"controller summarize {cluster_id} result: {refined_query}")
             retriever = PostmortemRAGRetriever()
-            rag_results = retriever.retrieve(query=refined_query, k=1, score_threshold=0.7)
+            rag_results = retriever.retrieve(query=refined_query, k=rag_k, score_threshold=0.7)
             logger.info(f"controller RAG {cluster_id} result: {rag_results}")
             if rag_results:
                 snippets = []
@@ -243,6 +246,8 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
                 rag_context = "\n".join(snippets)
         except Exception as e:
             logger.error(f"RAG failed for {cluster_id}: {e}")
+        
+        ## RAG core logic end
 
         # --- Local RCA Prompt ---
         local_rca_prompt = f"""You are analyzing a specific anomaly cluster during the time window of the original issue.

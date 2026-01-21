@@ -14,6 +14,7 @@ class LocalScriptToolAgent(BaseToolAgent):
         name: str,
         script_dir: str,
         base_dir: str,
+        logger: Any,
         log_dir: Optional[str] = None,
         **kwargs: Any,
     ) -> None:
@@ -24,23 +25,7 @@ class LocalScriptToolAgent(BaseToolAgent):
         os.makedirs(self.log_dir, exist_ok=True)
 
         # Set up logger for this agent instance
-        self.logger = logging.getLogger(f"LocalScriptToolAgent.{name}")
-        self.logger.setLevel(logging.INFO)
-
-        # Avoid adding multiple handlers if re-initialized
-        if not self.logger.handlers:
-            log_file = os.path.join(
-                self.log_dir,
-                f"{name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-            )
-            handler = logging.FileHandler(log_file)
-            formatter = logging.Formatter(
-                '[%(asctime)s] %(levelname)s - %(message)s',
-                datefmt='%Y-%m-%d %H:%M:%S'
-            )
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
-            self.logger.info(f"Logger initialized. Log file: {log_file}")
+        self.logger = logger
 
         self.description = (
             "This agent can execute the following RCA analysis pipelines:\n"

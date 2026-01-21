@@ -106,7 +106,8 @@ def main(args, uid, dataset):
                                                     instruction, 
                                                     logger, 
                                                     max_step=args.controller_max_step, 
-                                                    max_turn=args.controller_max_turn)
+                                                    max_turn=args.controller_max_turn,
+                                                    rag_k=args.rag_k)
                 
                 signal.alarm(0)
 
@@ -166,6 +167,7 @@ if __name__ == "__main__":
     parser.add_argument("--end_idx", type=int, default=150)
     parser.add_argument("--controller_max_step", type=int, default=25)
     parser.add_argument("--controller_max_turn", type=int, default=5)
+    parser.add_argument("--rag_k", type=int, default=5)
     parser.add_argument("--timeout", type=int, default=3600)
     parser.add_argument("--tag", type=str, default='rca')
     parser.add_argument("--auto", type=bool, default=False)
