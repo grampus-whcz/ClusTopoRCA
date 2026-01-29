@@ -225,27 +225,27 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
         rag_context = ""
         
         ## RAG core logic start
-        try:
-            refined_query = summarize_observation_for_rag(cluster_desc, logger)
-            logger.info(f"controller summarize {cluster_id} result: {refined_query}")
-            retriever = PostmortemRAGRetriever()
-            rag_results = retriever.retrieve(query=refined_query, k=rag_k, score_threshold=0.7)
-            logger.info(f"controller RAG {cluster_id} result: {rag_results}")
-            if rag_results:
-                snippets = []
-                for i, res in enumerate(rag_results, 1):
-                    meta = res['metadata']
-                    comp = meta.get('component', 'N/A')
-                    metrics = ", ".join(meta.get("metrics", [])) or "N/A"
-                    snippet = (
-                        f"[Past Incident {i}] (Score: {res['score']:.3f})\n"
-                        f"Component: {comp} | Metrics: {metrics}\n"
-                        f"Summary: {res['content']}"
-                    )
-                    snippets.append(snippet)
-                rag_context = "\n".join(snippets)
-        except Exception as e:
-            logger.error(f"RAG failed for {cluster_id}: {e}")
+        # try:
+        #     refined_query = summarize_observation_for_rag(cluster_desc, logger)
+        #     logger.info(f"controller summarize {cluster_id} result: {refined_query}")
+        #     retriever = PostmortemRAGRetriever()
+        #     rag_results = retriever.retrieve(query=refined_query, k=rag_k, score_threshold=0.7)
+        #     logger.info(f"controller RAG {cluster_id} result: {rag_results}")
+        #     if rag_results:
+        #         snippets = []
+        #         for i, res in enumerate(rag_results, 1):
+        #             meta = res['metadata']
+        #             comp = meta.get('component', 'N/A')
+        #             metrics = ", ".join(meta.get("metrics", [])) or "N/A"
+        #             snippet = (
+        #                 f"[Past Incident {i}] (Score: {res['score']:.3f})\n"
+        #                 f"Component: {comp} | Metrics: {metrics}\n"
+        #                 f"Summary: {res['content']}"
+        #             )
+        #             snippets.append(snippet)
+        #         rag_context = "\n".join(snippets)
+        # except Exception as e:
+        #     logger.error(f"RAG failed for {cluster_id}: {e}")
         
         ## RAG core logic end
 

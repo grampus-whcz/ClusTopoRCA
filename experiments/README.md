@@ -12,3 +12,28 @@ get *_extracted_tasks_info_1_135.md
 
 # extract_key_info.py
 get scores and tokens of some LLM
+
+# log file naming rule
+```
+{dataset_name}_{task_name}_{model_name}.log
+```
+dataset_name: Bank, Market, and Telecom
+
+task_name:
+ - all_RAG, RAG k1
+ - all_RAG_k2, RAG k2
+ - all_RAG_k3, RAG k3
+ - all_RAG_k4, RAG k4
+ - all_RAG_k5, RAG k5
+ - FusionTool_full, FusionTool full k4
+
+model_name:
+ - glm-4.5
+ - glm-4.6
+ - glm-4.7
+ - deepseek-r1-250528
+ - gemini-2.5-pro-preview-p
+ - gpt-4o
+ - llama3.1:8b-instruct-q8_0
+ - qwen3-235b-a22b-instruct-2507
+

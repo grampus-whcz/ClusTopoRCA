@@ -18,17 +18,17 @@ def extract_task_info(input_file, model_name):
     # 动态生成token匹配模式，适配不同的模型名称
     # 转义模型名称中的特殊字符（如:、.、-等）以避免正则表达式冲突
     escaped_model_name = re.escape(model_name)
-    token_pattern = re.compile(
-        r'\|\s*INFO\s+\|\s*rca\.api_router:AI_chat_completion:\d+\s*-\s*==' 
-        + escaped_model_name 
-        + r'=====================input Tokens:'
-    )
-    
     # token_pattern = re.compile(
-    #     r'\|\s*INFO\s+\|\s*rca\.api_router:GLM_chat_completion:\d+\s*-\s*==' 
+    #     r'\|\s*INFO\s+\|\s*rca\.api_router:AI_chat_completion:\d+\s*-\s*==' 
     #     + escaped_model_name 
     #     + r'=====================input Tokens:'
     # )
+    
+    token_pattern = re.compile(
+        r'\|\s*INFO\s+\|\s*rca\.api_router:GLM_chat_completion:\d+\s*-\s*==' 
+        + escaped_model_name 
+        + r'=====================input Tokens:'
+    )
 
     scoring_patterns = {
         'scoring': re.compile(r'\|\s*INFO\s+\|\s*__main__:main:\d+\s*-\s*Candidate \d+:\s*Scoring Points:'),
@@ -115,26 +115,26 @@ def process_all_combinations(base_path):
         base_path: 基础路径（experiments目录的路径）
     """
     # 配置所有数据集：key=主目录名，value=(子数据集列表, 文件名前缀)
-    # datasets = {
-    #     # 'Bank': (['Bank'], 'Bank'),
-    #     'Market': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
-    #     # 'Telecom': (['Telecom'], 'Telecom')
-    # }
+    datasets = {
+        # 'Bank': (['Bank'], 'Bank'),
+        # 'Market': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
+        'Telecom': (['Telecom'], 'Telecom')
+    }
     
     # ablation
-    datasets = {
-        'ablation': (['Bank'], 'Bank'),
-        # 'ablation': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
-        # 'ablation': (['Telecom'], 'Telecom')
-    }
+    # datasets = {
+    #     'ablation': (['Bank'], 'Bank'),
+    #     # 'ablation': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
+    #     # 'ablation': (['Telecom'], 'Telecom')
+    # }
     
     # 配置所有大模型名称
     llm_models = [
-        # 'glm-4.5',
+        'glm-4.5',
         # 'glm-4.6',
         # 'glm-4.7',
         # 'claude-3-5-sonnet-20241022',
-        'deepseek-r1-250528',
+        # 'deepseek-r1-250528',
         # 'gemini-2.5-pro-preview-p',
         # 'gpt-4o',
         # 'llama3.1:8b-instruct-q8_0',
@@ -151,7 +151,7 @@ def process_all_combinations(base_path):
             for model in llm_models:
                 # 构建输入文件路径
                 # input_filename = f"{filename_prefix}_all_RAG_{model}.log"
-                input_filename = f"{filename_prefix}_public_RAG_k4_{model}.log"
+                input_filename = f"{filename_prefix}_no_RAG_min_samples6_{model}.log"
                 input_path = os.path.join(
                     base_path, 
                     dataset_main,  # 目录仍使用主数据集名称（Market）
@@ -161,7 +161,7 @@ def process_all_combinations(base_path):
                 
                 # 构建输出文件路径
                 # output_filename = f"{filename_prefix}_all_RAG_{model}_extracted_tasks_info.md"
-                output_filename = f"{filename_prefix}_public_RAG_k4_{model}_extracted_tasks_info.md"
+                output_filename = f"{filename_prefix}_no_RAG_min_samples6_{model}_extracted_tasks_info.md"
                 output_path = os.path.join(
                     base_path, 
                     dataset_main, 

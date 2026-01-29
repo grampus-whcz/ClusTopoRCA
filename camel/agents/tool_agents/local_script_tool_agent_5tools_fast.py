@@ -48,6 +48,7 @@ class LocalScriptToolAgent(BaseToolAgent):
         method: str = "TranAD",
         output_folder_name: str = "1204",
         output_suffix: str = "default",
+        min_samples: str = "3",
         **kwargs: Any,
     ) -> str:
         """
@@ -67,7 +68,7 @@ class LocalScriptToolAgent(BaseToolAgent):
             f"Received request: pipeline_type={pipeline_type}, "
             f"date_offline={date_offline}, date_online={date_online}, "
             f"start_ts={start_ts}, end_ts={end_ts}, method={method}, "
-            f"output_folder_name={output_folder_name}, output_suffix={output_suffix}"
+            f"output_folder_name={output_folder_name}, output_suffix={output_suffix}, min_samples={min_samples}"
         )
 
         if pipeline_type == "all":
@@ -123,6 +124,7 @@ class LocalScriptToolAgent(BaseToolAgent):
                     "--date_online", date_online,
                     "--output_folder_name", output_folder_name,
                     "--output_suffix", output_suffix,
+                    "--min_samples", min_samples,
                 ]
             else:
                 cmd = [

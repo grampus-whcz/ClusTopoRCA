@@ -406,24 +406,24 @@ def process_all_combinations(base_path):
     """
     批量处理所有数据集和模型的组合
     """
-    # datasets = {
-    #     # 'Bank': (['Bank'], 'Bank'),
-    #     'Market': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),
-    #     # 'Telecom': (['Telecom'], 'Telecom')
-    # }
-    
     datasets = {
-        'ablation': (['Bank'], 'Bank'),
-        # 'ablation': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
-        # 'ablation': (['Telecom'], 'Telecom')
+        # 'Bank': (['Bank'], 'Bank'),
+        # 'Market': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),
+        'Telecom': (['Telecom'], 'Telecom')
     }
     
+    # datasets = {
+    #     'ablation': (['Bank'], 'Bank'),
+    #     # 'ablation': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
+    #     # 'ablation': (['Telecom'], 'Telecom')
+    # }
+    
     llm_models = [
-        # 'glm-4.5',
+        'glm-4.5',
         # 'glm-4.6',
         # 'glm-4.7',
         # 'claude-3-5-sonnet-20241022',
-        'deepseek-r1-250528',
+        # 'deepseek-r1-250528',
         # 'gemini-2.5-pro-preview-p',
         # 'gpt-4o',
         # 'llama3.1:8b-instruct-q8_0',
@@ -442,12 +442,12 @@ def process_all_combinations(base_path):
                 print(f"{'#'*100}")
                 
                 # 构建文件路径
-                input_filename = f"{filename_prefix}_no_RAG_k4_{model}_extracted_tasks_info.md"
+                input_filename = f"{filename_prefix}_no_RAG_min_samples6_{model}_extracted_tasks_info.md"
                 input_path = os.path.join(base_path, dataset_main, model, input_filename)
                 
-                task_csv_filename = f"{filename_prefix}_no_RAG_k4_{model}_task_summary.csv"
-                global_csv_filename = f"{filename_prefix}_no_RAG_k4_{model}_global_summary.csv"
-                difficulty_csv_filename = f"{filename_prefix}_no_RAG_k4_{model}_difficulty_summary.csv"
+                task_csv_filename = f"{filename_prefix}_no_RAG_min_samples6_{model}_task_summary.csv"
+                global_csv_filename = f"{filename_prefix}_no_RAG_min_samples6_{model}_global_summary.csv"
+                difficulty_csv_filename = f"{filename_prefix}_no_RAG_min_samples6_{model}_difficulty_summary.csv"
                 
                 task_csv_path = os.path.join(base_path, dataset_main, model, task_csv_filename)
                 global_csv_path = os.path.join(base_path, dataset_main, model, global_csv_filename)

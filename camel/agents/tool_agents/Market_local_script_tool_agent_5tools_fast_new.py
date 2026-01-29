@@ -47,6 +47,7 @@ class LocalScriptToolAgent(BaseToolAgent):
         data_dir: str = "data2",
         output_folder_name: str = "1215",
         output_suffix: str = "default",
+        min_samples: str = "3",
         **kwargs: Any,
     ) -> str:
         """
@@ -62,14 +63,14 @@ class LocalScriptToolAgent(BaseToolAgent):
             f"Received request: pipeline_type={pipeline_type}, "
             f"date_offline={date_offline}, date_offline_start_ts={date_offline_start_ts}, date_offline_end_ts={date_offline_end_ts}, "
             f"date_online={date_online}, date_online_start_ts={date_online_start_ts}, date_online_end_ts={date_online_end_ts}, method={method}, "
-            f"output_folder_name={output_folder_name}, output_suffix={output_suffix}, data_dir={data_dir}, cloudbed={cloudbed}"
+            f"output_folder_name={output_folder_name}, output_suffix={output_suffix}, data_dir={data_dir}, cloudbed={cloudbed}, min_samples={min_samples}"
         )
         
         print(
             f"Received request: pipeline_type={pipeline_type}, "
             f"date_offline={date_offline}, date_offline_start_ts={date_offline_start_ts}, date_offline_end_ts={date_offline_end_ts}, "
             f"date_online={date_online}, date_online_start_ts={date_online_start_ts}, date_online_end_ts={date_online_end_ts}, method={method}, "
-            f"output_folder_name={output_folder_name}, output_suffix={output_suffix}, data_dir={data_dir}, cloudbed={cloudbed}"
+            f"output_folder_name={output_folder_name}, output_suffix={output_suffix}, data_dir={data_dir}, cloudbed={cloudbed}, min_samples={min_samples}"
         )
 
         if pipeline_type == "all":
@@ -125,6 +126,7 @@ class LocalScriptToolAgent(BaseToolAgent):
                     "--date_online", date_online,
                     "--output_folder_name", output_folder_name,
                     "--output_suffix", output_suffix,
+                    "--min_samples", min_samples,
                 ]
 
             self.logger.info(f"[{p_type}] Executing command: {' '.join(cmd)}")
