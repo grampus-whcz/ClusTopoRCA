@@ -61,7 +61,8 @@ class LocalScriptToolAgent(BaseToolAgent):
             "Bank_metric_app": "run_pipline_Bank_metric_app.py",
             "Bank_trace": "run_pipline_Bank_trace.py",
             "Bank_log": "run_pipline_Bank_log.py",
-            "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies.py",
+            # "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies.py",
+            "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_2.7.py",
         }
 
         self.logger.info(

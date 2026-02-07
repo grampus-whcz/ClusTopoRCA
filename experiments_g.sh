@@ -36,7 +36,7 @@
 
 ## GLM 4.7
 # nohup bash experiments_g.sh >> Bank_no_RAG_c3_glm-4.7.log 2>&1 &
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 1  --end_idx 135
+python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 0  --end_idx 135
 
 # nohup bash experiments_g.sh >> Telecom_no_RAG_c3_glm-4.7.log 2>&1 &
 # python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 0  --end_idx 50

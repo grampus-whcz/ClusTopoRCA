@@ -193,7 +193,7 @@ The original execution output of the tool is also provided below for reference:
             detailed_context += f"--- {filename} ---\n{content}\n\n"
         detailed_context += f"--- Original Tool Output ---\n{tool_execution_result}"
       
-        head = "Based on the upper RCA tool execution results and detailed temporal clustering anomaly reports, please provide a concise plain-English summary (RCA analysis result) of the key findings and anomalies about related entities and their features for every cluster:\n\n."
+        head = "Based on the upper RCA tool execution results and detailed temporal clustering anomaly reports, please provide a concise plain-English summary (RCA analysis result) of the key findings and anomalies about related entities , their features , and the exact root cause occurrence datetime (yyyy-mm-dd HH:MM:SS CST) for every cluster:\n\n."
         # Summarize with LLM using full report contents
         summary_prompt = [
             {'role': 'system', 'content': 'You are a helpful assistant skilled in root cause analysis (RCA).'},

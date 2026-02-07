@@ -222,7 +222,7 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
         logger.info(f"RAG rag_k: {rag_k}")
 
         # --- RAG ---
-        rag_context = ""
+        # rag_context = ""    
         
         ## RAG core logic start
         # try:
@@ -250,6 +250,68 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
         ## RAG core logic end
 
         # --- Local RCA Prompt ---
+#         local_rca_prompt = f"""You are analyzing a specific anomaly cluster during the time window of the original issue.
+# {system_prompt}
+
+# Original Issue Time Window: {time_info['date_online']} from {time_info['output_suffix'][:4]} to {time_info['output_suffix'][5:]} (UTC+8)
+
+# Candidate Root Cause Components (MUST choose from this list):
+# {bp.cand}
+
+# Anomaly Cluster Description:
+# {cluster_desc}
+
+# Relevant Historical Incidents (if any):
+# {rag_context if rag_context else 'None'}
+
+# Backgroud:
+# {backgroud}
+
+# Based on this information, identify the MOST LIKELY root cause component and reason from the candidate list.
+# Follow these rules:
+# - The root cause must be a single component from the candidate list.
+# - The reason must be directly supported by the anomaly description.
+# - Assign a suspicious score between 0.0 and 1.0 (higher = more confident).
+
+# Respond ONLY with a JSON object in this exact format:
+# {{
+#     "component": "service-name",
+#     "reason": "brief reason",
+#     "score": 0.92
+# }}"""
+
+        date_online = time_info["date_online"]
+        output_suffix = time_info["output_suffix"]
+        log_context_name = f"Bank_cluster_window_anomaly_report_{date_online}_{output_suffix}_multi_grain.json"
+        log_context_path = f"/root/shared-nvme/work/timeSeries/OmniTransfer_new/1204/{log_context_name}"
+        logger.info(f"RAG log_context_path: {log_context_path}")
+        cluster_id_num = cluster_id.split()[-1]
+        cluster_i_report = get_cluster_multi_grain_report(log_context_path, cluster_id_num)
+        
+#         log_prompt = f"""log analysis tool execution results: {cluster_i_report}.\n
+# Based on the upper log analysis tool execution results, please provide a concise plain-English summary (RCA analysis result for log) of the key findings and anomalies about related entities and their features for the log analysis report:
+
+# Backgroud:
+# {backgroud}
+
+# Apply these RCA Decision Rules:
+# - **Sustained Anomaly Priority**: Prefer entities with ≥3 anomalies on the same metric within 5 minutes.
+# - **Earliest Among Sustained**: If multiple sustained anomalies exist, pick the one starting earliest.
+# - **Log as Trigger Only**: Treat log anomalies as high-confidence only if they precede sustained metric anomalies by ≤2 minutes.
+# - **Upstream over Downstream**: Favor components that are called by others (per trace data) and fail first.
+# - **Ignore Isolated Events**: Single-point anomalies without corroboration are likely symptoms."""
+        
+#         messages = [
+#             {'role': 'system', 'content': 'You are a precise root cause analyst.'},
+#             {'role': 'user', 'content': log_prompt}
+#         ]
+#         logger.info(f"controller Local summary for {cluster_id} log request: {messages}")
+#         log_response = get_chat_completion(logger, messages = messages)
+#         logger.info(f"controller Local summary for {cluster_id} log response: {log_response}")        
+        
+#         log_context = log_response
+
+# --- Local RCA Prompt ---
         local_rca_prompt = f"""You are analyzing a specific anomaly cluster during the time window of the original issue.
 {system_prompt}
 
@@ -258,11 +320,8 @@ Original Issue Time Window: {time_info['date_online']} from {time_info['output_s
 Candidate Root Cause Components (MUST choose from this list):
 {bp.cand}
 
-Anomaly Cluster Description:
-{cluster_desc}
-
-Relevant Historical Incidents (if any):
-{rag_context if rag_context else 'None'}
+Analyze the anomaly cluster with the reference log context below:
+- Anomaly Cluster Description: {cluster_desc}
 
 Backgroud:
 {backgroud}
@@ -279,6 +338,11 @@ Respond ONLY with a JSON object in this exact format:
     "reason": "brief reason",
     "score": 0.92
 }}"""
+
+# Relevant Key log Context (if any, note: The Relevant Key Log Context is only used as a reference for root cause analysis (RCA), not as a criterion for definitive judgment. When inconsistencies arise in the preceding anomaly detection results, the Relevant Key Log Context may be referred to for a conclusive determination.):
+# {log_context if log_context else 'None'}
+# - Reference Log Context (This is only for updating the score value in the returned JSON: the score shall be increased if the token count of the Log Context is high, and decreased if the token count is low.): {cluster_i_report}
+
 
         try:
             messages = [
@@ -609,6 +673,39 @@ def Market_parse_rca_task(task_description: str, cloudbed: str):
     import json
     text = json.dumps(return_json)
     return text, return_json
+
+def get_cluster_multi_grain_report(json_path, cluster_id):
+    """
+    从 JSON 文件中读取指定 cluster_id 对应的多粒度报告内容
+    :param json_path: JSON 文件路径
+    :param cluster_id: 集群编号（支持 int 或 str 类型，如 1 或 "1"）
+    :return: 对应的多粒度报告字符串，若不存在则返回 None
+    """
+    # 1. 检查文件是否存在
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            # 2. 加载 JSON 数据为字典
+            cluster_json_data = json.load(f)
+    except FileNotFoundError:
+        print(f"JSON 文件不存在：{json_path}")
+        return None
+    except json.JSONDecodeError:
+        print(f"JSON 文件格式错误，无法解析：{json_path}")
+        return None
+    except Exception as e:
+        print(f"读取 JSON 文件失败：{str(e)}")
+        return None
+    
+    # 3. 统一 cluster_id 为字符串（因为 JSON 中的键是字符串类型）
+    cluster_id_str = str(cluster_id)
+    
+    # 4. 根据 cluster_id 提取对应的 value
+    if cluster_id_str in cluster_json_data:
+        return cluster_json_data[cluster_id_str]
+    else:
+        print(f"JSON 中不存在 cluster_id: {cluster_id}（对应字符串键：{cluster_id_str}）")
+        print(f"可用的 cluster_id 列表：{list(cluster_json_data.keys())}")
+        return None
 
 # -----------------------------
 # Main test loop
