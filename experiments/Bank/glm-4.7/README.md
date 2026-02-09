@@ -76,4 +76,81 @@ FALLBACK_THRESHOLD = 1
 WEIGHT_TIME = 0.4
 WEIGHT_TOPOLOGY = 0.3
 WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 3 -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune10_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 3
+ANOMALY_THRESHOLD = 3
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.4
+WEIGHT_TOPOLOGY = 0.3
+WEIGHT_COUNT = 0.3
 ANALYSIS_START_TIMESTAMP_INDEX = 0 -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune11_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 3
+ANOMALY_THRESHOLD = 2
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.4
+WEIGHT_TOPOLOGY = 0.3
+WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 2   -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune12_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 4
+ANOMALY_THRESHOLD = 2
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.4
+WEIGHT_TOPOLOGY = 0.3
+WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 0 -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune13_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 4
+ANOMALY_THRESHOLD = 2
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.4
+WEIGHT_TOPOLOGY = 0.3
+WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 1 -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune14_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 3
+ANOMALY_THRESHOLD = 2
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.3
+WEIGHT_TOPOLOGY = 0.4
+WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 0 -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune15_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 3
+ANOMALY_THRESHOLD = 2
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.5
+WEIGHT_TOPOLOGY = 0.2
+WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 0 -->
+
+# _no_RAG_c3_log_template_new_context_back_llm_tune16_
+no RAG + clustering DBSCAN min_samples=3 + dependency analysis (topology/root cause scoring) logic after clustering
+
+<!-- CONCENTRATION_WINDOW_MINUTES = 4
+ANOMALY_THRESHOLD = 2
+FALLBACK_THRESHOLD = 1
+WEIGHT_TIME = 0.4
+WEIGHT_TOPOLOGY = 0.3
+WEIGHT_COUNT = 0.3
+ANALYSIS_START_TIMESTAMP_INDEX = 2   -->

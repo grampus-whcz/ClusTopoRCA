@@ -35,12 +35,13 @@
 ## ====================================================================
 
 ## GLM 4.7
-# nohup bash experiments_h.sh >> Bank_no_RAG_c3_log_template_new_context_back_llm_tune9_glm-4.7.log 2>&1 &
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 4  --end_idx 4
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 16  --end_idx 16
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 33  --end_idx 33
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 38  --end_idx 38
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 48  --end_idx 48
+# nohup bash experiments_h.sh >> Bank_no_RAG_c3_log_template_new_context_back_llm_tune7_all_glm-4.7.log 2>&1 &
+python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 0  --end_idx 135
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 4  --end_idx 4
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 16  --end_idx 16
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 33  --end_idx 33
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 38  --end_idx 38
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 48  --end_idx 48
 
 # nohup bash experiments_h.sh >> Telecom_no_RAG_c3_log_template_new_context_back_llm_glm-4.7.log 2>&1 &
 # python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 0  --end_idx 50

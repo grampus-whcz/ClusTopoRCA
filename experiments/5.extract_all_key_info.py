@@ -151,7 +151,7 @@ def process_all_combinations(base_path):
             for model in llm_models:
                 # 构建输入文件路径
                 # input_filename = f"{filename_prefix}_all_RAG_{model}.log"
-                input_filename = f"{filename_prefix}_no_RAG_{model}.log"
+                input_filename = f"{filename_prefix}_no_RAG_c3_log_template_new_context_back_llm_tune6_all_{model}.log"
                 input_path = os.path.join(
                     base_path, 
                     dataset_main,  # 目录仍使用主数据集名称（Market）
@@ -161,7 +161,7 @@ def process_all_combinations(base_path):
                 
                 # 构建输出文件路径
                 # output_filename = f"{filename_prefix}_all_RAG_{model}_extracted_tasks_info.md"
-                output_filename = f"{filename_prefix}_no_RAG_{model}_extracted_tasks_info.md"
+                output_filename = f"{filename_prefix}_no_RAG_c3_log_template_new_context_back_llm_tune6_all_{model}_extracted_tasks_info.md"
                 output_path = os.path.join(
                     base_path, 
                     dataset_main, 
