@@ -35,8 +35,8 @@
 ## ====================================================================
 
 ## GLM 4.7
-# nohup bash experiments_h.sh >> Bank_no_RAG_c3_log_template_new_context_back_llm_tune8_all_glm-4.7.log 2>&1 &
-python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 63  --end_idx 135
+# nohup bash experiments_h.sh >> Bank_no_RAG_c3_log_template_new_context_back_llm_tune7_new_test_glm-4.7.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 0  --end_idx 135
 # python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 4  --end_idx 4
 # python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 16  --end_idx 16
 # python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 33  --end_idx 33
@@ -50,7 +50,7 @@ python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max
 # python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-1 --controller_max_step 1  --start_idx 0  --end_idx 70
 
 # nohup bash experiments_h.sh >> Market_cloudbed-2_no_RAG_c3_log_template_new_context_back_llm_glm-4.7.log 2>&1 &
-# python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1  --start_idx 0  --end_idx 77
+python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1  --start_idx 0  --end_idx 77
 
 ## ====================================================================
 

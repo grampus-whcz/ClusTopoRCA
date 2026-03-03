@@ -56,7 +56,7 @@ class LocalScriptToolAgent(BaseToolAgent):
         """
         output_folder_name = "1215"
         valid_pipelines = {
-            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies.py",
+            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3.py",
         }
 
         self.logger.info(
