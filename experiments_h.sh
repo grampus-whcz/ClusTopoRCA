@@ -43,14 +43,22 @@
 # python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 38  --end_idx 38
 # python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1  --start_idx 48  --end_idx 48
 
-# nohup bash experiments_h.sh >> Telecom_no_RAG_c3_log_template_new_context_back_llm_glm-4.7.log 2>&1 &
+# nohup bash experiments_h.sh >> Telecom_no_RAG_c3_log_template_new_context_back_tune5_4_llm_0-50_glm-4.7.log 2>&1 &
 # python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 0  --end_idx 50
+
+# nohup bash experiments_h.sh >> Telecom_no_RAG_c3_knowledge_graph_program_0-0_glm-4.7.log 2>&1 &
+# python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 0  --end_idx 0
+# python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 45  --end_idx 50
+
+# nohup bash experiments_h.sh >> Telecom_no_RAG_c3_knowledge_graph_llm_0-50_glm-4.7.log 2>&1 &
+python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 1  --end_idx 50
+# python -m rca.run_agent_standard_multi_candidate --dataset Telecom --controller_max_step 1  --start_idx 45  --end_idx 50
 
 # nohup bash experiments_h.sh >> Market_cloudbed-1_no_RAG_c3_log_template_new_context_back_llm_glm-4.7.log 2>&1 &
 # python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-1 --controller_max_step 1  --start_idx 0  --end_idx 70
 
 # nohup bash experiments_h.sh >> Market_cloudbed-2_no_RAG_c3_log_template_new_context_back_llm_glm-4.7.log 2>&1 &
-python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1  --start_idx 0  --end_idx 77
+# python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-2 --controller_max_step 1  --start_idx 0  --end_idx 77
 
 ## ====================================================================
 

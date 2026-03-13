@@ -33,8 +33,10 @@ class LocalScriptToolAgent(BaseToolAgent):
             "- Telecom_metric_B\n"
             "- Telecom_trace\n"
             "- Telecom_cluster_window\n"
+            "- Telecom_knowledge_graph_RCA\n"
             "Telecom_metric_A, Telecom_metric_B, and Telecom_trace require parameters: date_offline, date_online, start_ts, end_ts, method, output_folder_name, output_suffix. "
-            "Telecom_cluster_window requires parameters: date_online, output_folder_name, output_suffix."
+            "Telecom_cluster_window requires parameters: date_online, output_folder_name, output_suffix. "
+            "Telecom_knowledge_graph_RCA requires parameters: date_online, output_folder_name, output_suffix."
         )
 
     def step(
@@ -61,6 +63,8 @@ class LocalScriptToolAgent(BaseToolAgent):
             "Telecom_metric_B": "11.run_telecom_metric_B_pipeline.py",
             "Telecom_trace": "13.run_telecom_trace_pipeline.py",
             "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.3.3.py",
+            # "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.py",
+            "Telecom_knowledge_graph_RCA": "15.Telecom_knowledge_graph_RCA.py",
         }
 
         self.logger.info(
@@ -94,7 +98,11 @@ class LocalScriptToolAgent(BaseToolAgent):
                 continue
 
             # 构建预期的报告路径（关键：用于判断是否跳过执行）
-            report_path = os.path.join(base_output_dir, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
+            
+            if p_type in ['Telecom_metric_A', 'Telecom_metric_B', 'Telecom_trace', 'Telecom_cluster_window']:
+                report_path = os.path.join(base_output_dir, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
+            else:
+                report_path = os.path.join(base_output_dir, f"Telecom_cluster_window_anomaly_report_{date_online}_{output_suffix}_llm_rca_summary.json")
 
             # ✅ 新增逻辑：如果报告已存在，跳过执行
             if os.path.exists(report_path):
@@ -124,6 +132,13 @@ class LocalScriptToolAgent(BaseToolAgent):
                     "--output_folder_name", output_folder_name,
                     "--output_suffix", output_suffix,
                     "--min_samples", min_samples,
+                ]
+            elif p_type == "Telecom_knowledge_graph_RCA":
+                cmd = [
+                    "/root/shared-nvme/.conda/envs/faiss-env/bin/python", script_path,
+                    "--date_online", date_online,
+                    "--output_folder_name", output_folder_name,
+                    "--output_suffix", output_suffix,
                 ]
             else:
                 cmd = [
