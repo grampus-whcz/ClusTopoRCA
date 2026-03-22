@@ -62,9 +62,10 @@ class LocalScriptToolAgent(BaseToolAgent):
             "Telecom_metric_A": "10.run_telecom_metric_A_pipeline.py",
             "Telecom_metric_B": "11.run_telecom_metric_B_pipeline.py",
             "Telecom_trace": "13.run_telecom_trace_pipeline.py",
-            "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.3.3.py",
+            "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.3.12.py",
             # "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.py",
-            "Telecom_knowledge_graph_RCA": "15.Telecom_knowledge_graph_RCA.py",
+            # "Telecom_knowledge_graph_RCA": "15.Telecom_knowledge_graph_RCA.py",
+            "Telecom_knowledge_graph_RCA": "15.Telecom_knowledge_graph_RCA.3.19.py",
         }
 
         self.logger.info(

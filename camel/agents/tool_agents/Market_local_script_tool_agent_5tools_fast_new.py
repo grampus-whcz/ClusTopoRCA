@@ -56,7 +56,9 @@ class LocalScriptToolAgent(BaseToolAgent):
         """
         output_folder_name = "1215"
         valid_pipelines = {
-            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3.py",
+            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.13.py",
+            # "Market_knowledge_graph_RCA": "17.Market_knowledge_graph_RCA.py",
+            "Market_knowledge_graph_RCA": "17.Market_knowledge_graph_RCA.3.20.py",
         }
 
         self.logger.info(
@@ -99,6 +101,12 @@ class LocalScriptToolAgent(BaseToolAgent):
             # 构建预期的报告路径（关键：用于判断是否跳过执行）
             report_path = os.path.join(base_output_dir, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
 
+            if p_type in ['Market_cluster_window']:
+                report_path = os.path.join(base_output_dir, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
+            else:
+                report_path = os.path.join(base_output_dir, f"Market_cluster_window_anomaly_report_{date_online}_{output_suffix}_llm_rca_summary.json")
+
+
             # ✅ 新增逻辑：如果报告已存在，跳过执行
             if os.path.exists(report_path):
                 self.logger.info(f"[{p_type}] Report already exists at {report_path}. Skipping execution.")
@@ -128,6 +136,15 @@ class LocalScriptToolAgent(BaseToolAgent):
                     "--output_suffix", output_suffix,
                     "--min_samples", min_samples,
                 ]
+            elif p_type == "Market_knowledge_graph_RCA":
+                cmd = [
+                    "/root/shared-nvme/.conda/envs/faiss-env/bin/python", script_path,
+                    "--date_online", date_online,
+                    "--output_folder_name", output_folder_name,
+                    "--output_suffix", output_suffix,
+                ]
+            else:
+                pass
 
             self.logger.info(f"[{p_type}] Executing command: {' '.join(cmd)}")
 

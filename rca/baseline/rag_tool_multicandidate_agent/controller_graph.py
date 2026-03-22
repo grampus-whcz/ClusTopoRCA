@@ -223,8 +223,9 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
         output_folder_name = time_info["output_folder_name"]
         date_online = time_info["date_online"]
         output_suffix = time_info["output_suffix"]
-        # knowledge_graph_name = f"Bank_cluster_window_anomaly_report_{date_online}_{output_suffix}_programmatic_rca_summary.json"
-        knowledge_graph_name = f"{time_info['dataset']}_cluster_window_anomaly_report_{date_online}_{output_suffix}_llm_rca_summary.json"
+        # knowledge_graph_name = f"{time_info['dataset']}_cluster_window_anomaly_report_{date_online}_{output_suffix}_programmatic_rca_summary.json"
+        # knowledge_graph_name = f"{time_info['dataset']}_cluster_window_anomaly_report_{date_online}_{output_suffix}_llm_rca_summary.json"
+        knowledge_graph_name = f"{time_info['dataset']}_cluster_window_anomaly_report_{date_online}_{output_suffix}_merged_rca_summary.json"
         knowledge_graph_path = f"/root/shared-nvme/work/timeSeries/OmniTransfer_new/{output_folder_name}/{knowledge_graph_name}"
         logger.info(f"Knowledge graph RCA path: {knowledge_graph_path}")
         cluster_id_num = cluster_id.split()[-1]

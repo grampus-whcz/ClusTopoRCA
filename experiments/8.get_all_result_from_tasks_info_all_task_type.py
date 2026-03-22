@@ -407,9 +407,9 @@ def process_all_combinations(base_path):
     批量处理所有数据集和模型的组合
     """
     datasets = {
-        # 'Bank': (['Bank'], 'Bank'),
+        'Bank': (['Bank'], 'Bank'),
         # 'Market': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),
-        'Telecom': (['Telecom'], 'Telecom')
+        # 'Telecom': (['Telecom'], 'Telecom')
     }
     
     # datasets = {
@@ -442,12 +442,12 @@ def process_all_combinations(base_path):
                 print(f"{'#'*100}")
                 
                 # 构建文件路径
-                input_filename = f"{filename_prefix}_no_RAG_c3_log_template_new_context_back_tune5_4_llm_0-50_{model}_extracted_tasks_info.md"
+                input_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_0-77_{model}_extracted_tasks_info.md"
                 input_path = os.path.join(base_path, dataset_main, model, input_filename)
                 
-                task_csv_filename = f"{filename_prefix}_no_RAG_c3_log_template_new_context_back_tune5_4_llm_0-50_{model}_task_summary.csv"
-                global_csv_filename = f"{filename_prefix}_no_RAG_c3_log_template_new_context_back_tune5_4_llm_0-50_{model}_global_summary.csv"
-                difficulty_csv_filename = f"{filename_prefix}_no_RAG_c3_log_template_new_context_back_tune5_4_llm_0-50_{model}_difficulty_summary.csv"
+                task_csv_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_0-77_{model}_task_summary.csv"
+                global_csv_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_0-77_{model}_global_summary.csv"
+                difficulty_csv_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_0-77_{model}_difficulty_summary.csv"
                 
                 task_csv_path = os.path.join(base_path, dataset_main, model, task_csv_filename)
                 global_csv_path = os.path.join(base_path, dataset_main, model, global_csv_filename)
