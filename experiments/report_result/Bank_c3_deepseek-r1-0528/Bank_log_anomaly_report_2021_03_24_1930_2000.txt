@@ -1,0 +1,40 @@
+
+📝 Detailed Log Anomaly Report (Beijing Time = UTC+8):
+================================================================================
+
+Pod: IG01
+  - Pattern ID 3 (1 anomalies):
+      Template: 
+      1616585580 (2021-03-24 19:33:00 CST)
+  - Pattern ID 62 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM MYSQL Ignoring unknown property: value of  for maxPoolSize property
+      1616586960 (2021-03-24 19:56:00 CST)
+  - Pattern ID 67 (1 anomalies):
+      Template: INFO [localhost-startStop-] redis.clients.jedis.JedisSentinelPool.initPool Created JedisPool to master at IPAddress:Port
+      1616586960 (2021-03-24 19:56:00 CST)
+  - Pattern ID 80 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named but has failed to stop itThis i ...
+      1616586960 (2021-03-24 19:56:00 CST)
+  - Pattern ID 82 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [Curator-ConnectionStateManager ...
+      1616586780 (2021-03-24 19:53:00 CST)
+  - Pattern ID 83 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [pool--thread--SendThread(IPAdd ...
+      1616585580 (2021-03-24 19:33:00 CST)
+  - Pattern ID 90 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [kafka-producer-network-thread ...
+      1616587080 (2021-03-24 19:58:00 CST)
+  - Pattern ID 124 (2 anomalies):
+      Template: SEVERE org.apache.catalina.core.StandardHostValve.invoke Exception Processing java.lang.NullPointerException at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:) at org. ...
+      1616585520 (2021-03-24 19:32:00 CST), 1616587080 (2021-03-24 19:58:00 CST)
+  - Pattern ID 131 (1 anomalies):
+      Template: [Note] InnoDB: page cleaner: 1000ms intended loop took The settings might not be optimal(flushed= and evicted=, during the time.)
+      1616586780 (2021-03-24 19:53:00 CST)
+  - Pattern ID 135 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=;
+      1616585880 (2021-03-24 19:38:00 CST)
+  - Pattern ID 136 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=;
+      1616585880 (2021-03-24 19:38:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).

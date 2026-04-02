@@ -1,0 +1,364 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_25 | Window: 0630_0700
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 8 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2021-03-25 06:31:00 CST → 2021-03-25 06:33:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 16
+**Key Anomaly Patterns**: GC, Error/Failure
+
+## Anomaly Breakdown
+- **Metric App**: 1 anomalies
+- **Metric Container**: 5 anomalies
+- **Log**: 10 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1
+**Analysis Window**: 2021-03-25 06:33:00 (T2) to 2021-03-25 06:37:00 (3 minutes)
+**Total Anomalies**: 16
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.71 (1.0 = highest)
+- **Anomaly Count**: 11
+- **Anomaly Attributes**: OSLinux-CPU_CPU-2_SingleCpuidle(1 times), PatternID_11(1 times), PatternID_16(1 times), PatternID_51(1 times), PatternID_63(1 times), PatternID_90(1 times), PatternID_124(1 times), PatternID_147(1 times), PatternID_148(1 times), PatternID_159(1 times), PatternID_174(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:31:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.28 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG02** (Layer: GATEWAY): Score = 0.47, Anomalies = 2, Attrs = OSLinux-CPU_CPU-2_SingleCpuidle(1 times), JVM-Memory_7778_JVM_Memory_HeapMemoryUsed(1 times)
+- **apache02** (Layer: ENTRY_POINT): Score = 0.45, Anomalies = 2, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(1 times), OSLinux-CPU_CPU-2_SingleCpuidle(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Tomcat02, MG02, Mysql02, MG01
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (highest confidence score)
+2. Check IG01 for 11 anomalies on attributes: OSLinux-CPU_CPU-2_SingleCpuidle(1 times), PatternID_11(1 times), PatternID_16(1 times), PatternID_51(1 times), PatternID_63(1 times), PatternID_90(1 times), PatternID_124(1 times), PatternID_147(1 times), PatternID_148(1 times), PatternID_159(1 times), PatternID_174(1 times)
+3. Investigate anomalies starting at 2021-03-25 06:31:00 for IG01 (analysis window starts at 2021-03-25 06:33:00 (T2))
+4. Verify downstream dependencies of IG01 for cascading failures
+5. Check GATEWAY layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2021-03-25 06:34:59 CST → 2021-03-25 06:38:00 CST (Duration: 181 seconds)
+**Total Anomalies**: 12
+
+## Anomaly Breakdown
+- **Metric App**: 3 anomalies
+- **Metric Container**: 8 anomalies
+- **Trace**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2
+**Analysis Window**: 2021-03-25 06:36:00 (T2) to 2021-03-25 06:40:00 (3 minutes)
+**Total Anomalies**: 12
+
+#### Primary Root Cause Entity
+- **Entity**: apache02 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.85 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: OSLinux-CPU_CPU-2_SingleCpuidle(1 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:36:00
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for apache02
+- **Time Score**: 0.66 (earlier anomaly = higher score)
+- **Topology Score**: 0.89 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat02** (Layer: BUSINESS): Score = 0.82, Anomalies = 2, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(1 times), frequency(1 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.43, Anomalies = 2, Attrs = Mysql-MySQL_3306_Max trx rows locked(1 times), OSLinux-OSLinux_FILE_-home-zabbix_DirSizeMB(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache02**: dockerA2, Tomcat02, IG01, MG02, IG02
+
+#### Layer-wise Impact Analysis
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache02 (highest confidence score)
+2. Check apache02 for 2.0 anomalies on attributes: OSLinux-CPU_CPU-2_SingleCpuidle(1 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+3. Investigate anomalies starting at 2021-03-25 06:36:00 for apache02 (analysis window starts at 2021-03-25 06:36:00 (T2))
+4. Verify downstream dependencies of apache02 for cascading failures
+5. Check ENTRY_POINT layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2021-03-25 06:40:00 CST → 2021-03-25 06:43:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 9
+
+## Anomaly Breakdown
+- **Metric Container**: 9 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3
+**Analysis Window**: 2021-03-25 06:42:00 (T2) to 2021-03-25 06:46:00 (3 minutes)
+**Total Anomalies**: 9
+
+#### Primary Root Cause Entity
+- **Entity**: apache02 (Layer: ENTRY_POINT)
+- **Confidence Score**: 1.00 (1.0 = highest)
+- **Anomaly Count**: 8
+- **Anomaly Attributes**: OSLinux-CPU_CPU_CPUUserTime(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-CPU_CPU_CPUCpuUtil(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKTps(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:40:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for apache02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache02**: dockerA2, Tomcat02, IG01, MG02, IG02
+
+#### Layer-wise Impact Analysis
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache02 (highest confidence score)
+2. Check apache02 for 8 anomalies on attributes: OSLinux-CPU_CPU_CPUUserTime(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-CPU_CPU_CPUCpuUtil(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKTps(1 times)
+3. Investigate anomalies starting at 2021-03-25 06:40:00 for apache02 (analysis window starts at 2021-03-25 06:42:00 (T2))
+4. Verify downstream dependencies of apache02 for cascading failures
+5. Check ENTRY_POINT layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #4
+**Time Span**: 2021-03-25 06:45:00 CST → 2021-03-25 06:48:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 17
+**Key Anomaly Patterns**: GC
+
+## Anomaly Breakdown
+- **Metric Container**: 13 anomalies
+- **Trace**: 1 anomalies
+- **Log**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #4
+**Analysis Window**: 2021-03-25 06:47:00 (T2) to 2021-03-25 06:51:00 (3 minutes)
+**Total Anomalies**: 17
+
+#### Primary Root Cause Entity
+- **Entity**: apache02 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.84 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: OSLinux-CPU_CPU_CPUCpuUtil(2 times), OSLinux-CPU_CPU_CPUUserTime(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:45:00
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for apache02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.89 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.60 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.73, Anomalies = 5, Attrs = OSLinux-OSLinux_FILESYSTEM_-mysql_FSCapacity(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times)
+- **Redis02** (Layer: CACHE): Score = 0.50, Anomalies = 2, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(2 times)
+- **IG01** (Layer: GATEWAY): Score = 0.46, Anomalies = 3, Attrs = PatternID_46(1 times), PatternID_115(1 times), PatternID_168(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache02**: dockerA2, Tomcat02, IG01, MG02, IG02
+
+#### Layer-wise Impact Analysis
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **CONTAINER Layer**: 1 entities affected (Weight: 0.7)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache02 (highest confidence score)
+2. Check apache02 for 3.0 anomalies on attributes: OSLinux-CPU_CPU_CPUCpuUtil(2 times), OSLinux-CPU_CPU_CPUUserTime(1 times)
+3. Investigate anomalies starting at 2021-03-25 06:45:00 for apache02 (analysis window starts at 2021-03-25 06:47:00 (T2))
+4. Verify downstream dependencies of apache02 for cascading failures
+5. Check ENTRY_POINT layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #5
+**Time Span**: 2021-03-25 06:50:00 CST → 2021-03-25 06:50:00 CST (Duration: 0 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #5
+**Analysis Window**: 2021-03-25 06:50:00 (T2) to 2021-03-25 06:54:00 (3 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: PatternID_125(1 times), PatternID_153(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:50:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Tomcat02, MG02, Mysql02, MG01
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (highest confidence score)
+2. Check IG01 for 2 anomalies on attributes: PatternID_125(1 times), PatternID_153(1 times)
+3. Investigate anomalies starting at 2021-03-25 06:50:00 for IG01 (analysis window starts at 2021-03-25 06:50:00 (T2))
+4. Verify downstream dependencies of IG01 for cascading failures
+5. Check GATEWAY layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #6
+**Time Span**: 2021-03-25 06:53:00 CST → 2021-03-25 06:55:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 17
+**Key Anomaly Patterns**: GC, Error/Failure
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Log**: 15 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #6
+**Analysis Window**: 2021-03-25 06:55:00 (T2) to 2021-03-25 06:59:00 (3 minutes)
+**Total Anomalies**: 17
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 15
+- **Anomaly Attributes**: PatternID_3(1 times), PatternID_16(1 times), PatternID_23(1 times), PatternID_28(1 times), PatternID_51(1 times), PatternID_60(1 times), PatternID_63(1 times), PatternID_83(1 times), PatternID_94(1 times), PatternID_106(1 times), PatternID_114(1 times), PatternID_126(1 times), PatternID_148(1 times), PatternID_164(1 times), PatternID_168(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:54:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Tomcat02, MG02, Mysql02, MG01
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (highest confidence score)
+2. Check IG01 for 15 anomalies on attributes: PatternID_3(1 times), PatternID_16(1 times), PatternID_23(1 times), PatternID_28(1 times), PatternID_51(1 times), PatternID_60(1 times), PatternID_63(1 times), PatternID_83(1 times), PatternID_94(1 times), PatternID_106(1 times), PatternID_114(1 times), PatternID_126(1 times), PatternID_148(1 times), PatternID_164(1 times), PatternID_168(1 times)
+3. Investigate anomalies starting at 2021-03-25 06:54:00 for IG01 (analysis window starts at 2021-03-25 06:55:00 (T2))
+4. Verify downstream dependencies of IG01 for cascading failures
+5. Check GATEWAY layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #7
+**Time Span**: 2021-03-25 06:57:00 CST → 2021-03-25 06:57:59 CST (Duration: 59 seconds)
+**Total Anomalies**: 7
+
+## Anomaly Breakdown
+- **Metric Container**: 3 anomalies
+- **Trace**: 4 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #7
+**Analysis Window**: 2021-03-25 06:57:59 (T2) to 2021-03-25 07:01:59 (3 minutes)
+**Total Anomalies**: 7
+
+#### Primary Root Cause Entity
+- **Entity**: UNKNOWN_PARENT (Layer: UNKNOWN)
+- **Confidence Score**: 0.70 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: frequency(4 times)
+- **Earliest Anomaly Time**: 2021-03-25 06:57:59
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for UNKNOWN_PARENT
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat02** (Layer: BUSINESS): Score = 0.62, Anomalies = 2, Attrs = OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), frequency(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by UNKNOWN_PARENT**: dockerA1, dockerA2, Tomcat02, IG01, MG02
+
+#### Layer-wise Impact Analysis
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of UNKNOWN_PARENT (highest confidence score)
+2. Check UNKNOWN_PARENT for 4.0 anomalies on attributes: frequency(4 times)
+3. Investigate anomalies starting at 2021-03-25 06:57:59 for UNKNOWN_PARENT (analysis window starts at 2021-03-25 06:57:59 (T2))
+4. Verify downstream dependencies of UNKNOWN_PARENT for cascading failures
+5. Check UNKNOWN layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #8
+**Time Span**: 2021-03-25 06:59:00 CST → 2021-03-25 07:00:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 5
+**Key Anomaly Patterns**: Error/Failure, Timeout
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Log**: 4 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #8
+**Analysis Window**: 2021-03-25 07:00:00 (T2) to 2021-03-25 07:04:00 (3 minutes)
+**Total Anomalies**: 5
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: PatternID_68(1 times), PatternID_97(1 times), PatternID_144(1 times), PatternID_165(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 07:00:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Tomcat02, MG02, Mysql02, MG01
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (highest confidence score)
+2. Check IG01 for 4 anomalies on attributes: PatternID_68(1 times), PatternID_97(1 times), PatternID_144(1 times), PatternID_165(1 times)
+3. Investigate anomalies starting at 2021-03-25 07:00:00 for IG01 (analysis window starts at 2021-03-25 07:00:00 (T2))
+4. Verify downstream dependencies of IG01 for cascading failures
+5. Check GATEWAY layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

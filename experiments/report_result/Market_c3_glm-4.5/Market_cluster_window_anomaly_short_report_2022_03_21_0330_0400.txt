@@ -1,0 +1,49 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0330_0400
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 03:44:00 CST → 2022-03-21 03:45:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.T
+       Times (2): 2022-03-21 03:44:00 CST, 2022-03-21 03:45:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_memory_cache
+       Times (2): 2022-03-21 03:44:00 CST, 2022-03-21 03:45:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 03:47:00 CST → 2022-03-21 03:51:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.T
+       Times (2): 2022-03-21 03:47:00 CST, 2022-03-21 03:50:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_memory_cache
+       Times (4): 2022-03-21 03:47:00 CST, 2022-03-21 03:48:00 CST, 2022-03-21 03:50:00 CST, 2022-03-21 03:51:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 03:55:00 CST → 2022-03-21 03:57:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_memory_cache
+       Times (3): 2022-03-21 03:55:00 CST, 2022-03-21 03:56:00 CST, 2022-03-21 03:57:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.grpc.200.0.0
+       Times (3): 2022-03-21 03:55:00 CST, 2022-03-21 03:56:00 CST, 2022-03-21 03:57:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

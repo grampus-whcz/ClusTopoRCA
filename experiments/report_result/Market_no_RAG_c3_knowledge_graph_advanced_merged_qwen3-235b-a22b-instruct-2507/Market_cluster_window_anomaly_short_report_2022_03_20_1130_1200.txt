@@ -1,0 +1,43 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1130_1200
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 11:32:00 CST → 2022-03-20 11:33:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 (Original: currencyservice2-0.destination.checkoutservice2.currencyservice2) | Attribute: istio_agent_go_memstats_stack_inuse_bytes
+       Times (2): 2022-03-20 11:32:00 CST, 2022-03-20 11:33:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 11:54:00 CST → 2022-03-20 11:59:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: currencyservice (Original: node-5.currencyservice-1) | Attribute: container_fs_reads./dev/vda
+       Times (5): 2022-03-20 11:55:00 CST, 2022-03-20 11:56:00 CST, 2022-03-20 11:57:00 CST, 2022-03-20 11:58:00 CST, 2022-03-20 11:59:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 (Original: currencyservice2-0.destination.checkoutservice2.currencyservice2) | Attribute: istio_agent_go_memstats_stack_inuse_bytes
+       Times (2): 2022-03-20 11:54:00 CST, 2022-03-20 11:58:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies (Original: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies) | Attribute: frequency
+       Times (2): 2022-03-20 11:57:00 CST, 2022-03-20 11:59:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.currencyservice-1 (Cleaned: currencyservice, Score: 0.76)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 4
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

@@ -1,0 +1,34 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1300_1330
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 13:07:00 CST → 2022-03-20 13:13:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: paymentservice (Original: node-6.paymentservice2-0) | Attribute: container_memory_cache
+       Times (4): 2022-03-20 13:08:00 CST, 2022-03-20 13:09:00 CST, 2022-03-20 13:11:00 CST, 2022-03-20 13:13:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.source.checkoutservice.productcatalogservice (Original: checkoutservice-0.source.checkoutservice.productcatalogservice) | Attribute: istio_requests.http.500.
+       Times (2): 2022-03-20 13:08:00 CST, 2022-03-20 13:09:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-1) | Attribute: system.mem.free
+       Times (4): 2022-03-20 13:07:00 CST, 2022-03-20 13:08:00 CST, 2022-03-20 13:10:00 CST, 2022-03-20 13:11:00 CST
+
+   📝 Log Anomalies:
+     • Entity: shippingservice (Original: shippingservice-0) | Attribute: info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+       Times (4): 2022-03-20 13:09:00 CST, 2022-03-20 13:10:00 CST, 2022-03-20 13:11:00 CST, 2022-03-20 13:12:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-1 (Cleaned: node, Score: 0.73)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 4
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

@@ -1,0 +1,342 @@
+🔍 Anomaly Clustering Report for 2021_03_25 2300_2330
+🔍 The number of clusters are 2021_03_25 2300_2330
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2021-03-25 23:00:00 CST → 2021-03-25 23:30:00 CST (Δ = 1800 sec)
+   Total Anomalies: 419
+   🔑 Keywords: Timeout, Error/Failure, GC
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616684760 (2021-03-25 23:06:00 CST), 1616684880 (2021-03-25 23:08:00 CST), 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616684880 (2021-03-25 23:08:00 CST), 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685600 (2021-03-25 23:20:00 CST), 1616685840 (2021-03-25 23:24:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616684880 (2021-03-25 23:08:00 CST), 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685600 (2021-03-25 23:20:00 CST), 1616685840 (2021-03-25 23:24:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG01 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1616685540 (2021-03-25 23:19:00 CST)
+     • Entity: MG01 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1616685540 (2021-03-25 23:19:00 CST)
+     • Entity: MG01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tmp_FSCapacity
+       Timestamps: 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn
+       Timestamps: 1616684400 (2021-03-25 23:00:00 CST), 1616684640 (2021-03-25 23:04:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616684400 (2021-03-25 23:00:00 CST), 1616684640 (2021-03-25 23:04:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----home_FSCapacity
+       Timestamps: 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn
+       Timestamps: 1616684640 (2021-03-25 23:04:00 CST), 1616685000 (2021-03-25 23:10:00 CST), 1616685240 (2021-03-25 23:14:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616684640 (2021-03-25 23:04:00 CST), 1616685000 (2021-03-25 23:10:00 CST), 1616685240 (2021-03-25 23:14:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Binlog Cache Use
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Bytes Sent
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Com Select
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Com Update
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Connections
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Created Tmp Disk Tables
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Created Tmp Tables
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Commit
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Read First
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Read Key
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Read Rnd Next
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Update
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Write
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages flushed
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read requests
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool write requests
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb data fsyncs
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb data writes
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb data written
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb dblwr pages written
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb dblwr writes
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb log write requests
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb log writes
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb os log fsyncs
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb os log written
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb pages written
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_MySQL  Queries
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Qcache Not Cached
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Questions
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Rows Read
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Select Scan
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_SlowQueries
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Sort Scan
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Table Locks Immediate
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Table open cache hits
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616684880 (2021-03-25 23:08:00 CST), 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616684880 (2021-03-25 23:08:00 CST), 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum
+       Timestamps: 1616685360 (2021-03-25 23:16:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKPercentBusy
+       Timestamps: 1616685060 (2021-03-25 23:11:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-FIN-WAIT
+       Timestamps: 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-CPU_CPU_CPUUserTime
+       Timestamps: 1616685360 (2021-03-25 23:16:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685600 (2021-03-25 23:20:00 CST), 1616685660 (2021-03-25 23:21:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKTps
+       Timestamps: 1616684520 (2021-03-25 23:02:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1616684400 (2021-03-25 23:00:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tomcat_FSCapacity
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST), 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616684700 (2021-03-25 23:05:00 CST), 1616684940 (2021-03-25 23:09:00 CST), 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685900 (2021-03-25 23:25:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1616685420 (2021-03-25 23:17:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn
+       Timestamps: 1616684820 (2021-03-25 23:07:00 CST), 1616685060 (2021-03-25 23:11:00 CST), 1616685300 (2021-03-25 23:15:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616684820 (2021-03-25 23:07:00 CST), 1616685060 (2021-03-25 23:11:00 CST), 1616685300 (2021-03-25 23:15:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tomcat_FSCapacity
+       Timestamps: 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616685600 (2021-03-25 23:20:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685840 (2021-03-25 23:24:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686080 (2021-03-25 23:28:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn
+       Timestamps: 1616684460 (2021-03-25 23:01:00 CST), 1616684700 (2021-03-25 23:05:00 CST), 1616685000 (2021-03-25 23:10:00 CST), 1616685240 (2021-03-25 23:14:00 CST), 1616685480 (2021-03-25 23:18:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616684460 (2021-03-25 23:01:00 CST), 1616684700 (2021-03-25 23:05:00 CST), 1616685000 (2021-03-25 23:10:00 CST), 1616685240 (2021-03-25 23:14:00 CST), 1616685480 (2021-03-25 23:18:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies
+       Timestamps: 1616685600 (2021-03-25 23:20:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1616685600 (2021-03-25 23:20:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1616685600 (2021-03-25 23:20:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tomcat_FSCapacity
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616685660 (2021-03-25 23:21:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST), 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST), 1616685060 (2021-03-25 23:11:00 CST), 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685900 (2021-03-25 23:25:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616684460 (2021-03-25 23:01:00 CST), 1616684700 (2021-03-25 23:05:00 CST), 1616685300 (2021-03-25 23:15:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616684880 (2021-03-25 23:08:00 CST), 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST), 1616685360 (2021-03-25 23:16:00 CST), 1616685600 (2021-03-25 23:20:00 CST), 1616685840 (2021-03-25 23:24:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn
+       Timestamps: 1616684400 (2021-03-25 23:00:00 CST), 1616684640 (2021-03-25 23:04:00 CST), 1616685000 (2021-03-25 23:10:00 CST), 1616685240 (2021-03-25 23:14:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616684400 (2021-03-25 23:00:00 CST), 1616684640 (2021-03-25 23:04:00 CST), 1616685000 (2021-03-25 23:10:00 CST), 1616685240 (2021-03-25 23:14:00 CST), 1616685480 (2021-03-25 23:18:00 CST), 1616685720 (2021-03-25 23:22:00 CST), 1616685960 (2021-03-25 23:26:00 CST), 1616686200 (2021-03-25 23:30:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685660 (2021-03-25 23:21:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686080 (2021-03-25 23:28:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1616684700 (2021-03-25 23:05:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1616684580 (2021-03-25 23:03:00 CST), 1616684700 (2021-03-25 23:05:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU_CPUUserTime
+       Timestamps: 1616685120 (2021-03-25 23:12:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616684460 (2021-03-25 23:01:00 CST), 1616684580 (2021-03-25 23:03:00 CST), 1616684820 (2021-03-25 23:07:00 CST), 1616685180 (2021-03-25 23:13:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685300 (2021-03-25 23:15:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSUsedSpace
+       Timestamps: 1616685660 (2021-03-25 23:21:00 CST), 1616685900 (2021-03-25 23:25:00 CST), 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685300 (2021-03-25 23:15:00 CST), 1616685420 (2021-03-25 23:17:00 CST), 1616685540 (2021-03-25 23:19:00 CST), 1616685780 (2021-03-25 23:23:00 CST), 1616686020 (2021-03-25 23:27:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: dockerA1->MG02 | Attribute: duration
+       Timestamps: 1616685659 (2021-03-25 23:20:59 CST)
+     • Entity: dockerA1->MG02 | Attribute: frequency
+       Timestamps: 1616685659 (2021-03-25 23:20:59 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_0
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_102
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_109
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_112
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_113
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: IG01 | Attribute: PatternID_121
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_124
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_125
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_126
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_13
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_130
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_136
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_139
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_14
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST), 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_141
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_144
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_149
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_15
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_152
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_153
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_16
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_164
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: IG01 | Attribute: PatternID_165
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_166
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_168
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_174
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_18
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_24
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616686140 (2021-03-25 23:29:00 CST)
+     • Entity: IG01 | Attribute: PatternID_28
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_31
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_34
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_36
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_52
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_57
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_60
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_62
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_63
+       Timestamps: 1616686020 (2021-03-25 23:27:00 CST)
+     • Entity: IG01 | Attribute: PatternID_66
+       Timestamps: 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: IG01 | Attribute: PatternID_68
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_69
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_73
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_74
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_75
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_76
+       Timestamps: 1616685720 (2021-03-25 23:22:00 CST)
+     • Entity: IG01 | Attribute: PatternID_77
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST)
+     • Entity: IG01 | Attribute: PatternID_78
+       Timestamps: 1616685960 (2021-03-25 23:26:00 CST)
+     • Entity: IG01 | Attribute: PatternID_80
+       Timestamps: 1616685000 (2021-03-25 23:10:00 CST)
+     • Entity: IG01 | Attribute: PatternID_81
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST)
+     • Entity: IG01 | Attribute: PatternID_87
+       Timestamps: 1616684940 (2021-03-25 23:09:00 CST), 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_94
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+     • Entity: IG01 | Attribute: PatternID_97
+       Timestamps: 1616685180 (2021-03-25 23:13:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

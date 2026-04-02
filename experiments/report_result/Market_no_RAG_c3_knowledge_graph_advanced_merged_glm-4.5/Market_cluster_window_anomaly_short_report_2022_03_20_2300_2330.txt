@@ -1,0 +1,88 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 2300_2330
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 23:00:00 CST → 2022-03-20 23:02:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (2): 2022-03-20 23:00:00 CST, 2022-03-20 23:01:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: adservice (Original: node-5.adservice-2) | Attribute: container_ulimits_soft.max_open_files
+       Times (3): 2022-03-20 23:00:00 CST, 2022-03-20 23:01:00 CST, 2022-03-20 23:02:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 (Original: adservice2-0.destination.unknown.adservice2) | Attribute: istio_agent_go_memstats_mspan_sys_bytes
+       Times (2): 2022-03-20 23:01:00 CST, 2022-03-20 23:02:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.adservice-2 (Cleaned: adservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 23:04:00 CST → 2022-03-20 23:09:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-http (Original: adservice-http) | Attribute: count
+       Times (2): 2022-03-20 23:06:00 CST, 2022-03-20 23:09:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 (Original: adservice2-0.destination.unknown.adservice2) | Attribute: istio_agent_go_memstats_mspan_sys_bytes
+       Times (4): 2022-03-20 23:05:00 CST, 2022-03-20 23:06:00 CST, 2022-03-20 23:07:00 CST, 2022-03-20 23:09:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->shippingservice-1:hipstershop.ShippingService/GetQuote (Original: frontend-0->shippingservice-1:hipstershop.ShippingService/GetQuote) | Attribute: duration
+       Times (2): 2022-03-20 23:04:00 CST, 2022-03-20 23:08:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-0 (Cleaned: frontend, Score: 0.79)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 23:11:00 CST → 2022-03-20 23:28:00 CST (Δ = 1020 sec)
+   Repeated Entity-Attribute Pairs: 7 (based on cleaned entity names)
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-http (Original: adservice-http) | Attribute: count
+       Times (2): 2022-03-20 23:12:00 CST, 2022-03-20 23:14:00 CST
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (8): 2022-03-20 23:13:00 CST, 2022-03-20 23:18:00 CST, 2022-03-20 23:21:00 CST, 2022-03-20 23:22:00 CST, 2022-03-20 23:24:00 CST, 2022-03-20 23:25:00 CST, 2022-03-20 23:26:00 CST, 2022-03-20 23:27:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: adservice (Original: node-5.adservice-2) | Attribute: container_ulimits_soft.max_open_files
+       Times (6): 2022-03-20 23:15:00 CST, 2022-03-20 23:17:00 CST, 2022-03-20 23:18:00 CST, 2022-03-20 23:19:00 CST, 2022-03-20 23:23:00 CST, 2022-03-20 23:25:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 (Original: adservice2-0.destination.unknown.adservice2) | Attribute: istio_agent_go_memstats_mspan_sys_bytes
+       Times (6): 2022-03-20 23:12:00 CST, 2022-03-20 23:13:00 CST, 2022-03-20 23:16:00 CST, 2022-03-20 23:17:00 CST, 2022-03-20 23:19:00 CST, 2022-03-20 23:20:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-6) | Attribute: system.io.await
+       Times (5): 2022-03-20 23:11:00 CST, 2022-03-20 23:12:00 CST, 2022-03-20 23:13:00 CST, 2022-03-20 23:14:00 CST, 2022-03-20 23:15:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->shippingservice-1:hipstershop.ShippingService/GetQuote (Original: frontend-0->shippingservice-1:hipstershop.ShippingService/GetQuote) | Attribute: duration
+       Times (2): 2022-03-20 23:20:00 CST, 2022-03-20 23:23:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend (Original: frontend-0) | Attribute: at hipstershop.AdService.getRandomAds(AdService.java:193)
+       Times (4): 2022-03-20 23:16:00 CST, 2022-03-20 23:24:00 CST, 2022-03-20 23:26:00 CST, 2022-03-20 23:28:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6 (Cleaned: node, Score: 0.73)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 13
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

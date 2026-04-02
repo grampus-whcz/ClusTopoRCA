@@ -1,0 +1,56 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1400_1430
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 14:00:00 CST → 2022-03-21 14:06:00 CST (Δ = 360 sec)
+   Total Anomalies: 12
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_MemoryPool_PeakUsage_used.Survivor_Space
+       Timestamps: 1647842400 (2022-03-21 14:00:00 CST), 1647842460 (2022-03-21 14:01:00 CST), 1647842640 (2022-03-21 14:04:00 CST), 1647842760 (2022-03-21 14:06:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_spec_cpu_shares
+       Timestamps: 1647842400 (2022-03-21 14:00:00 CST), 1647842460 (2022-03-21 14:01:00 CST), 1647842520 (2022-03-21 14:02:00 CST), 1647842580 (2022-03-21 14:03:00 CST), 1647842640 (2022-03-21 14:04:00 CST), 1647842700 (2022-03-21 14:05:00 CST), 1647842760 (2022-03-21 14:06:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | Attribute: frequency
+       Timestamps: 1647842760 (2022-03-21 14:06:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 14:08:00 CST → 2022-03-21 14:29:00 CST (Δ = 1260 sec)
+   Total Anomalies: 50
+
+   📝 Metric Service Anomalies:
+     • Entity: productcatalogservice-grpc | Attribute: rr
+       Timestamps: 1647842940 (2022-03-21 14:09:00 CST), 1647843000 (2022-03-21 14:10:00 CST), 1647843060 (2022-03-21 14:11:00 CST), 1647843120 (2022-03-21 14:12:00 CST), 1647843180 (2022-03-21 14:13:00 CST), 1647843240 (2022-03-21 14:14:00 CST), 1647843300 (2022-03-21 14:15:00 CST), 1647843360 (2022-03-21 14:16:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_spec_cpu_shares
+       Timestamps: 1647842880 (2022-03-21 14:08:00 CST), 1647843060 (2022-03-21 14:11:00 CST), 1647843240 (2022-03-21 14:14:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.productcatalogservice | Attribute: istio_agent_go_goroutines
+       Timestamps: 1647842940 (2022-03-21 14:09:00 CST), 1647843060 (2022-03-21 14:11:00 CST), 1647843120 (2022-03-21 14:12:00 CST), 1647843180 (2022-03-21 14:13:00 CST), 1647843240 (2022-03-21 14:14:00 CST), 1647843360 (2022-03-21 14:16:00 CST), 1647843420 (2022-03-21 14:17:00 CST), 1647843480 (2022-03-21 14:18:00 CST), 1647843540 (2022-03-21 14:19:00 CST), 1647843600 (2022-03-21 14:20:00 CST), 1647843660 (2022-03-21 14:21:00 CST), 1647843720 (2022-03-21 14:22:00 CST), 1647843840 (2022-03-21 14:24:00 CST), 1647843900 (2022-03-21 14:25:00 CST), 1647843960 (2022-03-21 14:26:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.net.packets_in.count
+       Timestamps: 1647843000 (2022-03-21 14:10:00 CST), 1647843120 (2022-03-21 14:12:00 CST), 1647843180 (2022-03-21 14:13:00 CST), 1647843240 (2022-03-21 14:14:00 CST), 1647843300 (2022-03-21 14:15:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | Attribute: frequency
+       Timestamps: 1647843000 (2022-03-21 14:10:00 CST), 1647843180 (2022-03-21 14:13:00 CST), 1647843240 (2022-03-21 14:14:00 CST), 1647843360 (2022-03-21 14:16:00 CST), 1647843660 (2022-03-21 14:21:00 CST), 1647843720 (2022-03-21 14:22:00 CST), 1647843780 (2022-03-21 14:23:00 CST), 1647843840 (2022-03-21 14:24:00 CST), 1647844020 (2022-03-21 14:27:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at hipstershop.AdService$OpenTelemetryServerInterceptor.interceptCall(AdService.java:336)
+       Timestamps: 1647843600 (2022-03-21 14:20:00 CST), 1647843660 (2022-03-21 14:21:00 CST), 1647843720 (2022-03-21 14:22:00 CST), 1647843780 (2022-03-21 14:23:00 CST), 1647843840 (2022-03-21 14:24:00 CST), 1647843900 (2022-03-21 14:25:00 CST), 1647843960 (2022-03-21 14:26:00 CST), 1647844020 (2022-03-21 14:27:00 CST), 1647844080 (2022-03-21 14:28:00 CST), 1647844140 (2022-03-21 14:29:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

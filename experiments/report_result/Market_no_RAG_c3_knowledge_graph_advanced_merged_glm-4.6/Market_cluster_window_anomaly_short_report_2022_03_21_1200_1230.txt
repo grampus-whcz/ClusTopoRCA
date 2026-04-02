@@ -1,0 +1,64 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1200_1230
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 12:01:00 CST → 2022-03-21 12:09:00 CST (Δ = 480 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-0) | Attribute: container_start_time_seconds
+       Times (4): 2022-03-21 12:02:00 CST, 2022-03-21 12:07:00 CST, 2022-03-21 12:08:00 CST, 2022-03-21 12:09:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend (Original: frontend-2.destination.unknown.frontend) | Attribute: istio_agent_process_max_fds
+       Times (4): 2022-03-21 12:01:00 CST, 2022-03-21 12:03:00 CST, 2022-03-21 12:07:00 CST, 2022-03-21 12:09:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-5) | Attribute: system.io.w_await
+       Times (8): 2022-03-21 12:02:00 CST, 2022-03-21 12:03:00 CST, 2022-03-21 12:04:00 CST, 2022-03-21 12:05:00 CST, 2022-03-21 12:06:00 CST, 2022-03-21 12:07:00 CST, 2022-03-21 12:08:00 CST, 2022-03-21 12:09:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend (Original: frontend-2) | Attribute: at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648)
+       Times (2): 2022-03-21 12:07:00 CST, 2022-03-21 12:08:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-2.destination.unknown.frontend (Cleaned: frontend-2.destination.unknown.frontend, Score: 0.58)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 12:13:00 CST → 2022-03-21 12:16:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-0) | Attribute: container_start_time_seconds
+       Times (2): 2022-03-21 12:13:00 CST, 2022-03-21 12:15:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend (Original: frontend-2) | Attribute: at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648)
+       Times (3): 2022-03-21 12:14:00 CST, 2022-03-21 12:15:00 CST, 2022-03-21 12:16:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-0 (Cleaned: frontend, Score: 0.77)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 12:21:00 CST → 2022-03-21 12:23:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Log Anomalies:
+     • Entity: frontend (Original: frontend-2) | Attribute: at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648)
+       Times (2): 2022-03-21 12:21:00 CST, 2022-03-21 12:22:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-2 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 7
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

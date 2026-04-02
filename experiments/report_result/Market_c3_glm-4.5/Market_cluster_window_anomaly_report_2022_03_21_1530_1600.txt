@@ -1,0 +1,42 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1530_1600
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 15:33:00 CST → 2022-03-21 15:35:00 CST (Δ = 120 sec)
+   Total Anomalies: 3
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+       Timestamps: 1647847980 (2022-03-21 15:33:00 CST), 1647848040 (2022-03-21 15:34:00 CST), 1647848100 (2022-03-21 15:35:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 15:56:00 CST → 2022-03-21 15:59:00 CST (Δ = 180 sec)
+   Total Anomalies: 12
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647849360 (2022-03-21 15:56:00 CST), 1647849420 (2022-03-21 15:57:00 CST), 1647849480 (2022-03-21 15:58:00 CST), 1647849540 (2022-03-21 15:59:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.adservice-2 | Attribute: container_cpu_cfs_throttled_periods
+       Timestamps: 1647849360 (2022-03-21 15:56:00 CST), 1647849420 (2022-03-21 15:57:00 CST), 1647849480 (2022-03-21 15:58:00 CST), 1647849540 (2022-03-21 15:59:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.grpc.200.13.0
+       Timestamps: 1647849360 (2022-03-21 15:56:00 CST), 1647849420 (2022-03-21 15:57:00 CST), 1647849480 (2022-03-21 15:58:00 CST), 1647849540 (2022-03-21 15:59:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   log | productcatalogservice-1 | at java.net.InetAddress.getAllByName(InetAddress.java:1127) | 1647847800 (2022-03-21 15:30:00 CST)
+   log | productcatalogservice-1 | at java.net.InetAddress.getAllByName(InetAddress.java:1127) | 1647847860 (2022-03-21 15:31:00 CST)
+   metric_mesh | adservice-0.destination.frontend.adservice | istio_request_bytes.grpc.200.13.0 | 1647848220 (2022-03-21 15:37:00 CST)
+   log | productcatalogservice-1 | at java.net.InetAddress.getAllByName(InetAddress.java:1127) | 1647848220 (2022-03-21 15:37:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

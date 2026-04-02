@@ -1,0 +1,61 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0930_1000
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 09:30:00 CST → 2022-03-21 09:38:00 CST (Δ = 480 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (3): 2022-03-21 09:33:00 CST, 2022-03-21 09:34:00 CST, 2022-03-21 09:35:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-1 | Attribute: container_fs_usage_MB./dev/vda1
+       Times (9): 2022-03-21 09:30:00 CST, 2022-03-21 09:31:00 CST, 2022-03-21 09:32:00 CST, 2022-03-21 09:33:00 CST, 2022-03-21 09:34:00 CST, 2022-03-21 09:35:00 CST, 2022-03-21 09:36:00 CST, 2022-03-21 09:37:00 CST, 2022-03-21 09:38:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 09:41:00 CST → 2022-03-21 09:52:00 CST (Δ = 660 sec)
+   Repeated Entity-Attribute Pairs: 5
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (10): 2022-03-21 09:43:00 CST, 2022-03-21 09:44:00 CST, 2022-03-21 09:45:00 CST, 2022-03-21 09:46:00 CST, 2022-03-21 09:47:00 CST, 2022-03-21 09:48:00 CST, 2022-03-21 09:49:00 CST, 2022-03-21 09:50:00 CST, 2022-03-21 09:51:00 CST, 2022-03-21 09:52:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-1 | Attribute: container_fs_usage_MB./dev/vda1
+       Times (2): 2022-03-21 09:41:00 CST, 2022-03-21 09:46:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_request_bytes.grpc.200.14.0
+       Times (2): 2022-03-21 09:42:00 CST, 2022-03-21 09:43:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.cpu.user
+       Times (2): 2022-03-21 09:49:00 CST, 2022-03-21 09:50:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: info xdsproxy connected to upstream XDS server: istiod.istio-system.svc:<:NUM:>
+       Times (2): 2022-03-21 09:49:00 CST, 2022-03-21 09:50:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 09:54:00 CST → 2022-03-21 09:56:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.cpu.user
+       Times (2): 2022-03-21 09:55:00 CST, 2022-03-21 09:56:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: info xdsproxy connected to upstream XDS server: istiod.istio-system.svc:<:NUM:>
+       Times (2): 2022-03-21 09:54:00 CST, 2022-03-21 09:55:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 9
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

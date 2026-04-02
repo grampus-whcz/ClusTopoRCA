@@ -61,11 +61,8 @@ class LocalScriptToolAgent(BaseToolAgent):
             "Bank_metric_app": "run_pipline_Bank_metric_app.py",
             "Bank_trace": "run_pipline_Bank_trace.py",
             "Bank_log": "run_pipline_Bank_log.py",
-            # "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies.py",
-            # "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_2.7.py",
-            "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_3.13.py",
-            # "Bank_knowledge_graph_RCA": "Bank_knowledge_graph_RCA.py",
-            "Bank_knowledge_graph_RCA": "Bank_knowledge_graph_RCA.3.20.py",
+            # "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_2.7.py", # ClusTopoRCA version
+            "Bank_cluster_window": "2.Bank_cluster_window_analyze_anomalies_old.py", # just cluster version
         }
 
         self.logger.info(

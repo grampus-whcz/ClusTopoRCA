@@ -1,0 +1,68 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1200_1230
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 12:01:00 CST → 2022-03-21 12:09:00 CST (Δ = 480 sec)
+   Total Anomalies: 18
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_start_time_seconds
+       Timestamps: 1647835320 (2022-03-21 12:02:00 CST), 1647835620 (2022-03-21 12:07:00 CST), 1647835680 (2022-03-21 12:08:00 CST), 1647835740 (2022-03-21 12:09:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend | Attribute: istio_agent_process_max_fds
+       Timestamps: 1647835260 (2022-03-21 12:01:00 CST), 1647835380 (2022-03-21 12:03:00 CST), 1647835620 (2022-03-21 12:07:00 CST), 1647835740 (2022-03-21 12:09:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.io.w_await
+       Timestamps: 1647835320 (2022-03-21 12:02:00 CST), 1647835380 (2022-03-21 12:03:00 CST), 1647835440 (2022-03-21 12:04:00 CST), 1647835500 (2022-03-21 12:05:00 CST), 1647835560 (2022-03-21 12:06:00 CST), 1647835620 (2022-03-21 12:07:00 CST), 1647835680 (2022-03-21 12:08:00 CST), 1647835740 (2022-03-21 12:09:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648)
+       Timestamps: 1647835620 (2022-03-21 12:07:00 CST), 1647835680 (2022-03-21 12:08:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 12:13:00 CST → 2022-03-21 12:16:00 CST (Δ = 180 sec)
+   Total Anomalies: 5
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_start_time_seconds
+       Timestamps: 1647835980 (2022-03-21 12:13:00 CST), 1647836100 (2022-03-21 12:15:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648)
+       Timestamps: 1647836040 (2022-03-21 12:14:00 CST), 1647836100 (2022-03-21 12:15:00 CST), 1647836160 (2022-03-21 12:16:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 12:21:00 CST → 2022-03-21 12:23:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_start_time_seconds
+       Timestamps: 1647836580 (2022-03-21 12:23:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend | Attribute: istio_agent_process_max_fds
+       Timestamps: 1647836460 (2022-03-21 12:21:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648)
+       Timestamps: 1647836460 (2022-03-21 12:21:00 CST), 1647836520 (2022-03-21 12:22:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.frontend-0 | container_start_time_seconds | 1647836340 (2022-03-21 12:19:00 CST)
+   metric_mesh | frontend-2.destination.unknown.frontend | istio_agent_process_max_fds | 1647836700 (2022-03-21 12:25:00 CST)
+   metric_container | node-5.frontend-0 | container_start_time_seconds | 1647836880 (2022-03-21 12:28:00 CST)
+   log | frontend-2 | at io.grpc.internal.ServerImpl$ServerTransportListenerImpl.startWrappedCall(ServerImpl.java:648) | 1647836940 (2022-03-21 12:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

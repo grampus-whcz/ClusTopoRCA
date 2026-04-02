@@ -1,0 +1,55 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_05_22 0000_0030
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-05-22 00:12:00 CST → 2020-05-22 00:17:00 CST (Δ = 300 sec)
+   Total Anomalies: 14
+
+   📝 Metric A Anomalies:
+     • Entity: db_010 | Attribute: ZJ-001-029_Memory_used_pct
+       Timestamps: 1590077580 (2020-05-22 00:13:00 CST), 1590077760 (2020-05-22 00:16:00 CST)
+     • Entity: db_010 | Attribute: ZJ-001-072_Outgoing_network_traffic
+       Timestamps: 1590077520 (2020-05-22 00:12:00 CST), 1590077580 (2020-05-22 00:13:00 CST), 1590077700 (2020-05-22 00:15:00 CST)
+     • Entity: db_010 | Attribute: ZJ-001-103_Disk_wr_kbs
+       Timestamps: 1590077520 (2020-05-22 00:12:00 CST), 1590077640 (2020-05-22 00:14:00 CST), 1590077820 (2020-05-22 00:17:00 CST)
+     • Entity: db_010 | Attribute: ZJ-005-022_used_cpu_sys
+       Timestamps: 1590077520 (2020-05-22 00:12:00 CST), 1590077580 (2020-05-22 00:13:00 CST), 1590077760 (2020-05-22 00:16:00 CST), 1590077820 (2020-05-22 00:17:00 CST)
+
+   📝 Metric B Anomalies:
+     • Entity: osb_001 | Attribute: avg_time
+       Timestamps: 1590077520 (2020-05-22 00:12:00 CST)
+     • Entity: osb_001 | Attribute: succee_rate
+       Timestamps: 1590077520 (2020-05-22 00:12:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2020-05-22 00:25:00 CST → 2020-05-22 00:29:00 CST (Δ = 240 sec)
+   Total Anomalies: 5
+
+   📝 Metric A Anomalies:
+     • Entity: db_010 | Attribute: ZJ-001-029_Memory_used_pct
+       Timestamps: 1590078420 (2020-05-22 00:27:00 CST)
+     • Entity: db_010 | Attribute: ZJ-001-103_Disk_wr_kbs
+       Timestamps: 1590078480 (2020-05-22 00:28:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1590078360 (2020-05-22 00:26:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_015 | Attribute: duration
+       Timestamps: 1590078300 (2020-05-22 00:25:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_016 | Attribute: duration
+       Timestamps: 1590078540 (2020-05-22 00:29:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   trace | docker_007->docker_007:JDBC,db_003,null | duration | 1590076800 (2020-05-22 00:00:00 CST)
+   metric_A | db_010 | ZJ-001-072_Outgoing_network_traffic | 1590078000 (2020-05-22 00:20:00 CST)
+   metric_A | db_010 | ZJ-001-029_Memory_used_pct | 1590078060 (2020-05-22 00:21:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,76 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0000_0030
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 00:00:00 CST → 2022-03-21 00:12:00 CST (Δ = 720 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: jvm_memory_pool_allocated_MB_created.Eden_Space
+       Times (8): 2022-03-21 00:00:00 CST, 2022-03-21 00:01:00 CST, 2022-03-21 00:03:00 CST, 2022-03-21 00:06:00 CST, 2022-03-21 00:07:00 CST, 2022-03-21 00:09:00 CST, 2022-03-21 00:11:00 CST, 2022-03-21 00:12:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-2) | Attribute: container_memory_failcnt
+       Times (5): 2022-03-21 00:00:00 CST, 2022-03-21 00:02:00 CST, 2022-03-21 00:05:00 CST, 2022-03-21 00:08:00 CST, 2022-03-21 00:11:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_duration_milliseconds.http.302.
+       Times (2): 2022-03-21 00:11:00 CST, 2022-03-21 00:12:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-6) | Attribute: system.net.bytes_rcvd
+       Times (9): 2022-03-21 00:00:00 CST, 2022-03-21 00:02:00 CST, 2022-03-21 00:03:00 CST, 2022-03-21 00:04:00 CST, 2022-03-21 00:05:00 CST, 2022-03-21 00:06:00 CST, 2022-03-21 00:07:00 CST, 2022-03-21 00:09:00 CST, 2022-03-21 00:10:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: adservice2.ts:8088 (Cleaned: adservice, Score: 0.77)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 00:17:00 CST → 2022-03-21 00:21:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: jvm_memory_pool_allocated_MB_created.Eden_Space
+       Times (3): 2022-03-21 00:17:00 CST, 2022-03-21 00:19:00 CST, 2022-03-21 00:21:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-2) | Attribute: container_memory_failcnt
+       Times (4): 2022-03-21 00:18:00 CST, 2022-03-21 00:19:00 CST, 2022-03-21 00:20:00 CST, 2022-03-21 00:21:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_duration_milliseconds.http.302.
+       Times (2): 2022-03-21 00:17:00 CST, 2022-03-21 00:18:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: adservice2.ts:8088 (Cleaned: adservice, Score: 0.79)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 00:25:00 CST → 2022-03-21 00:29:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-2) | Attribute: container_memory_failcnt
+       Times (3): 2022-03-21 00:25:00 CST, 2022-03-21 00:28:00 CST, 2022-03-21 00:29:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_duration_milliseconds.http.302.
+       Times (2): 2022-03-21 00:25:00 CST, 2022-03-21 00:26:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-6) | Attribute: system.net.bytes_rcvd
+       Times (2): 2022-03-21 00:27:00 CST, 2022-03-21 00:28:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-2 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 10
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

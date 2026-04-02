@@ -1,0 +1,69 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1500_1530
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 15:00:00 CST → 2022-03-21 15:04:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.load.15
+       Times (2): 2022-03-21 15:02:00 CST, 2022-03-21 15:04:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.CurrencyService/Convert | Attribute: duration
+       Times (4): 2022-03-21 15:00:00 CST, 2022-03-21 15:01:00 CST, 2022-03-21 15:02:00 CST, 2022-03-21 15:03:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 15:06:00 CST → 2022-03-21 15:10:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Mesh Anomalies:
+     • Entity: emailservice-1.source.emailservice.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (3): 2022-03-21 15:07:00 CST, 2022-03-21 15:08:00 CST, 2022-03-21 15:09:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.load.15
+       Times (3): 2022-03-21 15:06:00 CST, 2022-03-21 15:08:00 CST, 2022-03-21 15:09:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 15:13:00 CST → 2022-03-21 15:15:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.paymentservice2-0 | Attribute: container_memory_cache
+       Times (3): 2022-03-21 15:13:00 CST, 2022-03-21 15:14:00 CST, 2022-03-21 15:15:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 15:18:00 CST → 2022-03-21 15:22:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.paymentservice2-0 | Attribute: container_memory_cache
+       Times (4): 2022-03-21 15:18:00 CST, 2022-03-21 15:19:00 CST, 2022-03-21 15:20:00 CST, 2022-03-21 15:21:00 CST
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+       Times (2): 2022-03-21 15:20:00 CST, 2022-03-21 15:22:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2022-03-21 15:24:00 CST → 2022-03-21 15:29:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+       Times (6): 2022-03-21 15:24:00 CST, 2022-03-21 15:25:00 CST, 2022-03-21 15:26:00 CST, 2022-03-21 15:27:00 CST, 2022-03-21 15:28:00 CST, 2022-03-21 15:29:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 8
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

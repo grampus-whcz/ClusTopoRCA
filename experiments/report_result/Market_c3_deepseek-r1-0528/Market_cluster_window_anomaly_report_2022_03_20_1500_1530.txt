@@ -1,0 +1,20 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1500_1530
+================================================================================
+
+🔍 The number of clusters are 0
+========================================
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_runtime | adservice.ts:8088 | java_lang_Compilation_TotalCompilationTime | 1647759720 (2022-03-20 15:02:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_Compilation_TotalCompilationTime | 1647759780 (2022-03-20 15:03:00 CST)
+   metric_mesh | checkoutservice-2.destination.frontend.checkoutservice | istio_agent_go_memstats_other_sys_bytes | 1647759960 (2022-03-20 15:06:00 CST)
+   metric_mesh | checkoutservice-2.destination.frontend.checkoutservice | istio_agent_go_memstats_other_sys_bytes | 1647760260 (2022-03-20 15:11:00 CST)
+   metric_mesh | checkoutservice-2.destination.frontend.checkoutservice | istio_agent_go_memstats_other_sys_bytes | 1647760320 (2022-03-20 15:12:00 CST)
+   metric_mesh | checkoutservice-2.destination.frontend.checkoutservice | istio_agent_go_memstats_other_sys_bytes | 1647760380 (2022-03-20 15:13:00 CST)
+   metric_mesh | checkoutservice-2.destination.frontend.checkoutservice | istio_agent_go_memstats_other_sys_bytes | 1647760440 (2022-03-20 15:14:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_Compilation_TotalCompilationTime | 1647760860 (2022-03-20 15:21:00 CST)
+   metric_mesh | checkoutservice-2.destination.frontend.checkoutservice | istio_agent_go_memstats_other_sys_bytes | 1647760860 (2022-03-20 15:21:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_Compilation_TotalCompilationTime | 1647760980 (2022-03-20 15:23:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

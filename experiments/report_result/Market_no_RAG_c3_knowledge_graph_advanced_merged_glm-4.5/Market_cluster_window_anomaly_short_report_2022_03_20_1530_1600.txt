@@ -1,0 +1,22 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1530_1600
+================================================================================
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 15:47:00 CST → 2022-03-20 15:48:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Log Anomalies:
+     • Entity: shippingservice (Original: shippingservice-0) | Attribute: at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)
+       Times (2): 2022-03-20 15:47:00 CST, 2022-03-20 15:48:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: shippingservice-0 (Cleaned: shippingservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 1
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

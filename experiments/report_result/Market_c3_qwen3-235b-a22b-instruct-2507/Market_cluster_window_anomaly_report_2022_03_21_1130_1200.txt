@@ -1,0 +1,88 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1130_1200
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 11:34:00 CST → 2022-03-21 11:39:00 CST (Δ = 300 sec)
+   Total Anomalies: 10
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_init.Ed
+       Timestamps: 1647833940 (2022-03-21 11:39:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647833640 (2022-03-21 11:34:00 CST), 1647833760 (2022-03-21 11:36:00 CST), 1647833820 (2022-03-21 11:37:00 CST), 1647833880 (2022-03-21 11:38:00 CST), 1647833940 (2022-03-21 11:39:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend | Attribute: istio_tcp_received_bytes.UH
+       Timestamps: 1647833700 (2022-03-21 11:35:00 CST), 1647833760 (2022-03-21 11:36:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-1 | Attribute: <:datetime:> io.grpc.internal.SerializingExecutor run
+       Timestamps: 1647833700 (2022-03-21 11:35:00 CST), 1647833820 (2022-03-21 11:37:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 11:41:00 CST → 2022-03-21 11:42:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647834060 (2022-03-21 11:41:00 CST), 1647834120 (2022-03-21 11:42:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend | Attribute: istio_tcp_received_bytes.UH
+       Timestamps: 1647834060 (2022-03-21 11:41:00 CST), 1647834120 (2022-03-21 11:42:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 11:49:00 CST → 2022-03-21 11:49:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647834540 (2022-03-21 11:49:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend | Attribute: istio_tcp_received_bytes.UH
+       Timestamps: 1647834540 (2022-03-21 11:49:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-1 | Attribute: <:datetime:> io.grpc.internal.SerializingExecutor run
+       Timestamps: 1647834540 (2022-03-21 11:49:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 11:53:00 CST → 2022-03-21 11:55:00 CST (Δ = 120 sec)
+   Total Anomalies: 7
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_init.Ed
+       Timestamps: 1647834780 (2022-03-21 11:53:00 CST), 1647834840 (2022-03-21 11:54:00 CST), 1647834900 (2022-03-21 11:55:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647834780 (2022-03-21 11:53:00 CST), 1647834900 (2022-03-21 11:55:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.destination.unknown.frontend | Attribute: istio_tcp_received_bytes.UH
+       Timestamps: 1647834780 (2022-03-21 11:53:00 CST), 1647834900 (2022-03-21 11:55:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_init.Ed | 1647833400 (2022-03-21 11:30:00 CST)
+   metric_mesh | frontend-2.destination.unknown.frontend | istio_tcp_received_bytes.UH | 1647833460 (2022-03-21 11:31:00 CST)
+   metric_container | node-5.frontend-2 | container_fs_usage_MB./dev/vda1 | 1647834240 (2022-03-21 11:44:00 CST)
+   log | frontend-1 | <:datetime:> io.grpc.internal.SerializingExecutor run | 1647834420 (2022-03-21 11:47:00 CST)
+   metric_container | node-5.frontend-2 | container_fs_usage_MB./dev/vda1 | 1647834420 (2022-03-21 11:47:00 CST)
+   log | frontend-1 | <:datetime:> io.grpc.internal.SerializingExecutor run | 1647834660 (2022-03-21 11:51:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

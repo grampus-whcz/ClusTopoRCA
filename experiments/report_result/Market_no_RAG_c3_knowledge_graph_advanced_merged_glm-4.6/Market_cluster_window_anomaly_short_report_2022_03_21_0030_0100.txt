@@ -1,0 +1,60 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0030_0100
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 00:30:00 CST → 2022-03-21 00:32:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: checkoutservice (Original: node-5.checkoutservice-1) | Attribute: container_memory_cache
+       Times (3): 2022-03-21 00:30:00 CST, 2022-03-21 00:31:00 CST, 2022-03-21 00:32:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.checkoutservice-1 (Cleaned: checkoutservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 00:34:00 CST → 2022-03-21 00:38:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_bytes.http.500.
+       Times (4): 2022-03-21 00:34:00 CST, 2022-03-21 00:36:00 CST, 2022-03-21 00:37:00 CST, 2022-03-21 00:38:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: istio-egressgateway-7bfdcc9d86-g2d4q (Cleaned: istio-egressgateway, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 00:41:00 CST → 2022-03-21 00:54:00 CST (Δ = 780 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (6): 2022-03-21 00:43:00 CST, 2022-03-21 00:44:00 CST, 2022-03-21 00:45:00 CST, 2022-03-21 00:49:00 CST, 2022-03-21 00:51:00 CST, 2022-03-21 00:52:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: checkoutservice (Original: node-5.checkoutservice-1) | Attribute: container_memory_cache
+       Times (3): 2022-03-21 00:42:00 CST, 2022-03-21 00:48:00 CST, 2022-03-21 00:49:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_bytes.http.500.
+       Times (5): 2022-03-21 00:41:00 CST, 2022-03-21 00:43:00 CST, 2022-03-21 00:45:00 CST, 2022-03-21 00:46:00 CST, 2022-03-21 00:47:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.mem.used
+       Times (6): 2022-03-21 00:48:00 CST, 2022-03-21 00:49:00 CST, 2022-03-21 00:50:00 CST, 2022-03-21 00:51:00 CST, 2022-03-21 00:53:00 CST, 2022-03-21 00:54:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: istio-egressgateway-7bfdcc9d86-g2d4q (Cleaned: istio-egressgateway, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

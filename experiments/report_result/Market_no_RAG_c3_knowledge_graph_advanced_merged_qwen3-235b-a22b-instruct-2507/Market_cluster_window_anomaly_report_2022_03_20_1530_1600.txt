@@ -1,0 +1,112 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1530_1600
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 15:40:00 CST → 2022-03-20 15:42:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Metric Node**: 1 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 15:42:00 CST (T2) to 2022-03-20 15:46:00 CST (4 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.cartservice2-0 (Cleaned: cartservice, Layer: CARTSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 1
+- **Anomaly Attributes**: container_spec_memory_limit_MB(1 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for node-6.cartservice2-0 (Cleaned: cartservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-1** (Cleaned: node, Layer: UNKNOWN): Score = 0.58, Anomalies = 1, Attrs = system.tcp.retrans_pct(1 times)
+- **shippingservice-0** (Cleaned: shippingservice, Layer: SHIPPINGSERVICE): Score = 0.57, Anomalies = 1, Attrs = at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.cartservice2-0 (Cleaned: cartservice)**: currencyservice-1, recommendationservice-0, recommendationservice2-0, paymentservice-0, cartservice-1
+
+#### Layer-wise Impact Analysis
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.cartservice2-0 (Cleaned: cartservice, highest confidence score)
+2. Check node-6.cartservice2-0 for 1 anomalies on attributes: container_spec_memory_limit_MB(1 times)
+3. Investigate anomalies starting at N/A for node-6.cartservice2-0 (analysis window starts at 2022-03-20 15:42:00 CST (T2))
+4. Verify downstream dependencies of cartservice for cascading failures
+5. Check CARTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-20 15:47:00 CST → 2022-03-20 15:48:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-20 15:48:00 CST (T2) to 2022-03-20 15:52:00 CST (4 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: shippingservice-0 (Cleaned: shippingservice, Layer: SHIPPINGSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for shippingservice-0 (Cleaned: shippingservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by shippingservice-0 (Cleaned: shippingservice)**: currencyservice-1, recommendationservice-0, recommendationservice2-0, paymentservice-0, cartservice-1
+
+#### Layer-wise Impact Analysis
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of shippingservice-0 (Cleaned: shippingservice, highest confidence score)
+2. Check shippingservice-0 for 2 anomalies on attributes: at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)(2 times)
+3. Investigate anomalies starting at N/A for shippingservice-0 (analysis window starts at 2022-03-20 15:48:00 CST (T2))
+4. Verify downstream dependencies of shippingservice for cascading failures
+5. Check SHIPPINGSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 7
+- metric_node | node-1 (Cleaned: node) | system.tcp.retrans_pct | 2022-03-20 15:30:00 CST
+- log | shippingservice-0 (Cleaned: shippingservice) | at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) | 2022-03-20 15:36:00 CST
+- metric_node | node-1 (Cleaned: node) | system.tcp.retrans_pct | 2022-03-20 15:37:00 CST
+- metric_container | node-6.cartservice2-0 (Cleaned: cartservice) | container_spec_memory_limit_MB | 2022-03-20 15:51:00 CST
+- metric_container | node-6.cartservice2-0 (Cleaned: cartservice) | container_spec_memory_limit_MB | 2022-03-20 15:55:00 CST
+- metric_container | node-6.cartservice2-0 (Cleaned: cartservice) | container_spec_memory_limit_MB | 2022-03-20 15:56:00 CST
+- metric_node | node-1 (Cleaned: node) | system.tcp.retrans_pct | 2022-03-20 15:59:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

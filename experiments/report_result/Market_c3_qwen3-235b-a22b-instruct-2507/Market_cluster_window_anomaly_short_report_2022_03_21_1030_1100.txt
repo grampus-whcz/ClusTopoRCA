@@ -1,0 +1,39 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1030_1100
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 10:39:00 CST → 2022-03-21 10:45:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_OperatingSystem_FreePhysicalMemorySize
+       Times (6): 2022-03-21 10:40:00 CST, 2022-03-21 10:41:00 CST, 2022-03-21 10:42:00 CST, 2022-03-21 10:43:00 CST, 2022-03-21 10:44:00 CST, 2022-03-21 10:45:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.frontend2-0 | Attribute: container_memory_mapped_file
+       Times (5): 2022-03-21 10:40:00 CST, 2022-03-21 10:42:00 CST, 2022-03-21 10:43:00 CST, 2022-03-21 10:44:00 CST, 2022-03-21 10:45:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.io.r_await
+       Times (5): 2022-03-21 10:40:00 CST, 2022-03-21 10:41:00 CST, 2022-03-21 10:42:00 CST, 2022-03-21 10:43:00 CST, 2022-03-21 10:44:00 CST
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-0 | Attribute: at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:230)
+       Times (3): 2022-03-21 10:39:00 CST, 2022-03-21 10:41:00 CST, 2022-03-21 10:45:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 10:52:00 CST → 2022-03-21 10:59:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.destination.frontend.checkoutservice | Attribute: istio_request_bytes.grpc.200.13.0
+       Times (8): 2022-03-21 10:52:00 CST, 2022-03-21 10:53:00 CST, 2022-03-21 10:54:00 CST, 2022-03-21 10:55:00 CST, 2022-03-21 10:56:00 CST, 2022-03-21 10:57:00 CST, 2022-03-21 10:58:00 CST, 2022-03-21 10:59:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

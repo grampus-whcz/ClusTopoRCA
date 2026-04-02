@@ -1,0 +1,73 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1330_1400
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 13:48:00 CST → 2022-03-20 13:59:00 CST (Duration: 660 seconds)
+**Total Anomalies**: 19
+
+## Anomaly Breakdown
+- **Metric Service**: 4 anomalies
+- **Metric Container**: 1 anomalies
+- **Metric Mesh**: 12 anomalies
+- **Trace**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 13:50:00 CST (T2) to 2022-03-20 13:54:00 CST (4 minutes)
+**Total Anomalies**: 19
+
+#### Primary Root Cause Entity
+- **Entity**: recommendationservice-2.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-2.source.recommendationservice.jaeger-coll, Layer: RECOMMENDATIONSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 7
+- **Anomaly Attributes**: istio_request_duration_milliseconds.http.202.(14 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for recommendationservice-2.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-2.source.recommendationservice.jaeger-coll)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **recommendationservice-grpc** (Cleaned: recommendationservice-grpc, Layer: RECOMMENDATIONSERVICE): Score = 0.26, Anomalies = 3, Attrs = mrt(6 times)
+
+#### Dependency Impact Path
+- **recommendationservice-2.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-2.source.recommendationservice.jaeger-coll) not found in topology graph**
+  - Suggestion: Check if recommendationservice-2.source.recommendationservice.jaeger-coll is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **RECOMMENDATIONSERVICE Layer**: 2 entities affected (Weight: 0.85)
+
+#### RCA Recommendations
+1. Prioritize investigation of recommendationservice-2.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-2.source.recommendationservice.jaeger-coll, highest confidence score)
+2. Check recommendationservice-2.source.recommendationservice.jaeger-coll for 7.0 anomalies on attributes: istio_request_duration_milliseconds.http.202.(14 times)
+3. Investigate anomalies starting at N/A for recommendationservice-2.source.recommendationservice.jaeger-coll (analysis window starts at 2022-03-20 13:50:00 CST (T2))
+4. Verify downstream dependencies of recommendationservice-2.source.recommendationservice.jaeger-coll for cascading failures
+5. Check RECOMMENDATIONSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 9
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_fs_usage_MB./dev/vda1 | 2022-03-20 13:31:00 CST
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_fs_usage_MB./dev/vda1 | 2022-03-20 13:33:00 CST
+- trace | frontend-1->cartservice-2:/hipstershop.CartService/AddItem (Cleaned: frontend-1->cartservice-2:/hipstershop.CartService/AddItem) | duration | 2022-03-20 13:34:00 CST
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_fs_usage_MB./dev/vda1 | 2022-03-20 13:36:00 CST
+- trace | frontend-1->cartservice-2:/hipstershop.CartService/AddItem (Cleaned: frontend-1->cartservice-2:/hipstershop.CartService/AddItem) | duration | 2022-03-20 13:38:00 CST
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_fs_usage_MB./dev/vda1 | 2022-03-20 13:40:00 CST
+- trace | frontend-1->cartservice-2:/hipstershop.CartService/AddItem (Cleaned: frontend-1->cartservice-2:/hipstershop.CartService/AddItem) | duration | 2022-03-20 13:40:00 CST
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_fs_usage_MB./dev/vda1 | 2022-03-20 13:44:00 CST
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_fs_usage_MB./dev/vda1 | 2022-03-20 13:46:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

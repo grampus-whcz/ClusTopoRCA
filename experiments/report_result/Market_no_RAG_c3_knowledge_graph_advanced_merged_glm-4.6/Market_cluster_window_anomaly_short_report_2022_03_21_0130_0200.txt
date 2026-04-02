@@ -1,0 +1,26 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0130_0200
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 01:31:00 CST → 2022-03-21 01:34:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: emailservice (Original: node-5.emailservice-0) | Attribute: container_spec_cpu_quota
+       Times (3): 2022-03-21 01:31:00 CST, 2022-03-21 01:33:00 CST, 2022-03-21 01:34:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.udp.connect.num
+       Times (3): 2022-03-21 01:31:00 CST, 2022-03-21 01:32:00 CST, 2022-03-21 01:34:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.emailservice-0 (Cleaned: emailservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 2
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

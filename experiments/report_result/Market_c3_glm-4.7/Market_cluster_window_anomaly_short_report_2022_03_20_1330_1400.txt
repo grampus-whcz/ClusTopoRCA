@@ -1,0 +1,25 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1330_1400
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 13:48:00 CST → 2022-03-20 13:59:00 CST (Δ = 660 sec)
+   Repeated Entity-Attribute Pairs: 3
+
+   📝 Metric Service Anomalies:
+     • Entity: recommendationservice-grpc | Attribute: mrt
+       Times (4): 2022-03-20 13:49:00 CST, 2022-03-20 13:50:00 CST, 2022-03-20 13:54:00 CST, 2022-03-20 13:55:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-2.source.recommendationservice.jaeger-coll | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (12): 2022-03-20 13:48:00 CST, 2022-03-20 13:49:00 CST, 2022-03-20 13:50:00 CST, 2022-03-20 13:51:00 CST, 2022-03-20 13:52:00 CST, 2022-03-20 13:53:00 CST, 2022-03-20 13:54:00 CST, 2022-03-20 13:55:00 CST, 2022-03-20 13:56:00 CST, 2022-03-20 13:57:00 CST, 2022-03-20 13:58:00 CST, 2022-03-20 13:59:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->cartservice-2:/hipstershop.CartService/AddItem | Attribute: duration
+       Times (2): 2022-03-20 13:53:00 CST, 2022-03-20 13:59:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 3
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

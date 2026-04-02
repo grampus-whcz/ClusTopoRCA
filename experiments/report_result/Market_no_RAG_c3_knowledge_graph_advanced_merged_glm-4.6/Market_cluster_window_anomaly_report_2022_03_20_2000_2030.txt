@@ -1,0 +1,117 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 2000_2030
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 20:00:00 CST → 2022-03-20 20:19:00 CST (Duration: 1140 seconds)
+**Total Anomalies**: 38
+
+## Anomaly Breakdown
+- **Metric Runtime**: 6 anomalies
+- **Metric Container**: 9 anomalies
+- **Metric Mesh**: 11 anomalies
+- **Metric Node**: 3 anomalies
+- **Trace**: 6 anomalies
+- **Log**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 20:02:00 CST (T2) to 2022-03-20 20:06:00 CST (4 minutes)
+**Total Anomalies**: 38
+
+#### Primary Root Cause Entity
+- **Entity**: recommendationservice-1 (Cleaned: recommendationservice, Layer: RECOMMENDATIONSERVICE)
+- **Confidence Score**: 0.79 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: duration(3 times)
+- **Earliest Anomaly Time**: 2022-03-20 20:00:00 CST
+- **Topology Impact**: 4 downstream entities affected
+
+#### Score Breakdown for recommendationservice-1 (Cleaned: recommendationservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.75 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts** (Cleaned: productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts, Layer: UNKNOWN): Score = 0.65, Anomalies = 3, Attrs = duration(6 times)
+- **cartservice-0.destination.frontend.cartservice** (Cleaned: cartservice-0.destination.frontend.cartservice, Layer: FRONTEND): Score = 0.53, Anomalies = 4, Attrs = istio_requests.grpc.200.14.0(8 times)
+- **node-5.cartservice-0** (Cleaned: cartservice, Layer: CARTSERVICE): Score = 0.40, Anomalies = 2, Attrs = container_fs_usage_MB./dev/vda1(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by recommendationservice-1 (Cleaned: recommendationservice)**: productcatalogservice-1, shippingservice-0, paymentservice-2, istio-ingressgateway, istio-egressgateway
+
+#### Layer-wise Impact Analysis
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of recommendationservice-1 (Cleaned: recommendationservice, highest confidence score)
+2. Check recommendationservice-1 for 3.0 anomalies on attributes: duration(3 times)
+3. Investigate anomalies starting at 2022-03-20 20:00:00 CST for recommendationservice-1 (analysis window starts at 2022-03-20 20:02:00 CST (T2))
+4. Verify downstream dependencies of recommendationservice for cascading failures
+5. Check RECOMMENDATIONSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-20 20:21:00 CST → 2022-03-20 20:25:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 9
+
+## Anomaly Breakdown
+- **Metric Runtime**: 1 anomalies
+- **Metric Node**: 3 anomalies
+- **Log**: 5 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-20 20:23:00 CST (T2) to 2022-03-20 20:27:00 CST (4 minutes)
+**Total Anomalies**: 9
+
+#### Primary Root Cause Entity
+- **Entity**: cartservice-0 (Cleaned: cartservice, Layer: CARTSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for cartservice-0 (Cleaned: cartservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.61, Anomalies = 3, Attrs = system.io.r_s(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by cartservice-0 (Cleaned: cartservice)**: recommendationservice, productcatalogservice-1, shippingservice-0, paymentservice-2, istio-ingressgateway
+
+#### Layer-wise Impact Analysis
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of cartservice-0 (Cleaned: cartservice, highest confidence score)
+2. Check cartservice-0 for 5 anomalies on attributes: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)(5 times)
+3. Investigate anomalies starting at N/A for cartservice-0 (analysis window starts at 2022-03-20 20:23:00 CST (T2))
+4. Verify downstream dependencies of cartservice for cascading failures
+5. Check CARTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 2
+- metric_container | node-5.cartservice-0 (Cleaned: cartservice) | container_fs_usage_MB./dev/vda1 | 2022-03-20 20:27:00 CST
+- metric_runtime | adservice2.ts:8088 (Cleaned: adservice) | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co | 2022-03-20 20:29:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

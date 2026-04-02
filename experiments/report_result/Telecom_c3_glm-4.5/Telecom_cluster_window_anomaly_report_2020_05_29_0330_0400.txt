@@ -1,0 +1,149 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_05_29 0330_0400
+================================================================================
+
+🔍 The number of clusters are 5
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-05-29 03:30:00 CST → 2020-05-29 03:31:00 CST (Δ = 60 sec)
+   Total Anomalies: 11
+
+   📝 Metric B Anomalies:
+     • Entity: osb_001 | Attribute: num
+       Timestamps: 1590694260 (2020-05-29 03:31:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_009,null | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_003 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_007 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_005 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_009 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_003 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_004 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_015 | Attribute: frequency
+       Timestamps: 1590694200 (2020-05-29 03:30:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2020-05-29 03:33:00 CST → 2020-05-29 03:35:00 CST (Δ = 120 sec)
+   Total Anomalies: 19
+
+   📝 Metric B Anomalies:
+     • Entity: osb_001 | Attribute: succee_num
+       Timestamps: 1590694440 (2020-05-29 03:34:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_001->docker_001:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_003 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_004 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_005 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590694500 (2020-05-29 03:35:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_009,null | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST), 1590694500 (2020-05-29 03:35:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_007 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_009 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: os_021->os_021:CSF,null,csf_001 | Attribute: frequency
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+     • Entity: os_022->docker_001:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1590694380 (2020-05-29 03:33:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2020-05-29 03:38:00 CST → 2020-05-29 03:38:00 CST (Δ = 0 sec)
+   Total Anomalies: 6
+
+   📝 Trace Anomalies:
+     • Entity: docker_004->docker_004:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1590694680 (2020-05-29 03:38:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590694680 (2020-05-29 03:38:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1590694680 (2020-05-29 03:38:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1590694680 (2020-05-29 03:38:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1590694680 (2020-05-29 03:38:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1590694680 (2020-05-29 03:38:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2020-05-29 03:52:00 CST → 2020-05-29 03:52:00 CST (Δ = 0 sec)
+   Total Anomalies: 7
+
+   📝 Trace Anomalies:
+     • Entity: docker_003->docker_003:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_009 | Attribute: duration
+       Timestamps: 1590695520 (2020-05-29 03:52:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2020-05-29 03:57:00 CST → 2020-05-29 04:00:00 CST (Δ = 180 sec)
+   Total Anomalies: 5
+
+   📝 Metric A Anomalies:
+     • Entity: redis_005 | Attribute: ZJ-001-099_Disk_rd_kbs
+       Timestamps: 1590695820 (2020-05-29 03:57:00 CST), 1590695880 (2020-05-29 03:58:00 CST), 1590695940 (2020-05-29 03:59:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: ROOT->os_022:OSB,null,osb_001 | Attribute: duration
+       Timestamps: 1590696000 (2020-05-29 04:00:00 CST)
+     • Entity: os_022->os_022:CSF,null,csf_001 | Attribute: duration
+       Timestamps: 1590696000 (2020-05-29 04:00:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_B | osb_001 | succee_num | 1590694920 (2020-05-29 03:42:00 CST)
+   trace | docker_001->docker_001:LOCAL,db_009,local_method_001 | duration | 1590695100 (2020-05-29 03:45:00 CST)
+   metric_A | redis_005 | ZJ-001-099_Disk_rd_kbs | 1590695700 (2020-05-29 03:55:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

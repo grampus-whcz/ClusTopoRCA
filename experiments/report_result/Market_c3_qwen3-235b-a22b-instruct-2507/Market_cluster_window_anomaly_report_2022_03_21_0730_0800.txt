@@ -1,0 +1,138 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0730_0800
+================================================================================
+
+🔍 The number of clusters are 6
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 07:30:00 CST → 2022-03-21 07:32:00 CST (Δ = 120 sec)
+   Total Anomalies: 6
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Timestamps: 1647819000 (2022-03-21 07:30:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Timestamps: 1647819060 (2022-03-21 07:31:00 CST), 1647819120 (2022-03-21 07:32:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647819060 (2022-03-21 07:31:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+       Timestamps: 1647819000 (2022-03-21 07:30:00 CST), 1647819060 (2022-03-21 07:31:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 07:34:00 CST → 2022-03-21 07:35:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Timestamps: 1647819300 (2022-03-21 07:35:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Timestamps: 1647819240 (2022-03-21 07:34:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647819240 (2022-03-21 07:34:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 07:37:00 CST → 2022-03-21 07:40:00 CST (Δ = 180 sec)
+   Total Anomalies: 6
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Timestamps: 1647819420 (2022-03-21 07:37:00 CST), 1647819480 (2022-03-21 07:38:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Timestamps: 1647819480 (2022-03-21 07:38:00 CST), 1647819540 (2022-03-21 07:39:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647819600 (2022-03-21 07:40:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+       Timestamps: 1647819420 (2022-03-21 07:37:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 07:44:00 CST → 2022-03-21 07:45:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Timestamps: 1647819840 (2022-03-21 07:44:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Timestamps: 1647819840 (2022-03-21 07:44:00 CST), 1647819900 (2022-03-21 07:45:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Timestamps: 1647819840 (2022-03-21 07:44:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2022-03-21 07:47:00 CST → 2022-03-21 07:48:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Timestamps: 1647820080 (2022-03-21 07:48:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Timestamps: 1647820020 (2022-03-21 07:47:00 CST), 1647820080 (2022-03-21 07:48:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+       Timestamps: 1647820020 (2022-03-21 07:47:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #6
+   Time Span: 2022-03-21 07:53:00 CST → 2022-03-21 07:57:00 CST (Δ = 240 sec)
+   Total Anomalies: 7
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Timestamps: 1647820440 (2022-03-21 07:54:00 CST), 1647820500 (2022-03-21 07:55:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Timestamps: 1647820620 (2022-03-21 07:57:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Timestamps: 1647820380 (2022-03-21 07:53:00 CST), 1647820440 (2022-03-21 07:54:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647820560 (2022-03-21 07:56:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+       Timestamps: 1647820440 (2022-03-21 07:54:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_node | node-4 | system.load.15 | 1647819720 (2022-03-21 07:42:00 CST)
+   log | checkoutservice-2 | at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94) | 1647819720 (2022-03-21 07:42:00 CST)
+   log | checkoutservice-2 | at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94) | 1647820260 (2022-03-21 07:51:00 CST)
+   metric_mesh | recommendationservice-1.source.recommendationservice.jaeger-coll | istio_response_bytes.http.200. | 1647820740 (2022-03-21 07:59:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

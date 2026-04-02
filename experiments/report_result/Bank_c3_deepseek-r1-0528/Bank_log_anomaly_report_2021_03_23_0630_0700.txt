@@ -1,0 +1,94 @@
+
+📝 Detailed Log Anomaly Report (Beijing Time = UTC+8):
+================================================================================
+
+Pod: IG01
+  - Pattern ID 3 (1 anomalies):
+      Template: 
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 11 (1 anomalies):
+      Template: [GC (CMS Final Remark) [YG occupancy: K ( [Rescan (parallel) , [weak refs processing, [class unloading, [scrub symbol table, [scrub string table, secs][ CMS-remark: secs] [Times: user=sys=., real=secs ...
+      1616452320 (2021-03-23 06:32:00 CST)
+  - Pattern ID 16 (2 anomalies):
+      Template: [GC (GCLocker Initiated GC) --04T09  [ParNew: 849342K->8988K(943744K), secs] 3342992K->2502639K(4089472K), secs] [Times: user=sys=., real=secs]
+      1616452320 (2021-03-23 06:32:00 CST), 1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 23 (1 anomalies):
+      Template: secs] [Times: user=sys=., real=secs]
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 28 (1 anomalies):
+      Template: [GC (GCLocker Initiated GC) [ParNew: secs] secs] [Times: user=sys=., real=secs]
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 46 (1 anomalies):
+      Template: INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+      1616453220 (2021-03-23 06:47:00 CST)
+  - Pattern ID 51 (2 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDescriptor A docBase /tomcat/apache-tomcat-./webapps/manager inside the host appBase has been specified, and will be ignored
+      1616452320 (2021-03-23 06:32:00 CST), 1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 60 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM MYSQL Property maxActive is not used in DBCP2, use maxTotal insteadmaxTotal defau ...
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 63 (2 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM MYSQL Ignoring unknown property: value of  for property
+      1616452320 (2021-03-23 06:32:00 CST), 1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 68 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /tomcat/apache-tomcat-./webapps/UOCP.war has finished in , ms
+      1616454000 (2021-03-23 07:00:00 CST)
+  - Pattern ID 83 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [pool--thread--SendThread(IPAdd ...
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 90 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [kafka-producer-network-thread ...
+      1616452320 (2021-03-23 06:32:00 CST)
+  - Pattern ID 94 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type (value and a value of type ...
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 97 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [java.lang.ThreadLocal] (va ...
+      1616454000 (2021-03-23 07:00:00 CST)
+  - Pattern ID 106 (1 anomalies):
+      Template: INFO [http-nio--exec-] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped alreadyCould not load [org.apache.ib ...
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 114 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.core.StandardWrapper.unload Waiting for instance(s) to be deallocated for Servlet [dynamic] OpenJDK -Bit Server VM warning: UseCMSCompactAtFullCollectio ...
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 115 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dynamic'
+      1616453220 (2021-03-23 06:47:00 CST)
+  - Pattern ID 124 (1 anomalies):
+      Template: SEVERE org.apache.catalina.core.StandardHostValve.invoke Exception Processing java.lang.NullPointerException at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:) at org. ...
+      1616452320 (2021-03-23 06:32:00 CST)
+  - Pattern ID 125 (1 anomalies):
+      Template: IG01 POST /UOCP/base/ServiceTest4.json HTTP/- Mozilla/(Windows NT ; WOW64) AppleWebKit/(KHTML, like Gecko) Chrome/Safari/.
+      1616453400 (2021-03-23 06:50:00 CST)
+  - Pattern ID 126 (1 anomalies):
+      Template: 
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 144 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; SELECT SC.MODULE, SC.PROTOCOL, SC.IP, SC.PORT, SC.CONNECT TIMEOUT, SC.CLIENT REUSE, ...
+      1616454000 (2021-03-23 07:00:00 CST)
+  - Pattern ID 147 (1 anomalies):
+      Template: [Full GC (Allocation Failure) [CMS: secs] [Metaspace: secs] [Times: user=sys=., real=secs]
+      1616452320 (2021-03-23 06:32:00 CST)
+  - Pattern ID 148 (2 anomalies):
+      Template: [Full GC (Allocation Failure) --06T18  [CMS (concurrent mode failure): 3145419K->3145405K(3145728K), secs] 4088790K->4088297K(4089472K), [Metaspace: 489080K->489080K(1521664K)], secs] [Times: user=sys ...
+      1616452320 (2021-03-23 06:32:00 CST), 1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 153 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [Tomcat03] Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName; SET timestamp=; commit;
+      1616453400 (2021-03-23 06:50:00 CST)
+  - Pattern ID 159 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.core.StandardWrapper.unload Waiting for instance(s) to be deallocated for Servlet [dynamic] OpenJDK -Bit Server VM warning: UseCMSCompactAtFullCollectio ...
+      1616452320 (2021-03-23 06:32:00 CST)
+  - Pattern ID 164 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDsEnable debug logging for this logger for a complete list of JARs th ...
+      1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 165 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.Catalina.start Server startup in ms OpenJDK -Bit Server VM warning: UseCMSCompactAtFullCollection is deprecated and will likely be removed in a future releaseOp ...
+      1616454000 (2021-03-23 07:00:00 CST)
+  - Pattern ID 168 (2 anomalies):
+      Template: [Full GC [CMS: secs] [Metaspace: secs] [Times: user=sys=., real=secs]
+      1616453220 (2021-03-23 06:47:00 CST), 1616453640 (2021-03-23 06:54:00 CST)
+  - Pattern ID 174 (1 anomalies):
+      Template: # User@Host: @ Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=;
+      1616452320 (2021-03-23 06:32:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).

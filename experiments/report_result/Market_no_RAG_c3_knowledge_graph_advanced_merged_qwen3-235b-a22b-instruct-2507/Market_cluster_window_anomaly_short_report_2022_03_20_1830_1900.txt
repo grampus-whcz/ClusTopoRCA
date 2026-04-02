@@ -1,0 +1,67 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1830_1900
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 18:30:00 CST → 2022-03-20 18:43:00 CST (Δ = 780 sec)
+   Repeated Entity-Attribute Pairs: 5 (based on cleaned entity names)
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc (Original: adservice-grpc) | Attribute: count
+       Times (3): 2022-03-20 18:33:00 CST, 2022-03-20 18:35:00 CST, 2022-03-20 18:42:00 CST
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (4): 2022-03-20 18:31:00 CST, 2022-03-20 18:37:00 CST, 2022-03-20 18:39:00 CST, 2022-03-20 18:42:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: currencyservice (Original: node-6.currencyservice2-0) | Attribute: container_memory_max_usage_MB
+       Times (9): 2022-03-20 18:35:00 CST, 2022-03-20 18:36:00 CST, 2022-03-20 18:37:00 CST, 2022-03-20 18:38:00 CST, 2022-03-20 18:39:00 CST, 2022-03-20 18:40:00 CST, 2022-03-20 18:41:00 CST, 2022-03-20 18:42:00 CST, 2022-03-20 18:43:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-2) | Attribute: system.mem.free
+       Times (11): 2022-03-20 18:30:00 CST, 2022-03-20 18:31:00 CST, 2022-03-20 18:32:00 CST, 2022-03-20 18:33:00 CST, 2022-03-20 18:34:00 CST, 2022-03-20 18:35:00 CST, 2022-03-20 18:37:00 CST, 2022-03-20 18:39:00 CST, 2022-03-20 18:41:00 CST, 2022-03-20 18:42:00 CST, 2022-03-20 18:43:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice (Original: cartservice-1) | Attribute: at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+       Times (3): 2022-03-20 18:32:00 CST, 2022-03-20 18:40:00 CST, 2022-03-20 18:43:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-2 (Cleaned: node, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 18:45:00 CST → 2022-03-20 18:55:00 CST (Δ = 600 sec)
+   Repeated Entity-Attribute Pairs: 5 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (2): 2022-03-20 18:45:00 CST, 2022-03-20 18:55:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: currencyservice (Original: node-6.currencyservice2-0) | Attribute: container_memory_max_usage_MB
+       Times (3): 2022-03-20 18:45:00 CST, 2022-03-20 18:46:00 CST, 2022-03-20 18:47:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-1.destination.frontend.adservice (Original: adservice-1.destination.frontend.adservice) | Attribute: istio_agent_go_memstats_mcache_sys_bytes
+       Times (6): 2022-03-20 18:47:00 CST, 2022-03-20 18:48:00 CST, 2022-03-20 18:49:00 CST, 2022-03-20 18:50:00 CST, 2022-03-20 18:51:00 CST, 2022-03-20 18:54:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->currencyservice-2:grpc.hipstershop.CurrencyService/GetSupportedCurrencies (Original: frontend-0->currencyservice-2:grpc.hipstershop.CurrencyService/GetSupportedCurrencies) | Attribute: duration
+       Times (3): 2022-03-20 18:49:00 CST, 2022-03-20 18:52:00 CST, 2022-03-20 18:55:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice (Original: cartservice-1) | Attribute: at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+       Times (3): 2022-03-20 18:45:00 CST, 2022-03-20 18:52:00 CST, 2022-03-20 18:53:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.currencyservice2-0 (Cleaned: currencyservice, Score: 0.75)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 10
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

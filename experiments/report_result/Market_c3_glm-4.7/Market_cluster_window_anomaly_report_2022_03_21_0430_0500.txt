@@ -1,0 +1,108 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0430_0500
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 04:30:00 CST → 2022-03-21 04:36:00 CST (Δ = 360 sec)
+   Total Anomalies: 14
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_MB_max.heap
+       Timestamps: 1647808260 (2022-03-21 04:31:00 CST), 1647808440 (2022-03-21 04:34:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647808320 (2022-03-21 04:32:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_go_info.go1.16.6
+       Timestamps: 1647808260 (2022-03-21 04:31:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.fs.inodes.in_use
+       Timestamps: 1647808200 (2022-03-21 04:30:00 CST), 1647808380 (2022-03-21 04:33:00 CST), 1647808560 (2022-03-21 04:36:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: UNKNOWN_PARENT->cartservice-1:HGET | Attribute: duration
+       Timestamps: 1647808380 (2022-03-21 04:33:00 CST), 1647808440 (2022-03-21 04:34:00 CST), 1647808500 (2022-03-21 04:35:00 CST), 1647808560 (2022-03-21 04:36:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: ARNING: Failed to export spans
+       Timestamps: 1647808440 (2022-03-21 04:34:00 CST), 1647808500 (2022-03-21 04:35:00 CST), 1647808560 (2022-03-21 04:36:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 04:38:00 CST → 2022-03-21 04:44:00 CST (Δ = 360 sec)
+   Total Anomalies: 11
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_MB_max.heap
+       Timestamps: 1647808980 (2022-03-21 04:43:00 CST), 1647809040 (2022-03-21 04:44:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647808740 (2022-03-21 04:39:00 CST), 1647808800 (2022-03-21 04:40:00 CST), 1647808920 (2022-03-21 04:42:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_go_info.go1.16.6
+       Timestamps: 1647808680 (2022-03-21 04:38:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.fs.inodes.in_use
+       Timestamps: 1647808860 (2022-03-21 04:41:00 CST), 1647808980 (2022-03-21 04:43:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: UNKNOWN_PARENT->cartservice-1:HGET | Attribute: duration
+       Timestamps: 1647808740 (2022-03-21 04:39:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: ARNING: Failed to export spans
+       Timestamps: 1647808860 (2022-03-21 04:41:00 CST), 1647809040 (2022-03-21 04:44:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 04:48:00 CST → 2022-03-21 04:52:00 CST (Δ = 240 sec)
+   Total Anomalies: 6
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647809520 (2022-03-21 04:52:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_go_info.go1.16.6
+       Timestamps: 1647809280 (2022-03-21 04:48:00 CST), 1647809340 (2022-03-21 04:49:00 CST), 1647809400 (2022-03-21 04:50:00 CST), 1647809460 (2022-03-21 04:51:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.fs.inodes.in_use
+       Timestamps: 1647809340 (2022-03-21 04:49:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 04:56:00 CST → 2022-03-21 04:59:00 CST (Δ = 180 sec)
+   Total Anomalies: 6
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_MB_max.heap
+       Timestamps: 1647809940 (2022-03-21 04:59:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647809760 (2022-03-21 04:56:00 CST), 1647809880 (2022-03-21 04:58:00 CST), 1647809940 (2022-03-21 04:59:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_go_info.go1.16.6
+       Timestamps: 1647809820 (2022-03-21 04:57:00 CST), 1647809940 (2022-03-21 04:59:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_node | node-1 | system.fs.inodes.in_use | 1647809160 (2022-03-21 04:46:00 CST)
+   metric_mesh | istio-ingressgateway-565bffd4d-rn678 | istio_agent_go_info.go1.16.6 | 1647809640 (2022-03-21 04:54:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

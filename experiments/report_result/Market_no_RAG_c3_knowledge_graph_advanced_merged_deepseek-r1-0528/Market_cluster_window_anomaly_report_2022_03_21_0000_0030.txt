@@ -1,0 +1,163 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0000_0030
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 3 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 00:00:00 CST → 2022-03-21 00:12:00 CST (Duration: 720 seconds)
+**Total Anomalies**: 24
+
+## Anomaly Breakdown
+- **Metric Runtime**: 8 anomalies
+- **Metric Container**: 5 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 9 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 00:02:00 CST (T2) to 2022-03-21 00:06:00 CST (4 minutes)
+**Total Anomalies**: 24
+
+#### Primary Root Cause Entity
+- **Entity**: adservice2.ts:8088 (Cleaned: adservice, Layer: ADSERVICE)
+- **Confidence Score**: 0.77 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: jvm_memory_pool_allocated_MB_created.Eden_Space(4 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for adservice2.ts:8088 (Cleaned: adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.67 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-6** (Cleaned: node, Layer: UNKNOWN): Score = 0.73, Anomalies = 6, Attrs = system.net.bytes_rcvd(6 times)
+- **node-5.frontend-2** (Cleaned: frontend, Layer: FRONTEND): Score = 0.72, Anomalies = 3, Attrs = container_memory_failcnt(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by adservice2.ts:8088 (Cleaned: adservice)**: adservice-2, productcatalogservice-0, emailservice-1, frontend-0, cartservice-1
+
+#### Layer-wise Impact Analysis
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice2.ts:8088 (Cleaned: adservice, highest confidence score)
+2. Check adservice2.ts:8088 for 4 anomalies on attributes: jvm_memory_pool_allocated_MB_created.Eden_Space(4 times)
+3. Investigate anomalies starting at N/A for adservice2.ts:8088 (analysis window starts at 2022-03-21 00:02:00 CST (T2))
+4. Verify downstream dependencies of adservice for cascading failures
+5. Check ADSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 00:17:00 CST → 2022-03-21 00:21:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 10
+
+## Anomaly Breakdown
+- **Metric Runtime**: 3 anomalies
+- **Metric Container**: 4 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 00:19:00 CST (T2) to 2022-03-21 00:23:00 CST (4 minutes)
+**Total Anomalies**: 10
+
+#### Primary Root Cause Entity
+- **Entity**: adservice2.ts:8088 (Cleaned: adservice, Layer: ADSERVICE)
+- **Confidence Score**: 0.79 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: jvm_memory_pool_allocated_MB_created.Eden_Space(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for adservice2.ts:8088 (Cleaned: adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.75 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **istio-egressgateway-7bfdcc9d86-g2d4q** (Cleaned: istio-egressgateway, Layer: FRONTEND): Score = 0.72, Anomalies = 2, Attrs = istio_request_duration_milliseconds.http.302.(2 times)
+- **node-5.frontend-2** (Cleaned: frontend, Layer: FRONTEND): Score = 0.57, Anomalies = 4, Attrs = container_memory_failcnt(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by adservice2.ts:8088 (Cleaned: adservice)**: adservice-2, productcatalogservice-0, emailservice-1, frontend-0, cartservice-1
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 2 entities affected (Weight: 1.0)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice2.ts:8088 (Cleaned: adservice, highest confidence score)
+2. Check adservice2.ts:8088 for 3 anomalies on attributes: jvm_memory_pool_allocated_MB_created.Eden_Space(3 times)
+3. Investigate anomalies starting at N/A for adservice2.ts:8088 (analysis window starts at 2022-03-21 00:19:00 CST (T2))
+4. Verify downstream dependencies of adservice for cascading failures
+5. Check ADSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 00:25:00 CST → 2022-03-21 00:29:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 8
+
+## Anomaly Breakdown
+- **Metric Runtime**: 1 anomalies
+- **Metric Container**: 3 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 00:27:00 CST (T2) to 2022-03-21 00:31:00 CST (4 minutes)
+**Total Anomalies**: 8
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.frontend-2 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: container_memory_failcnt(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-5.frontend-2 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **istio-egressgateway-7bfdcc9d86-g2d4q** (Cleaned: istio-egressgateway, Layer: FRONTEND): Score = 0.77, Anomalies = 2, Attrs = istio_request_duration_milliseconds.http.302.(2 times)
+- **node-6** (Cleaned: node, Layer: UNKNOWN): Score = 0.33, Anomalies = 2, Attrs = system.net.bytes_rcvd(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.frontend-2 (Cleaned: frontend)**: adservice-2, productcatalogservice-0, emailservice-1, frontend-0, cartservice-1
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 2 entities affected (Weight: 1.0)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.frontend-2 (Cleaned: frontend, highest confidence score)
+2. Check node-5.frontend-2 for 3 anomalies on attributes: container_memory_failcnt(3 times)
+3. Investigate anomalies starting at N/A for node-5.frontend-2 (analysis window starts at 2022-03-21 00:27:00 CST (T2))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 3
+- metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q (Cleaned: istio-egressgateway) | istio_request_duration_milliseconds.http.302. | 2022-03-21 00:15:00 CST
+- metric_node | node-6 (Cleaned: node) | system.net.bytes_rcvd | 2022-03-21 00:23:00 CST
+- metric_container | node-5.frontend-2 (Cleaned: frontend) | container_memory_failcnt | 2022-03-21 00:23:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

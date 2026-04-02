@@ -1,0 +1,60 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1000_1030
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 10:00:00 CST → 2022-03-20 10:01:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-1.source.cartservice.redis-cart (Original: cartservice-1.source.cartservice.redis-cart) | Attribute: istio_agent_pilot_xds_pushes.sds
+       Times (2): 2022-03-20 10:00:00 CST, 2022-03-20 10:01:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: cartservice-1.source.cartservice.redis-cart (Cleaned: cartservice-1.source.cartservice.redis-cart, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 10:13:00 CST → 2022-03-20 10:17:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-2) | Attribute: container_fs_usage_MB./dev/vda1
+       Times (3): 2022-03-20 10:15:00 CST, 2022-03-20 10:16:00 CST, 2022-03-20 10:17:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->cartservice-1:/hipstershop.CartService/GetCart (Original: frontend-0->cartservice-1:/hipstershop.CartService/GetCart) | Attribute: duration
+       Times (2): 2022-03-20 10:14:00 CST, 2022-03-20 10:16:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice (Original: cartservice-2) | Attribute: at okio.RealBufferedSource.indexOf(RealBufferedSource.java:358)
+       Times (2): 2022-03-20 10:13:00 CST, 2022-03-20 10:14:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: cartservice-2 (Cleaned: cartservice, Score: 0.76)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2022-03-20 10:19:00 CST → 2022-03-20 10:26:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_max.Cod
+       Times (3): 2022-03-20 10:20:00 CST, 2022-03-20 10:23:00 CST, 2022-03-20 10:24:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-2) | Attribute: container_fs_usage_MB./dev/vda1
+       Times (8): 2022-03-20 10:19:00 CST, 2022-03-20 10:20:00 CST, 2022-03-20 10:21:00 CST, 2022-03-20 10:22:00 CST, 2022-03-20 10:23:00 CST, 2022-03-20 10:24:00 CST, 2022-03-20 10:25:00 CST, 2022-03-20 10:26:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-2 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

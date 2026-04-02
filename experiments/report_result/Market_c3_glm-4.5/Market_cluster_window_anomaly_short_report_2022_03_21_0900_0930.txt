@@ -1,0 +1,55 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0900_0930
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 09:00:00 CST → 2022-03-21 09:05:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (6): 2022-03-21 09:00:00 CST, 2022-03-21 09:01:00 CST, 2022-03-21 09:02:00 CST, 2022-03-21 09:03:00 CST, 2022-03-21 09:04:00 CST, 2022-03-21 09:05:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 09:07:00 CST → 2022-03-21 09:12:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (2): 2022-03-21 09:07:00 CST, 2022-03-21 09:08:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations | Attribute: duration
+       Times (5): 2022-03-21 09:08:00 CST, 2022-03-21 09:09:00 CST, 2022-03-21 09:10:00 CST, 2022-03-21 09:11:00 CST, 2022-03-21 09:12:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 09:19:00 CST → 2022-03-21 09:25:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-1 | Attribute: container_memory_failures.hierarchy.pgfault
+       Times (6): 2022-03-21 09:19:00 CST, 2022-03-21 09:20:00 CST, 2022-03-21 09:21:00 CST, 2022-03-21 09:23:00 CST, 2022-03-21 09:24:00 CST, 2022-03-21 09:25:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 09:28:00 CST → 2022-03-21 09:29:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_used.C
+       Times (2): 2022-03-21 09:28:00 CST, 2022-03-21 09:29:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-1 | Attribute: container_memory_failures.hierarchy.pgfault
+       Times (2): 2022-03-21 09:28:00 CST, 2022-03-21 09:29:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

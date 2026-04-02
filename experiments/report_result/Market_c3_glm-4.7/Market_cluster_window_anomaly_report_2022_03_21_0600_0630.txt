@@ -1,0 +1,75 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0600_0630
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 06:00:00 CST → 2022-03-21 06:04:00 CST (Δ = 240 sec)
+   Total Anomalies: 10
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_memory_cache
+       Timestamps: 1647813660 (2022-03-21 06:01:00 CST), 1647813840 (2022-03-21 06:04:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector | Attribute: istio_request_bytes.grpc.200.0.0
+       Timestamps: 1647813600 (2022-03-21 06:00:00 CST), 1647813720 (2022-03-21 06:02:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.io.r_s
+       Timestamps: 1647813600 (2022-03-21 06:00:00 CST), 1647813660 (2022-03-21 06:01:00 CST), 1647813720 (2022-03-21 06:02:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->adservice-0:hipstershop.adservice/getads | Attribute: duration
+       Timestamps: 1647813660 (2022-03-21 06:01:00 CST), 1647813780 (2022-03-21 06:03:00 CST), 1647813840 (2022-03-21 06:04:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 06:14:00 CST → 2022-03-21 06:21:00 CST (Δ = 420 sec)
+   Total Anomalies: 9
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_memory_cache
+       Timestamps: 1647814440 (2022-03-21 06:14:00 CST), 1647814560 (2022-03-21 06:16:00 CST), 1647814620 (2022-03-21 06:17:00 CST), 1647814740 (2022-03-21 06:19:00 CST), 1647814800 (2022-03-21 06:20:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector | Attribute: istio_request_bytes.grpc.200.0.0
+       Timestamps: 1647814680 (2022-03-21 06:18:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.io.r_s
+       Timestamps: 1647814500 (2022-03-21 06:15:00 CST), 1647814860 (2022-03-21 06:21:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->adservice-0:hipstershop.adservice/getads | Attribute: duration
+       Timestamps: 1647814860 (2022-03-21 06:21:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 06:23:00 CST → 2022-03-21 06:27:00 CST (Δ = 240 sec)
+   Total Anomalies: 5
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector | Attribute: istio_request_bytes.grpc.200.0.0
+       Timestamps: 1647815100 (2022-03-21 06:25:00 CST), 1647815220 (2022-03-21 06:27:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.io.r_s
+       Timestamps: 1647815040 (2022-03-21 06:24:00 CST), 1647815160 (2022-03-21 06:26:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->adservice-0:hipstershop.adservice/getads | Attribute: duration
+       Timestamps: 1647814980 (2022-03-21 06:23:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.frontend-0 | container_memory_cache | 1647814080 (2022-03-21 06:08:00 CST)
+   metric_mesh | frontend-0.source.frontend.jaeger-collector | istio_request_bytes.grpc.200.0.0 | 1647814260 (2022-03-21 06:11:00 CST)
+   metric_mesh | frontend-0.source.frontend.jaeger-collector | istio_request_bytes.grpc.200.0.0 | 1647815340 (2022-03-21 06:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

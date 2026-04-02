@@ -1,0 +1,47 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0230_0300
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 02:32:00 CST → 2022-03-21 02:36:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Trace Anomalies:
+     • Entity: UNKNOWN_PARENT->cartservice2-0:HGET (Original: UNKNOWN_PARENT->cartservice2-0:HGET) | Attribute: duration
+       Times (4): 2022-03-21 02:32:00 CST, 2022-03-21 02:34:00 CST, 2022-03-21 02:35:00 CST, 2022-03-21 02:36:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice (Original: cartservice-1) | Attribute: ARNING: Failed to export spans
+       Times (4): 2022-03-21 02:32:00 CST, 2022-03-21 02:33:00 CST, 2022-03-21 02:34:00 CST, 2022-03-21 02:36:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: UNKNOWN_PARENT (Cleaned: UNKNOWN_PARENT, Score: 0.89)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 02:47:00 CST → 2022-03-21 02:54:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: emailservice (Original: node-5.emailservice-2) | Attribute: container_memory_rss
+       Times (7): 2022-03-21 02:47:00 CST, 2022-03-21 02:48:00 CST, 2022-03-21 02:49:00 CST, 2022-03-21 02:50:00 CST, 2022-03-21 02:51:00 CST, 2022-03-21 02:52:00 CST, 2022-03-21 02:53:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_agent_go_threads
+       Times (4): 2022-03-21 02:47:00 CST, 2022-03-21 02:50:00 CST, 2022-03-21 02:51:00 CST, 2022-03-21 02:53:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-1) | Attribute: system.load.15
+       Times (4): 2022-03-21 02:51:00 CST, 2022-03-21 02:52:00 CST, 2022-03-21 02:53:00 CST, 2022-03-21 02:54:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.emailservice-2 (Cleaned: emailservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

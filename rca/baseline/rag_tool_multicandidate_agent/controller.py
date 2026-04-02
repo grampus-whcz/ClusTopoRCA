@@ -219,7 +219,7 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
 
     for cluster_id, cluster_desc in clusters:
         logger.info(f"controller Processing {cluster_id}: {cluster_desc}")
-        logger.info(f"RAG rag_k: {rag_k}")
+        # logger.info(f"RAG rag_k: {rag_k}")
 
         # --- RAG ---
         # rag_context = ""    
@@ -284,9 +284,9 @@ def control_loop(dataset: str, objective: str, plan: str, ap, bp, logger, max_st
         output_suffix = time_info["output_suffix"]
         log_context_name = f"Bank_cluster_window_anomaly_report_{date_online}_{output_suffix}_multi_grain.json"
         log_context_path = f"/root/shared-nvme/work/timeSeries/OmniTransfer_new/1204/{log_context_name}"
-        logger.info(f"RAG log_context_path: {log_context_path}")
+        # logger.info(f"RAG log_context_path: {log_context_path}")
         cluster_id_num = cluster_id.split()[-1]
-        cluster_i_report = get_cluster_multi_grain_report(log_context_path, cluster_id_num)
+        # cluster_i_report = get_cluster_multi_grain_report(log_context_path, cluster_id_num)
         
 #         log_prompt = f"""log analysis tool execution results: {cluster_i_report}.\n
 # Based on the upper log analysis tool execution results, please provide a concise plain-English summary (RCA analysis result for log) of the key findings and anomalies about related entities and their features for the log analysis report:

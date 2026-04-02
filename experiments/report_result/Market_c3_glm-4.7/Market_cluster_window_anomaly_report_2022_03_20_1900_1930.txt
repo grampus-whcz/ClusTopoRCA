@@ -1,0 +1,118 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1900_1930
+================================================================================
+
+🔍 The number of clusters are 5
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 19:00:00 CST → 2022-03-20 19:14:00 CST (Δ = 840 sec)
+   Total Anomalies: 36
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc | Attribute: count
+       Timestamps: 1647774300 (2022-03-20 19:05:00 CST), 1647774480 (2022-03-20 19:08:00 CST), 1647774540 (2022-03-20 19:09:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647774060 (2022-03-20 19:01:00 CST), 1647774120 (2022-03-20 19:02:00 CST), 1647774240 (2022-03-20 19:04:00 CST), 1647774300 (2022-03-20 19:05:00 CST), 1647774480 (2022-03-20 19:08:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-2 | Attribute: container_ulimits_soft.max_open_files
+       Timestamps: 1647774300 (2022-03-20 19:05:00 CST), 1647774540 (2022-03-20 19:09:00 CST), 1647774660 (2022-03-20 19:11:00 CST), 1647774780 (2022-03-20 19:13:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.http.302.
+       Timestamps: 1647774240 (2022-03-20 19:04:00 CST), 1647774360 (2022-03-20 19:06:00 CST), 1647774420 (2022-03-20 19:07:00 CST), 1647774540 (2022-03-20 19:09:00 CST), 1647774600 (2022-03-20 19:10:00 CST), 1647774720 (2022-03-20 19:12:00 CST), 1647774840 (2022-03-20 19:14:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.load.15
+       Timestamps: 1647774000 (2022-03-20 19:00:00 CST), 1647774120 (2022-03-20 19:02:00 CST), 1647774180 (2022-03-20 19:03:00 CST), 1647774240 (2022-03-20 19:04:00 CST), 1647774480 (2022-03-20 19:08:00 CST), 1647774540 (2022-03-20 19:09:00 CST), 1647774600 (2022-03-20 19:10:00 CST), 1647774780 (2022-03-20 19:13:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->currencyservice-1:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647774360 (2022-03-20 19:06:00 CST), 1647774420 (2022-03-20 19:07:00 CST), 1647774540 (2022-03-20 19:09:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88)
+       Timestamps: 1647774000 (2022-03-20 19:00:00 CST), 1647774180 (2022-03-20 19:03:00 CST), 1647774240 (2022-03-20 19:04:00 CST), 1647774300 (2022-03-20 19:05:00 CST), 1647774660 (2022-03-20 19:11:00 CST), 1647774780 (2022-03-20 19:13:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 19:16:00 CST → 2022-03-20 19:16:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc | Attribute: count
+       Timestamps: 1647774960 (2022-03-20 19:16:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647774960 (2022-03-20 19:16:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-2 | Attribute: container_ulimits_soft.max_open_files
+       Timestamps: 1647774960 (2022-03-20 19:16:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 19:18:00 CST → 2022-03-20 19:20:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-2 | Attribute: container_ulimits_soft.max_open_files
+       Timestamps: 1647775080 (2022-03-20 19:18:00 CST), 1647775200 (2022-03-20 19:20:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.load.15
+       Timestamps: 1647775140 (2022-03-20 19:19:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88)
+       Timestamps: 1647775200 (2022-03-20 19:20:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 19:22:00 CST → 2022-03-20 19:24:00 CST (Δ = 120 sec)
+   Total Anomalies: 7
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647775320 (2022-03-20 19:22:00 CST), 1647775380 (2022-03-20 19:23:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-2 | Attribute: container_ulimits_soft.max_open_files
+       Timestamps: 1647775320 (2022-03-20 19:22:00 CST), 1647775440 (2022-03-20 19:24:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.load.15
+       Timestamps: 1647775440 (2022-03-20 19:24:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88)
+       Timestamps: 1647775380 (2022-03-20 19:23:00 CST), 1647775440 (2022-03-20 19:24:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2022-03-20 19:26:00 CST → 2022-03-20 19:27:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647775560 (2022-03-20 19:26:00 CST), 1647775620 (2022-03-20 19:27:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->currencyservice-1:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647775560 (2022-03-20 19:26:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88)
+       Timestamps: 1647775620 (2022-03-20 19:27:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

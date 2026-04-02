@@ -1,0 +1,1414 @@
+🔍 Anomaly Clustering Report for 2021_03_25 1530_1600
+🔍 The number of clusters are 2021_03_25 1530_1600
+================================================================================
+
+🔍 The number of clusters are 6
+========================================
+
+🚨 Cluster #1
+   Time Span: 2021-03-25 15:30:00 CST → 2021-03-25 15:35:00 CST (Δ = 300 sec)
+   Total Anomalies: 70
+   🔑 Keywords: Timeout, GC, Error/Failure
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest1 | Attribute: cnt
+       Timestamps: 1616657520 (2021-03-25 15:32:00 CST)
+     • Entity: ServiceTest11 | Attribute: cnt
+       Timestamps: 1616657580 (2021-03-25 15:33:00 CST)
+     • Entity: ServiceTest6 | Attribute: cnt
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: ServiceTest7 | Attribute: cnt
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1616657580 (2021-03-25 15:33:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps
+       Timestamps: 1616657400 (2021-03-25 15:30:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1616657580 (2021-03-25 15:33:00 CST)
+     • Entity: IG02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1616657520 (2021-03-25 15:32:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616657520 (2021-03-25 15:32:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Bytes Received
+       Timestamps: 1616657400 (2021-03-25 15:30:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read First
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool reads
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb os log fsyncs
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Key Reads
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_MySQL  Queries
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table Locks Immediate
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_ThreadsRunning
+       Timestamps: 1616657400 (2021-03-25 15:30:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuUtil
+       Timestamps: 1616657400 (2021-03-25 15:30:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616657400 (2021-03-25 15:30:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU_CPUWio
+       Timestamps: 1616657400 (2021-03-25 15:30:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSAvailableSpace
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSUsedSpace
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILE_-tmp-zabbix_agentd.log_FileSizeMB
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy
+       Timestamps: 1616657580 (2021-03-25 15:33:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite
+       Timestamps: 1616657580 (2021-03-25 15:33:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_NoCacheMemPerc
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite
+       Timestamps: 1616657460 (2021-03-25 15:31:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU_CPUCpuUtil
+       Timestamps: 1616657460 (2021-03-25 15:31:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: dockerA1->MG02 | Attribute: frequency
+       Timestamps: 1616657519 (2021-03-25 15:31:59 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_1
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_102
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_11
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_121
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_122
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_125
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_131
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_148
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_153
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_159
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_16
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_160
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_162
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_163
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_168
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_17
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_174
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_21
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_31
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_38
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_43
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_45
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_51
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_52
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_53
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_60
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_61
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_65
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_71
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST), 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_76
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_80
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_82
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_88
+       Timestamps: 1616657700 (2021-03-25 15:35:00 CST)
+     • Entity: IG01 | Attribute: PatternID_98
+       Timestamps: 1616657640 (2021-03-25 15:34:00 CST), 1616657700 (2021-03-25 15:35:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2021-03-25 15:37:00 CST → 2021-03-25 15:39:00 CST (Δ = 120 sec)
+   Total Anomalies: 128
+   🔑 Keywords: GC, Error/Failure
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-CPU_CPU_CPUSysTime
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_CpuPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemUsage
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkRxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_CpuPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7779_JVM_Memory_NoHeapMemoryUsed
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Operating System_7779_JVM_JVM_CPULoad
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Runtime_7778_JVM_JVM_Uptime
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Binlog Cache Use
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Binlog stmt cache disk use
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Bytes Sent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Delete Multi
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Insert
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Update Multi
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Created Tmp Files
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_GetResponseTimeOfMysqld
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Delete
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Savepoint
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead evicted
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool write requests
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data writes
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data written
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb dblwr pages written
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb log write requests
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb pages created
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb pages written
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Opened Tables
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Qcache Inserts
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Qcache Not Cached
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Rows Read
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Select Full Range Join
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Select Scan
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Range
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Scan
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table open cache misses
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-2_SingleCpuUtil
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----_FSInodeUsedPercent
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----home_FSCapacity
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tmp_FSCapacity
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSUsedSpace
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSAvailableSpace
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETInErrPrc
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETOutErrPrcc
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_SWAP_SWAP_Si
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMTotalMemory
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMUsedMemory
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Requests_7441-"http-nio-8003"_MaxTimeRequestInfo
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Requests_7441-"http-nio-8003"_ProcessingTimeRequestInfo
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Requests_7441-"http-nio-8003"_RequestCountRequestInfo
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--_SESSIONKeepaliveCounter
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--_SESSIONRejectedSessions
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONRejectedSessions
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (aof_enabled)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (client_longest_output_list)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (connected_clients)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (connected_slaves)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (evicted_keys)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (instantaneous_ops_per_sec)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (keyspace_misses)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (loading)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (lru_clock)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (pubsub_channels)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_sys)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_sys_children)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_user)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_user_children)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_memory)
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1616657820 (2021-03-25 15:37:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy
+       Timestamps: 1616657820 (2021-03-25 15:37:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_101
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_113
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_117
+       Timestamps: 1616657940 (2021-03-25 15:39:00 CST)
+     • Entity: IG01 | Attribute: PatternID_131
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_135
+       Timestamps: 1616657940 (2021-03-25 15:39:00 CST)
+     • Entity: IG01 | Attribute: PatternID_139
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_140
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_143
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_145
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_15
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_152
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_166
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_172
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_20
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_27
+       Timestamps: 1616657940 (2021-03-25 15:39:00 CST)
+     • Entity: IG01 | Attribute: PatternID_32
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_41
+       Timestamps: 1616657940 (2021-03-25 15:39:00 CST)
+     • Entity: IG01 | Attribute: PatternID_7
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_79
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+     • Entity: IG01 | Attribute: PatternID_88
+       Timestamps: 1616657880 (2021-03-25 15:38:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2021-03-25 15:41:00 CST → 2021-03-25 15:43:00 CST (Δ = 120 sec)
+   Total Anomalies: 208
+   🔑 Keywords: GC, Error/Failure
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest10 | Attribute: cnt
+       Timestamps: 1616658180 (2021-03-25 15:43:00 CST)
+     • Entity: ServiceTest11 | Attribute: cnt
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: IG02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1616658180 (2021-03-25 15:43:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryMax
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryMax
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Operating System_7778_JVM_JVM_CPULoad
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Threads_7779_JVM_ThreadCount_Threads
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Aborted Connects
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Binlog stmt cache disk use
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Delete Multi
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Insert
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Replace Select
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Update
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Created Tmp Files
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Created Tmp Tables
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read First
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read Key
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read Next
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Savepoint
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Update
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Write
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Time
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead evicted
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead rnd
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool wait free
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data fsyncs
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data pending reads
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data writes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data written
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb log writes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb os log fsyncs
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb row lock current waits
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Key Reads
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_MySQL  Queries
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Opened table definitions
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Qcache Inserts
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Qcache Not Cached
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Select Scan
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Slave Open Temp Tables
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Slow launch threads
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Merge Passes
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Range
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Scan
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table open cache hits
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table open cache misses
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Tc log max pages used
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-NTP_40.2.208.64_NtpServerTimeOffset
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----_FSInodeUsedPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----boot_FSCapacity
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----boot_FSInodeUsedPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----home_FSCapacity
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----home_FSInodeUsedPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tomcat_FSCapacity
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSInodeUsedPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSUsedSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSUsedSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSUsedSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKReadWrite
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMFreeMem
+       Timestamps: 1616658120 (2021-03-25 15:42:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETBandwidthUtil
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETInErr
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETKBTotalPerSec
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMemPerc
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_PROCESS_apache_10001_PROCPPCount
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_SWAP_SWAP_Si
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_SWAP_SWAP_So
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMMaxMemory
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMUsedMemory
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Requests_7441-"http-nio-8003"_MaxTimeRequestInfo
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Requests_7441-"http-nio-8003"_ProcessingTimeRequestInfo
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--UOCP_SESSIONActiveCounter
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--UOCP_SESSIONKeepaliveCounter
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--UOCP_SESSIONRejectedSessions
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--_SESSIONKeepaliveCounter
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--_SESSIONRejectedSessions
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--log.Home_IS_UNDEFINED_SESSIONRejectedSessions
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONKeepaliveCounter
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONRejectedSessions
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Threads_7441-"http-nio-8003"_CurrentThreadCountThreadInfo
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Threads_7441-"http-nio-8003"_CurrentThreadsBusyThreadInfo
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (connected_clients)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (connected_slaves)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (expired_keys)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (loading)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (pubsub_channels)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (rejected_connections)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (total_commands_processed)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_sys)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_sys_children)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_user)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_user_children)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_memory)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_memory_rss)
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1616658120 (2021-03-25 15:42:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_15
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: IG01 | Attribute: PatternID_152
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: IG01 | Attribute: PatternID_166
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: IG01 | Attribute: PatternID_5
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+     • Entity: IG01 | Attribute: PatternID_73
+       Timestamps: 1616658060 (2021-03-25 15:41:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2021-03-25 15:45:00 CST → 2021-03-25 15:52:00 CST (Δ = 420 sec)
+   Total Anomalies: 166
+   🔑 Keywords: Error/Failure, GC
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest2 | Attribute: cnt
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: ServiceTest3 | Attribute: cnt
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: ServiceTest9 | Attribute: cnt
+       Timestamps: 1616658360 (2021-03-25 15:46:00 CST), 1616658720 (2021-03-25 15:52:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc
+       Timestamps: 1616658480 (2021-03-25 15:48:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryMax
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Operating System_7778_JVM_JVM_CPULoad
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Runtime_7779_JVM_JVM_Uptime
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Aborted Clients
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Aborted Connects
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Binlog Cache Disk Use
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Binlog stmt cache disk use
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Insert
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Insert Select
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Created Tmp Disk Tables
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Created Tmp Tables
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_GetResponseTimeOfMysqld
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read Key
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read Rnd Next
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Savepoint
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Update
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Time
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Waits
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages total
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool wait free
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool write requests
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data pending writes
+       Timestamps: 1616658480 (2021-03-25 15:48:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb os log pending writes
+       Timestamps: 1616658480 (2021-03-25 15:48:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb pages created
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Key Read Requests
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Key Write Requests
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Key Writes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Max trx rows locked
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Qcache Lowmem Prunes
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Select Full Range Join
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Slave Open Temp Tables
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Range
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table Locks Waited
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table open cache hits
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table open cache misses
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST), 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_max trx lock memory bytes
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-1_SingleCpuUtil
+       Timestamps: 1616658600 (2021-03-25 15:50:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU_CPUUserTime
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-NTP_40.2.208.64_NtpServerTimeOffset
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----boot_FSInodeUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----cmbc_admin_FSCapacity
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tmp_FSInodeUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSAvailableSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSAvailableSpace
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSInodeUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSUsedSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST), 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSAvailableSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSUsedSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST), 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSAvailableSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSAvailableSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSInodeUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSUsedSpace
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST), 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSCapacity
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSInodeUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSUsedSpace
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST), 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKBps
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKPercentBusy
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKReadWrite
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps
+       Timestamps: 1616658300 (2021-03-25 15:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-FIN-WAIT
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum
+       Timestamps: 1616658720 (2021-03-25 15:52:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETInErrPrc
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMemPerc
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_SWAP_SWAP_SWPTotSwapSize
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_SWAP_SWAP_So
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMMemoryUsedPercent
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMTotalMemory
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--UOCP_SESSIONActiveCounter
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--_SESSIONKeepaliveCounter
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--log.Home_IS_UNDEFINED_SESSIONRejectedSessions
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONActiveCounter
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-Threads_7441-"http-nio-8003"_MaxThreadsThreadInfo
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (aof_enabled)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (blocked_clients)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (evicted_keys)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (keyspace_misses)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (loading)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (rdb_changes_since_last_save)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (rejected_connections)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (total_connections_received)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_user)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_cpu_user_children)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_memory)
+       Timestamps: 1616658540 (2021-03-25 15:49:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-FIN-WAIT
+       Timestamps: 1616658720 (2021-03-25 15:52:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: Tomcat02->MG02 | Attribute: frequency
+       Timestamps: 1616658719 (2021-03-25 15:51:59 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_103
+       Timestamps: 1616658660 (2021-03-25 15:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_127
+       Timestamps: 1616658420 (2021-03-25 15:47:00 CST)
+     • Entity: IG01 | Attribute: PatternID_145
+       Timestamps: 1616658420 (2021-03-25 15:47:00 CST)
+     • Entity: IG01 | Attribute: PatternID_23
+       Timestamps: 1616658660 (2021-03-25 15:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_55
+       Timestamps: 1616658660 (2021-03-25 15:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_78
+       Timestamps: 1616658660 (2021-03-25 15:51:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2021-03-25 15:54:00 CST → 2021-03-25 15:54:00 CST (Δ = 0 sec)
+   Total Anomalies: 21
+
+   📝 Metric Container Anomalies:
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_GetResponseTimeOfMysqld
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Aborted Clients
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Update
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Read Rnd Next
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages total
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read requests
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool write requests
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data writes
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb data written
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb dblwr pages written
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb os log written
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Key Reads
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Opened Tables
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Select Range
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Sort Range
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_ThreadsRunning
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuUtil
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-2_SingleCpuUtil
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-3_SingleCpuUtil
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_UserMem
+       Timestamps: 1616658840 (2021-03-25 15:54:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #6
+   Time Span: 2021-03-25 15:58:00 CST → 2021-03-25 16:00:00 CST (Δ = 120 sec)
+   Total Anomalies: 79
+   🔑 Keywords: Error/Failure
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest10 | Attribute: cnt
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: Mysql01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1616659080 (2021-03-25 15:58:00 CST), 1616659200 (2021-03-25 16:00:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead
+       Timestamps: 1616659080 (2021-03-25 15:58:00 CST), 1616659200 (2021-03-25 16:00:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemLimit
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: JVM-Threads_7778_JVM_ThreadCount_Threads
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Aborted Clients
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Delete
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Insert Select
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Com Replace
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Savepoint
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Handler Savepoint Rollback
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Waits
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead evicted
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Opened Tables
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Select Range
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table Locks Waited
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Mysql-MySQL_3306_Table open cache hits
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSInodeUsedPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSAvailableSpace
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSCapacity
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSCapacity
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSInodeUsedPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSAvailableSpace
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSInodeUsedPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSCapacity
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSInodeUsedPercent
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKWrite
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_SWAP_SWAP_So
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMTotalMemory
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (client_biggest_input_buf)
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (connected_clients)
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (expired_keys)
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (redis_git_dirty)
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (rejected_connections)
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Mysql02 | Attribute: redis-Redis_6379_Redis  (used_memory)
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1616659200 (2021-03-25 16:00:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: dockerA1->MG01 | Attribute: frequency
+       Timestamps: 1616659139 (2021-03-25 15:58:59 CST)
+     • Entity: dockerA1->MG02 | Attribute: frequency
+       Timestamps: 1616659139 (2021-03-25 15:58:59 CST)
+     • Entity: dockerA2->MG01 | Attribute: frequency
+       Timestamps: 1616659139 (2021-03-25 15:58:59 CST)
+     • Entity: dockerA2->MG02 | Attribute: frequency
+       Timestamps: 1616659139 (2021-03-25 15:58:59 CST)
+     • Entity: dockerB2->MG02 | Attribute: frequency
+       Timestamps: 1616659139 (2021-03-25 15:58:59 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_133
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_139
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_93
+       Timestamps: 1616659140 (2021-03-25 15:59:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | MG02 | JVM-Memory_7779_JVM_Memory_HeapMemoryUsed | 1616658960 (2021-03-25 15:56:00 CST)
+   log | IG01 | PatternID_12 | 1616658960 (2021-03-25 15:56:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

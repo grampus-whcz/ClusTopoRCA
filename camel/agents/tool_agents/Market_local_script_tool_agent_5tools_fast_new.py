@@ -56,9 +56,8 @@ class LocalScriptToolAgent(BaseToolAgent):
         """
         output_folder_name = "1215"
         valid_pipelines = {
-            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.13.py",
-            # "Market_knowledge_graph_RCA": "17.Market_knowledge_graph_RCA.py",
-            "Market_knowledge_graph_RCA": "17.Market_knowledge_graph_RCA.3.20.py",
+            # "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3.py", # ClusTopoRCA version
+            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3_old.py", # just cluster version
         }
 
         self.logger.info(

@@ -1,0 +1,65 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_23 | Window: 0100_0130
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2021-03-23 01:00:00 CST → 2021-03-23 01:30:00 CST (Duration: 1800 seconds)
+**Total Anomalies**: 319
+**Key Anomaly Patterns**: GC, Error/Failure, Timeout
+
+## Anomaly Breakdown
+- **Metric App**: 4 anomalies
+- **Metric Container**: 231 anomalies
+- **Log**: 84 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1
+**Analysis Window**: 2021-03-23 01:02:00 (T2) to 2021-03-23 01:06:00 (3 minutes)
+**Total Anomalies**: 319
+
+#### Primary Root Cause Entity
+- **Entity**: MG01 (Layer: GOVERNANCE)
+- **Confidence Score**: 0.75 (1.0 = highest)
+- **Anomaly Count**: 15
+- **Anomaly Attributes**: OSLinux-CPU_CPU_CPUCpuUtil(4 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(3 times), OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(1 times)
+- **Earliest Anomaly Time**: 2021-03-23 01:01:00
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for MG01
+- **Time Score**: 0.80 (earlier anomaly = higher score)
+- **Topology Score**: 0.53 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat02** (Layer: BUSINESS): Score = 0.69, Anomalies = 9, Attrs = OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(2 times)
+- **apache02** (Layer: ENTRY_POINT): Score = 0.66, Anomalies = 3, Attrs = OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKBps(1 times)
+- **Tomcat03** (Layer: BUSINESS): Score = 0.61, Anomalies = 9, Attrs = OSLinux-CPU_CPU_CPUUserTime(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(2 times), OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by MG01**: MG02, Redis02, Mysql02, Tomcat02, dockerA2
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **GOVERNANCE Layer**: 1 entities affected (Weight: 0.8)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of MG01 (highest confidence score)
+2. Check MG01 for 15 anomalies on attributes: OSLinux-CPU_CPU_CPUCpuUtil(4 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(3 times), OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(1 times)
+3. Investigate anomalies starting at 2021-03-23 01:01:00 for MG01 (analysis window starts at 2021-03-23 01:02:00 (T2))
+4. Verify downstream dependencies of MG01 for cascading failures
+5. Check GOVERNANCE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

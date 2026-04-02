@@ -1,0 +1,42 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 2130_2200
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 21:37:00 CST → 2022-03-20 21:58:00 CST (Δ = 1260 sec)
+   Repeated Entity-Attribute Pairs: 6 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Times (5): 2022-03-20 21:37:00 CST, 2022-03-20 21:39:00 CST, 2022-03-20 21:40:00 CST, 2022-03-20 21:43:00 CST, 2022-03-20 21:45:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-6.frontend2-0) | Attribute: container_spec_memory_swap_limit_MB
+       Times (12): 2022-03-20 21:37:00 CST, 2022-03-20 21:39:00 CST, 2022-03-20 21:42:00 CST, 2022-03-20 21:43:00 CST, 2022-03-20 21:44:00 CST, 2022-03-20 21:45:00 CST, 2022-03-20 21:46:00 CST, 2022-03-20 21:48:00 CST, 2022-03-20 21:49:00 CST, 2022-03-20 21:52:00 CST, 2022-03-20 21:53:00 CST, 2022-03-20 21:55:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend2-0.destination.unknown.frontend2 (Original: frontend2-0.destination.unknown.frontend2) | Attribute: istio_agent_process_cpu_seconds
+       Times (7): 2022-03-20 21:38:00 CST, 2022-03-20 21:45:00 CST, 2022-03-20 21:50:00 CST, 2022-03-20 21:52:00 CST, 2022-03-20 21:54:00 CST, 2022-03-20 21:55:00 CST, 2022-03-20 21:57:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-6) | Attribute: system.load.15
+       Times (8): 2022-03-20 21:38:00 CST, 2022-03-20 21:47:00 CST, 2022-03-20 21:52:00 CST, 2022-03-20 21:53:00 CST, 2022-03-20 21:54:00 CST, 2022-03-20 21:55:00 CST, 2022-03-20 21:56:00 CST, 2022-03-20 21:58:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->frontend2-0:hipstershop.ShippingService/GetQuote (Original: frontend2-0->frontend2-0:hipstershop.ShippingService/GetQuote) | Attribute: duration
+       Times (3): 2022-03-20 21:41:00 CST, 2022-03-20 21:45:00 CST, 2022-03-20 21:56:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend (Original: frontend-0) | Attribute: warning envoy config StreamAggregatedResources gRPC config stream closed: <:NUM:>, transport is closing
+       Times (5): 2022-03-20 21:49:00 CST, 2022-03-20 21:51:00 CST, 2022-03-20 21:53:00 CST, 2022-03-20 21:55:00 CST, 2022-03-20 21:57:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.frontend2-0 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

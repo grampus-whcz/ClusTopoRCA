@@ -1,0 +1,79 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0000_0030
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 00:00:00 CST → 2022-03-21 00:12:00 CST (Δ = 720 sec)
+   Total Anomalies: 24
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_pool_allocated_MB_created.Eden_Space
+       Timestamps: 1647792000 (2022-03-21 00:00:00 CST), 1647792060 (2022-03-21 00:01:00 CST), 1647792180 (2022-03-21 00:03:00 CST), 1647792360 (2022-03-21 00:06:00 CST), 1647792420 (2022-03-21 00:07:00 CST), 1647792540 (2022-03-21 00:09:00 CST), 1647792660 (2022-03-21 00:11:00 CST), 1647792720 (2022-03-21 00:12:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_memory_failcnt
+       Timestamps: 1647792000 (2022-03-21 00:00:00 CST), 1647792120 (2022-03-21 00:02:00 CST), 1647792300 (2022-03-21 00:05:00 CST), 1647792480 (2022-03-21 00:08:00 CST), 1647792660 (2022-03-21 00:11:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.302.
+       Timestamps: 1647792660 (2022-03-21 00:11:00 CST), 1647792720 (2022-03-21 00:12:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.net.bytes_rcvd
+       Timestamps: 1647792000 (2022-03-21 00:00:00 CST), 1647792120 (2022-03-21 00:02:00 CST), 1647792180 (2022-03-21 00:03:00 CST), 1647792240 (2022-03-21 00:04:00 CST), 1647792300 (2022-03-21 00:05:00 CST), 1647792360 (2022-03-21 00:06:00 CST), 1647792420 (2022-03-21 00:07:00 CST), 1647792540 (2022-03-21 00:09:00 CST), 1647792600 (2022-03-21 00:10:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 00:17:00 CST → 2022-03-21 00:21:00 CST (Δ = 240 sec)
+   Total Anomalies: 10
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_pool_allocated_MB_created.Eden_Space
+       Timestamps: 1647793020 (2022-03-21 00:17:00 CST), 1647793140 (2022-03-21 00:19:00 CST), 1647793260 (2022-03-21 00:21:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_memory_failcnt
+       Timestamps: 1647793080 (2022-03-21 00:18:00 CST), 1647793140 (2022-03-21 00:19:00 CST), 1647793200 (2022-03-21 00:20:00 CST), 1647793260 (2022-03-21 00:21:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.302.
+       Timestamps: 1647793020 (2022-03-21 00:17:00 CST), 1647793080 (2022-03-21 00:18:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.net.bytes_rcvd
+       Timestamps: 1647793200 (2022-03-21 00:20:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 00:25:00 CST → 2022-03-21 00:29:00 CST (Δ = 240 sec)
+   Total Anomalies: 8
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_pool_allocated_MB_created.Eden_Space
+       Timestamps: 1647793680 (2022-03-21 00:28:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_memory_failcnt
+       Timestamps: 1647793500 (2022-03-21 00:25:00 CST), 1647793680 (2022-03-21 00:28:00 CST), 1647793740 (2022-03-21 00:29:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.302.
+       Timestamps: 1647793500 (2022-03-21 00:25:00 CST), 1647793560 (2022-03-21 00:26:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.net.bytes_rcvd
+       Timestamps: 1647793620 (2022-03-21 00:27:00 CST), 1647793680 (2022-03-21 00:28:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q | istio_request_duration_milliseconds.http.302. | 1647792900 (2022-03-21 00:15:00 CST)
+   metric_node | node-6 | system.net.bytes_rcvd | 1647793380 (2022-03-21 00:23:00 CST)
+   metric_container | node-5.frontend-2 | container_memory_failcnt | 1647793380 (2022-03-21 00:23:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

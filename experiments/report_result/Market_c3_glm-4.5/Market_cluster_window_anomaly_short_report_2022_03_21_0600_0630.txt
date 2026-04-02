@@ -1,0 +1,57 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0600_0630
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 06:00:00 CST → 2022-03-21 06:04:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_memory_cache
+       Times (2): 2022-03-21 06:01:00 CST, 2022-03-21 06:04:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector | Attribute: istio_request_bytes.grpc.200.0.0
+       Times (2): 2022-03-21 06:00:00 CST, 2022-03-21 06:02:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.io.r_s
+       Times (3): 2022-03-21 06:00:00 CST, 2022-03-21 06:01:00 CST, 2022-03-21 06:02:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->adservice-0:hipstershop.adservice/getads | Attribute: duration
+       Times (3): 2022-03-21 06:01:00 CST, 2022-03-21 06:03:00 CST, 2022-03-21 06:04:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 06:14:00 CST → 2022-03-21 06:21:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_memory_cache
+       Times (5): 2022-03-21 06:14:00 CST, 2022-03-21 06:16:00 CST, 2022-03-21 06:17:00 CST, 2022-03-21 06:19:00 CST, 2022-03-21 06:20:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.io.r_s
+       Times (2): 2022-03-21 06:15:00 CST, 2022-03-21 06:21:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 06:23:00 CST → 2022-03-21 06:27:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector | Attribute: istio_request_bytes.grpc.200.0.0
+       Times (2): 2022-03-21 06:25:00 CST, 2022-03-21 06:27:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.io.r_s
+       Times (2): 2022-03-21 06:24:00 CST, 2022-03-21 06:26:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 8
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

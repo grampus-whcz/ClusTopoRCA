@@ -1,0 +1,102 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1500_1530
+================================================================================
+
+🔍 The number of clusters are 5
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 15:00:00 CST → 2022-03-21 15:04:00 CST (Δ = 240 sec)
+   Total Anomalies: 7
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_Threading_TotalStartedThreadCount
+       Timestamps: 1647846180 (2022-03-21 15:03:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.load.15
+       Timestamps: 1647846120 (2022-03-21 15:02:00 CST), 1647846240 (2022-03-21 15:04:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.CurrencyService/Convert | Attribute: duration
+       Timestamps: 1647846000 (2022-03-21 15:00:00 CST), 1647846060 (2022-03-21 15:01:00 CST), 1647846120 (2022-03-21 15:02:00 CST), 1647846180 (2022-03-21 15:03:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 15:06:00 CST → 2022-03-21 15:10:00 CST (Δ = 240 sec)
+   Total Anomalies: 8
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_Threading_TotalStartedThreadCount
+       Timestamps: 1647846600 (2022-03-21 15:10:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.paymentservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647846600 (2022-03-21 15:10:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: emailservice-1.source.emailservice.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647846420 (2022-03-21 15:07:00 CST), 1647846480 (2022-03-21 15:08:00 CST), 1647846540 (2022-03-21 15:09:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.load.15
+       Timestamps: 1647846360 (2022-03-21 15:06:00 CST), 1647846480 (2022-03-21 15:08:00 CST), 1647846540 (2022-03-21 15:09:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 15:13:00 CST → 2022-03-21 15:15:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.paymentservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647846780 (2022-03-21 15:13:00 CST), 1647846840 (2022-03-21 15:14:00 CST), 1647846900 (2022-03-21 15:15:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: emailservice-1.source.emailservice.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647846900 (2022-03-21 15:15:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 15:18:00 CST → 2022-03-21 15:22:00 CST (Δ = 240 sec)
+   Total Anomalies: 8
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_Threading_TotalStartedThreadCount
+       Timestamps: 1647847200 (2022-03-21 15:20:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.paymentservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647847080 (2022-03-21 15:18:00 CST), 1647847140 (2022-03-21 15:19:00 CST), 1647847200 (2022-03-21 15:20:00 CST), 1647847260 (2022-03-21 15:21:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: emailservice-1.source.emailservice.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647847140 (2022-03-21 15:19:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+       Timestamps: 1647847200 (2022-03-21 15:20:00 CST), 1647847320 (2022-03-21 15:22:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2022-03-21 15:24:00 CST → 2022-03-21 15:29:00 CST (Δ = 300 sec)
+   Total Anomalies: 8
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_Threading_TotalStartedThreadCount
+       Timestamps: 1647847740 (2022-03-21 15:29:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.paymentservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647847560 (2022-03-21 15:26:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+       Timestamps: 1647847440 (2022-03-21 15:24:00 CST), 1647847500 (2022-03-21 15:25:00 CST), 1647847560 (2022-03-21 15:26:00 CST), 1647847620 (2022-03-21 15:27:00 CST), 1647847680 (2022-03-21 15:28:00 CST), 1647847740 (2022-03-21 15:29:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

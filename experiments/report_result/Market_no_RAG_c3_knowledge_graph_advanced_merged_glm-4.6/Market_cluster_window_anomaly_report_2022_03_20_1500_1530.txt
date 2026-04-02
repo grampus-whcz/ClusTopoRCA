@@ -1,0 +1,28 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1500_1530
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 0 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 10
+- metric_runtime | adservice.ts:8088 (Cleaned: adservice) | java_lang_Compilation_TotalCompilationTime | 2022-03-20 15:02:00 CST
+- metric_runtime | adservice.ts:8088 (Cleaned: adservice) | java_lang_Compilation_TotalCompilationTime | 2022-03-20 15:03:00 CST
+- metric_mesh | checkoutservice-2.destination.frontend.checkoutservice (Cleaned: checkoutservice-2.destination.frontend.checkoutservice) | istio_agent_go_memstats_other_sys_bytes | 2022-03-20 15:06:00 CST
+- metric_mesh | checkoutservice-2.destination.frontend.checkoutservice (Cleaned: checkoutservice-2.destination.frontend.checkoutservice) | istio_agent_go_memstats_other_sys_bytes | 2022-03-20 15:11:00 CST
+- metric_mesh | checkoutservice-2.destination.frontend.checkoutservice (Cleaned: checkoutservice-2.destination.frontend.checkoutservice) | istio_agent_go_memstats_other_sys_bytes | 2022-03-20 15:12:00 CST
+- metric_mesh | checkoutservice-2.destination.frontend.checkoutservice (Cleaned: checkoutservice-2.destination.frontend.checkoutservice) | istio_agent_go_memstats_other_sys_bytes | 2022-03-20 15:13:00 CST
+- metric_mesh | checkoutservice-2.destination.frontend.checkoutservice (Cleaned: checkoutservice-2.destination.frontend.checkoutservice) | istio_agent_go_memstats_other_sys_bytes | 2022-03-20 15:14:00 CST
+- metric_runtime | adservice.ts:8088 (Cleaned: adservice) | java_lang_Compilation_TotalCompilationTime | 2022-03-20 15:21:00 CST
+- metric_mesh | checkoutservice-2.destination.frontend.checkoutservice (Cleaned: checkoutservice-2.destination.frontend.checkoutservice) | istio_agent_go_memstats_other_sys_bytes | 2022-03-20 15:21:00 CST
+- metric_runtime | adservice.ts:8088 (Cleaned: adservice) | java_lang_Compilation_TotalCompilationTime | 2022-03-20 15:23:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

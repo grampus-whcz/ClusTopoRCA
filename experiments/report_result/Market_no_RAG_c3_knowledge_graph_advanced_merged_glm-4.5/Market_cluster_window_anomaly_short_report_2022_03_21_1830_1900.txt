@@ -1,0 +1,63 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1830_1900
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 18:30:00 CST → 2022-03-21 18:46:00 CST (Δ = 960 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (2): 2022-03-21 18:30:00 CST, 2022-03-21 18:37:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-5.cartservice-0) | Attribute: container_memory_usage_MB
+       Times (10): 2022-03-21 18:31:00 CST, 2022-03-21 18:34:00 CST, 2022-03-21 18:35:00 CST, 2022-03-21 18:37:00 CST, 2022-03-21 18:39:00 CST, 2022-03-21 18:41:00 CST, 2022-03-21 18:43:00 CST, 2022-03-21 18:44:00 CST, 2022-03-21 18:45:00 CST, 2022-03-21 18:46:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: redis-cart-0.destination.cartservice.redis-cart (Original: redis-cart-0.destination.cartservice.redis-cart) | Attribute: istio_tcp_connections_opened.-
+       Times (8): 2022-03-21 18:31:00 CST, 2022-03-21 18:37:00 CST, 2022-03-21 18:39:00 CST, 2022-03-21 18:40:00 CST, 2022-03-21 18:41:00 CST, 2022-03-21 18:42:00 CST, 2022-03-21 18:43:00 CST, 2022-03-21 18:45:00 CST
+
+   📝 Log Anomalies:
+     • Entity: adservice (Original: adservice-1) | Attribute: info sds SDS: PUSH resource=default
+       Times (13): 2022-03-21 18:30:00 CST, 2022-03-21 18:31:00 CST, 2022-03-21 18:32:00 CST, 2022-03-21 18:33:00 CST, 2022-03-21 18:34:00 CST, 2022-03-21 18:35:00 CST, 2022-03-21 18:36:00 CST, 2022-03-21 18:37:00 CST, 2022-03-21 18:38:00 CST, 2022-03-21 18:39:00 CST, 2022-03-21 18:40:00 CST, 2022-03-21 18:41:00 CST, 2022-03-21 18:42:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: adservice-1 (Cleaned: adservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 18:48:00 CST → 2022-03-21 18:57:00 CST (Δ = 540 sec)
+   Repeated Entity-Attribute Pairs: 5 (based on cleaned entity names)
+
+   📝 Metric Service Anomalies:
+     • Entity: cartservice-grpc (Original: cartservice-grpc) | Attribute: count
+       Times (4): 2022-03-21 18:48:00 CST, 2022-03-21 18:49:00 CST, 2022-03-21 18:51:00 CST, 2022-03-21 18:55:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-5.cartservice-0) | Attribute: container_memory_usage_MB
+       Times (2): 2022-03-21 18:50:00 CST, 2022-03-21 18:52:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: redis-cart-0.destination.cartservice.redis-cart (Original: redis-cart-0.destination.cartservice.redis-cart) | Attribute: istio_tcp_connections_opened.-
+       Times (3): 2022-03-21 18:48:00 CST, 2022-03-21 18:49:00 CST, 2022-03-21 18:52:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-5) | Attribute: system.mem.used
+       Times (6): 2022-03-21 18:48:00 CST, 2022-03-21 18:49:00 CST, 2022-03-21 18:50:00 CST, 2022-03-21 18:52:00 CST, 2022-03-21 18:53:00 CST, 2022-03-21 18:55:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice-0->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts (Original: recommendationservice-0->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts) | Attribute: frequency
+       Times (5): 2022-03-21 18:50:00 CST, 2022-03-21 18:53:00 CST, 2022-03-21 18:54:00 CST, 2022-03-21 18:56:00 CST, 2022-03-21 18:57:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5 (Cleaned: node, Score: 0.73)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 9
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

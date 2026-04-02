@@ -1,0 +1,53 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 2100_2130
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 21:01:00 CST → 2022-03-20 21:03:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_agent_go_memstats_mspan_sys_bytes
+       Times (2): 2022-03-20 21:02:00 CST, 2022-03-20 21:03:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 21:13:00 CST → 2022-03-20 21:18:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.paymentservice-2 | Attribute: container_memory_rss
+       Times (4): 2022-03-20 21:14:00 CST, 2022-03-20 21:15:00 CST, 2022-03-20 21:16:00 CST, 2022-03-20 21:17:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_agent_go_memstats_mspan_sys_bytes
+       Times (3): 2022-03-20 21:15:00 CST, 2022-03-20 21:17:00 CST, 2022-03-20 21:18:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.os.nofile.current
+       Times (3): 2022-03-20 21:13:00 CST, 2022-03-20 21:15:00 CST, 2022-03-20 21:18:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 21:21:00 CST → 2022-03-20 21:27:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (2): 2022-03-20 21:21:00 CST, 2022-03-20 21:22:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.paymentservice-2 | Attribute: container_memory_rss
+       Times (6): 2022-03-20 21:21:00 CST, 2022-03-20 21:22:00 CST, 2022-03-20 21:23:00 CST, 2022-03-20 21:25:00 CST, 2022-03-20 21:26:00 CST, 2022-03-20 21:27:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_agent_go_memstats_mspan_sys_bytes
+       Times (3): 2022-03-20 21:21:00 CST, 2022-03-20 21:22:00 CST, 2022-03-20 21:24:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 7
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

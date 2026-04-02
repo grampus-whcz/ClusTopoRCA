@@ -1,0 +1,61 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1300_1330
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 13:02:00 CST → 2022-03-21 13:18:00 CST (Δ = 960 sec)
+   Repeated Entity-Attribute Pairs: 6
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_pool_MB_max.Metaspace
+       Times (5): 2022-03-21 13:10:00 CST, 2022-03-21 13:11:00 CST, 2022-03-21 13:12:00 CST, 2022-03-21 13:13:00 CST, 2022-03-21 13:16:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.frontend2-0 | Attribute: container_fs_usage_MB./dev/vda1
+       Times (7): 2022-03-21 13:07:00 CST, 2022-03-21 13:08:00 CST, 2022-03-21 13:09:00 CST, 2022-03-21 13:11:00 CST, 2022-03-21 13:12:00 CST, 2022-03-21 13:13:00 CST, 2022-03-21 13:14:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.source.adservice2.jaeger-collector | Attribute: istio_requests.http.0.
+       Times (6): 2022-03-21 13:02:00 CST, 2022-03-21 13:04:00 CST, 2022-03-21 13:06:00 CST, 2022-03-21 13:08:00 CST, 2022-03-21 13:11:00 CST, 2022-03-21 13:17:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.mem.free
+       Times (7): 2022-03-21 13:02:00 CST, 2022-03-21 13:03:00 CST, 2022-03-21 13:04:00 CST, 2022-03-21 13:05:00 CST, 2022-03-21 13:06:00 CST, 2022-03-21 13:10:00 CST, 2022-03-21 13:12:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Times (2): 2022-03-21 13:15:00 CST, 2022-03-21 13:18:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:230)
+       Times (2): 2022-03-21 13:09:00 CST, 2022-03-21 13:15:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 13:20:00 CST → 2022-03-21 13:23:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Times (2): 2022-03-21 13:21:00 CST, 2022-03-21 13:22:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 13:25:00 CST → 2022-03-21 13:29:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.source.adservice2.jaeger-collector | Attribute: istio_requests.http.0.
+       Times (2): 2022-03-21 13:27:00 CST, 2022-03-21 13:28:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Times (2): 2022-03-21 13:26:00 CST, 2022-03-21 13:29:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 9
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

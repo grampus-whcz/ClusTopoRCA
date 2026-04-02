@@ -1,0 +1,56 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 2000_2030
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 20:03:00 CST → 2022-03-21 20:05:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Log Anomalies:
+     • Entity: frontend (Original: frontend-0) | Attribute: at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
+       Times (3): 2022-03-21 20:03:00 CST, 2022-03-21 20:04:00 CST, 2022-03-21 20:05:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-0 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 20:09:00 CST → 2022-03-21 20:12:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: jvm_classes_loaded
+       Times (2): 2022-03-21 20:09:00 CST, 2022-03-21 20:10:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-5.cartservice-0) | Attribute: container_spec_cpu_quota
+       Times (3): 2022-03-21 20:09:00 CST, 2022-03-21 20:11:00 CST, 2022-03-21 20:12:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.cartservice-0 (Cleaned: cartservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 20:18:00 CST → 2022-03-21 20:29:00 CST (Δ = 660 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_agent_go_memstats_other_sys_bytes
+       Times (7): 2022-03-21 20:18:00 CST, 2022-03-21 20:20:00 CST, 2022-03-21 20:21:00 CST, 2022-03-21 20:22:00 CST, 2022-03-21 20:24:00 CST, 2022-03-21 20:26:00 CST, 2022-03-21 20:28:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-2) | Attribute: system.mem.free
+       Times (5): 2022-03-21 20:23:00 CST, 2022-03-21 20:24:00 CST, 2022-03-21 20:25:00 CST, 2022-03-21 20:26:00 CST, 2022-03-21 20:27:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

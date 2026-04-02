@@ -1,0 +1,55 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1700_1730
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 17:05:00 CST → 2022-03-20 17:07:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-6.cartservice2-0) | Attribute: container_memory_usage_MB
+       Times (2): 2022-03-20 17:05:00 CST, 2022-03-20 17:07:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.cartservice2-0 (Cleaned: cartservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 17:09:00 CST → 2022-03-20 17:26:00 CST (Δ = 1020 sec)
+   Repeated Entity-Attribute Pairs: 6 (based on cleaned entity names)
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-http (Original: adservice-http) | Attribute: rr
+       Times (4): 2022-03-20 17:12:00 CST, 2022-03-20 17:17:00 CST, 2022-03-20 17:18:00 CST, 2022-03-20 17:19:00 CST
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (9): 2022-03-20 17:09:00 CST, 2022-03-20 17:10:00 CST, 2022-03-20 17:11:00 CST, 2022-03-20 17:12:00 CST, 2022-03-20 17:16:00 CST, 2022-03-20 17:19:00 CST, 2022-03-20 17:20:00 CST, 2022-03-20 17:22:00 CST, 2022-03-20 17:25:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-6.cartservice2-0) | Attribute: container_memory_usage_MB
+       Times (7): 2022-03-20 17:11:00 CST, 2022-03-20 17:13:00 CST, 2022-03-20 17:15:00 CST, 2022-03-20 17:20:00 CST, 2022-03-20 17:22:00 CST, 2022-03-20 17:24:00 CST, 2022-03-20 17:26:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 (Original: adservice2-0.destination.unknown.adservice2) | Attribute: istio_agent_go_gc_duration_seconds.0.5
+       Times (5): 2022-03-20 17:14:00 CST, 2022-03-20 17:15:00 CST, 2022-03-20 17:17:00 CST, 2022-03-20 17:18:00 CST, 2022-03-20 17:23:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-5) | Attribute: system.fs.inodes.used
+       Times (8): 2022-03-20 17:13:00 CST, 2022-03-20 17:15:00 CST, 2022-03-20 17:16:00 CST, 2022-03-20 17:17:00 CST, 2022-03-20 17:20:00 CST, 2022-03-20 17:21:00 CST, 2022-03-20 17:22:00 CST, 2022-03-20 17:25:00 CST
+
+   📝 Log Anomalies:
+     • Entity: emailservice (Original: emailservice-1) | Attribute: "POST /api/v2/spans HTTP/1.1<:code202:>
+       Times (3): 2022-03-20 17:10:00 CST, 2022-03-20 17:18:00 CST, 2022-03-20 17:25:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: adservice2.ts:8088 (Cleaned: adservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 7
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

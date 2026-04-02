@@ -1,0 +1,46 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 2230_2300
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 22:34:00 CST → 2022-03-21 22:56:00 CST (Δ = 1320 sec)
+   Total Anomalies: 61
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc | Attribute: sr
+       Timestamps: 1647873240 (2022-03-21 22:34:00 CST), 1647873300 (2022-03-21 22:35:00 CST), 1647873360 (2022-03-21 22:36:00 CST), 1647873420 (2022-03-21 22:37:00 CST), 1647873480 (2022-03-21 22:38:00 CST), 1647873540 (2022-03-21 22:39:00 CST), 1647873660 (2022-03-21 22:41:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_init.Te
+       Timestamps: 1647873360 (2022-03-21 22:36:00 CST), 1647873660 (2022-03-21 22:41:00 CST), 1647873840 (2022-03-21 22:44:00 CST), 1647874020 (2022-03-21 22:47:00 CST), 1647874560 (2022-03-21 22:56:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.currencyservice2-0 | Attribute: container_sockets
+       Timestamps: 1647873240 (2022-03-21 22:34:00 CST), 1647873300 (2022-03-21 22:35:00 CST), 1647873360 (2022-03-21 22:36:00 CST), 1647873420 (2022-03-21 22:37:00 CST), 1647873480 (2022-03-21 22:38:00 CST), 1647873720 (2022-03-21 22:42:00 CST), 1647873780 (2022-03-21 22:43:00 CST), 1647873840 (2022-03-21 22:44:00 CST), 1647873900 (2022-03-21 22:45:00 CST), 1647873960 (2022-03-21 22:46:00 CST), 1647874260 (2022-03-21 22:51:00 CST), 1647874380 (2022-03-21 22:53:00 CST), 1647874440 (2022-03-21 22:54:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: productcatalogservice-0.destination.frontend.productcatalogservi | Attribute: istio_requests.grpc.0.2.0
+       Timestamps: 1647873420 (2022-03-21 22:37:00 CST), 1647873480 (2022-03-21 22:38:00 CST), 1647873540 (2022-03-21 22:39:00 CST), 1647873600 (2022-03-21 22:40:00 CST), 1647873660 (2022-03-21 22:41:00 CST), 1647873720 (2022-03-21 22:42:00 CST), 1647873780 (2022-03-21 22:43:00 CST), 1647873840 (2022-03-21 22:44:00 CST), 1647873900 (2022-03-21 22:45:00 CST), 1647873960 (2022-03-21 22:46:00 CST), 1647874020 (2022-03-21 22:47:00 CST), 1647874140 (2022-03-21 22:49:00 CST), 1647874200 (2022-03-21 22:50:00 CST), 1647874260 (2022-03-21 22:51:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.net.udp.in_errors
+       Timestamps: 1647873360 (2022-03-21 22:36:00 CST), 1647873420 (2022-03-21 22:37:00 CST), 1647873480 (2022-03-21 22:38:00 CST), 1647873600 (2022-03-21 22:40:00 CST), 1647873660 (2022-03-21 22:41:00 CST), 1647873840 (2022-03-21 22:44:00 CST), 1647873900 (2022-03-21 22:45:00 CST), 1647873960 (2022-03-21 22:46:00 CST), 1647874200 (2022-03-21 22:50:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice-0->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647873300 (2022-03-21 22:35:00 CST), 1647873960 (2022-03-21 22:46:00 CST), 1647874020 (2022-03-21 22:47:00 CST), 1647874080 (2022-03-21 22:48:00 CST), 1647874140 (2022-03-21 22:49:00 CST), 1647874200 (2022-03-21 22:50:00 CST), 1647874260 (2022-03-21 22:51:00 CST), 1647874320 (2022-03-21 22:52:00 CST), 1647874380 (2022-03-21 22:53:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-2 | Attribute: at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:94)
+       Timestamps: 1647874080 (2022-03-21 22:48:00 CST), 1647874380 (2022-03-21 22:53:00 CST), 1647874500 (2022-03-21 22:55:00 CST), 1647874560 (2022-03-21 22:56:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   log | cartservice-2 | at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:94) | 1647874680 (2022-03-21 22:58:00 CST)
+   log | cartservice-2 | at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:94) | 1647874740 (2022-03-21 22:59:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

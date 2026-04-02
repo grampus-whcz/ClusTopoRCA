@@ -1,0 +1,53 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1430_1500
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 14:30:00 CST → 2022-03-21 14:34:00 CST (Δ = 240 sec)
+   Total Anomalies: 10
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.productcatalogservice2-0 | Attribute: container_memory_mapped_file
+       Timestamps: 1647844260 (2022-03-21 14:31:00 CST), 1647844320 (2022-03-21 14:32:00 CST), 1647844380 (2022-03-21 14:33:00 CST), 1647844440 (2022-03-21 14:34:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.load.15
+       Timestamps: 1647844200 (2022-03-21 14:30:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: "POST /api/v2/spans HTTP/1.1<:code202:>
+       Timestamps: 1647844200 (2022-03-21 14:30:00 CST), 1647844260 (2022-03-21 14:31:00 CST), 1647844320 (2022-03-21 14:32:00 CST), 1647844380 (2022-03-21 14:33:00 CST), 1647844440 (2022-03-21 14:34:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 14:47:00 CST → 2022-03-21 14:54:00 CST (Δ = 420 sec)
+   Total Anomalies: 9
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.productcatalogservice2-0 | Attribute: container_memory_mapped_file
+       Timestamps: 1647845580 (2022-03-21 14:53:00 CST), 1647845640 (2022-03-21 14:54:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647845220 (2022-03-21 14:47:00 CST), 1647845280 (2022-03-21 14:48:00 CST), 1647845340 (2022-03-21 14:49:00 CST), 1647845400 (2022-03-21 14:50:00 CST), 1647845460 (2022-03-21 14:51:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.load.15
+       Timestamps: 1647845520 (2022-03-21 14:52:00 CST), 1647845580 (2022-03-21 14:53:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-6.productcatalogservice2-0 | container_memory_mapped_file | 1647844560 (2022-03-21 14:36:00 CST)
+   metric_container | node-6.productcatalogservice2-0 | container_memory_mapped_file | 1647844620 (2022-03-21 14:37:00 CST)
+   metric_container | node-6.productcatalogservice2-0 | container_memory_mapped_file | 1647844800 (2022-03-21 14:40:00 CST)
+   metric_container | node-6.productcatalogservice2-0 | container_memory_mapped_file | 1647844860 (2022-03-21 14:41:00 CST)
+   metric_container | node-6.productcatalogservice2-0 | container_memory_mapped_file | 1647845100 (2022-03-21 14:45:00 CST)
+   metric_node | node-5 | system.load.15 | 1647845760 (2022-03-21 14:56:00 CST)
+   metric_container | node-6.productcatalogservice2-0 | container_memory_mapped_file | 1647845940 (2022-03-21 14:59:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

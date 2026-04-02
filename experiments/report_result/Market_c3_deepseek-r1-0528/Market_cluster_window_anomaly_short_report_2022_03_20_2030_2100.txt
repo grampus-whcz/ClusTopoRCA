@@ -1,0 +1,49 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 2030_2100
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 20:32:00 CST → 2022-03-20 20:33:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.net.packets_out.count
+       Times (2): 2022-03-20 20:32:00 CST, 2022-03-20 20:33:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 20:36:00 CST → 2022-03-20 20:47:00 CST (Δ = 660 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Times (7): 2022-03-20 20:36:00 CST, 2022-03-20 20:38:00 CST, 2022-03-20 20:39:00 CST, 2022-03-20 20:41:00 CST, 2022-03-20 20:43:00 CST, 2022-03-20 20:45:00 CST, 2022-03-20 20:47:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_file_descriptors
+       Times (3): 2022-03-20 20:37:00 CST, 2022-03-20 20:41:00 CST, 2022-03-20 20:43:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_outgoing_latency.csr
+       Times (11): 2022-03-20 20:37:00 CST, 2022-03-20 20:38:00 CST, 2022-03-20 20:39:00 CST, 2022-03-20 20:40:00 CST, 2022-03-20 20:41:00 CST, 2022-03-20 20:42:00 CST, 2022-03-20 20:43:00 CST, 2022-03-20 20:44:00 CST, 2022-03-20 20:45:00 CST, 2022-03-20 20:46:00 CST, 2022-03-20 20:47:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-1->cartservice-2:/hipstershop.CartService/GetCart | Attribute: frequency
+       Times (3): 2022-03-20 20:36:00 CST, 2022-03-20 20:38:00 CST, 2022-03-20 20:43:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 20:54:00 CST → 2022-03-20 20:57:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_file_descriptors
+       Times (3): 2022-03-20 20:55:00 CST, 2022-03-20 20:56:00 CST, 2022-03-20 20:57:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

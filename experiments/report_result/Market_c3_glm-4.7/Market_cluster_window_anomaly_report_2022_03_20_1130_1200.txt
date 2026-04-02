@@ -1,0 +1,76 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1130_1200
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 11:32:00 CST → 2022-03-20 11:33:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-1 | Attribute: container_fs_reads./dev/vda
+       Timestamps: 1647747120 (2022-03-20 11:32:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 | Attribute: istio_agent_go_memstats_stack_inuse_bytes
+       Timestamps: 1647747120 (2022-03-20 11:32:00 CST), 1647747180 (2022-03-20 11:33:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.mem.used
+       Timestamps: 1647747120 (2022-03-20 11:32:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 11:52:00 CST → 2022-03-20 11:52:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-1 | Attribute: container_fs_reads./dev/vda
+       Timestamps: 1647748320 (2022-03-20 11:52:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 | Attribute: istio_agent_go_memstats_stack_inuse_bytes
+       Timestamps: 1647748320 (2022-03-20 11:52:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.mem.used
+       Timestamps: 1647748320 (2022-03-20 11:52:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 11:54:00 CST → 2022-03-20 11:59:00 CST (Δ = 300 sec)
+   Total Anomalies: 10
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.currencyservice-1 | Attribute: container_fs_reads./dev/vda
+       Timestamps: 1647748500 (2022-03-20 11:55:00 CST), 1647748560 (2022-03-20 11:56:00 CST), 1647748620 (2022-03-20 11:57:00 CST), 1647748680 (2022-03-20 11:58:00 CST), 1647748740 (2022-03-20 11:59:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 | Attribute: istio_agent_go_memstats_stack_inuse_bytes
+       Timestamps: 1647748440 (2022-03-20 11:54:00 CST), 1647748680 (2022-03-20 11:58:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.mem.used
+       Timestamps: 1647748560 (2022-03-20 11:56:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647748620 (2022-03-20 11:57:00 CST), 1647748740 (2022-03-20 11:59:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.currencyservice-1 | container_fs_reads./dev/vda | 1647747300 (2022-03-20 11:35:00 CST)
+   metric_node | node-1 | system.mem.used | 1647747420 (2022-03-20 11:37:00 CST)
+   trace | frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | frequency | 1647747600 (2022-03-20 11:40:00 CST)
+   metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 | istio_agent_go_memstats_stack_inuse_bytes | 1647747660 (2022-03-20 11:41:00 CST)
+   metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 | istio_agent_go_memstats_stack_inuse_bytes | 1647748080 (2022-03-20 11:48:00 CST)
+   metric_container | node-5.currencyservice-1 | container_fs_reads./dev/vda | 1647748080 (2022-03-20 11:48:00 CST)
+   trace | frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | frequency | 1647748200 (2022-03-20 11:50:00 CST)
+   metric_node | node-1 | system.mem.used | 1647748200 (2022-03-20 11:50:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

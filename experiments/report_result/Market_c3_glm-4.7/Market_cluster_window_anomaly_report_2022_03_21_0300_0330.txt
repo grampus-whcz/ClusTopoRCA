@@ -1,0 +1,71 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0300_0330
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 03:01:00 CST → 2022-03-21 03:08:00 CST (Δ = 420 sec)
+   Total Anomalies: 15
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-2 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647802920 (2022-03-21 03:02:00 CST), 1647802980 (2022-03-21 03:03:00 CST), 1647803040 (2022-03-21 03:04:00 CST), 1647803100 (2022-03-21 03:05:00 CST), 1647803160 (2022-03-21 03:06:00 CST), 1647803280 (2022-03-21 03:08:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_bytes.http.0.
+       Timestamps: 1647802920 (2022-03-21 03:02:00 CST), 1647803040 (2022-03-21 03:04:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.udp.connect.num
+       Timestamps: 1647802980 (2022-03-21 03:03:00 CST), 1647803040 (2022-03-21 03:04:00 CST), 1647803100 (2022-03-21 03:05:00 CST), 1647803160 (2022-03-21 03:06:00 CST), 1647803220 (2022-03-21 03:07:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: paymentservice-1 | Attribute: info sds SDS: PUSH resource=default
+       Timestamps: 1647802860 (2022-03-21 03:01:00 CST), 1647803040 (2022-03-21 03:04:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 03:10:00 CST → 2022-03-21 03:11:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-2 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647803400 (2022-03-21 03:10:00 CST), 1647803460 (2022-03-21 03:11:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.udp.connect.num
+       Timestamps: 1647803400 (2022-03-21 03:10:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 03:13:00 CST → 2022-03-21 03:18:00 CST (Δ = 300 sec)
+   Total Anomalies: 11
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_OperatingSystem_FreePhysicalMemorySize
+       Timestamps: 1647803580 (2022-03-21 03:13:00 CST), 1647803640 (2022-03-21 03:14:00 CST), 1647803700 (2022-03-21 03:15:00 CST), 1647803760 (2022-03-21 03:16:00 CST), 1647803820 (2022-03-21 03:17:00 CST), 1647803880 (2022-03-21 03:18:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-2 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647803580 (2022-03-21 03:13:00 CST), 1647803640 (2022-03-21 03:14:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_bytes.http.0.
+       Timestamps: 1647803640 (2022-03-21 03:14:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: paymentservice-1 | Attribute: info sds SDS: PUSH resource=default
+       Timestamps: 1647803640 (2022-03-21 03:14:00 CST), 1647803700 (2022-03-21 03:15:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q | istio_request_bytes.http.0. | 1647804120 (2022-03-21 03:22:00 CST)
+   metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q | istio_request_bytes.http.0. | 1647804360 (2022-03-21 03:26:00 CST)
+   log | paymentservice-1 | info sds SDS: PUSH resource=default | 1647804540 (2022-03-21 03:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

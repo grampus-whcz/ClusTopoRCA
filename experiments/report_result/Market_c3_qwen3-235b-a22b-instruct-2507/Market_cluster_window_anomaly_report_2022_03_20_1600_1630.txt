@@ -1,0 +1,31 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1600_1630
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 16:20:00 CST → 2022-03-20 16:23:00 CST (Δ = 180 sec)
+   Total Anomalies: 5
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_fs_writes_MB./dev/vda
+       Timestamps: 1647764400 (2022-03-20 16:20:00 CST), 1647764580 (2022-03-20 16:23:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_request_bytes.http.500.
+       Timestamps: 1647764460 (2022-03-20 16:21:00 CST), 1647764520 (2022-03-20 16:22:00 CST), 1647764580 (2022-03-20 16:23:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-6.cartservice2-0 | container_fs_writes_MB./dev/vda | 1647763440 (2022-03-20 16:04:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_request_bytes.http.500. | 1647763860 (2022-03-20 16:11:00 CST)
+   metric_container | node-6.cartservice2-0 | container_fs_writes_MB./dev/vda | 1647764100 (2022-03-20 16:15:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_request_bytes.http.500. | 1647764160 (2022-03-20 16:16:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_request_bytes.http.500. | 1647764760 (2022-03-20 16:26:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_request_bytes.http.500. | 1647764820 (2022-03-20 16:27:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_request_bytes.http.500. | 1647764940 (2022-03-20 16:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

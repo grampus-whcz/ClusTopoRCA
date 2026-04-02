@@ -1,0 +1,47 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1100_1130
+================================================================================
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 11:14:00 CST → 2022-03-20 11:20:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: jvm_memory_MB_max.nonheap
+       Times (2): 2022-03-20 11:18:00 CST, 2022-03-20 11:19:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-0) | Attribute: container_cpu_cfs_periods
+       Times (7): 2022-03-20 11:14:00 CST, 2022-03-20 11:15:00 CST, 2022-03-20 11:16:00 CST, 2022-03-20 11:17:00 CST, 2022-03-20 11:18:00 CST, 2022-03-20 11:19:00 CST, 2022-03-20 11:20:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_duration_milliseconds.http.200.
+       Times (2): 2022-03-20 11:16:00 CST, 2022-03-20 11:17:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-2) | Attribute: system.mem.total
+       Times (2): 2022-03-20 11:17:00 CST, 2022-03-20 11:20:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-0 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 11:22:00 CST → 2022-03-20 11:24:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway (Original: istio-egressgateway-7bfdcc9d86-g2d4q) | Attribute: istio_request_duration_milliseconds.http.200.
+       Times (2): 2022-03-20 11:23:00 CST, 2022-03-20 11:24:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: istio-egressgateway-7bfdcc9d86-g2d4q (Cleaned: istio-egressgateway, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

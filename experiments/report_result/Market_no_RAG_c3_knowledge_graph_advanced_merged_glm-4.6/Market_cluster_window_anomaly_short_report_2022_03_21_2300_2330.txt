@@ -1,0 +1,64 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 2300_2330
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 23:00:00 CST → 2022-03-21 23:02:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_tcp_connections_closed.-
+       Times (2): 2022-03-21 23:00:00 CST, 2022-03-21 23:02:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.load.15
+       Times (2): 2022-03-21 23:00:00 CST, 2022-03-21 23:02:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 23:15:00 CST → 2022-03-21 23:26:00 CST (Δ = 660 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (5): 2022-03-21 23:22:00 CST, 2022-03-21 23:23:00 CST, 2022-03-21 23:24:00 CST, 2022-03-21 23:25:00 CST, 2022-03-21 23:26:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: recommendationservice (Original: node-6.recommendationservice2-0) | Attribute: container_memory_rss
+       Times (5): 2022-03-21 23:15:00 CST, 2022-03-21 23:17:00 CST, 2022-03-21 23:18:00 CST, 2022-03-21 23:20:00 CST, 2022-03-21 23:23:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_tcp_connections_closed.-
+       Times (5): 2022-03-21 23:17:00 CST, 2022-03-21 23:19:00 CST, 2022-03-21 23:20:00 CST, 2022-03-21 23:21:00 CST, 2022-03-21 23:26:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.load.15
+       Times (2): 2022-03-21 23:15:00 CST, 2022-03-21 23:16:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.recommendationservice2-0 (Cleaned: recommendationservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 23:28:00 CST → 2022-03-21 23:29:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: recommendationservice (Original: node-6.recommendationservice2-0) | Attribute: container_memory_rss
+       Times (2): 2022-03-21 23:28:00 CST, 2022-03-21 23:29:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.recommendationservice2-0 (Cleaned: recommendationservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 7
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

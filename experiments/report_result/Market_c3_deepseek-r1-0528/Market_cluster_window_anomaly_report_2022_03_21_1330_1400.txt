@@ -1,0 +1,70 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1330_1400
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 13:30:00 CST → 2022-03-21 13:35:00 CST (Δ = 300 sec)
+   Total Anomalies: 9
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_MemoryPool_PeakUsage_used.Survivor_Space
+       Timestamps: 1647840600 (2022-03-21 13:30:00 CST), 1647840660 (2022-03-21 13:31:00 CST), 1647840720 (2022-03-21 13:32:00 CST), 1647840780 (2022-03-21 13:33:00 CST), 1647840840 (2022-03-21 13:34:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.source.adservice2.jaeger-collector | Attribute: istio_request_bytes.grpc.200.13.0
+       Timestamps: 1647840780 (2022-03-21 13:33:00 CST), 1647840900 (2022-03-21 13:35:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->frontend2-0:hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647840780 (2022-03-21 13:33:00 CST), 1647840840 (2022-03-21 13:34:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 13:37:00 CST → 2022-03-21 13:55:00 CST (Δ = 1080 sec)
+   Total Anomalies: 29
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_MemoryPool_PeakUsage_used.Survivor_Space
+       Timestamps: 1647841260 (2022-03-21 13:41:00 CST), 1647841380 (2022-03-21 13:43:00 CST), 1647841500 (2022-03-21 13:45:00 CST), 1647841620 (2022-03-21 13:47:00 CST), 1647841860 (2022-03-21 13:51:00 CST), 1647841920 (2022-03-21 13:52:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_sockets
+       Timestamps: 1647841200 (2022-03-21 13:40:00 CST), 1647841380 (2022-03-21 13:43:00 CST), 1647841440 (2022-03-21 13:44:00 CST), 1647841620 (2022-03-21 13:47:00 CST), 1647841740 (2022-03-21 13:49:00 CST), 1647841920 (2022-03-21 13:52:00 CST), 1647842100 (2022-03-21 13:55:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.source.adservice2.jaeger-collector | Attribute: istio_request_bytes.grpc.200.13.0
+       Timestamps: 1647841080 (2022-03-21 13:38:00 CST), 1647841380 (2022-03-21 13:43:00 CST), 1647841440 (2022-03-21 13:44:00 CST), 1647841500 (2022-03-21 13:45:00 CST), 1647841560 (2022-03-21 13:46:00 CST), 1647841740 (2022-03-21 13:49:00 CST), 1647842040 (2022-03-21 13:54:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->frontend2-0:hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647841020 (2022-03-21 13:37:00 CST), 1647841140 (2022-03-21 13:39:00 CST), 1647841320 (2022-03-21 13:42:00 CST), 1647841980 (2022-03-21 13:53:00 CST), 1647842040 (2022-03-21 13:54:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-1 | Attribute: ava.lang.NullPointerException
+       Timestamps: 1647841080 (2022-03-21 13:38:00 CST), 1647841680 (2022-03-21 13:48:00 CST), 1647841800 (2022-03-21 13:50:00 CST), 1647842040 (2022-03-21 13:54:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 13:58:00 CST → 2022-03-21 13:59:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_sockets
+       Timestamps: 1647842280 (2022-03-21 13:58:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.source.adservice2.jaeger-collector | Attribute: istio_request_bytes.grpc.200.13.0
+       Timestamps: 1647842280 (2022-03-21 13:58:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->frontend2-0:hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647842340 (2022-03-21 13:59:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,69 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1900_1930
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 19:00:00 CST → 2022-03-21 19:10:00 CST (Δ = 600 sec)
+   Repeated Entity-Attribute Pairs: 6
+
+   📝 Metric Service Anomalies:
+     • Entity: currencyservice-grpc | Attribute: count
+       Times (2): 2022-03-21 19:05:00 CST, 2022-03-21 19:08:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-0 | Attribute: container_memory_failcnt
+       Times (7): 2022-03-21 19:00:00 CST, 2022-03-21 19:01:00 CST, 2022-03-21 19:02:00 CST, 2022-03-21 19:03:00 CST, 2022-03-21 19:04:00 CST, 2022-03-21 19:05:00 CST, 2022-03-21 19:06:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.grpc.200.14.0
+       Times (3): 2022-03-21 19:05:00 CST, 2022-03-21 19:09:00 CST, 2022-03-21 19:10:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.cpu.pct_usage
+       Times (3): 2022-03-21 19:01:00 CST, 2022-03-21 19:05:00 CST, 2022-03-21 19:07:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->cartservice-0:/hipstershop.CartService/GetCart | Attribute: frequency
+       Times (2): 2022-03-21 19:00:00 CST, 2022-03-21 19:06:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+       Times (8): 2022-03-21 19:00:00 CST, 2022-03-21 19:01:00 CST, 2022-03-21 19:02:00 CST, 2022-03-21 19:04:00 CST, 2022-03-21 19:05:00 CST, 2022-03-21 19:06:00 CST, 2022-03-21 19:08:00 CST, 2022-03-21 19:10:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 19:12:00 CST → 2022-03-21 19:17:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 3
+
+   📝 Metric Service Anomalies:
+     • Entity: currencyservice-grpc | Attribute: count
+       Times (2): 2022-03-21 19:12:00 CST, 2022-03-21 19:15:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.grpc.200.14.0
+       Times (3): 2022-03-21 19:12:00 CST, 2022-03-21 19:14:00 CST, 2022-03-21 19:16:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.cpu.pct_usage
+       Times (2): 2022-03-21 19:13:00 CST, 2022-03-21 19:17:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 19:21:00 CST → 2022-03-21 19:23:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.cpu.pct_usage
+       Times (2): 2022-03-21 19:21:00 CST, 2022-03-21 19:23:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->cartservice-0:/hipstershop.CartService/GetCart | Attribute: frequency
+       Times (2): 2022-03-21 19:21:00 CST, 2022-03-21 19:22:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 11
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

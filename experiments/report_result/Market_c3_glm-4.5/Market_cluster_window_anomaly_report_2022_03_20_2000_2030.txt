@@ -1,0 +1,60 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 2000_2030
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 20:00:00 CST → 2022-03-20 20:19:00 CST (Δ = 1140 sec)
+   Total Anomalies: 38
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Timestamps: 1647777600 (2022-03-20 20:00:00 CST), 1647778140 (2022-03-20 20:09:00 CST), 1647778200 (2022-03-20 20:10:00 CST), 1647778380 (2022-03-20 20:13:00 CST), 1647778500 (2022-03-20 20:15:00 CST), 1647778620 (2022-03-20 20:17:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.cartservice-0 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647777780 (2022-03-20 20:03:00 CST), 1647777960 (2022-03-20 20:06:00 CST), 1647778020 (2022-03-20 20:07:00 CST), 1647778140 (2022-03-20 20:09:00 CST), 1647778200 (2022-03-20 20:10:00 CST), 1647778260 (2022-03-20 20:11:00 CST), 1647778320 (2022-03-20 20:12:00 CST), 1647778380 (2022-03-20 20:13:00 CST), 1647778500 (2022-03-20 20:15:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-0.destination.frontend.cartservice | Attribute: istio_requests.grpc.200.14.0
+       Timestamps: 1647777720 (2022-03-20 20:02:00 CST), 1647777780 (2022-03-20 20:03:00 CST), 1647777840 (2022-03-20 20:04:00 CST), 1647777900 (2022-03-20 20:05:00 CST), 1647778020 (2022-03-20 20:07:00 CST), 1647778080 (2022-03-20 20:08:00 CST), 1647778140 (2022-03-20 20:09:00 CST), 1647778200 (2022-03-20 20:10:00 CST), 1647778320 (2022-03-20 20:12:00 CST), 1647778380 (2022-03-20 20:13:00 CST), 1647778440 (2022-03-20 20:14:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.io.r_s
+       Timestamps: 1647778260 (2022-03-20 20:11:00 CST), 1647778380 (2022-03-20 20:13:00 CST), 1647778680 (2022-03-20 20:18:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice-1->productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647777600 (2022-03-20 20:00:00 CST), 1647777660 (2022-03-20 20:01:00 CST), 1647777720 (2022-03-20 20:02:00 CST), 1647778260 (2022-03-20 20:11:00 CST), 1647778500 (2022-03-20 20:15:00 CST), 1647778740 (2022-03-20 20:19:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Timestamps: 1647778440 (2022-03-20 20:14:00 CST), 1647778560 (2022-03-20 20:16:00 CST), 1647778740 (2022-03-20 20:19:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 20:21:00 CST → 2022-03-20 20:25:00 CST (Δ = 240 sec)
+   Total Anomalies: 9
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Timestamps: 1647778860 (2022-03-20 20:21:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.io.r_s
+       Timestamps: 1647778860 (2022-03-20 20:21:00 CST), 1647778980 (2022-03-20 20:23:00 CST), 1647779040 (2022-03-20 20:24:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Timestamps: 1647778860 (2022-03-20 20:21:00 CST), 1647778920 (2022-03-20 20:22:00 CST), 1647778980 (2022-03-20 20:23:00 CST), 1647779040 (2022-03-20 20:24:00 CST), 1647779100 (2022-03-20 20:25:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.cartservice-0 | container_fs_usage_MB./dev/vda1 | 1647779220 (2022-03-20 20:27:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co | 1647779340 (2022-03-20 20:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

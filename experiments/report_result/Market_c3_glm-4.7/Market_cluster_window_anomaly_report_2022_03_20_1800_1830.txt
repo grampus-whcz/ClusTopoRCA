@@ -1,0 +1,69 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1800_1830
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 18:00:00 CST → 2022-03-20 18:09:00 CST (Δ = 540 sec)
+   Total Anomalies: 22
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647770400 (2022-03-20 18:00:00 CST), 1647770520 (2022-03-20 18:02:00 CST), 1647770580 (2022-03-20 18:03:00 CST), 1647770640 (2022-03-20 18:04:00 CST), 1647770700 (2022-03-20 18:05:00 CST), 1647770820 (2022-03-20 18:07:00 CST), 1647770880 (2022-03-20 18:08:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_fs_writes./dev/vda
+       Timestamps: 1647770460 (2022-03-20 18:01:00 CST), 1647770640 (2022-03-20 18:04:00 CST), 1647770940 (2022-03-20 18:09:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: shippingservice-1.source.shippingservice.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647770400 (2022-03-20 18:00:00 CST), 1647770460 (2022-03-20 18:01:00 CST), 1647770520 (2022-03-20 18:02:00 CST), 1647770580 (2022-03-20 18:03:00 CST), 1647770640 (2022-03-20 18:04:00 CST), 1647770700 (2022-03-20 18:05:00 CST), 1647770760 (2022-03-20 18:06:00 CST), 1647770820 (2022-03-20 18:07:00 CST), 1647770880 (2022-03-20 18:08:00 CST), 1647770940 (2022-03-20 18:09:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder | Attribute: frequency
+       Timestamps: 1647770880 (2022-03-20 18:08:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-1 | Attribute: aused by: java.net.SocketException: Socket closed
+       Timestamps: 1647770640 (2022-03-20 18:04:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 18:11:00 CST → 2022-03-20 18:15:00 CST (Δ = 240 sec)
+   Total Anomalies: 11
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647771060 (2022-03-20 18:11:00 CST), 1647771180 (2022-03-20 18:13:00 CST), 1647771300 (2022-03-20 18:15:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_fs_writes./dev/vda
+       Timestamps: 1647771060 (2022-03-20 18:11:00 CST), 1647771180 (2022-03-20 18:13:00 CST), 1647771240 (2022-03-20 18:14:00 CST), 1647771300 (2022-03-20 18:15:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: shippingservice-1.source.shippingservice.jaeger-collector | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647771120 (2022-03-20 18:12:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder | Attribute: frequency
+       Timestamps: 1647771060 (2022-03-20 18:11:00 CST), 1647771180 (2022-03-20 18:13:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-1 | Attribute: aused by: java.net.SocketException: Socket closed
+       Timestamps: 1647771300 (2022-03-20 18:15:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   log | cartservice-1 | aused by: java.net.SocketException: Socket closed | 1647771420 (2022-03-20 18:17:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit | 1647771480 (2022-03-20 18:18:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit | 1647771660 (2022-03-20 18:21:00 CST)
+   trace | frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder | frequency | 1647771660 (2022-03-20 18:21:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit | 1647771780 (2022-03-20 18:23:00 CST)
+   log | cartservice-1 | aused by: java.net.SocketException: Socket closed | 1647771840 (2022-03-20 18:24:00 CST)
+   log | cartservice-1 | aused by: java.net.SocketException: Socket closed | 1647771960 (2022-03-20 18:26:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,76 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 2200_2230
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 22:07:00 CST → 2022-03-20 22:20:00 CST (Δ = 780 sec)
+   Total Anomalies: 32
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647785340 (2022-03-20 22:09:00 CST), 1647785580 (2022-03-20 22:13:00 CST), 1647785700 (2022-03-20 22:15:00 CST), 1647785760 (2022-03-20 22:16:00 CST), 1647785940 (2022-03-20 22:19:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.recommendationservice-0 | Attribute: container_memory_failures.hierarchy.pgfault
+       Timestamps: 1647785280 (2022-03-20 22:08:00 CST), 1647785340 (2022-03-20 22:09:00 CST), 1647785400 (2022-03-20 22:10:00 CST), 1647785460 (2022-03-20 22:11:00 CST), 1647785520 (2022-03-20 22:12:00 CST), 1647785580 (2022-03-20 22:13:00 CST), 1647785640 (2022-03-20 22:14:00 CST), 1647785700 (2022-03-20 22:15:00 CST), 1647785760 (2022-03-20 22:16:00 CST), 1647785820 (2022-03-20 22:17:00 CST), 1647785940 (2022-03-20 22:19:00 CST), 1647786000 (2022-03-20 22:20:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: productcatalogservice2-0.source.productcatalogservice2.basic-tid | Attribute: istio_agent_startup_duration_seconds
+       Timestamps: 1647785220 (2022-03-20 22:07:00 CST), 1647785460 (2022-03-20 22:11:00 CST), 1647785520 (2022-03-20 22:12:00 CST), 1647785700 (2022-03-20 22:15:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.io.await
+       Timestamps: 1647785280 (2022-03-20 22:08:00 CST), 1647785340 (2022-03-20 22:09:00 CST), 1647785400 (2022-03-20 22:10:00 CST), 1647785460 (2022-03-20 22:11:00 CST), 1647785520 (2022-03-20 22:12:00 CST), 1647785580 (2022-03-20 22:13:00 CST), 1647785640 (2022-03-20 22:14:00 CST), 1647785700 (2022-03-20 22:15:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice2-0->productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647785520 (2022-03-20 22:12:00 CST), 1647785700 (2022-03-20 22:15:00 CST), 1647785880 (2022-03-20 22:18:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 22:22:00 CST → 2022-03-20 22:23:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647786180 (2022-03-20 22:23:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.recommendationservice-0 | Attribute: container_memory_failures.hierarchy.pgfault
+       Timestamps: 1647786120 (2022-03-20 22:22:00 CST), 1647786180 (2022-03-20 22:23:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: productcatalogservice2-0.source.productcatalogservice2.basic-tid | Attribute: istio_agent_startup_duration_seconds
+       Timestamps: 1647786180 (2022-03-20 22:23:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 22:25:00 CST → 2022-03-20 22:26:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647786360 (2022-03-20 22:26:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.recommendationservice-0 | Attribute: container_memory_failures.hierarchy.pgfault
+       Timestamps: 1647786300 (2022-03-20 22:25:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice2-0->productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts | Attribute: duration
+       Timestamps: 1647786300 (2022-03-20 22:25:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ | 1647784800 (2022-03-20 22:00:00 CST)
+   metric_mesh | productcatalogservice2-0.source.productcatalogservice2.basic-tid | istio_agent_startup_duration_seconds | 1647784800 (2022-03-20 22:00:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ | 1647784980 (2022-03-20 22:03:00 CST)
+   metric_mesh | productcatalogservice2-0.source.productcatalogservice2.basic-tid | istio_agent_startup_duration_seconds | 1647785040 (2022-03-20 22:04:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

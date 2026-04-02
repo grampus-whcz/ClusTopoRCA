@@ -1,0 +1,51 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0500_0530
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 05:00:00 CST → 2022-03-21 05:03:00 CST (Δ = 180 sec)
+   Total Anomalies: 5
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Timestamps: 1647810000 (2022-03-21 05:00:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-0.destination.checkoutservice.cartservice | Attribute: istio_agent_go_info.go1.16.6
+       Timestamps: 1647810000 (2022-03-21 05:00:00 CST), 1647810060 (2022-03-21 05:01:00 CST), 1647810120 (2022-03-21 05:02:00 CST), 1647810180 (2022-03-21 05:03:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 05:06:00 CST → 2022-03-21 05:17:00 CST (Δ = 660 sec)
+   Total Anomalies: 26
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Timestamps: 1647810420 (2022-03-21 05:07:00 CST), 1647810480 (2022-03-21 05:08:00 CST), 1647810840 (2022-03-21 05:14:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-0 | Attribute: container_cpu_cfs_periods
+       Timestamps: 1647810660 (2022-03-21 05:11:00 CST), 1647810720 (2022-03-21 05:12:00 CST), 1647810780 (2022-03-21 05:13:00 CST), 1647810840 (2022-03-21 05:14:00 CST), 1647810900 (2022-03-21 05:15:00 CST), 1647810960 (2022-03-21 05:16:00 CST), 1647811020 (2022-03-21 05:17:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-0.destination.checkoutservice.cartservice | Attribute: istio_agent_go_info.go1.16.6
+       Timestamps: 1647810360 (2022-03-21 05:06:00 CST), 1647810720 (2022-03-21 05:12:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.io.avg_q_sz
+       Timestamps: 1647810600 (2022-03-21 05:10:00 CST), 1647810660 (2022-03-21 05:11:00 CST), 1647810720 (2022-03-21 05:12:00 CST), 1647810780 (2022-03-21 05:13:00 CST), 1647810840 (2022-03-21 05:14:00 CST), 1647810900 (2022-03-21 05:15:00 CST), 1647810960 (2022-03-21 05:16:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.CartService/AddItem | Attribute: duration
+       Timestamps: 1647810480 (2022-03-21 05:08:00 CST), 1647810540 (2022-03-21 05:09:00 CST), 1647810600 (2022-03-21 05:10:00 CST), 1647810720 (2022-03-21 05:12:00 CST), 1647810780 (2022-03-21 05:13:00 CST), 1647810840 (2022-03-21 05:14:00 CST), 1647810900 (2022-03-21 05:15:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_runtime | adservice2.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co | 1647811140 (2022-03-21 05:19:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

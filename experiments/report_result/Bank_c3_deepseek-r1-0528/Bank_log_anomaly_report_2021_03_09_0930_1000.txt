@@ -1,0 +1,55 @@
+
+📝 Detailed Log Anomaly Report (Beijing Time = UTC+8):
+================================================================================
+
+Pod: IG01
+  - Pattern ID 3 (1 anomalies):
+      Template: 
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 12 (1 anomalies):
+      Template: [GC (Allocation Failure) [ParNew: secs] secs] [Times: user=sys=., real=secs]
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 13 (1 anomalies):
+      Template: [Full GC (Metadata GC Threshold) --04T07  [CMS2021--04T07  [CMS-concurrent-mark: /secs] [Times: user=sys=., real=secs]
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 25 (1 anomalies):
+      Template: [GC (Allocation Failure) --04T03  [ParNew: 838764K->838764K(943744K), secs]--04T03  [CMS2021--04T03  [CMS-concurrent-sweep: /secs] [Times: user=sys=., real=secs]
+      1615253940 (2021-03-09 09:39:00 CST)
+  - Pattern ID 33 (1 anomalies):
+      Template: INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler [http-nio-]
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 36 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built: Feb  UTC
+      1615254120 (2021-03-09 09:42:00 CST)
+  - Pattern ID 44 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the jav ...
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 70 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /tomcat/apache-tomcat-./webapps/log.Home IS UNDEFINED has finished in ms
+      1615253820 (2021-03-09 09:37:00 CST)
+  - Pattern ID 76 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.core.StandardWrapper.unload Waiting for instance(s) to be deallocated for Servlet [dynamic]
+      1615254120 (2021-03-09 09:42:00 CST)
+  - Pattern ID 94 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type (value and a value of type ...
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 100 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [java.lang.ThreadLocal] (va ...
+      1615253820 (2021-03-09 09:37:00 CST)
+  - Pattern ID 110 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina OpenJDK -Bit Server VM warning: UseCMSCompactAtFullCollection is deprecated and will likely be removed in a ...
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 151 (1 anomalies):
+      Template: 
+      1615255140 (2021-03-09 09:59:00 CST)
+  - Pattern ID 154 (1 anomalies):
+      Template: SEVERE [http-nio--exec-] org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun java.lang.OutOfMemoryError: Java heap space
+      1615254000 (2021-03-09 09:40:00 CST)
+  - Pattern ID 168 (1 anomalies):
+      Template: [Full GC [CMS: secs] [Metaspace: secs] [Times: user=sys=., real=secs]
+      1615254120 (2021-03-09 09:42:00 CST)
+  - Pattern ID 174 (1 anomalies):
+      Template: # User@Host: @ Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=;
+      1615254120 (2021-03-09 09:42:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).

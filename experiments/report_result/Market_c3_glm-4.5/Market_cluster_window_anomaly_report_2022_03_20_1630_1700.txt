@@ -1,0 +1,76 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1630_1700
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 16:37:00 CST → 2022-03-20 16:39:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_fs_inodes./dev/vda1
+       Timestamps: 1647765420 (2022-03-20 16:37:00 CST), 1647765480 (2022-03-20 16:38:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_tcp_connections_opened.UH
+       Timestamps: 1647765540 (2022-03-20 16:39:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: emailservice-2 | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Timestamps: 1647765480 (2022-03-20 16:38:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 16:43:00 CST → 2022-03-20 16:44:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_fs_inodes./dev/vda1
+       Timestamps: 1647765840 (2022-03-20 16:44:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_tcp_connections_opened.UH
+       Timestamps: 1647765780 (2022-03-20 16:43:00 CST), 1647765840 (2022-03-20 16:44:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 16:52:00 CST → 2022-03-20 16:59:00 CST (Δ = 420 sec)
+   Total Anomalies: 12
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_fs_inodes./dev/vda1
+       Timestamps: 1647766320 (2022-03-20 16:52:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_tcp_connections_opened.UH
+       Timestamps: 1647766500 (2022-03-20 16:55:00 CST), 1647766680 (2022-03-20 16:58:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.mem.free
+       Timestamps: 1647766500 (2022-03-20 16:55:00 CST), 1647766560 (2022-03-20 16:56:00 CST), 1647766620 (2022-03-20 16:57:00 CST), 1647766740 (2022-03-20 16:59:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: cartservice-0->cartservice-0:HGET | Attribute: frequency
+       Timestamps: 1647766320 (2022-03-20 16:52:00 CST), 1647766380 (2022-03-20 16:53:00 CST), 1647766440 (2022-03-20 16:54:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: emailservice-2 | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Timestamps: 1647766440 (2022-03-20 16:54:00 CST), 1647766560 (2022-03-20 16:56:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_tcp_connections_opened.UH | 1647765000 (2022-03-20 16:30:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_tcp_connections_opened.UH | 1647765060 (2022-03-20 16:31:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_tcp_connections_opened.UH | 1647765180 (2022-03-20 16:33:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_tcp_connections_opened.UH | 1647765300 (2022-03-20 16:35:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_tcp_connections_opened.UH | 1647766020 (2022-03-20 16:47:00 CST)
+   metric_mesh | adservice2-0.destination.frontend2.adservice2 | istio_tcp_connections_opened.UH | 1647766080 (2022-03-20 16:48:00 CST)
+   log | emailservice-2 | at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171) | 1647766200 (2022-03-20 16:50:00 CST)
+   trace | cartservice-0->cartservice-0:HGET | frequency | 1647766200 (2022-03-20 16:50:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

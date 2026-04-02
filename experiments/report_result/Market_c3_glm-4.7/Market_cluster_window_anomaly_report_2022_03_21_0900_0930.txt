@@ -1,0 +1,68 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0900_0930
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 09:00:00 CST → 2022-03-21 09:05:00 CST (Δ = 300 sec)
+   Total Anomalies: 6
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647824400 (2022-03-21 09:00:00 CST), 1647824460 (2022-03-21 09:01:00 CST), 1647824520 (2022-03-21 09:02:00 CST), 1647824580 (2022-03-21 09:03:00 CST), 1647824640 (2022-03-21 09:04:00 CST), 1647824700 (2022-03-21 09:05:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 09:07:00 CST → 2022-03-21 09:12:00 CST (Δ = 300 sec)
+   Total Anomalies: 8
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_used.C
+       Timestamps: 1647824820 (2022-03-21 09:07:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_request_duration_milliseconds.http.202.
+       Timestamps: 1647824820 (2022-03-21 09:07:00 CST), 1647824880 (2022-03-21 09:08:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations | Attribute: duration
+       Timestamps: 1647824880 (2022-03-21 09:08:00 CST), 1647824940 (2022-03-21 09:09:00 CST), 1647825000 (2022-03-21 09:10:00 CST), 1647825060 (2022-03-21 09:11:00 CST), 1647825120 (2022-03-21 09:12:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 09:19:00 CST → 2022-03-21 09:25:00 CST (Δ = 360 sec)
+   Total Anomalies: 7
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_used.C
+       Timestamps: 1647825720 (2022-03-21 09:22:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-1 | Attribute: container_memory_failures.hierarchy.pgfault
+       Timestamps: 1647825540 (2022-03-21 09:19:00 CST), 1647825600 (2022-03-21 09:20:00 CST), 1647825660 (2022-03-21 09:21:00 CST), 1647825780 (2022-03-21 09:23:00 CST), 1647825840 (2022-03-21 09:24:00 CST), 1647825900 (2022-03-21 09:25:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 09:28:00 CST → 2022-03-21 09:29:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_used.C
+       Timestamps: 1647826080 (2022-03-21 09:28:00 CST), 1647826140 (2022-03-21 09:29:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-1 | Attribute: container_memory_failures.hierarchy.pgfault
+       Timestamps: 1647826080 (2022-03-21 09:28:00 CST), 1647826140 (2022-03-21 09:29:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   trace | frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations | duration | 1647825240 (2022-03-21 09:14:00 CST)
+   trace | frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations | duration | 1647825300 (2022-03-21 09:15:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

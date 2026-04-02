@@ -1,0 +1,85 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_05_27 0200_0230
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-05-27 02:12:00 CST → 2020-05-27 02:14:00 CST (Δ = 120 sec)
+   Total Anomalies: 11
+
+   📝 Trace Anomalies:
+     • Entity: docker_001->docker_001:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590516780 (2020-05-27 02:13:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1590516720 (2020-05-27 02:12:00 CST), 1590516840 (2020-05-27 02:14:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590516780 (2020-05-27 02:13:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1590516840 (2020-05-27 02:14:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590516780 (2020-05-27 02:13:00 CST), 1590516840 (2020-05-27 02:14:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1590516840 (2020-05-27 02:14:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590516780 (2020-05-27 02:13:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1590516720 (2020-05-27 02:12:00 CST), 1590516840 (2020-05-27 02:14:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2020-05-27 02:16:00 CST → 2020-05-27 02:19:00 CST (Δ = 180 sec)
+   Total Anomalies: 12
+
+   📝 Metric A Anomalies:
+     • Entity: db_007 | Attribute: ZJ-001-073_Recv_total
+       Timestamps: 1590516960 (2020-05-27 02:16:00 CST), 1590517020 (2020-05-27 02:17:00 CST), 1590517080 (2020-05-27 02:18:00 CST), 1590517140 (2020-05-27 02:19:00 CST)
+     • Entity: db_007 | Attribute: ZJ-001-074_Send_total
+       Timestamps: 1590517080 (2020-05-27 02:18:00 CST)
+     • Entity: db_007 | Attribute: ZJ-002-038_LFParaWrite_Per_Sec
+       Timestamps: 1590516960 (2020-05-27 02:16:00 CST), 1590517020 (2020-05-27 02:17:00 CST), 1590517080 (2020-05-27 02:18:00 CST), 1590517140 (2020-05-27 02:19:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_003 | Attribute: frequency
+       Timestamps: 1590517020 (2020-05-27 02:17:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1590516960 (2020-05-27 02:16:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_015 | Attribute: frequency
+       Timestamps: 1590517020 (2020-05-27 02:17:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2020-05-27 02:23:00 CST → 2020-05-27 02:28:00 CST (Δ = 300 sec)
+   Total Anomalies: 18
+
+   📝 Metric A Anomalies:
+     • Entity: db_007 | Attribute: ZJ-001-074_Send_total
+       Timestamps: 1590517380 (2020-05-27 02:23:00 CST), 1590517560 (2020-05-27 02:26:00 CST)
+     • Entity: db_007 | Attribute: ZJ-002-037_DFParaWrite_Per_Sec
+       Timestamps: 1590517380 (2020-05-27 02:23:00 CST), 1590517500 (2020-05-27 02:25:00 CST), 1590517560 (2020-05-27 02:26:00 CST)
+
+   📝 Metric B Anomalies:
+     • Entity: osb_001 | Attribute: avg_time
+       Timestamps: 1590517440 (2020-05-27 02:24:00 CST), 1590517500 (2020-05-27 02:25:00 CST), 1590517560 (2020-05-27 02:26:00 CST)
+     • Entity: osb_001 | Attribute: num
+       Timestamps: 1590517680 (2020-05-27 02:28:00 CST)
+     • Entity: osb_001 | Attribute: succee_num
+       Timestamps: 1590517440 (2020-05-27 02:24:00 CST), 1590517500 (2020-05-27 02:25:00 CST), 1590517560 (2020-05-27 02:26:00 CST), 1590517680 (2020-05-27 02:28:00 CST)
+     • Entity: osb_001 | Attribute: succee_rate
+       Timestamps: 1590517440 (2020-05-27 02:24:00 CST), 1590517500 (2020-05-27 02:25:00 CST), 1590517560 (2020-05-27 02:26:00 CST), 1590517620 (2020-05-27 02:27:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_017 | Attribute: duration
+       Timestamps: 1590517560 (2020-05-27 02:26:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_A | db_007 | ZJ-002-037_DFParaWrite_Per_Sec | 1590517260 (2020-05-27 02:21:00 CST)
+   metric_A | db_007 | ZJ-001-074_Send_total | 1590517800 (2020-05-27 02:30:00 CST)
+   trace | docker_003->docker_003:LOCAL,db_007,local_method_010 | duration | 1590517800 (2020-05-27 02:30:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

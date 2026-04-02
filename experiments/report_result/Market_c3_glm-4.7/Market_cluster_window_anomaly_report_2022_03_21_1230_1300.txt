@@ -1,0 +1,63 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1230_1300
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 12:35:00 CST → 2022-03-21 12:52:00 CST (Δ = 1020 sec)
+   Total Anomalies: 43
+
+   📝 Metric Service Anomalies:
+     • Entity: checkoutservice-grpc | Attribute: rr
+       Timestamps: 1647837300 (2022-03-21 12:35:00 CST), 1647837360 (2022-03-21 12:36:00 CST), 1647837420 (2022-03-21 12:37:00 CST), 1647837480 (2022-03-21 12:38:00 CST), 1647837600 (2022-03-21 12:40:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.C
+       Timestamps: 1647837540 (2022-03-21 12:39:00 CST), 1647837780 (2022-03-21 12:43:00 CST), 1647837960 (2022-03-21 12:46:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.frontend2-0 | Attribute: container_fs_writes_MB./dev/vda
+       Timestamps: 1647837600 (2022-03-21 12:40:00 CST), 1647837780 (2022-03-21 12:43:00 CST), 1647837840 (2022-03-21 12:44:00 CST), 1647837960 (2022-03-21 12:46:00 CST), 1647838200 (2022-03-21 12:50:00 CST), 1647838260 (2022-03-21 12:51:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.source.checkoutservice.shippingservice | Attribute: istio_request_bytes.grpc.0.2.0
+       Timestamps: 1647837300 (2022-03-21 12:35:00 CST), 1647837360 (2022-03-21 12:36:00 CST), 1647837420 (2022-03-21 12:37:00 CST), 1647837480 (2022-03-21 12:38:00 CST), 1647837540 (2022-03-21 12:39:00 CST), 1647837600 (2022-03-21 12:40:00 CST), 1647837660 (2022-03-21 12:41:00 CST), 1647837720 (2022-03-21 12:42:00 CST), 1647837780 (2022-03-21 12:43:00 CST), 1647837840 (2022-03-21 12:44:00 CST), 1647837900 (2022-03-21 12:45:00 CST), 1647837960 (2022-03-21 12:46:00 CST), 1647838020 (2022-03-21 12:47:00 CST), 1647838080 (2022-03-21 12:48:00 CST), 1647838140 (2022-03-21 12:49:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.mem.total
+       Timestamps: 1647837840 (2022-03-21 12:44:00 CST), 1647837900 (2022-03-21 12:45:00 CST), 1647838080 (2022-03-21 12:48:00 CST), 1647838320 (2022-03-21 12:52:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.ShippingService/GetQuote | Attribute: duration
+       Timestamps: 1647838020 (2022-03-21 12:47:00 CST), 1647838080 (2022-03-21 12:48:00 CST), 1647838140 (2022-03-21 12:49:00 CST), 1647838200 (2022-03-21 12:50:00 CST), 1647838260 (2022-03-21 12:51:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: "POST /api/v2/spans HTTP/1.1<:code202:>
+       Timestamps: 1647838080 (2022-03-21 12:48:00 CST), 1647838140 (2022-03-21 12:49:00 CST), 1647838200 (2022-03-21 12:50:00 CST), 1647838260 (2022-03-21 12:51:00 CST), 1647838320 (2022-03-21 12:52:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 12:56:00 CST → 2022-03-21 12:58:00 CST (Δ = 120 sec)
+   Total Anomalies: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.C
+       Timestamps: 1647838680 (2022-03-21 12:58:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.frontend2-0 | Attribute: container_fs_writes_MB./dev/vda
+       Timestamps: 1647838620 (2022-03-21 12:57:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: "POST /api/v2/spans HTTP/1.1<:code202:>
+       Timestamps: 1647838560 (2022-03-21 12:56:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_node | node-4 | system.mem.total | 1647837120 (2022-03-21 12:32:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,59 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0330_0400
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 03:44:00 CST → 2022-03-21 03:45:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.T
+       Timestamps: 1647805440 (2022-03-21 03:44:00 CST), 1647805500 (2022-03-21 03:45:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647805440 (2022-03-21 03:44:00 CST), 1647805500 (2022-03-21 03:45:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 03:47:00 CST → 2022-03-21 03:51:00 CST (Δ = 240 sec)
+   Total Anomalies: 7
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.T
+       Timestamps: 1647805620 (2022-03-21 03:47:00 CST), 1647805800 (2022-03-21 03:50:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647805620 (2022-03-21 03:47:00 CST), 1647805680 (2022-03-21 03:48:00 CST), 1647805800 (2022-03-21 03:50:00 CST), 1647805860 (2022-03-21 03:51:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.grpc.200.0.0
+       Timestamps: 1647805740 (2022-03-21 03:49:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 03:55:00 CST → 2022-03-21 03:57:00 CST (Δ = 120 sec)
+   Total Anomalies: 6
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647806100 (2022-03-21 03:55:00 CST), 1647806160 (2022-03-21 03:56:00 CST), 1647806220 (2022-03-21 03:57:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.grpc.200.0.0
+       Timestamps: 1647806100 (2022-03-21 03:55:00 CST), 1647806160 (2022-03-21 03:56:00 CST), 1647806220 (2022-03-21 03:57:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.emailservice-1 | container_memory_cache | 1647805140 (2022-03-21 03:39:00 CST)
+   metric_mesh | istio-ingressgateway-565bffd4d-rn678 | istio_response_bytes.grpc.200.0.0 | 1647805140 (2022-03-21 03:39:00 CST)
+   metric_container | node-5.emailservice-1 | container_memory_cache | 1647806340 (2022-03-21 03:59:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

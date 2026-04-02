@@ -1,0 +1,38 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0630_0700
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 06:33:00 CST → 2022-03-21 06:58:00 CST (Δ = 1500 sec)
+   Repeated Entity-Attribute Pairs: 5 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: checkoutservice (Original: node-5.checkoutservice-0) | Attribute: container_memory_max_usage_MB
+       Times (6): 2022-03-21 06:35:00 CST, 2022-03-21 06:37:00 CST, 2022-03-21 06:39:00 CST, 2022-03-21 06:45:00 CST, 2022-03-21 06:46:00 CST, 2022-03-21 06:54:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.source.frontend.recommendationservice (Original: frontend-2.source.frontend.recommendationservice) | Attribute: istio_request_bytes.grpc.0.2.0
+       Times (14): 2022-03-21 06:33:00 CST, 2022-03-21 06:34:00 CST, 2022-03-21 06:35:00 CST, 2022-03-21 06:36:00 CST, 2022-03-21 06:37:00 CST, 2022-03-21 06:38:00 CST, 2022-03-21 06:40:00 CST, 2022-03-21 06:41:00 CST, 2022-03-21 06:42:00 CST, 2022-03-21 06:43:00 CST, 2022-03-21 06:44:00 CST, 2022-03-21 06:45:00 CST, 2022-03-21 06:46:00 CST, 2022-03-21 06:47:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.load.15
+       Times (5): 2022-03-21 06:44:00 CST, 2022-03-21 06:45:00 CST, 2022-03-21 06:48:00 CST, 2022-03-21 06:53:00 CST, 2022-03-21 06:54:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: UNKNOWN_PARENT->productcatalogservice-2:hipstershop.ProductCatalogService/ListProducts (Original: UNKNOWN_PARENT->productcatalogservice-2:hipstershop.ProductCatalogService/ListProducts) | Attribute: duration
+       Times (4): 2022-03-21 06:44:00 CST, 2022-03-21 06:45:00 CST, 2022-03-21 06:57:00 CST, 2022-03-21 06:58:00 CST
+
+   📝 Log Anomalies:
+     • Entity: recommendationservice (Original: recommendationservice-1) | Attribute: ava.lang.NullPointerException
+       Times (15): 2022-03-21 06:44:00 CST, 2022-03-21 06:45:00 CST, 2022-03-21 06:46:00 CST, 2022-03-21 06:47:00 CST, 2022-03-21 06:48:00 CST, 2022-03-21 06:49:00 CST, 2022-03-21 06:50:00 CST, 2022-03-21 06:51:00 CST, 2022-03-21 06:52:00 CST, 2022-03-21 06:53:00 CST, 2022-03-21 06:54:00 CST, 2022-03-21 06:55:00 CST, 2022-03-21 06:56:00 CST, 2022-03-21 06:57:00 CST, 2022-03-21 06:58:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-2.source.frontend.recommendationservice (Cleaned: frontend-2.source.frontend.recommendationservice, Score: 0.73)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

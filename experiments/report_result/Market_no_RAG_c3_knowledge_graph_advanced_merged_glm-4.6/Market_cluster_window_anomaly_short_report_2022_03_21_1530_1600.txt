@@ -1,0 +1,43 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1530_1600
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 15:33:00 CST → 2022-03-21 15:35:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice (Original: productcatalogservice-1) | Attribute: at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+       Times (3): 2022-03-21 15:33:00 CST, 2022-03-21 15:34:00 CST, 2022-03-21 15:35:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: productcatalogservice-1 (Cleaned: productcatalogservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 15:56:00 CST → 2022-03-21 15:59:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (4): 2022-03-21 15:56:00 CST, 2022-03-21 15:57:00 CST, 2022-03-21 15:58:00 CST, 2022-03-21 15:59:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: adservice (Original: node-5.adservice-2) | Attribute: container_cpu_cfs_throttled_periods
+       Times (4): 2022-03-21 15:56:00 CST, 2022-03-21 15:57:00 CST, 2022-03-21 15:58:00 CST, 2022-03-21 15:59:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice (Original: adservice-0.destination.frontend.adservice) | Attribute: istio_request_bytes.grpc.200.13.0
+       Times (4): 2022-03-21 15:56:00 CST, 2022-03-21 15:57:00 CST, 2022-03-21 15:58:00 CST, 2022-03-21 15:59:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.adservice-2 (Cleaned: adservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 4
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

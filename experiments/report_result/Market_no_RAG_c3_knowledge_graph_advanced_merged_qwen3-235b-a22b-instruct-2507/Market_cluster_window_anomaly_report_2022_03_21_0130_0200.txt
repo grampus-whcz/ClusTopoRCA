@@ -1,0 +1,66 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0130_0200
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 01:31:00 CST → 2022-03-21 01:34:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 6
+
+## Anomaly Breakdown
+- **Metric Container**: 3 anomalies
+- **Metric Node**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 01:33:00 CST (T2) to 2022-03-21 01:37:00 CST (4 minutes)
+**Total Anomalies**: 6
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.emailservice-0 (Cleaned: emailservice, Layer: EMAILSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: container_spec_cpu_quota(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.emailservice-0 (Cleaned: emailservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.73, Anomalies = 3, Attrs = system.udp.connect.num(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.emailservice-0 (Cleaned: emailservice)**: recommendationservice-1, cartservice-1, paymentservice, shippingservice-2, frontend
+
+#### Layer-wise Impact Analysis
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.emailservice-0 (Cleaned: emailservice, highest confidence score)
+2. Check node-5.emailservice-0 for 3 anomalies on attributes: container_spec_cpu_quota(3 times)
+3. Investigate anomalies starting at N/A for node-5.emailservice-0 (analysis window starts at 2022-03-21 01:33:00 CST (T2))
+4. Verify downstream dependencies of emailservice for cascading failures
+5. Check EMAILSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 4
+- metric_container | node-5.emailservice-0 (Cleaned: emailservice) | container_spec_cpu_quota | 2022-03-21 01:37:00 CST
+- metric_container | node-5.emailservice-0 (Cleaned: emailservice) | container_spec_cpu_quota | 2022-03-21 01:41:00 CST
+- metric_node | node-3 (Cleaned: node) | system.udp.connect.num | 2022-03-21 01:45:00 CST
+- metric_node | node-3 (Cleaned: node) | system.udp.connect.num | 2022-03-21 01:53:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

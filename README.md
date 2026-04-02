@@ -184,3 +184,7 @@ python -c "import pickle; data=pickle.load(open('index.pkl','rb')); print(f'记�
 
 # 方法2：快速加载faiss索引
 python -c "import faiss; idx=faiss.read_index('index.faiss'); print(f'记录数：{idx.ntotal}')"
+
+# copy framework
+1. cp -r /root/shared-nvme/work/agent/OpenRCA XXX
+2. replace "OmniTransfer_new" with a "OmniTransfer_new?", exclude files like "*.md, *.log, *.txt, *.json, *.ipynb"

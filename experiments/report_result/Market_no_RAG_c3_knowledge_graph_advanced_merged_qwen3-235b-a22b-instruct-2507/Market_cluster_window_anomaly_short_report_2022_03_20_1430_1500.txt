@@ -1,0 +1,30 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1430_1500
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 14:49:00 CST → 2022-03-20 14:55:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Times (2): 2022-03-20 14:49:00 CST, 2022-03-20 14:52:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: checkoutservice (Original: node-5.checkoutservice-0) | Attribute: container_memory_cache
+       Times (6): 2022-03-20 14:49:00 CST, 2022-03-20 14:50:00 CST, 2022-03-20 14:51:00 CST, 2022-03-20 14:52:00 CST, 2022-03-20 14:53:00 CST, 2022-03-20 14:54:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.source.frontend.checkoutservice (Original: frontend-2.source.frontend.checkoutservice) | Attribute: istio_request_duration_milliseconds.http.0.
+       Times (5): 2022-03-20 14:50:00 CST, 2022-03-20 14:51:00 CST, 2022-03-20 14:52:00 CST, 2022-03-20 14:53:00 CST, 2022-03-20 14:55:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.checkoutservice-0 (Cleaned: checkoutservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 3
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

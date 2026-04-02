@@ -1,0 +1,47 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1430_1500
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 14:30:00 CST → 2022-03-21 14:34:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: productcatalogservice (Original: node-6.productcatalogservice2-0) | Attribute: container_memory_mapped_file
+       Times (4): 2022-03-21 14:31:00 CST, 2022-03-21 14:32:00 CST, 2022-03-21 14:33:00 CST, 2022-03-21 14:34:00 CST
+
+   📝 Log Anomalies:
+     • Entity: currencyservice (Original: currencyservice-1) | Attribute: "POST /api/v2/spans HTTP/1.1<:code202:>
+       Times (5): 2022-03-21 14:30:00 CST, 2022-03-21 14:31:00 CST, 2022-03-21 14:32:00 CST, 2022-03-21 14:33:00 CST, 2022-03-21 14:34:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: currencyservice-1 (Cleaned: currencyservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 14:47:00 CST → 2022-03-21 14:54:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: productcatalogservice (Original: node-6.productcatalogservice2-0) | Attribute: container_memory_mapped_file
+       Times (2): 2022-03-21 14:53:00 CST, 2022-03-21 14:54:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.jaeger-collector (Original: frontend-0.source.frontend.jaeger-collector) | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (5): 2022-03-21 14:47:00 CST, 2022-03-21 14:48:00 CST, 2022-03-21 14:49:00 CST, 2022-03-21 14:50:00 CST, 2022-03-21 14:51:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-5) | Attribute: system.load.15
+       Times (2): 2022-03-21 14:52:00 CST, 2022-03-21 14:53:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-0.source.frontend.jaeger-collector (Cleaned: frontend-0.source.frontend.jaeger-collector, Score: 0.73)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

@@ -33,10 +33,8 @@ class LocalScriptToolAgent(BaseToolAgent):
             "- Telecom_metric_B\n"
             "- Telecom_trace\n"
             "- Telecom_cluster_window\n"
-            "- Telecom_knowledge_graph_RCA\n"
             "Telecom_metric_A, Telecom_metric_B, and Telecom_trace require parameters: date_offline, date_online, start_ts, end_ts, method, output_folder_name, output_suffix. "
             "Telecom_cluster_window requires parameters: date_online, output_folder_name, output_suffix. "
-            "Telecom_knowledge_graph_RCA requires parameters: date_online, output_folder_name, output_suffix."
         )
 
     def step(
@@ -62,10 +60,8 @@ class LocalScriptToolAgent(BaseToolAgent):
             "Telecom_metric_A": "10.run_telecom_metric_A_pipeline.py",
             "Telecom_metric_B": "11.run_telecom_metric_B_pipeline.py",
             "Telecom_trace": "13.run_telecom_trace_pipeline.py",
-            "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.3.12.py",
-            # "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.py",
-            # "Telecom_knowledge_graph_RCA": "15.Telecom_knowledge_graph_RCA.py",
-            "Telecom_knowledge_graph_RCA": "15.Telecom_knowledge_graph_RCA.3.19.py",
+            # "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.3.3.py", # ClusTopoRCA version
+            "Telecom_cluster_window": "14.Telecom_cluster_window_analyze_anomalies.py", # just cluster version
         }
 
         self.logger.info(

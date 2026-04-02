@@ -1,0 +1,68 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1830_1900
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 18:30:00 CST → 2022-03-21 18:46:00 CST (Δ = 960 sec)
+   Total Anomalies: 35
+
+   📝 Metric Service Anomalies:
+     • Entity: cartservice-grpc | Attribute: count
+       Timestamps: 1647858660 (2022-03-21 18:31:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647858600 (2022-03-21 18:30:00 CST), 1647859020 (2022-03-21 18:37:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.cartservice-0 | Attribute: container_memory_usage_MB
+       Timestamps: 1647858660 (2022-03-21 18:31:00 CST), 1647858840 (2022-03-21 18:34:00 CST), 1647858900 (2022-03-21 18:35:00 CST), 1647859020 (2022-03-21 18:37:00 CST), 1647859140 (2022-03-21 18:39:00 CST), 1647859260 (2022-03-21 18:41:00 CST), 1647859380 (2022-03-21 18:43:00 CST), 1647859440 (2022-03-21 18:44:00 CST), 1647859500 (2022-03-21 18:45:00 CST), 1647859560 (2022-03-21 18:46:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: redis-cart-0.destination.cartservice.redis-cart | Attribute: istio_tcp_connections_opened.-
+       Timestamps: 1647858660 (2022-03-21 18:31:00 CST), 1647859020 (2022-03-21 18:37:00 CST), 1647859140 (2022-03-21 18:39:00 CST), 1647859200 (2022-03-21 18:40:00 CST), 1647859260 (2022-03-21 18:41:00 CST), 1647859320 (2022-03-21 18:42:00 CST), 1647859380 (2022-03-21 18:43:00 CST), 1647859500 (2022-03-21 18:45:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice-0->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: frequency
+       Timestamps: 1647859440 (2022-03-21 18:44:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: adservice-1 | Attribute: info sds SDS: PUSH resource=default
+       Timestamps: 1647858600 (2022-03-21 18:30:00 CST), 1647858660 (2022-03-21 18:31:00 CST), 1647858720 (2022-03-21 18:32:00 CST), 1647858780 (2022-03-21 18:33:00 CST), 1647858840 (2022-03-21 18:34:00 CST), 1647858900 (2022-03-21 18:35:00 CST), 1647858960 (2022-03-21 18:36:00 CST), 1647859020 (2022-03-21 18:37:00 CST), 1647859080 (2022-03-21 18:38:00 CST), 1647859140 (2022-03-21 18:39:00 CST), 1647859200 (2022-03-21 18:40:00 CST), 1647859260 (2022-03-21 18:41:00 CST), 1647859320 (2022-03-21 18:42:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 18:48:00 CST → 2022-03-21 18:57:00 CST (Δ = 540 sec)
+   Total Anomalies: 21
+
+   📝 Metric Service Anomalies:
+     • Entity: cartservice-grpc | Attribute: count
+       Timestamps: 1647859680 (2022-03-21 18:48:00 CST), 1647859740 (2022-03-21 18:49:00 CST), 1647859860 (2022-03-21 18:51:00 CST), 1647860100 (2022-03-21 18:55:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647859920 (2022-03-21 18:52:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.cartservice-0 | Attribute: container_memory_usage_MB
+       Timestamps: 1647859800 (2022-03-21 18:50:00 CST), 1647859920 (2022-03-21 18:52:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: redis-cart-0.destination.cartservice.redis-cart | Attribute: istio_tcp_connections_opened.-
+       Timestamps: 1647859680 (2022-03-21 18:48:00 CST), 1647859740 (2022-03-21 18:49:00 CST), 1647859920 (2022-03-21 18:52:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.mem.used
+       Timestamps: 1647859680 (2022-03-21 18:48:00 CST), 1647859740 (2022-03-21 18:49:00 CST), 1647859800 (2022-03-21 18:50:00 CST), 1647859920 (2022-03-21 18:52:00 CST), 1647859980 (2022-03-21 18:53:00 CST), 1647860100 (2022-03-21 18:55:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice-0->productcatalogservice-1:hipstershop.ProductCatalogService/ListProducts | Attribute: frequency
+       Timestamps: 1647859800 (2022-03-21 18:50:00 CST), 1647859980 (2022-03-21 18:53:00 CST), 1647860040 (2022-03-21 18:54:00 CST), 1647860160 (2022-03-21 18:56:00 CST), 1647860220 (2022-03-21 18:57:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

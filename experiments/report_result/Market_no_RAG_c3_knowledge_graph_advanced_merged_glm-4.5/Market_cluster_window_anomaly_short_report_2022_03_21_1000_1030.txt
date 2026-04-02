@@ -1,0 +1,39 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1000_1030
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 10:06:00 CST → 2022-03-21 10:08:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-1) | Attribute: container_memory_usage_MB
+       Times (2): 2022-03-21 10:06:00 CST, 2022-03-21 10:08:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-1 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 10:17:00 CST → 2022-03-21 10:21:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_Compilation_TotalCompilationTime
+       Times (3): 2022-03-21 10:17:00 CST, 2022-03-21 10:18:00 CST, 2022-03-21 10:19:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-1) | Attribute: container_memory_usage_MB
+       Times (5): 2022-03-21 10:17:00 CST, 2022-03-21 10:18:00 CST, 2022-03-21 10:19:00 CST, 2022-03-21 10:20:00 CST, 2022-03-21 10:21:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-1 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 3
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

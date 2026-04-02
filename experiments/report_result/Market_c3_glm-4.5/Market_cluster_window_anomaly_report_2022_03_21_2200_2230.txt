@@ -1,0 +1,88 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 2200_2230
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 22:00:00 CST → 2022-03-21 22:03:00 CST (Δ = 180 sec)
+   Total Anomalies: 6
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Su
+       Timestamps: 1647871320 (2022-03-21 22:02:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647871260 (2022-03-21 22:01:00 CST), 1647871320 (2022-03-21 22:02:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.http.500.
+       Timestamps: 1647871200 (2022-03-21 22:00:00 CST), 1647871260 (2022-03-21 22:01:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.net.udp.in_errors
+       Timestamps: 1647871380 (2022-03-21 22:03:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 22:05:00 CST → 2022-03-21 22:09:00 CST (Δ = 240 sec)
+   Total Anomalies: 10
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Su
+       Timestamps: 1647871500 (2022-03-21 22:05:00 CST), 1647871560 (2022-03-21 22:06:00 CST), 1647871740 (2022-03-21 22:09:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647871500 (2022-03-21 22:05:00 CST), 1647871560 (2022-03-21 22:06:00 CST), 1647871680 (2022-03-21 22:08:00 CST), 1647871740 (2022-03-21 22:09:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.http.500.
+       Timestamps: 1647871620 (2022-03-21 22:07:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.net.udp.in_errors
+       Timestamps: 1647871560 (2022-03-21 22:06:00 CST), 1647871680 (2022-03-21 22:08:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 22:11:00 CST → 2022-03-21 22:17:00 CST (Δ = 360 sec)
+   Total Anomalies: 8
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-1 | Attribute: container_fs_usage_MB./dev/vda1
+       Timestamps: 1647871860 (2022-03-21 22:11:00 CST), 1647871920 (2022-03-21 22:12:00 CST), 1647872160 (2022-03-21 22:16:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.http.500.
+       Timestamps: 1647871980 (2022-03-21 22:13:00 CST), 1647872040 (2022-03-21 22:14:00 CST), 1647872220 (2022-03-21 22:17:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.net.udp.in_errors
+       Timestamps: 1647871860 (2022-03-21 22:11:00 CST), 1647872100 (2022-03-21 22:15:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 22:22:00 CST → 2022-03-21 22:24:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Su
+       Timestamps: 1647872580 (2022-03-21 22:23:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_response_bytes.http.500.
+       Timestamps: 1647872520 (2022-03-21 22:22:00 CST), 1647872580 (2022-03-21 22:23:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.net.udp.in_errors
+       Timestamps: 1647872640 (2022-03-21 22:24:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

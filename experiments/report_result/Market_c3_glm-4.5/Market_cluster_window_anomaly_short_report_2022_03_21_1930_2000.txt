@@ -1,0 +1,55 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1930_2000
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 19:30:00 CST → 2022-03-21 19:34:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 3
+
+   📝 Metric Service Anomalies:
+     • Entity: paymentservice-grpc | Attribute: count
+       Times (2): 2022-03-21 19:31:00 CST, 2022-03-21 19:33:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.bytes_sent
+       Times (2): 2022-03-21 19:30:00 CST, 2022-03-21 19:32:00 CST
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at hipstershop.AdService.access$400(AdService.java:64)
+       Times (2): 2022-03-21 19:31:00 CST, 2022-03-21 19:34:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 19:36:00 CST → 2022-03-21 19:48:00 CST (Δ = 720 sec)
+   Repeated Entity-Attribute Pairs: 6
+
+   📝 Metric Service Anomalies:
+     • Entity: paymentservice-grpc | Attribute: count
+       Times (2): 2022-03-21 19:41:00 CST, 2022-03-21 19:43:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-0 | Attribute: container_fs_inodes./dev/vda1
+       Times (5): 2022-03-21 19:36:00 CST, 2022-03-21 19:39:00 CST, 2022-03-21 19:41:00 CST, 2022-03-21 19:42:00 CST, 2022-03-21 19:48:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-2.source.cartservice.redis-cart | Attribute: istio_tcp_connections_closed.-
+       Times (5): 2022-03-21 19:36:00 CST, 2022-03-21 19:38:00 CST, 2022-03-21 19:44:00 CST, 2022-03-21 19:45:00 CST, 2022-03-21 19:46:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.bytes_sent
+       Times (2): 2022-03-21 19:40:00 CST, 2022-03-21 19:46:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | Attribute: frequency
+       Times (3): 2022-03-21 19:39:00 CST, 2022-03-21 19:45:00 CST, 2022-03-21 19:47:00 CST
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at hipstershop.AdService.access$400(AdService.java:64)
+       Times (3): 2022-03-21 19:37:00 CST, 2022-03-21 19:39:00 CST, 2022-03-21 19:45:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 9
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

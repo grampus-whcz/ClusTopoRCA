@@ -1,0 +1,51 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1400_1430
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 14:00:00 CST → 2022-03-21 14:06:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_MemoryPool_PeakUsage_used.Survivor_Space
+       Times (4): 2022-03-21 14:00:00 CST, 2022-03-21 14:01:00 CST, 2022-03-21 14:04:00 CST, 2022-03-21 14:06:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_spec_cpu_shares
+       Times (7): 2022-03-21 14:00:00 CST, 2022-03-21 14:01:00 CST, 2022-03-21 14:02:00 CST, 2022-03-21 14:03:00 CST, 2022-03-21 14:04:00 CST, 2022-03-21 14:05:00 CST, 2022-03-21 14:06:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 14:08:00 CST → 2022-03-21 14:29:00 CST (Δ = 1260 sec)
+   Repeated Entity-Attribute Pairs: 6
+
+   📝 Metric Service Anomalies:
+     • Entity: productcatalogservice-grpc | Attribute: rr
+       Times (8): 2022-03-21 14:09:00 CST, 2022-03-21 14:10:00 CST, 2022-03-21 14:11:00 CST, 2022-03-21 14:12:00 CST, 2022-03-21 14:13:00 CST, 2022-03-21 14:14:00 CST, 2022-03-21 14:15:00 CST, 2022-03-21 14:16:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-2 | Attribute: container_spec_cpu_shares
+       Times (3): 2022-03-21 14:08:00 CST, 2022-03-21 14:11:00 CST, 2022-03-21 14:14:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-0.source.frontend.productcatalogservice | Attribute: istio_agent_go_goroutines
+       Times (15): 2022-03-21 14:09:00 CST, 2022-03-21 14:11:00 CST, 2022-03-21 14:12:00 CST, 2022-03-21 14:13:00 CST, 2022-03-21 14:14:00 CST, 2022-03-21 14:16:00 CST, 2022-03-21 14:17:00 CST, 2022-03-21 14:18:00 CST, 2022-03-21 14:19:00 CST, 2022-03-21 14:20:00 CST, 2022-03-21 14:21:00 CST, 2022-03-21 14:22:00 CST, 2022-03-21 14:24:00 CST, 2022-03-21 14:25:00 CST, 2022-03-21 14:26:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.net.packets_in.count
+       Times (5): 2022-03-21 14:10:00 CST, 2022-03-21 14:12:00 CST, 2022-03-21 14:13:00 CST, 2022-03-21 14:14:00 CST, 2022-03-21 14:15:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | Attribute: frequency
+       Times (9): 2022-03-21 14:10:00 CST, 2022-03-21 14:13:00 CST, 2022-03-21 14:14:00 CST, 2022-03-21 14:16:00 CST, 2022-03-21 14:21:00 CST, 2022-03-21 14:22:00 CST, 2022-03-21 14:23:00 CST, 2022-03-21 14:24:00 CST, 2022-03-21 14:27:00 CST
+
+   📝 Log Anomalies:
+     • Entity: productcatalogservice-1 | Attribute: at hipstershop.AdService$OpenTelemetryServerInterceptor.interceptCall(AdService.java:336)
+       Times (10): 2022-03-21 14:20:00 CST, 2022-03-21 14:21:00 CST, 2022-03-21 14:22:00 CST, 2022-03-21 14:23:00 CST, 2022-03-21 14:24:00 CST, 2022-03-21 14:25:00 CST, 2022-03-21 14:26:00 CST, 2022-03-21 14:27:00 CST, 2022-03-21 14:28:00 CST, 2022-03-21 14:29:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 8
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

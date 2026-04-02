@@ -1,0 +1,51 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1800_1830
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 18:00:00 CST → 2022-03-20 18:09:00 CST (Δ = 540 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Times (7): 2022-03-20 18:00:00 CST, 2022-03-20 18:02:00 CST, 2022-03-20 18:03:00 CST, 2022-03-20 18:04:00 CST, 2022-03-20 18:05:00 CST, 2022-03-20 18:07:00 CST, 2022-03-20 18:08:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-1) | Attribute: container_fs_writes./dev/vda
+       Times (3): 2022-03-20 18:01:00 CST, 2022-03-20 18:04:00 CST, 2022-03-20 18:09:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: shippingservice-1.source.shippingservice.jaeger-collector (Original: shippingservice-1.source.shippingservice.jaeger-collector) | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (10): 2022-03-20 18:00:00 CST, 2022-03-20 18:01:00 CST, 2022-03-20 18:02:00 CST, 2022-03-20 18:03:00 CST, 2022-03-20 18:04:00 CST, 2022-03-20 18:05:00 CST, 2022-03-20 18:06:00 CST, 2022-03-20 18:07:00 CST, 2022-03-20 18:08:00 CST, 2022-03-20 18:09:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: adservice2.ts:8088 (Cleaned: adservice, Score: 0.78)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 18:11:00 CST → 2022-03-20 18:15:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Times (3): 2022-03-20 18:11:00 CST, 2022-03-20 18:13:00 CST, 2022-03-20 18:15:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: frontend (Original: node-5.frontend-1) | Attribute: container_fs_writes./dev/vda
+       Times (4): 2022-03-20 18:11:00 CST, 2022-03-20 18:13:00 CST, 2022-03-20 18:14:00 CST, 2022-03-20 18:15:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder (Original: frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder) | Attribute: frequency
+       Times (2): 2022-03-20 18:11:00 CST, 2022-03-20 18:13:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.frontend-1 (Cleaned: frontend, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

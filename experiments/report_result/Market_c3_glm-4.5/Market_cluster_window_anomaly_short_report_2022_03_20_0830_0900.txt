@@ -1,0 +1,51 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 0830_0900
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 08:35:00 CST → 2022-03-20 08:43:00 CST (Δ = 480 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (3): 2022-03-20 08:36:00 CST, 2022-03-20 08:37:00 CST, 2022-03-20 08:43:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_agent_outgoing_latency.csr
+       Times (2): 2022-03-20 08:39:00 CST, 2022-03-20 08:43:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.load.5
+       Times (6): 2022-03-20 08:38:00 CST, 2022-03-20 08:39:00 CST, 2022-03-20 08:40:00 CST, 2022-03-20 08:41:00 CST, 2022-03-20 08:42:00 CST, 2022-03-20 08:43:00 CST
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at java.lang.Thread.run(Thread.java:748)
+       Times (2): 2022-03-20 08:35:00 CST, 2022-03-20 08:43:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 08:49:00 CST → 2022-03-20 08:56:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (3): 2022-03-20 08:50:00 CST, 2022-03-20 08:52:00 CST, 2022-03-20 08:56:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-2 | Attribute: container_cpu_cfs_throttled_seconds
+       Times (2): 2022-03-20 08:50:00 CST, 2022-03-20 08:54:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_agent_outgoing_latency.csr
+       Times (7): 2022-03-20 08:49:00 CST, 2022-03-20 08:50:00 CST, 2022-03-20 08:51:00 CST, 2022-03-20 08:52:00 CST, 2022-03-20 08:53:00 CST, 2022-03-20 08:54:00 CST, 2022-03-20 08:55:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-2->currencyservice-0:grpc.hipstershop.CurrencyService/Convert | Attribute: duration
+       Times (2): 2022-03-20 08:51:00 CST, 2022-03-20 08:55:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 8
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

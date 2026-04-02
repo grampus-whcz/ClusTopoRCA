@@ -1,0 +1,28 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0130_0200
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 01:31:00 CST → 2022-03-21 01:34:00 CST (Δ = 180 sec)
+   Total Anomalies: 6
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.emailservice-0 | Attribute: container_spec_cpu_quota
+       Timestamps: 1647797460 (2022-03-21 01:31:00 CST), 1647797580 (2022-03-21 01:33:00 CST), 1647797640 (2022-03-21 01:34:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.udp.connect.num
+       Timestamps: 1647797460 (2022-03-21 01:31:00 CST), 1647797520 (2022-03-21 01:32:00 CST), 1647797640 (2022-03-21 01:34:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.emailservice-0 | container_spec_cpu_quota | 1647797820 (2022-03-21 01:37:00 CST)
+   metric_container | node-5.emailservice-0 | container_spec_cpu_quota | 1647798060 (2022-03-21 01:41:00 CST)
+   metric_node | node-3 | system.udp.connect.num | 1647798300 (2022-03-21 01:45:00 CST)
+   metric_node | node-3 | system.udp.connect.num | 1647798780 (2022-03-21 01:53:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

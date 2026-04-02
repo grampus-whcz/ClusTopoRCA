@@ -1,0 +1,39 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0100_0130
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 01:00:00 CST → 2022-03-21 01:03:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: checkoutservice (Original: node-5.checkoutservice-1) | Attribute: container_spec_cpu_shares
+       Times (2): 2022-03-21 01:01:00 CST, 2022-03-21 01:02:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 (Original: currencyservice2-0.destination.checkoutservice2.currencyservice2) | Attribute: istio_agent_go_memstats_alloc_bytes
+       Times (3): 2022-03-21 01:00:00 CST, 2022-03-21 01:02:00 CST, 2022-03-21 01:03:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 01:06:00 CST → 2022-03-21 01:07:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: checkoutservice (Original: node-5.checkoutservice-1) | Attribute: container_spec_cpu_shares
+       Times (2): 2022-03-21 01:06:00 CST, 2022-03-21 01:07:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.checkoutservice-1 (Cleaned: checkoutservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 3
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

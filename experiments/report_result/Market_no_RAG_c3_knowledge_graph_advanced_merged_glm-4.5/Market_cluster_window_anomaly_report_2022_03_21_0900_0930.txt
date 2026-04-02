@@ -1,0 +1,190 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0900_0930
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 4 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 09:00:00 CST → 2022-03-21 09:05:00 CST (Duration: 300 seconds)
+**Total Anomalies**: 6
+
+## Anomaly Breakdown
+- **Metric Mesh**: 6 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 09:02:00 CST (T2) to 2022-03-21 09:06:00 CST (4 minutes)
+**Total Anomalies**: 6
+
+#### Primary Root Cause Entity
+- **Entity**: recommendationservice-1.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-1.source.recommendationservice.jaeger-coll, Layer: RECOMMENDATIONSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: istio_request_duration_milliseconds.http.202.(12 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for recommendationservice-1.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-1.source.recommendationservice.jaeger-coll)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **recommendationservice-1.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-1.source.recommendationservice.jaeger-coll) not found in topology graph**
+  - Suggestion: Check if recommendationservice-1.source.recommendationservice.jaeger-coll is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+
+#### RCA Recommendations
+1. Prioritize investigation of recommendationservice-1.source.recommendationservice.jaeger-coll (Cleaned: recommendationservice-1.source.recommendationservice.jaeger-coll, highest confidence score)
+2. Check recommendationservice-1.source.recommendationservice.jaeger-coll for 6 anomalies on attributes: istio_request_duration_milliseconds.http.202.(12 times)
+3. Investigate anomalies starting at N/A for recommendationservice-1.source.recommendationservice.jaeger-coll (analysis window starts at 2022-03-21 09:02:00 CST (T2))
+4. Verify downstream dependencies of recommendationservice-1.source.recommendationservice.jaeger-coll for cascading failures
+5. Check RECOMMENDATIONSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 09:07:00 CST → 2022-03-21 09:12:00 CST (Duration: 300 seconds)
+**Total Anomalies**: 8
+
+## Anomaly Breakdown
+- **Metric Runtime**: 1 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Trace**: 5 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 09:09:00 CST (T2) to 2022-03-21 09:13:00 CST (4 minutes)
+**Total Anomalies**: 8
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-2 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.57 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: duration(5 times)
+- **Earliest Anomaly Time**: 2022-03-21 09:08:00 CST
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for frontend-2 (Cleaned: frontend)
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **recommendationservice-1.source.recommendationservice.jaeger-coll** (Cleaned: recommendationservice-1.source.recommendationservice.jaeger-coll, Layer: RECOMMENDATIONSERVICE): Score = 0.55, Anomalies = 2, Attrs = istio_request_duration_milliseconds.http.202.(4 times)
+- **frontend-2:hipstershop.RecommendationService/ListRecommendations** (Cleaned: frontend-2:hipstershop.RecommendationService/ListRecommendations, Layer: FRONTEND): Score = 0.46, Anomalies = 5, Attrs = duration(10 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by frontend-2 (Cleaned: frontend)**: cartservice-0, frontend2-0, istio-egressgateway, paymentservice2-0, productcatalogservice-1
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 2 entities affected (Weight: 1.0)
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-2 (Cleaned: frontend, highest confidence score)
+2. Check frontend-2 for 5.0 anomalies on attributes: duration(5 times)
+3. Investigate anomalies starting at 2022-03-21 09:08:00 CST for frontend-2 (analysis window starts at 2022-03-21 09:09:00 CST (T2))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 09:19:00 CST → 2022-03-21 09:25:00 CST (Duration: 360 seconds)
+**Total Anomalies**: 7
+
+## Anomaly Breakdown
+- **Metric Runtime**: 1 anomalies
+- **Metric Container**: 6 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 09:21:00 CST (T2) to 2022-03-21 09:25:00 CST (4 minutes)
+**Total Anomalies**: 7
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.shippingservice-1 (Cleaned: shippingservice, Layer: SHIPPINGSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: container_memory_failures.hierarchy.pgfault(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.shippingservice-1 (Cleaned: shippingservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.shippingservice-1 (Cleaned: shippingservice)**: cartservice-0, frontend2-0, istio-egressgateway, paymentservice2-0, productcatalogservice-1
+
+#### Layer-wise Impact Analysis
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.shippingservice-1 (Cleaned: shippingservice, highest confidence score)
+2. Check node-5.shippingservice-1 for 6 anomalies on attributes: container_memory_failures.hierarchy.pgfault(6 times)
+3. Investigate anomalies starting at N/A for node-5.shippingservice-1 (analysis window starts at 2022-03-21 09:21:00 CST (T2))
+4. Verify downstream dependencies of shippingservice for cascading failures
+5. Check SHIPPINGSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #4
+**Time Span**: 2022-03-21 09:28:00 CST → 2022-03-21 09:29:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 4
+
+## Anomaly Breakdown
+- **Metric Runtime**: 2 anomalies
+- **Metric Container**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #4 (Market Dataset)
+**Analysis Window**: 2022-03-21 09:29:00 CST (T2) to 2022-03-21 09:33:00 CST (4 minutes)
+**Total Anomalies**: 4
+
+#### Primary Root Cause Entity
+- **Entity**: adservice2.ts:8088 (Cleaned: adservice, Layer: ADSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_used.C(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for adservice2.ts:8088 (Cleaned: adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-5.shippingservice-1** (Cleaned: shippingservice, Layer: SHIPPINGSERVICE): Score = 0.87, Anomalies = 2, Attrs = container_memory_failures.hierarchy.pgfault(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by adservice2.ts:8088 (Cleaned: adservice)**: cartservice-0, frontend2-0, istio-egressgateway, paymentservice2-0, productcatalogservice-1
+
+#### Layer-wise Impact Analysis
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice2.ts:8088 (Cleaned: adservice, highest confidence score)
+2. Check adservice2.ts:8088 for 2 anomalies on attributes: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_used.C(2 times)
+3. Investigate anomalies starting at N/A for adservice2.ts:8088 (analysis window starts at 2022-03-21 09:29:00 CST (T2))
+4. Verify downstream dependencies of adservice for cascading failures
+5. Check ADSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 2
+- trace | frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations (Cleaned: frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations) | duration | 2022-03-21 09:14:00 CST
+- trace | frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations (Cleaned: frontend-2->frontend-2:hipstershop.RecommendationService/ListRecommendations) | duration | 2022-03-21 09:15:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

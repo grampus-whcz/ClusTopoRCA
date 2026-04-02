@@ -1,0 +1,624 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_04_11 0430_0500
+================================================================================
+
+🔍 The number of clusters are 8
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-04-11 04:30:00 CST → 2020-04-11 04:33:00 CST (Δ = 180 sec)
+   Total Anomalies: 155
+
+   📝 Metric A Anomalies:
+     • Entity: os_010 | Attribute: ZJ-002-027_PGA_Used_Pct
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: os_021 | Attribute: ZJ-001-029_Memory_used_pct
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550660 (2020-04-11 04:31:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: redis_005 | Attribute: ZJ-002-013_Sess_Active
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550660 (2020-04-11 04:31:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: ROOT->os_021:OSB,null,osb_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: ROOT->os_022:OSB,null,osb_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_004 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_009,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_007 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_009 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_007:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_007:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_008:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_008:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_008:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_001->docker_008:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_009,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_007 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_009 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_007:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_007:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_007:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_007:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_009,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_007 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_009 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_009,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_007 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_009 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_005->docker_005:JDBC,db_003,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_015 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_016 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_017 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_006->docker_006:JDBC,db_003,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_013 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_015 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_016 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_017 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_007->docker_007:JDBC,db_003,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_016 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_017 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:JDBC,db_003,null | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_011 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_013 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_015 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_016 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_017 | Attribute: duration
+       Timestamps: 1586550600 (2020-04-11 04:30:00 CST), 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: os_021->docker_003:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: os_021->docker_004:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+     • Entity: os_021->os_021:CSF,null,csf_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: os_022->docker_002:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST)
+     • Entity: os_022->os_022:CSF,null,csf_001 | Attribute: duration
+       Timestamps: 1586550720 (2020-04-11 04:32:00 CST), 1586550780 (2020-04-11 04:33:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2020-04-11 04:35:00 CST → 2020-04-11 04:38:00 CST (Δ = 180 sec)
+   Total Anomalies: 6
+
+   📝 Metric A Anomalies:
+     • Entity: os_010 | Attribute: ZJ-002-027_PGA_Used_Pct
+       Timestamps: 1586550900 (2020-04-11 04:35:00 CST), 1586551020 (2020-04-11 04:37:00 CST)
+     • Entity: os_021 | Attribute: ZJ-001-029_Memory_used_pct
+       Timestamps: 1586551080 (2020-04-11 04:38:00 CST)
+     • Entity: redis_005 | Attribute: ZJ-002-013_Sess_Active
+       Timestamps: 1586550900 (2020-04-11 04:35:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586550900 (2020-04-11 04:35:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_013 | Attribute: frequency
+       Timestamps: 1586550960 (2020-04-11 04:36:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2020-04-11 04:41:00 CST → 2020-04-11 04:42:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric A Anomalies:
+     • Entity: os_010 | Attribute: ZJ-002-027_PGA_Used_Pct
+       Timestamps: 1586551320 (2020-04-11 04:42:00 CST)
+     • Entity: redis_005 | Attribute: ZJ-002-013_Sess_Active
+       Timestamps: 1586551260 (2020-04-11 04:41:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_004 | Attribute: frequency
+       Timestamps: 1586551260 (2020-04-11 04:41:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2020-04-11 04:47:00 CST → 2020-04-11 04:47:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Metric A Anomalies:
+     • Entity: os_021 | Attribute: ZJ-002-021_User_Commit
+       Timestamps: 1586551620 (2020-04-11 04:47:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586551620 (2020-04-11 04:47:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586551620 (2020-04-11 04:47:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2020-04-11 04:50:00 CST → 2020-04-11 04:51:00 CST (Δ = 60 sec)
+   Total Anomalies: 9
+
+   📝 Metric A Anomalies:
+     • Entity: os_021 | Attribute: ZJ-002-021_User_Commit
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+
+   📝 Metric B Anomalies:
+     • Entity: osb_001 | Attribute: num
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_001->docker_008:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586551800 (2020-04-11 04:50:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_011 | Attribute: frequency
+       Timestamps: 1586551800 (2020-04-11 04:50:00 CST)
+     • Entity: os_021->docker_003:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1586551860 (2020-04-11 04:51:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #6
+   Time Span: 2020-04-11 04:53:00 CST → 2020-04-11 04:54:00 CST (Δ = 60 sec)
+   Total Anomalies: 86
+
+   📝 Trace Anomalies:
+     • Entity: ROOT->os_021:OSB,null,osb_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:FlyRemote,null,fly_remote_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_009,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_007,local_method_010 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_003 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_006 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_007 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_003 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST), 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_004 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_005 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST), 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_002->docker_002:FlyRemote,null,fly_remote_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_002->docker_007:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_003 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:CSF,null,csf_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_009,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_007,local_method_010 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_006 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_007 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_009 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_005:RemoteProcess,null,csf_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_004 | Attribute: duration
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_003 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:CSF,null,csf_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:FlyRemote,null,fly_remote_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:JDBC,db_009,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_007,local_method_010 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_003 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_006 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_007 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_004:LOCAL,db_009,local_method_009 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_005 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_005->docker_005:JDBC,db_003,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_014 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_015 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_016 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_017 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_006->docker_006:JDBC,db_003,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_011 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_014 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_015 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_007->docker_007:JDBC,db_003,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_013 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_013 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_014 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:JDBC,db_003,null | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_011 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_013 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_014 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_015 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_016 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_017 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_017 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: os_021->docker_004:RemoteProcess,null,csf_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: os_021->os_021:CSF,null,csf_001 | Attribute: frequency
+       Timestamps: 1586552040 (2020-04-11 04:54:00 CST)
+     • Entity: os_022->docker_002:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1586551980 (2020-04-11 04:53:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #7
+   Time Span: 2020-04-11 04:56:00 CST → 2020-04-11 04:58:00 CST (Δ = 120 sec)
+   Total Anomalies: 32
+
+   📝 Metric A Anomalies:
+     • Entity: os_021 | Attribute: ZJ-002-021_User_Commit
+       Timestamps: 1586552220 (2020-04-11 04:57:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: ROOT->os_022:OSB,null,osb_001 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_003 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:CSF,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:FlyRemote,null,fly_remote_001 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:JDBC,db_009,null | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_001 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_002 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_004 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_005 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_001->docker_001:LOCAL,db_009,local_method_007 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_003 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_004 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:CSF,null,csf_005 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_007,null | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_009,null | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_007,local_method_010 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_002 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_003 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_004 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_005 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_007 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_009 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552280 (2020-04-11 04:58:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+     • Entity: os_022->os_022:CSF,null,csf_001 | Attribute: frequency
+       Timestamps: 1586552160 (2020-04-11 04:56:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #8
+   Time Span: 2020-04-11 05:00:00 CST → 2020-04-11 05:00:00 CST (Δ = 0 sec)
+   Total Anomalies: 12
+
+   📝 Trace Anomalies:
+     • Entity: docker_002->docker_002:CSF,null,csf_002 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_002->docker_002:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_007,local_method_010 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_002->docker_002:LOCAL,db_009,local_method_003 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_002->docker_007:RemoteProcess,null,csf_005 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_003->docker_003:JDBC,db_007,null | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_006 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_003->docker_006:RemoteProcess,null,csf_002 | Attribute: frequency
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_004->docker_005:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_013 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+     • Entity: os_022->docker_002:RemoteProcess,null,csf_001 | Attribute: duration
+       Timestamps: 1586552400 (2020-04-11 05:00:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_A | os_021 | ZJ-002-021_User_Commit | 1586551440 (2020-04-11 04:44:00 CST)
+   trace | docker_004->docker_005:RemoteProcess,null,csf_003 | frequency | 1586551500 (2020-04-11 04:45:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,60 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1630_1700
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 16:37:00 CST → 2022-03-20 16:39:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-6.cartservice2-0) | Attribute: container_fs_inodes./dev/vda1
+       Times (2): 2022-03-20 16:37:00 CST, 2022-03-20 16:38:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.cartservice2-0 (Cleaned: cartservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 16:43:00 CST → 2022-03-20 16:44:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 (Original: adservice2-0.destination.frontend2.adservice2) | Attribute: istio_tcp_connections_opened.UH
+       Times (2): 2022-03-20 16:43:00 CST, 2022-03-20 16:44:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 16:52:00 CST → 2022-03-20 16:59:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 (Original: adservice2-0.destination.frontend2.adservice2) | Attribute: istio_tcp_connections_opened.UH
+       Times (2): 2022-03-20 16:55:00 CST, 2022-03-20 16:58:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.mem.free
+       Times (4): 2022-03-20 16:55:00 CST, 2022-03-20 16:56:00 CST, 2022-03-20 16:57:00 CST, 2022-03-20 16:59:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: cartservice-0->cartservice-0:HGET (Original: cartservice-0->cartservice-0:HGET) | Attribute: frequency
+       Times (3): 2022-03-20 16:52:00 CST, 2022-03-20 16:53:00 CST, 2022-03-20 16:54:00 CST
+
+   📝 Log Anomalies:
+     • Entity: emailservice (Original: emailservice-2) | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Times (2): 2022-03-20 16:54:00 CST, 2022-03-20 16:56:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: cartservice-0 (Cleaned: cartservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

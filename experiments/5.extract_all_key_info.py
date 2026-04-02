@@ -116,9 +116,9 @@ def process_all_combinations(base_path):
     """
     # 配置所有数据集：key=主目录名，value=(子数据集列表, 文件名前缀)
     datasets = {
-        # 'Bank': (['Bank'], 'Bank'),
+        'Bank': (['Bank'], 'Bank'),
         'Market': (['Market_cloudbed-1', 'Market_cloudbed-2'], '{sub_dataset}'),  # 使用子数据集名称作为文件名前缀
-        # 'Telecom': (['Telecom'], 'Telecom')
+        'Telecom': (['Telecom'], 'Telecom')
     }
     
     # ablation
@@ -132,13 +132,14 @@ def process_all_combinations(base_path):
     llm_models = [
         # 'glm-4.5',
         # 'glm-4.6',
-        'glm-4.7',
+        # 'glm-4.7',
         # 'claude-3-5-sonnet-20241022',
         # 'deepseek-r1-250528',
+        # 'deepseek-r1-0528',
         # 'gemini-2.5-pro-preview-p',
         # 'gpt-4o',
         # 'llama3.1:8b-instruct-q8_0',
-        # 'qwen3-235b-a22b-instruct-2507'
+        'qwen3-235b-a22b-instruct-2507'
     ]
     
     # 遍历所有数据集
@@ -151,7 +152,7 @@ def process_all_combinations(base_path):
             for model in llm_models:
                 # 构建输入文件路径
                 # input_filename = f"{filename_prefix}_all_RAG_{model}.log"
-                input_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_0-77_{model}.log"
+                input_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_{model}.log"
                 input_path = os.path.join(
                     base_path, 
                     dataset_main,  # 目录仍使用主数据集名称（Market）
@@ -161,7 +162,7 @@ def process_all_combinations(base_path):
                 
                 # 构建输出文件路径
                 # output_filename = f"{filename_prefix}_all_RAG_{model}_extracted_tasks_info.md"
-                output_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_0-77_{model}_extracted_tasks_info.md"
+                output_filename = f"{filename_prefix}_no_RAG_c3_knowledge_graph_advanced_merged_{model}_extracted_tasks_info.md"
                 output_path = os.path.join(
                     base_path, 
                     dataset_main, 

@@ -1,0 +1,42 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 2030_2100
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 20:30:00 CST → 2022-03-21 20:59:00 CST (Δ = 1740 sec)
+   Total Anomalies: 64
+
+   📝 Metric Service Anomalies:
+     • Entity: checkoutservice-grpc | Attribute: sr
+       Timestamps: 1647865800 (2022-03-21 20:30:00 CST), 1647865860 (2022-03-21 20:31:00 CST), 1647865980 (2022-03-21 20:33:00 CST), 1647866040 (2022-03-21 20:34:00 CST), 1647866100 (2022-03-21 20:35:00 CST), 1647866160 (2022-03-21 20:36:00 CST), 1647866220 (2022-03-21 20:37:00 CST), 1647866280 (2022-03-21 20:38:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Timestamps: 1647866160 (2022-03-21 20:36:00 CST), 1647866220 (2022-03-21 20:37:00 CST), 1647866520 (2022-03-21 20:42:00 CST), 1647866880 (2022-03-21 20:48:00 CST), 1647867540 (2022-03-21 20:59:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice2-0 | Attribute: container_memory_failcnt
+       Timestamps: 1647866400 (2022-03-21 20:40:00 CST), 1647866520 (2022-03-21 20:42:00 CST), 1647866580 (2022-03-21 20:43:00 CST), 1647866700 (2022-03-21 20:45:00 CST), 1647866880 (2022-03-21 20:48:00 CST), 1647867000 (2022-03-21 20:50:00 CST), 1647867060 (2022-03-21 20:51:00 CST), 1647867360 (2022-03-21 20:56:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.source.checkoutservice.emailservice | Attribute: istio_agent_go_memstats_heap_objects
+       Timestamps: 1647865920 (2022-03-21 20:32:00 CST), 1647866040 (2022-03-21 20:34:00 CST), 1647866100 (2022-03-21 20:35:00 CST), 1647866160 (2022-03-21 20:36:00 CST), 1647866220 (2022-03-21 20:37:00 CST), 1647866280 (2022-03-21 20:38:00 CST), 1647866340 (2022-03-21 20:39:00 CST), 1647866460 (2022-03-21 20:41:00 CST), 1647866520 (2022-03-21 20:42:00 CST), 1647866580 (2022-03-21 20:43:00 CST), 1647866640 (2022-03-21 20:44:00 CST), 1647866700 (2022-03-21 20:45:00 CST), 1647866760 (2022-03-21 20:46:00 CST), 1647866820 (2022-03-21 20:47:00 CST), 1647866880 (2022-03-21 20:48:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.mem.real.pct_useage
+       Timestamps: 1647865920 (2022-03-21 20:32:00 CST), 1647865980 (2022-03-21 20:33:00 CST), 1647866220 (2022-03-21 20:37:00 CST), 1647866280 (2022-03-21 20:38:00 CST), 1647866880 (2022-03-21 20:48:00 CST), 1647867180 (2022-03-21 20:53:00 CST), 1647867420 (2022-03-21 20:57:00 CST), 1647867480 (2022-03-21 20:58:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-2->checkoutservice-2:hipstershop.EmailService/SendOrderConfirmation | Attribute: duration
+       Timestamps: 1647865920 (2022-03-21 20:32:00 CST), 1647866520 (2022-03-21 20:42:00 CST), 1647866640 (2022-03-21 20:44:00 CST), 1647866820 (2022-03-21 20:47:00 CST), 1647866880 (2022-03-21 20:48:00 CST), 1647866940 (2022-03-21 20:49:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
+       Timestamps: 1647866460 (2022-03-21 20:41:00 CST), 1647866520 (2022-03-21 20:42:00 CST), 1647866580 (2022-03-21 20:43:00 CST), 1647866640 (2022-03-21 20:44:00 CST), 1647866700 (2022-03-21 20:45:00 CST), 1647866760 (2022-03-21 20:46:00 CST), 1647866820 (2022-03-21 20:47:00 CST), 1647866880 (2022-03-21 20:48:00 CST), 1647866940 (2022-03-21 20:49:00 CST), 1647867000 (2022-03-21 20:50:00 CST), 1647867120 (2022-03-21 20:52:00 CST), 1647867180 (2022-03-21 20:53:00 CST), 1647867240 (2022-03-21 20:54:00 CST), 1647867300 (2022-03-21 20:55:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

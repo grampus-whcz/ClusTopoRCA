@@ -1,0 +1,59 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 2000_2030
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 20:00:00 CST → 2022-03-20 20:19:00 CST (Δ = 1140 sec)
+   Repeated Entity-Attribute Pairs: 6 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Times (6): 2022-03-20 20:00:00 CST, 2022-03-20 20:09:00 CST, 2022-03-20 20:10:00 CST, 2022-03-20 20:13:00 CST, 2022-03-20 20:15:00 CST, 2022-03-20 20:17:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-5.cartservice-0) | Attribute: container_fs_usage_MB./dev/vda1
+       Times (9): 2022-03-20 20:03:00 CST, 2022-03-20 20:06:00 CST, 2022-03-20 20:07:00 CST, 2022-03-20 20:09:00 CST, 2022-03-20 20:10:00 CST, 2022-03-20 20:11:00 CST, 2022-03-20 20:12:00 CST, 2022-03-20 20:13:00 CST, 2022-03-20 20:15:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-0.destination.frontend.cartservice (Original: cartservice-0.destination.frontend.cartservice) | Attribute: istio_requests.grpc.200.14.0
+       Times (11): 2022-03-20 20:02:00 CST, 2022-03-20 20:03:00 CST, 2022-03-20 20:04:00 CST, 2022-03-20 20:05:00 CST, 2022-03-20 20:07:00 CST, 2022-03-20 20:08:00 CST, 2022-03-20 20:09:00 CST, 2022-03-20 20:10:00 CST, 2022-03-20 20:12:00 CST, 2022-03-20 20:13:00 CST, 2022-03-20 20:14:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.io.r_s
+       Times (3): 2022-03-20 20:11:00 CST, 2022-03-20 20:13:00 CST, 2022-03-20 20:18:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: recommendationservice-1->productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts (Original: recommendationservice-1->productcatalogservice-0:hipstershop.ProductCatalogService/ListProducts) | Attribute: duration
+       Times (6): 2022-03-20 20:00:00 CST, 2022-03-20 20:01:00 CST, 2022-03-20 20:02:00 CST, 2022-03-20 20:11:00 CST, 2022-03-20 20:15:00 CST, 2022-03-20 20:19:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice (Original: cartservice-0) | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Times (3): 2022-03-20 20:14:00 CST, 2022-03-20 20:16:00 CST, 2022-03-20 20:19:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: recommendationservice-1 (Cleaned: recommendationservice, Score: 0.79)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 20:21:00 CST → 2022-03-20 20:25:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-3) | Attribute: system.io.r_s
+       Times (3): 2022-03-20 20:21:00 CST, 2022-03-20 20:23:00 CST, 2022-03-20 20:24:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice (Original: cartservice-0) | Attribute: at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)
+       Times (5): 2022-03-20 20:21:00 CST, 2022-03-20 20:22:00 CST, 2022-03-20 20:23:00 CST, 2022-03-20 20:24:00 CST, 2022-03-20 20:25:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: cartservice-0 (Cleaned: cartservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 8
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

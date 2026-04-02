@@ -1,0 +1,51 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0200_0230
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 02:00:00 CST → 2022-03-21 02:03:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-5.cartservice-2) | Attribute: container_network_transmit_MB.eth0
+       Times (2): 2022-03-21 02:02:00 CST, 2022-03-21 02:03:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-2) | Attribute: system.disk.pct_usage
+       Times (4): 2022-03-21 02:00:00 CST, 2022-03-21 02:01:00 CST, 2022-03-21 02:02:00 CST, 2022-03-21 02:03:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/Convert (Original: checkoutservice2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/Convert) | Attribute: duration
+       Times (2): 2022-03-21 02:00:00 CST, 2022-03-21 02:02:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-2 (Cleaned: node, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 02:20:00 CST → 2022-03-21 02:25:00 CST (Δ = 300 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: cartservice (Original: node-5.cartservice-2) | Attribute: container_network_transmit_MB.eth0
+       Times (5): 2022-03-21 02:20:00 CST, 2022-03-21 02:21:00 CST, 2022-03-21 02:22:00 CST, 2022-03-21 02:23:00 CST, 2022-03-21 02:24:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.destination.frontend.checkoutservice (Original: checkoutservice-0.destination.frontend.checkoutservice) | Attribute: istio_agent_go_gc_duration_seconds
+       Times (5): 2022-03-21 02:21:00 CST, 2022-03-21 02:22:00 CST, 2022-03-21 02:23:00 CST, 2022-03-21 02:24:00 CST, 2022-03-21 02:25:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/Convert (Original: checkoutservice2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/Convert) | Attribute: duration
+       Times (2): 2022-03-21 02:20:00 CST, 2022-03-21 02:24:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.cartservice-2 (Cleaned: cartservice, Score: 0.86)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 6
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

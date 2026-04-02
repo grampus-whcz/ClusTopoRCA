@@ -1,0 +1,78 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1930_2000
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 19:31:00 CST → 2022-03-20 19:40:00 CST (Δ = 540 sec)
+   Total Anomalies: 19
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647775920 (2022-03-20 19:32:00 CST), 1647775980 (2022-03-20 19:33:00 CST), 1647776220 (2022-03-20 19:37:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.recommendationservice-2 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647775860 (2022-03-20 19:31:00 CST), 1647775920 (2022-03-20 19:32:00 CST), 1647775980 (2022-03-20 19:33:00 CST), 1647776040 (2022-03-20 19:34:00 CST), 1647776100 (2022-03-20 19:35:00 CST), 1647776160 (2022-03-20 19:36:00 CST), 1647776220 (2022-03-20 19:37:00 CST), 1647776280 (2022-03-20 19:38:00 CST), 1647776400 (2022-03-20 19:40:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.fs.inodes.free
+       Timestamps: 1647775980 (2022-03-20 19:33:00 CST), 1647776040 (2022-03-20 19:34:00 CST), 1647776160 (2022-03-20 19:36:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-0 | Attribute: info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+       Timestamps: 1647776040 (2022-03-20 19:34:00 CST), 1647776100 (2022-03-20 19:35:00 CST), 1647776280 (2022-03-20 19:38:00 CST), 1647776340 (2022-03-20 19:39:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 19:42:00 CST → 2022-03-20 19:42:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647776520 (2022-03-20 19:42:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.recommendationservice-2 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647776520 (2022-03-20 19:42:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-0 | Attribute: info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+       Timestamps: 1647776520 (2022-03-20 19:42:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 19:46:00 CST → 2022-03-20 19:58:00 CST (Δ = 720 sec)
+   Total Anomalies: 26
+
+   📝 Metric Service Anomalies:
+     • Entity: cartservice-grpc | Attribute: mrt
+       Timestamps: 1647776820 (2022-03-20 19:47:00 CST), 1647777000 (2022-03-20 19:50:00 CST), 1647777360 (2022-03-20 19:56:00 CST), 1647777420 (2022-03-20 19:57:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647776760 (2022-03-20 19:46:00 CST), 1647776940 (2022-03-20 19:49:00 CST), 1647777000 (2022-03-20 19:50:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-2.destination.frontend.cartservice | Attribute: istio_agent_istiod_connection_terminations.cancelled
+       Timestamps: 1647776760 (2022-03-20 19:46:00 CST), 1647776820 (2022-03-20 19:47:00 CST), 1647776880 (2022-03-20 19:48:00 CST), 1647776940 (2022-03-20 19:49:00 CST), 1647777000 (2022-03-20 19:50:00 CST), 1647777060 (2022-03-20 19:51:00 CST), 1647777120 (2022-03-20 19:52:00 CST), 1647777180 (2022-03-20 19:53:00 CST), 1647777240 (2022-03-20 19:54:00 CST), 1647777300 (2022-03-20 19:55:00 CST), 1647777360 (2022-03-20 19:56:00 CST), 1647777420 (2022-03-20 19:57:00 CST), 1647777480 (2022-03-20 19:58:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.fs.inodes.free
+       Timestamps: 1647776820 (2022-03-20 19:47:00 CST), 1647776880 (2022-03-20 19:48:00 CST), 1647777180 (2022-03-20 19:53:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: frontend-0 | Attribute: info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+       Timestamps: 1647776820 (2022-03-20 19:47:00 CST), 1647776880 (2022-03-20 19:48:00 CST), 1647776940 (2022-03-20 19:49:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_node | node-5 | system.fs.inodes.free | 1647776640 (2022-03-20 19:44:00 CST)
+   metric_container | node-5.recommendationservice-2 | container_memory_max_usage_MB | 1647776640 (2022-03-20 19:44:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

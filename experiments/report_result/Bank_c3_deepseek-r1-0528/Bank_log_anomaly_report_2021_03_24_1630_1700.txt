@@ -1,0 +1,37 @@
+
+📝 Detailed Log Anomaly Report (Beijing Time = UTC+8):
+================================================================================
+
+Pod: IG01
+  - Pattern ID 12 (1 anomalies):
+      Template: [GC (Allocation Failure) [ParNew: secs] secs] [Times: user=sys=., real=secs]
+      1616575980 (2021-03-24 16:53:00 CST)
+  - Pattern ID 59 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM HIS MYSQL Ignoring unknown property: value of  for property
+      1616574600 (2021-03-24 16:30:00 CST)
+  - Pattern ID 103 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [cn.com.cmbc.uocp.common.ut ...
+      1616574600 (2021-03-24 16:30:00 CST)
+  - Pattern ID 118 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.core.ApplicationContext.log Initializing Spring sub WebApplicationContext: wealth
+      1616575680 (2021-03-24 16:48:00 CST)
+  - Pattern ID 127 (1 anomalies):
+      Template: IPAddress POST /UOCP/person/ServiceTest5.json HTTP/. - - k6/.(api url
+      1616575860 (2021-03-24 16:51:00 CST)
+  - Pattern ID 139 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; commit;
+      1616574600 (2021-03-24 16:30:00 CST)
+  - Pattern ID 143 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; commit;
+      1616574600 (2021-03-24 16:30:00 CST)
+  - Pattern ID 158 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDsEnable debug logging for this logger for a complete list of JARs th ...
+      1616575800 (2021-03-24 16:50:00 CST)
+  - Pattern ID 161 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [java.lang.ThreadLocal] (va ...
+      1616574600 (2021-03-24 16:30:00 CST)
+  - Pattern ID 170 (1 anomalies):
+      Template: [Full GC (Metadata GC Threshold) [CMS secs] [Times: user=sys=., real=secs]
+      1616574600 (2021-03-24 16:30:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).

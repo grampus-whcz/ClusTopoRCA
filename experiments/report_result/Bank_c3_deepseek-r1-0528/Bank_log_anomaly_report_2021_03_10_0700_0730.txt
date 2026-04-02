@@ -1,0 +1,70 @@
+
+📝 Detailed Log Anomaly Report (Beijing Time = UTC+8):
+================================================================================
+
+Pod: IG01
+  - Pattern ID 2 (1 anomalies):
+      Template: 
+      1615331580 (2021-03-10 07:13:00 CST)
+  - Pattern ID 14 (1 anomalies):
+      Template: [Full GC (Last ditch collection) --04T07  [CMS: 2512233K->2495291K(3145728K), secs] 2512233K->2495291K(4089472K), [Metaspace: 1037070K->1037070K(2000896K)], secs] [Times: user=sys=., real=secs]
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 34 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 36 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built: Feb  UTC
+      1615331580 (2021-03-10 07:13:00 CST)
+  - Pattern ID 52 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[C ...
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 68 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /tomcat/apache-tomcat-./webapps/UOCP.war has finished in , ms
+      1615330800 (2021-03-10 07:00:00 CST)
+  - Pattern ID 69 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /tomcat/apache-tomcat-./webapps/log.Home IS UNDEFINED
+      1615332060 (2021-03-10 07:21:00 CST)
+  - Pattern ID 75 (1 anomalies):
+      Template: 
+      1615331580 (2021-03-10 07:13:00 CST)
+  - Pattern ID 90 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [kafka-producer-network-thread ...
+      1615331160 (2021-03-10 07:06:00 CST)
+  - Pattern ID 96 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [org.springframework.core.N ...
+      1615331580 (2021-03-10 07:13:00 CST)
+  - Pattern ID 97 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [java.lang.ThreadLocal] (va ...
+      1615330800 (2021-03-10 07:00:00 CST)
+  - Pattern ID 109 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[C ...
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 112 (1 anomalies):
+      Template: INFO [http-nio--exec-] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped alreadyCould not load [org.apache.ib ...
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 113 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDsEnable debug logging for this logger for a complete list of JARs th ...
+      1615331160 (2021-03-10 07:06:00 CST)
+  - Pattern ID 125 (1 anomalies):
+      Template: IG01 POST /UOCP/base/ServiceTest4.json HTTP/- Mozilla/(Windows NT ; WOW64) AppleWebKit/(KHTML, like Gecko) Chrome/Safari/.
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 130 (1 anomalies):
+      Template: [Note] InnoDB: page cleaner: 1000ms intended loop took 7883msThe settings might not be optimal(flushed= and evicted=, during the time.)
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 132 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName invoke; SET timestamp=; INSERT INTO TableName ( Fields ) VALUES ( Values );
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 144 (2 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; SELECT SC.MODULE, SC.PROTOCOL, SC.IP, SC.PORT, SC.CONNECT TIMEOUT, SC.CLIENT REUSE, ...
+      1615330800 (2021-03-10 07:00:00 CST), 1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 153 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [Tomcat03] Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName; SET timestamp=; commit;
+      1615332000 (2021-03-10 07:20:00 CST)
+  - Pattern ID 165 (2 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.Catalina.start Server startup in ms OpenJDK -Bit Server VM warning: UseCMSCompactAtFullCollection is deprecated and will likely be removed in a future releaseOp ...
+      1615330800 (2021-03-10 07:00:00 CST), 1615331580 (2021-03-10 07:13:00 CST)
+  - Pattern ID 172 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName; SET timestamp=; commit;
+      1615331160 (2021-03-10 07:06:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).

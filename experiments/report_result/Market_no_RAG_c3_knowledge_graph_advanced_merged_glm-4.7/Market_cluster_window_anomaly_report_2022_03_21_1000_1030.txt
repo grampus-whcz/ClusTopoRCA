@@ -1,0 +1,109 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1000_1030
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 10:06:00 CST → 2022-03-21 10:08:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 10:08:00 CST (T2) to 2022-03-21 10:12:00 CST (4 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.frontend-1 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: container_memory_usage_MB(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.frontend-1 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.frontend-1 (Cleaned: frontend)**: emailservice-1, checkoutservice-1, currencyservice-1, productcatalogservice2-0, istio-ingressgateway
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.frontend-1 (Cleaned: frontend, highest confidence score)
+2. Check node-5.frontend-1 for 2 anomalies on attributes: container_memory_usage_MB(2 times)
+3. Investigate anomalies starting at N/A for node-5.frontend-1 (analysis window starts at 2022-03-21 10:08:00 CST (T2))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 10:17:00 CST → 2022-03-21 10:21:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 9
+
+## Anomaly Breakdown
+- **Metric Runtime**: 3 anomalies
+- **Metric Container**: 5 anomalies
+- **Metric Mesh**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 10:19:00 CST (T2) to 2022-03-21 10:23:00 CST (4 minutes)
+**Total Anomalies**: 9
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.frontend-1 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: container_memory_usage_MB(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-5.frontend-1 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice2.ts:8088** (Cleaned: adservice, Layer: ADSERVICE): Score = 0.75, Anomalies = 3, Attrs = java_lang_Compilation_TotalCompilationTime(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.frontend-1 (Cleaned: frontend)**: emailservice-1, checkoutservice-1, currencyservice-1, productcatalogservice2-0, istio-ingressgateway
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.frontend-1 (Cleaned: frontend, highest confidence score)
+2. Check node-5.frontend-1 for 5 anomalies on attributes: container_memory_usage_MB(5 times)
+3. Investigate anomalies starting at N/A for node-5.frontend-1 (analysis window starts at 2022-03-21 10:19:00 CST (T2))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 6
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_memory_usage_MB | 2022-03-21 10:10:00 CST
+- metric_container | node-5.frontend-1 (Cleaned: frontend) | container_memory_usage_MB | 2022-03-21 10:12:00 CST
+- metric_runtime | adservice2.ts:8088 (Cleaned: adservice) | java_lang_Compilation_TotalCompilationTime | 2022-03-21 10:14:00 CST
+- metric_runtime | adservice2.ts:8088 (Cleaned: adservice) | java_lang_Compilation_TotalCompilationTime | 2022-03-21 10:24:00 CST
+- metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2) | istio_tcp_connections_opened.UH | 2022-03-21 10:27:00 CST
+- metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2) | istio_tcp_connections_opened.UH | 2022-03-21 10:29:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

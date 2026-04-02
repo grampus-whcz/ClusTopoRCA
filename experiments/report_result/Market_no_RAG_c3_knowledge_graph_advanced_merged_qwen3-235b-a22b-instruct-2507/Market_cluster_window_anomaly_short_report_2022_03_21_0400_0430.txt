@@ -1,0 +1,76 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0400_0430
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 04:01:00 CST → 2022-03-21 04:08:00 CST (Δ = 420 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: emailservice (Original: node-5.emailservice-0) | Attribute: container_memory_rss
+       Times (7): 2022-03-21 04:01:00 CST, 2022-03-21 04:02:00 CST, 2022-03-21 04:03:00 CST, 2022-03-21 04:05:00 CST, 2022-03-21 04:06:00 CST, 2022-03-21 04:07:00 CST, 2022-03-21 04:08:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_request_bytes.grpc.0.2.0
+       Times (2): 2022-03-21 04:01:00 CST, 2022-03-21 04:07:00 CST
+
+   📝 Log Anomalies:
+     • Entity: paymentservice (Original: paymentservice-2) | Attribute: at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:41)
+       Times (2): 2022-03-21 04:04:00 CST, 2022-03-21 04:07:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.emailservice-0 (Cleaned: emailservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 04:11:00 CST → 2022-03-21 04:17:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Me
+       Times (3): 2022-03-21 04:13:00 CST, 2022-03-21 04:14:00 CST, 2022-03-21 04:17:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: emailservice (Original: node-5.emailservice-0) | Attribute: container_memory_rss
+       Times (3): 2022-03-21 04:11:00 CST, 2022-03-21 04:12:00 CST, 2022-03-21 04:13:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_request_bytes.grpc.0.2.0
+       Times (2): 2022-03-21 04:12:00 CST, 2022-03-21 04:16:00 CST
+
+   📝 Log Anomalies:
+     • Entity: paymentservice (Original: paymentservice-2) | Attribute: at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:41)
+       Times (2): 2022-03-21 04:12:00 CST, 2022-03-21 04:15:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.emailservice-0 (Cleaned: emailservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 04:19:00 CST → 2022-03-21 04:25:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc (Original: adservice-grpc) | Attribute: rr
+       Times (4): 2022-03-21 04:22:00 CST, 2022-03-21 04:23:00 CST, 2022-03-21 04:24:00 CST, 2022-03-21 04:25:00 CST
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice (Original: adservice2.ts:8088) | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Me
+       Times (2): 2022-03-21 04:21:00 CST, 2022-03-21 04:24:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway (Original: istio-ingressgateway-565bffd4d-rn678) | Attribute: istio_request_bytes.grpc.0.2.0
+       Times (4): 2022-03-21 04:19:00 CST, 2022-03-21 04:20:00 CST, 2022-03-21 04:21:00 CST, 2022-03-21 04:23:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 10
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

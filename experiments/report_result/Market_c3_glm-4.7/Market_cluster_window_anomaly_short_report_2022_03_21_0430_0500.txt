@@ -1,0 +1,75 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0430_0500
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 04:30:00 CST → 2022-03-21 04:36:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_MB_max.heap
+       Times (2): 2022-03-21 04:31:00 CST, 2022-03-21 04:34:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.fs.inodes.in_use
+       Times (3): 2022-03-21 04:30:00 CST, 2022-03-21 04:33:00 CST, 2022-03-21 04:36:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: UNKNOWN_PARENT->cartservice-1:HGET | Attribute: duration
+       Times (4): 2022-03-21 04:33:00 CST, 2022-03-21 04:34:00 CST, 2022-03-21 04:35:00 CST, 2022-03-21 04:36:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: ARNING: Failed to export spans
+       Times (3): 2022-03-21 04:34:00 CST, 2022-03-21 04:35:00 CST, 2022-03-21 04:36:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 04:38:00 CST → 2022-03-21 04:44:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: jvm_memory_MB_max.heap
+       Times (2): 2022-03-21 04:43:00 CST, 2022-03-21 04:44:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-1 | Attribute: container_memory_cache
+       Times (3): 2022-03-21 04:39:00 CST, 2022-03-21 04:40:00 CST, 2022-03-21 04:42:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.fs.inodes.in_use
+       Times (2): 2022-03-21 04:41:00 CST, 2022-03-21 04:43:00 CST
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: ARNING: Failed to export spans
+       Times (2): 2022-03-21 04:41:00 CST, 2022-03-21 04:44:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 04:48:00 CST → 2022-03-21 04:52:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_go_info.go1.16.6
+       Times (4): 2022-03-21 04:48:00 CST, 2022-03-21 04:49:00 CST, 2022-03-21 04:50:00 CST, 2022-03-21 04:51:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 04:56:00 CST → 2022-03-21 04:59:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-1 | Attribute: container_memory_cache
+       Times (3): 2022-03-21 04:56:00 CST, 2022-03-21 04:58:00 CST, 2022-03-21 04:59:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_go_info.go1.16.6
+       Times (2): 2022-03-21 04:57:00 CST, 2022-03-21 04:59:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 11
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

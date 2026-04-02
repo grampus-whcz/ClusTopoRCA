@@ -1,0 +1,61 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 0900_0930
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 09:10:00 CST → 2022-03-20 09:12:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_memory_cache
+       Times (3): 2022-03-20 09:10:00 CST, 2022-03-20 09:11:00 CST, 2022-03-20 09:12:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 09:14:00 CST → 2022-03-20 09:23:00 CST (Δ = 540 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (5): 2022-03-20 09:16:00 CST, 2022-03-20 09:18:00 CST, 2022-03-20 09:20:00 CST, 2022-03-20 09:21:00 CST, 2022-03-20 09:23:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_memory_cache
+       Times (7): 2022-03-20 09:14:00 CST, 2022-03-20 09:15:00 CST, 2022-03-20 09:16:00 CST, 2022-03-20 09:18:00 CST, 2022-03-20 09:19:00 CST, 2022-03-20 09:21:00 CST, 2022-03-20 09:23:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend2-0.destination.unknown.frontend2 | Attribute: istio_requests.http.200.
+       Times (3): 2022-03-20 09:15:00 CST, 2022-03-20 09:17:00 CST, 2022-03-20 09:19:00 CST
+
+   📝 Log Anomalies:
+     • Entity: emailservice-1 | Attribute: ava.net.UnknownHostException: jaeger-collector: Name or service not known
+       Times (2): 2022-03-20 09:18:00 CST, 2022-03-20 09:22:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 09:25:00 CST → 2022-03-20 09:29:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Times (5): 2022-03-20 09:25:00 CST, 2022-03-20 09:26:00 CST, 2022-03-20 09:27:00 CST, 2022-03-20 09:28:00 CST, 2022-03-20 09:29:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_memory_cache
+       Times (2): 2022-03-20 09:26:00 CST, 2022-03-20 09:29:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend2-0.destination.unknown.frontend2 | Attribute: istio_requests.http.200.
+       Times (4): 2022-03-20 09:26:00 CST, 2022-03-20 09:27:00 CST, 2022-03-20 09:28:00 CST, 2022-03-20 09:29:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.udp.in_errors
+       Times (5): 2022-03-20 09:25:00 CST, 2022-03-20 09:26:00 CST, 2022-03-20 09:27:00 CST, 2022-03-20 09:28:00 CST, 2022-03-20 09:29:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 9
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

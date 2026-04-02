@@ -1,0 +1,164 @@
+🔍 Telecom Anomaly Clustering & Root Cause Analysis Report
+📅 Date: 2020_05_24 | Window: 0300_0330
+⚙️  RCA Methodology: Time(2.5%) + Topology(2.5%) + Count(95.0%)
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+========================================
+
+# Cluster #1
+**Time Span**: 2020-05-24 03:05:00 CST → 2020-05-24 03:05:00 CST (Δ = 0 sec)
+**Total Anomalies**: 21
+
+## Anomaly Breakdown
+### Trace Anomalies:
+- **Entity**: docker_002 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:FlyRemote,null,fly_remote_001 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:JDBC,db_009,null | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_007,local_method_010 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_001 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_006 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_007 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_009 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_004:LOCAL,db_007,local_method_010 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_004:LOCAL,db_009,local_method_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_004:LOCAL,db_009,local_method_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_004:LOCAL,db_009,local_method_007 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+- **Entity**: docker_004:LOCAL,db_009,local_method_009 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:05:00 CST
+
+## Root Cause Analysis (Topology-Based)
+### Root Cause Analysis Report - Cluster #1 (Telecom Dataset)
+**Analysis Window**: 2020-05-24 03:05:00 CST to 2020-05-24 03:10:00 CST (5 minutes)
+**Total Anomalies**: 21
+
+#### Primary Root Cause Entity
+- **Entity**: docker_002 (Type: DOCKER)
+- **Confidence Score**: 0.85 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Predicted Fault Type**: unknown
+- **Earliest Anomaly Time**: 2020-05-24 03:05:00 CST
+- **Topology Impact**: 4 downstream entities affected
+- **Direct Dependencies**: os_001
+
+#### Score Breakdown for docker_002
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on dependency impact)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+- **Component Weight**: 0.85 (DOCKER layer weight)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **docker_002:LOCAL,db_009,local_method_001** (Type: UNKNOWN): Score = 0.49, Fault = unknown, Anomalies = 2
+- **docker_002:LOCAL,db_009,local_method_003** (Type: UNKNOWN): Score = 0.49, Fault = unknown, Anomalies = 2
+- **docker_004** (Type: DOCKER): Score = 0.45, Fault = unknown, Anomalies = 1
+
+#### Fault Type Distribution
+
+#### RCA Recommendations
+1. Prioritize investigation of docker_002 (highest confidence score)
+2. Verify unknown issues in DOCKER layer
+3. Check dependent entities of docker_002 for cascading failures
+4. Monitor resource utilization (CPU/network/database) for docker_002
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2020-05-24 03:14:00 CST → 2020-05-24 03:14:00 CST (Δ = 0 sec)
+**Total Anomalies**: 13
+
+## Anomaly Breakdown
+### Trace Anomalies:
+- **Entity**: docker_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:CSF,null,csf_004 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:CSF,null,csf_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_002 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_004 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_006 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_007 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_009 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_003:RemoteProcess,null,csf_001 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_004 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+- **Entity**: os_021 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-24 03:14:00 CST
+
+## Root Cause Analysis (Topology-Based)
+### Root Cause Analysis Report - Cluster #2 (Telecom Dataset)
+**Analysis Window**: 2020-05-24 03:14:00 CST to 2020-05-24 03:19:00 CST (5 minutes)
+**Total Anomalies**: 13
+
+#### Primary Root Cause Entity
+- **Entity**: os_021 (Type: OS)
+- **Confidence Score**: 0.88 (1.0 = highest)
+- **Anomaly Count**: 1
+- **Predicted Fault Type**: unknown
+- **Earliest Anomaly Time**: 2020-05-24 03:14:00 CST
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for os_021
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.00 (based on dependency impact)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+- **Component Weight**: 0.9 (OS layer weight)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **docker_003** (Type: DOCKER): Score = 0.85, Fault = unknown, Anomalies = 1
+- **docker_004** (Type: DOCKER): Score = 0.85, Fault = unknown, Anomalies = 1
+- **docker_003:CSF,null,csf_004** (Type: UNKNOWN): Score = 0.49, Fault = unknown, Anomalies = 1
+
+#### Fault Type Distribution
+
+#### RCA Recommendations
+1. Prioritize investigation of os_021 (highest confidence score)
+2. Verify unknown issues in OS layer
+3. Check dependent entities of os_021 for cascading failures
+4. Monitor resource utilization (CPU/network/database) for os_021
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- Clustering Algorithm: DBSCAN (eps=60s, min_samples=3)
+- RCA Weighting: Time(2.5%), Topology(2.5%), Anomaly Count(95.0%)
+- Component Weights: DB=1.0, OS=0.9, Docker/Pod=0.85
+- Fault Types: CPU fault, network delay, network loss, db connection limit, db close
+- Dependency Graph: Loaded from /root/shared-nvme/work/timeSeries/OmniTransfer_new3/experiment/RQ2/all_telecom_unique_dependency_graphs.json (28 nodes, 42 edges)

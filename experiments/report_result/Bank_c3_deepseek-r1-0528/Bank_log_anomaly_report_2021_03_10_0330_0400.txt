@@ -1,0 +1,145 @@
+
+📝 Detailed Log Anomaly Report (Beijing Time = UTC+8):
+================================================================================
+
+Pod: IG01
+  - Pattern ID 14 (1 anomalies):
+      Template: [Full GC (Last ditch collection) --04T07  [CMS: 2512233K->2495291K(3145728K), secs] 2512233K->2495291K(4089472K), [Metaspace: 1037070K->1037070K(2000896K)], secs] [Times: user=sys=., real=secs]
+      1615319400 (2021-03-10 03:50:00 CST)
+  - Pattern ID 15 (1 anomalies):
+      Template: [Full GC --04T07  [CMS: secs] [Metaspace: secs] [Times: user=sys=., real=secs]
+      1615319400 (2021-03-10 03:50:00 CST)
+  - Pattern ID 16 (1 anomalies):
+      Template: [GC (GCLocker Initiated GC) --04T09  [ParNew: 849342K->8988K(943744K), secs] 3342992K->2502639K(4089472K), secs] [Times: user=sys=., real=secs]
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 19 (1 anomalies):
+      Template: [Full GC (Allocation Failure) --04T03  [CMS2021--04T03  [CMS-concurrent-preclean: /secs] [Times: user=sys=., real=secs]
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 23 (1 anomalies):
+      Template: secs] [Times: user=sys=., real=secs]
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 29 (1 anomalies):
+      Template: IG02 POST /UOCP/person/ServiceTest1.json HTTP/- k6/.(api url
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 30 (1 anomalies):
+      Template: 
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 36 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built: Feb  UTC
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 37 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number: IPAddress
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 40 (1 anomalies):
+      Template: INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture: amd64
+      1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 51 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDescriptor A docBase /tomcat/apache-tomcat-./webapps/manager inside the host appBase has been specified, and will be ignored
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 54 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of configuration descriptor /tomcat/apache-tomcat-./conf/Catalina/localhost/manager.xml has finished in m ...
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 56 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM HIS MYSQL Property maxActive is not used in DBCP2, use maxTotal insteadmaxTotal d ...
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 57 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM HIS MYSQL Property maxWait is not used in DBCP2 , use maxWaitMillis insteadmaxWai ...
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 63 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory.getObjectInstance Name = CMBCSA BPM MYSQL Ignoring unknown property: value of  for property
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 65 (1 anomalies):
+      Template: INFO [localhost-startStop-] redis.clients.jedis.JedisSentinelPool.initSentinels Trying to find master from available Sentinels.
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 69 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /tomcat/apache-tomcat-./webapps/log.Home IS UNDEFINED
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 70 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /tomcat/apache-tomcat-./webapps/log.Home IS UNDEFINED has finished in ms
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 71 (1 anomalies):
+      Template: INFO [localhost-startStop-] Deploying web application /tomcat/apache-tomcat-.
+      1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 75 (1 anomalies):
+      Template: 
+      1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 76 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.catalina.core.StandardWrapper.unload Waiting for instance(s) to be deallocated for Servlet [dynamic]
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 79 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [MySQL Statement Cancellation T ...
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 81 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [tesla-monitor-metric-checker] ...
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 84 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [pool--thread--EventThread] but ...
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 85 (1 anomalies):
+      Template: WARNING [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [UOCP] appears to have started a thread named [Curator-Framework-] but has fa ...
+      1615318800 (2021-03-10 03:40:00 CST)
+  - Pattern ID 93 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [org.springframework.core.N ...
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 100 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [java.lang.ThreadLocal] (va ...
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 101 (1 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [java.lang.ThreadLocal] (va ...
+      1615319460 (2021-03-10 03:51:00 CST)
+  - Pattern ID 103 (2 anomalies):
+      Template: SEVERE [localhost-startStop-] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks The web application [UOCP] created a ThreadLocal with key of type [cn.com.cmbc.uocp.common.ut ...
+      1615319760 (2021-03-10 03:56:00 CST), 1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 105 (1 anomalies):
+      Template: INFO [http-nio--exec-] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped alreadyCould not load [com.tesla.fra ...
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 108 (1 anomalies):
+      Template: INFO [localhost-startStop-] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDsEnable debug logging for this logger for a complete list of JARs th ...
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 125 (2 anomalies):
+      Template: IG01 POST /UOCP/base/ServiceTest4.json HTTP/- Mozilla/(Windows NT ; WOW64) AppleWebKit/(KHTML, like Gecko) Chrome/Safari/.
+      1615319400 (2021-03-10 03:50:00 CST), 1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 126 (1 anomalies):
+      Template: 
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 133 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; INSERT INTO TableName ( Fields ) VALUES ( Values );
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 134 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; UPDATE TableName SET AssignClause WHERE WhereClause;
+      1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 137 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName SET timestamp=; INSERT INTO TableName ( Fields ) VALUES ( Values );
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 138 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName SET timestamp=;
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 139 (1 anomalies):
+      Template: # User@Host: OperName[OperName] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; commit;
+      1615319400 (2021-03-10 03:50:00 CST)
+  - Pattern ID 146 (1 anomalies):
+      Template: [Full GC (Allocation Failure) /secs] [Times: user=sys=., real=secs]
+      1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 148 (1 anomalies):
+      Template: [Full GC (Allocation Failure) --06T18  [CMS (concurrent mode failure): 3145419K->3145405K(3145728K), secs] 4088790K->4088297K(4089472K), [Metaspace: 489080K->489080K(1521664K)], secs] [Times: user=sys ...
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 152 (1 anomalies):
+      Template: 
+      1615319940 (2021-03-10 03:59:00 CST)
+  - Pattern ID 153 (2 anomalies):
+      Template: # User@Host: OperName[OperName] @ [Tomcat03] Id: # Query time: Lock time: Rows sent: Rows examined: use DatabaseName; SET timestamp=; commit;
+      1615319400 (2021-03-10 03:50:00 CST), 1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 156 (1 anomalies):
+      Template: SEVERE java.lang.OutOfMemoryError: Java heap space
+      1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 162 (1 anomalies):
+      Template: WARNING [main] org.apache.catalina.deploy.NamingResourcesImpl.cleanUp Failed to retrieve JNDI naming context for container [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/manager]] ...
+      1615319700 (2021-03-10 03:55:00 CST)
+  - Pattern ID 167 (2 anomalies):
+      Template: # User@Host: zabbix ro[zabbix ro] @ [IPAddress] Id: # Query time: Lock time: Rows sent: Rows examined: SET timestamp=; show engine innodb status;
+      1615318740 (2021-03-10 03:39:00 CST), 1615319760 (2021-03-10 03:56:00 CST)
+  - Pattern ID 169 (1 anomalies):
+      Template: [Full GC (Metadata GC Threshold) [CMS-concurrent-mark: /secs] [Times: user=sys=., real=secs]
+      1615319700 (2021-03-10 03:55:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).

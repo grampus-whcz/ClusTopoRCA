@@ -1,0 +1,107 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1100_1130
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 11:00:00 CST → 2022-03-21 11:08:00 CST (Duration: 480 seconds)
+**Total Anomalies**: 18
+
+## Anomaly Breakdown
+- **Metric Mesh**: 7 anomalies
+- **Trace**: 5 anomalies
+- **Log**: 6 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 11:02:00 CST (T2) to 2022-03-21 11:06:00 CST (4 minutes)
+**Total Anomalies**: 18
+
+#### Primary Root Cause Entity
+- **Entity**: checkoutservice-0.destination.frontend.checkoutservice (Cleaned: checkoutservice-0.destination.frontend.checkoutservice, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 7
+- **Anomaly Attributes**: istio_agent_go_memstats_heap_alloc_bytes(14 times)
+- **Earliest Anomaly Time**: 2022-03-21 11:00:00 CST
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for checkoutservice-0.destination.frontend.checkoutservice (Cleaned: checkoutservice-0.destination.frontend.checkoutservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **checkoutservice-0** (Cleaned: checkoutservice, Layer: CHECKOUTSERVICE): Score = 0.66, Anomalies = 4, Attrs = at hipstershop.AdService.getAdsByCategory(AdService.java:186)(4 times)
+- **frontend-2** (Cleaned: frontend, Layer: FRONTEND): Score = 0.40, Anomalies = 3, Attrs = duration(3 times)
+- **checkoutservice-1:hipstershop.CheckoutService/PlaceOrder** (Cleaned: checkoutservice-1:hipstershop.CheckoutService/PlaceOrder, Layer: CHECKOUTSERVICE): Score = 0.27, Anomalies = 3, Attrs = duration(6 times)
+
+#### Dependency Impact Path
+- **checkoutservice-0.destination.frontend.checkoutservice (Cleaned: checkoutservice-0.destination.frontend.checkoutservice) not found in topology graph**
+  - Suggestion: Check if checkoutservice-0.destination.frontend.checkoutservice is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 2 entities affected (Weight: 1.0)
+- **CHECKOUTSERVICE Layer**: 2 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of checkoutservice-0.destination.frontend.checkoutservice (Cleaned: checkoutservice-0.destination.frontend.checkoutservice, highest confidence score)
+2. Check checkoutservice-0.destination.frontend.checkoutservice for 7.0 anomalies on attributes: istio_agent_go_memstats_heap_alloc_bytes(14 times)
+3. Investigate anomalies starting at 2022-03-21 11:00:00 CST for checkoutservice-0.destination.frontend.checkoutservice (analysis window starts at 2022-03-21 11:02:00 CST (T2))
+4. Verify downstream dependencies of checkoutservice-0.destination.frontend.checkoutservice for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 11:15:00 CST → 2022-03-21 11:23:00 CST (Duration: 480 seconds)
+**Total Anomalies**: 16
+
+## Anomaly Breakdown
+- **Metric Container**: 9 anomalies
+- **Metric Node**: 7 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 11:17:00 CST (T2) to 2022-03-21 11:21:00 CST (4 minutes)
+**Total Anomalies**: 16
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.currencyservice2-0 (Cleaned: currencyservice, Layer: CURRENCYSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 7
+- **Anomaly Attributes**: container_file_descriptors(7 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-6.currencyservice2-0 (Cleaned: currencyservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-6** (Cleaned: node, Layer: UNKNOWN): Score = 0.69, Anomalies = 6, Attrs = system.io.util(6 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.currencyservice2-0 (Cleaned: currencyservice)**: checkoutservice, paymentservice-0, adservice2-0, checkoutservice2-0, adservice-2
+
+#### Layer-wise Impact Analysis
+- **CURRENCYSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.currencyservice2-0 (Cleaned: currencyservice, highest confidence score)
+2. Check node-6.currencyservice2-0 for 7 anomalies on attributes: container_file_descriptors(7 times)
+3. Investigate anomalies starting at N/A for node-6.currencyservice2-0 (analysis window starts at 2022-03-21 11:17:00 CST (T2))
+4. Verify downstream dependencies of currencyservice for cascading failures
+5. Check CURRENCYSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

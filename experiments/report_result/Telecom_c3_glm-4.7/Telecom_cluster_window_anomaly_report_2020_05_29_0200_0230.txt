@@ -1,0 +1,103 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_05_29 0200_0230
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-05-29 02:01:00 CST → 2020-05-29 02:06:00 CST (Δ = 300 sec)
+   Total Anomalies: 17
+
+   📝 Metric A Anomalies:
+     • Entity: db_004 | Attribute: ZJ-002-018_Logic_Read_Per_Sec
+       Timestamps: 1590688920 (2020-05-29 02:02:00 CST), 1590688980 (2020-05-29 02:03:00 CST), 1590689040 (2020-05-29 02:04:00 CST)
+     • Entity: db_008 | Attribute: ZJ-002-036_LFSync_Per_Sec
+       Timestamps: 1590688920 (2020-05-29 02:02:00 CST), 1590689160 (2020-05-29 02:06:00 CST)
+     • Entity: db_008 | Attribute: ZJ-002-038_LFParaWrite_Per_Sec
+       Timestamps: 1590689040 (2020-05-29 02:04:00 CST), 1590689160 (2020-05-29 02:06:00 CST)
+     • Entity: db_009 | Attribute: ZJ-002-012_Sess_Connect
+       Timestamps: 1590689100 (2020-05-29 02:05:00 CST), 1590689160 (2020-05-29 02:06:00 CST)
+     • Entity: db_009 | Attribute: ZJ-002-026_Proc_User_Used_Pct
+       Timestamps: 1590688920 (2020-05-29 02:02:00 CST), 1590689040 (2020-05-29 02:04:00 CST), 1590689100 (2020-05-29 02:05:00 CST)
+     • Entity: os_014 | Attribute: ZJ-005-024_connected_clients
+       Timestamps: 1590688920 (2020-05-29 02:02:00 CST)
+     • Entity: os_015 | Attribute: ZJ-001-097_Disk_avgqu_sz
+       Timestamps: 1590689040 (2020-05-29 02:04:00 CST), 1590689100 (2020-05-29 02:05:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: docker_004->docker_006:RemoteProcess,null,csf_003 | Attribute: duration
+       Timestamps: 1590688860 (2020-05-29 02:01:00 CST)
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1590688860 (2020-05-29 02:01:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2020-05-29 02:08:00 CST → 2020-05-29 02:22:00 CST (Δ = 840 sec)
+   Total Anomalies: 72
+
+   📝 Metric A Anomalies:
+     • Entity: db_004 | Attribute: ZJ-002-018_Logic_Read_Per_Sec
+       Timestamps: 1590689760 (2020-05-29 02:16:00 CST)
+     • Entity: db_008 | Attribute: ZJ-002-036_LFSync_Per_Sec
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689520 (2020-05-29 02:12:00 CST)
+     • Entity: db_008 | Attribute: ZJ-002-038_LFParaWrite_Per_Sec
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689460 (2020-05-29 02:11:00 CST)
+     • Entity: db_009 | Attribute: ZJ-002-012_Sess_Connect
+       Timestamps: 1590689280 (2020-05-29 02:08:00 CST), 1590689400 (2020-05-29 02:10:00 CST)
+     • Entity: os_011 | Attribute: ZJ-002-044_PGA_used_total
+       Timestamps: 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689580 (2020-05-29 02:13:00 CST), 1590689880 (2020-05-29 02:18:00 CST)
+     • Entity: os_012 | Attribute: ZJ-001-103_Disk_wr_kbs
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689880 (2020-05-29 02:18:00 CST)
+     • Entity: os_014 | Attribute: ZJ-005-024_connected_clients
+       Timestamps: 1590689460 (2020-05-29 02:11:00 CST), 1590689580 (2020-05-29 02:13:00 CST), 1590689640 (2020-05-29 02:14:00 CST)
+     • Entity: os_015 | Attribute: ZJ-001-025_Memory_available
+       Timestamps: 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689700 (2020-05-29 02:15:00 CST), 1590689760 (2020-05-29 02:16:00 CST)
+     • Entity: os_015 | Attribute: ZJ-001-097_Disk_avgqu_sz
+       Timestamps: 1590689280 (2020-05-29 02:08:00 CST), 1590689520 (2020-05-29 02:12:00 CST)
+     • Entity: os_022 | Attribute: ZJ-001-080_Agent_ping
+       Timestamps: 1590689280 (2020-05-29 02:08:00 CST), 1590689340 (2020-05-29 02:09:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689940 (2020-05-29 02:19:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-001-028_Memory_free
+       Timestamps: 1590689580 (2020-05-29 02:13:00 CST), 1590689760 (2020-05-29 02:16:00 CST), 1590689880 (2020-05-29 02:18:00 CST), 1590689940 (2020-05-29 02:19:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-001-064_Sent_queue
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689520 (2020-05-29 02:12:00 CST), 1590689820 (2020-05-29 02:17:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-002-014_TPS_Per_Sec
+       Timestamps: 1590689520 (2020-05-29 02:12:00 CST), 1590689580 (2020-05-29 02:13:00 CST), 1590689940 (2020-05-29 02:19:00 CST), 1590690120 (2020-05-29 02:22:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-002-015_Exec_Per_Sec
+       Timestamps: 1590689460 (2020-05-29 02:11:00 CST), 1590689520 (2020-05-29 02:12:00 CST), 1590689760 (2020-05-29 02:16:00 CST), 1590690000 (2020-05-29 02:20:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-002-016_Call_Per_Sec
+       Timestamps: 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689520 (2020-05-29 02:12:00 CST), 1590689820 (2020-05-29 02:17:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-005-012_used_memory
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590690060 (2020-05-29 02:21:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-005-013_used_memory_peak
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689940 (2020-05-29 02:19:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-005-028_mem_fragmentation_ratio
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590690000 (2020-05-29 02:20:00 CST)
+     • Entity: redis_004 | Attribute: ZJ-005-032_used_memory_rss
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689460 (2020-05-29 02:11:00 CST), 1590689880 (2020-05-29 02:18:00 CST)
+     • Entity: redis_005 | Attribute: ZJ-002-081_New_Tbs_Free_Gb
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689520 (2020-05-29 02:12:00 CST), 1590689580 (2020-05-29 02:13:00 CST)
+     • Entity: redis_008 | Attribute: ZJ-005-032_used_memory_rss
+       Timestamps: 1590689340 (2020-05-29 02:09:00 CST), 1590689400 (2020-05-29 02:10:00 CST), 1590689640 (2020-05-29 02:14:00 CST), 1590689700 (2020-05-29 02:15:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2020-05-29 02:24:00 CST → 2020-05-29 02:24:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Trace Anomalies:
+     • Entity: docker_006->docker_006:LOCAL,db_003,local_method_011 | Attribute: duration
+       Timestamps: 1590690240 (2020-05-29 02:24:00 CST)
+     • Entity: docker_007->docker_007:JDBC,db_003,null | Attribute: duration
+       Timestamps: 1590690240 (2020-05-29 02:24:00 CST)
+     • Entity: docker_007->docker_007:LOCAL,db_003,local_method_014 | Attribute: duration
+       Timestamps: 1590690240 (2020-05-29 02:24:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_A | db_009 | ZJ-002-026_Proc_User_Used_Pct | 1590690540 (2020-05-29 02:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

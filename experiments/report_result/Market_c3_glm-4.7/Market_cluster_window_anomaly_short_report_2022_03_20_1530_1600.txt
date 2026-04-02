@@ -1,0 +1,17 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1530_1600
+================================================================================
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 15:47:00 CST → 2022-03-20 15:48:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Log Anomalies:
+     • Entity: shippingservice-0 | Attribute: at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)
+       Times (2): 2022-03-20 15:47:00 CST, 2022-03-20 15:48:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 1
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

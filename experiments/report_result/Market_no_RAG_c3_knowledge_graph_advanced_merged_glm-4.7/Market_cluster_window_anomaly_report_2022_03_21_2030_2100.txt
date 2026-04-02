@@ -1,0 +1,66 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 2030_2100
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 20:30:00 CST → 2022-03-21 20:59:00 CST (Duration: 1740 seconds)
+**Total Anomalies**: 64
+
+## Anomaly Breakdown
+- **Metric Service**: 8 anomalies
+- **Metric Runtime**: 5 anomalies
+- **Metric Container**: 8 anomalies
+- **Metric Mesh**: 15 anomalies
+- **Metric Node**: 8 anomalies
+- **Trace**: 6 anomalies
+- **Log**: 14 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 20:32:00 CST (T2) to 2022-03-21 20:36:00 CST (4 minutes)
+**Total Anomalies**: 64
+
+#### Primary Root Cause Entity
+- **Entity**: checkoutservice-grpc (Cleaned: checkoutservice-grpc, Layer: CHECKOUTSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: sr(12 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for checkoutservice-grpc (Cleaned: checkoutservice-grpc)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **checkoutservice-0.source.checkoutservice.emailservice** (Cleaned: checkoutservice-0.source.checkoutservice.emailservice, Layer: CHECKOUTSERVICE): Score = 0.33, Anomalies = 4, Attrs = istio_agent_go_memstats_heap_objects(8 times)
+- **node-2** (Cleaned: node, Layer: UNKNOWN): Score = 0.23, Anomalies = 2, Attrs = system.mem.real.pct_useage(2 times)
+
+#### Dependency Impact Path
+- **checkoutservice-grpc (Cleaned: checkoutservice-grpc) not found in topology graph**
+  - Suggestion: Check if checkoutservice-grpc is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **CHECKOUTSERVICE Layer**: 2 entities affected (Weight: 0.95)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of checkoutservice-grpc (Cleaned: checkoutservice-grpc, highest confidence score)
+2. Check checkoutservice-grpc for 6.0 anomalies on attributes: sr(12 times)
+3. Investigate anomalies starting at N/A for checkoutservice-grpc (analysis window starts at 2022-03-21 20:32:00 CST (T2))
+4. Verify downstream dependencies of checkoutservice-grpc for cascading failures
+5. Check CHECKOUTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

@@ -1,0 +1,382 @@
+🔍 Anomaly Clustering Report for 2021_03_07 0130_0200
+🔍 The number of clusters are 2021_03_07 0130_0200
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2021-03-07 01:30:00 CST → 2021-03-07 02:00:00 CST (Δ = 1800 sec)
+   Total Anomalies: 248
+   🔑 Keywords: OOM, GC, Error/Failure, Timeout
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest2 | Attribute: sr
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST), 1615052160 (2021-03-07 01:36:00 CST)
+     • Entity: ServiceTest3 | Attribute: mrt
+       Timestamps: 1615053000 (2021-03-07 01:50:00 CST)
+     • Entity: ServiceTest4 | Attribute: mrt
+       Timestamps: 1615052400 (2021-03-07 01:40:00 CST), 1615052460 (2021-03-07 01:41:00 CST), 1615053120 (2021-03-07 01:52:00 CST)
+     • Entity: ServiceTest4 | Attribute: sr
+       Timestamps: 1615052820 (2021-03-07 01:47:00 CST)
+     • Entity: ServiceTest7 | Attribute: mrt
+       Timestamps: 1615052460 (2021-03-07 01:41:00 CST)
+     • Entity: ServiceTest8 | Attribute: sr
+       Timestamps: 1615052940 (2021-03-07 01:49:00 CST)
+     • Entity: ServiceTest9 | Attribute: sr
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: JVM-Threads_7778_JVM_ThreadCount_Threads
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-CPU_CPU_CPUUserTime
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615053000 (2021-03-07 01:50:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615052880 (2021-03-07 01:48:00 CST), 1615053240 (2021-03-07 01:54:00 CST)
+     • Entity: MG01 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST)
+     • Entity: MG01 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST)
+     • Entity: MG01 | Attribute: OSLinux-CPU_CPU-1_SingleCpuidle
+       Timestamps: 1615053360 (2021-03-07 01:56:00 CST), 1615053480 (2021-03-07 01:58:00 CST)
+     • Entity: MG01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: MG01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite
+       Timestamps: 1615052940 (2021-03-07 01:49:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615053480 (2021-03-07 01:58:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Created Tmp Tables
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Read Next
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Read Rnd
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Update
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Write
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Opened Tables
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Select Range
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Table open cache misses
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615052580 (2021-03-07 01:43:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615052940 (2021-03-07 01:49:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-CPU_CPU-1_SingleCpuidle
+       Timestamps: 1615052700 (2021-03-07 01:45:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMFreeMem
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST), 1615051920 (2021-03-07 01:32:00 CST), 1615051980 (2021-03-07 01:33:00 CST), 1615052100 (2021-03-07 01:35:00 CST), 1615052160 (2021-03-07 01:36:00 CST), 1615052280 (2021-03-07 01:38:00 CST), 1615052340 (2021-03-07 01:39:00 CST), 1615052460 (2021-03-07 01:41:00 CST), 1615052520 (2021-03-07 01:42:00 CST), 1615052640 (2021-03-07 01:44:00 CST), 1615052700 (2021-03-07 01:45:00 CST), 1615052820 (2021-03-07 01:47:00 CST), 1615052880 (2021-03-07 01:48:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Read Key
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb os log pending writes
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Slow launch threads
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST), 1615052580 (2021-03-07 01:43:00 CST), 1615053300 (2021-03-07 01:55:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU_CPUUserTime
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU_CPUidleutil
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-NTP_40.2.208.64_NtpServerTimeOffset
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSAvailableSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSInodeUsedPercent
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSUsedSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSAvailableSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSCapacity
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSUsedSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSAvailableSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSInodeUsedPercent
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKTps
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite
+       Timestamps: 1615053600 (2021-03-07 02:00:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_CacheMem
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMFreeMem
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Threads_7441-"http-nio-8003"_MaxThreadsThreadInfo
+       Timestamps: 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (expired_keys)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (keyspace_misses)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (lru_clock)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (maxmemory)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (rdb_changes_since_last_save)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (total_commands_processed)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (total_connections_received)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (uptime_in_seconds)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (used_memory_peak)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_redis server
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615052220 (2021-03-07 01:37:00 CST), 1615052820 (2021-03-07 01:47:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-CPU_CPU_CPUCpuUtil
+       Timestamps: 1615053180 (2021-03-07 01:53:00 CST), 1615053300 (2021-03-07 01:55:00 CST), 1615053360 (2021-03-07 01:56:00 CST), 1615053480 (2021-03-07 01:58:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-CPU_CPU_CPUUserTime
+       Timestamps: 1615053120 (2021-03-07 01:52:00 CST), 1615053180 (2021-03-07 01:53:00 CST), 1615053240 (2021-03-07 01:54:00 CST), 1615053300 (2021-03-07 01:55:00 CST), 1615053360 (2021-03-07 01:56:00 CST), 1615053420 (2021-03-07 01:57:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-CPU_CPU_CPUidleutil
+       Timestamps: 1615053120 (2021-03-07 01:52:00 CST), 1615053180 (2021-03-07 01:53:00 CST), 1615053240 (2021-03-07 01:54:00 CST), 1615053300 (2021-03-07 01:55:00 CST), 1615053360 (2021-03-07 01:56:00 CST), 1615053420 (2021-03-07 01:57:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (connected_clients)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (expired_keys)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (keyspace_misses)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (lru_clock)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (maxmemory)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (rdb_changes_since_last_save)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (total_commands_processed)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (total_connections_received)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (uptime_in_seconds)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (used_memory)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (used_memory_peak)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (used_memory_rss)
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_redis server
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615051920 (2021-03-07 01:32:00 CST), 1615053480 (2021-03-07 01:58:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace
+       Timestamps: 1615051920 (2021-03-07 01:32:00 CST), 1615052040 (2021-03-07 01:34:00 CST), 1615052280 (2021-03-07 01:38:00 CST), 1615052400 (2021-03-07 01:40:00 CST), 1615052520 (2021-03-07 01:42:00 CST), 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615052940 (2021-03-07 01:49:00 CST), 1615053540 (2021-03-07 01:59:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-CPU_CPU-1_SingleCpuidle
+       Timestamps: 1615053300 (2021-03-07 01:55:00 CST), 1615053540 (2021-03-07 01:59:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST), 1615052100 (2021-03-07 01:35:00 CST), 1615052340 (2021-03-07 01:39:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace
+       Timestamps: 1615051920 (2021-03-07 01:32:00 CST), 1615052040 (2021-03-07 01:34:00 CST), 1615052280 (2021-03-07 01:38:00 CST), 1615052400 (2021-03-07 01:40:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615053300 (2021-03-07 01:55:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615052100 (2021-03-07 01:35:00 CST), 1615052220 (2021-03-07 01:37:00 CST), 1615052580 (2021-03-07 01:43:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST), 1615052100 (2021-03-07 01:35:00 CST), 1615052220 (2021-03-07 01:37:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615052640 (2021-03-07 01:44:00 CST), 1615053180 (2021-03-07 01:53:00 CST), 1615053300 (2021-03-07 01:55:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615051800 (2021-03-07 01:30:00 CST), 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: dockerB1 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1615051860 (2021-03-07 01:31:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: MG02->dockerB1 | Attribute: duration
+       Timestamps: 1615052938 (2021-03-07 01:48:58 CST)
+     • Entity: dockerA2->MG02 | Attribute: duration
+       Timestamps: 1615052338 (2021-03-07 01:38:58 CST)
+     • Entity: dockerB2->MG01 | Attribute: frequency
+       Timestamps: 1615052098 (2021-03-07 01:34:58 CST)
+     • Entity: dockerB2->MG02 | Attribute: frequency
+       Timestamps: 1615052338 (2021-03-07 01:38:58 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_0
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_100
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_102
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_105
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_106
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_111
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_117
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_121
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_123
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_125
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_127
+       Timestamps: 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: IG01 | Attribute: PatternID_131
+       Timestamps: 1615053180 (2021-03-07 01:53:00 CST)
+     • Entity: IG01 | Attribute: PatternID_132
+       Timestamps: 1615052400 (2021-03-07 01:40:00 CST)
+     • Entity: IG01 | Attribute: PatternID_133
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_134
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_135
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_139
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_142
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_143
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: IG01 | Attribute: PatternID_144
+       Timestamps: 1615052400 (2021-03-07 01:40:00 CST)
+     • Entity: IG01 | Attribute: PatternID_148
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_149
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_15
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_151
+       Timestamps: 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_152
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_155
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_156
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_158
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_166
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_167
+       Timestamps: 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_170
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_18
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_2
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_20
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_22
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_23
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_26
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_27
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_28
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_29
+       Timestamps: 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_30
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_33
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_34
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_35
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_40
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_41
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_49
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_5
+       Timestamps: 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: IG01 | Attribute: PatternID_50
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_56
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_58
+       Timestamps: 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_59
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_63
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_66
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615053540 (2021-03-07 01:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_7
+       Timestamps: 1615052640 (2021-03-07 01:44:00 CST)
+     • Entity: IG01 | Attribute: PatternID_73
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_75
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_77
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615052400 (2021-03-07 01:40:00 CST)
+     • Entity: IG01 | Attribute: PatternID_78
+       Timestamps: 1615053480 (2021-03-07 01:58:00 CST)
+     • Entity: IG01 | Attribute: PatternID_80
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_86
+       Timestamps: 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_87
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615052400 (2021-03-07 01:40:00 CST)
+     • Entity: IG01 | Attribute: PatternID_88
+       Timestamps: 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_89
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_9
+       Timestamps: 1615053060 (2021-03-07 01:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_93
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST), 1615052760 (2021-03-07 01:46:00 CST)
+     • Entity: IG01 | Attribute: PatternID_95
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_96
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_97
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+     • Entity: IG01 | Attribute: PatternID_99
+       Timestamps: 1615052040 (2021-03-07 01:34:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

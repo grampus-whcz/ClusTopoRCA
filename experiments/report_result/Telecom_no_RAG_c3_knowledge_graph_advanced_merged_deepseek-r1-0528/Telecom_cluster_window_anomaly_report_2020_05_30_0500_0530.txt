@@ -1,0 +1,336 @@
+🔍 Telecom Anomaly Clustering & Root Cause Analysis Report
+📅 Date: 2020_05_30 | Window: 0500_0530
+⚙️  RCA Methodology: Time(2.5%) + Topology(2.5%) + Count(95.0%)
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+========================================
+
+# Cluster #1
+**Time Span**: 2020-05-30 05:00:00 CST → 2020-05-30 05:05:00 CST (Δ = 300 sec)
+**Total Anomalies**: 46
+
+## Anomaly Breakdown
+### Metric A Anomalies:
+- **Entity**: db_007 | **Attribute**: ZJ-001-014_CPU_system_time | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST, 2020-05-30 05:05:00 CST
+- **Entity**: os_019 | **Attribute**: ZJ-001-068_Received_packets | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:05:00 CST
+- **Entity**: redis_009 | **Attribute**: ZJ-001-069_Incoming_network_traffic | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: redis_009 | **Attribute**: ZJ-002-001_Tbs_Used_Pct | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:04:00 CST
+- **Entity**: redis_009 | **Attribute**: ZJ-002-015_Exec_Per_Sec | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:03:00 CST
+- **Entity**: redis_010 | **Attribute**: ZJ-005-027_keyspace_hits | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+
+### Trace Anomalies:
+- **Entity**: ROOT | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_002 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:00:00 CST, 2020-05-30 05:02:00 CST
+- **Entity**: docker_002:JDBC,db_007,null | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_002:JDBC,db_009,null | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_002:LOCAL,db_009,local_method_007 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST, 2020-05-30 05:02:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_004 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_005:LOCAL,db_003,local_method_015 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_005:RemoteProcess,null,csf_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_006 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_006:JDBC,db_003,null | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:JDBC,db_003,null | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_011 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_013 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_013 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_014 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_014 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_015 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_017 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:LOCAL,db_003,local_method_017 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_002 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:01:00 CST
+- **Entity**: docker_007 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_007:JDBC,db_003,null | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: docker_007:RemoteProcess,null,csf_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:00:00 CST
+- **Entity**: docker_008:RemoteProcess,null,csf_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:00:00 CST
+- **Entity**: os_021 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: os_021:CSF,null,csf_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: os_021:OSB,null,osb_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: os_022 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: os_022:CSF,null,csf_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+- **Entity**: os_022:OSB,null,osb_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:02:00 CST
+
+## Root Cause Analysis (Topology-Based)
+### Root Cause Analysis Report - Cluster #1 (Telecom Dataset)
+**Analysis Window**: 2020-05-30 05:02:00 CST to 2020-05-30 05:07:00 CST (5 minutes)
+**Total Anomalies**: 46
+
+#### Primary Root Cause Entity
+- **Entity**: docker_002 (Type: DOCKER)
+- **Confidence Score**: 0.85 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Predicted Fault Type**: unknown
+- **Earliest Anomaly Time**: 2020-05-30 05:00:00 CST
+- **Topology Impact**: 24 downstream entities affected
+- **Direct Dependencies**: db_009, os_022, docker_007, docker_008, docker_005
+
+#### Score Breakdown for docker_002
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on dependency impact)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+- **Component Weight**: 0.85 (DOCKER layer weight)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **db_007** (Type: DB): Score = 0.67, Fault = unknown, Anomalies = 2
+- **docker_003** (Type: DOCKER): Score = 0.58, Fault = unknown, Anomalies = 2
+- **docker_006** (Type: DOCKER): Score = 0.57, Fault = unknown, Anomalies = 2
+
+#### Fault Type Distribution
+
+#### RCA Recommendations
+1. Prioritize investigation of docker_002 (highest confidence score)
+2. Verify unknown issues in DOCKER layer
+3. Check dependent entities of docker_002 for cascading failures
+4. Monitor resource utilization (CPU/network/database) for docker_002
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2020-05-30 05:07:00 CST → 2020-05-30 05:30:00 CST (Δ = 1380 sec)
+**Total Anomalies**: 135
+
+## Anomaly Breakdown
+### Metric A Anomalies:
+- **Entity**: db_003 | **Attribute**: ZJ-002-016_Call_Per_Sec | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:15:00 CST, 2020-05-30 05:16:00 CST, 2020-05-30 05:17:00 CST (+1 more)
+- **Entity**: db_007 | **Attribute**: ZJ-001-014_CPU_system_time | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:18:00 CST, 2020-05-30 05:28:00 CST
+- **Entity**: os_005 | **Attribute**: ZJ-001-108_FS_used_space | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:13:00 CST, 2020-05-30 05:18:00 CST, 2020-05-30 05:23:00 CST (+1 more)
+- **Entity**: os_006 | **Attribute**: ZJ-001-031_Memory_used | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:23:00 CST, 2020-05-30 05:26:00 CST, 2020-05-30 05:28:00 CST (+1 more)
+- **Entity**: os_007 | **Attribute**: ZJ-005-035_redis_load | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST, 2020-05-30 05:19:00 CST, 2020-05-30 05:22:00 CST (+1 more)
+- **Entity**: os_019 | **Attribute**: ZJ-001-068_Received_packets | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:15:00 CST, 2020-05-30 05:25:00 CST, 2020-05-30 05:30:00 CST
+- **Entity**: redis_007 | **Attribute**: ZJ-001-101_Disk_io_util | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:25:00 CST, 2020-05-30 05:28:00 CST, 2020-05-30 05:29:00 CST (+1 more)
+- **Entity**: redis_009 | **Attribute**: ZJ-001-069_Incoming_network_traffic | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:12:00 CST, 2020-05-30 05:15:00 CST, 2020-05-30 05:17:00 CST
+- **Entity**: redis_009 | **Attribute**: ZJ-002-001_Tbs_Used_Pct | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST, 2020-05-30 05:15:00 CST, 2020-05-30 05:27:00 CST
+- **Entity**: redis_009 | **Attribute**: ZJ-002-015_Exec_Per_Sec | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST, 2020-05-30 05:14:00 CST, 2020-05-30 05:21:00 CST
+- **Entity**: redis_010 | **Attribute**: ZJ-001-103_Disk_wr_kbs | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:07:00 CST, 2020-05-30 05:09:00 CST, 2020-05-30 05:10:00 CST (+1 more)
+- **Entity**: redis_010 | **Attribute**: ZJ-002-050_Asm_Free_Tb | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:07:00 CST, 2020-05-30 05:17:00 CST, 2020-05-30 05:20:00 CST (+1 more)
+- **Entity**: redis_010 | **Attribute**: ZJ-005-027_keyspace_hits | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:09:00 CST, 2020-05-30 05:10:00 CST, 2020-05-30 05:20:00 CST
+- **Entity**: redis_012 | **Attribute**: ZJ-002-023_Row_Lock | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:09:00 CST, 2020-05-30 05:13:00 CST, 2020-05-30 05:14:00 CST (+1 more)
+
+### Metric B Anomalies:
+- **Entity**: osb_001 | **Attribute**: num | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:21:00 CST
+- **Entity**: osb_001 | **Attribute**: succee_rate | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:19:00 CST
+
+### Trace Anomalies:
+- **Entity**: docker_001 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:09:00 CST, 2020-05-30 05:10:00 CST, 2020-05-30 05:11:00 CST (+1 more)
+- **Entity**: docker_001:CSF,null,csf_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:CSF,null,csf_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:CSF,null,csf_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:CSF,null,csf_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:FlyRemote,null,fly_remote_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:JDBC,db_007,null | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_001:JDBC,db_009,null | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_007,local_method_010 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_006 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_007 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:LOCAL,db_009,local_method_009 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_001:RemoteProcess,null,csf_001 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST
+- **Entity**: docker_001:RemoteProcess,null,csf_001 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_002 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST, 2020-05-30 05:24:00 CST, 2020-05-30 05:27:00 CST (+1 more)
+- **Entity**: docker_003 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:08:00 CST, 2020-05-30 05:17:00 CST
+- **Entity**: docker_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST, 2020-05-30 05:17:00 CST, 2020-05-30 05:23:00 CST (+1 more)
+- **Entity**: docker_003:LOCAL,db_009,local_method_001 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_002 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_003:LOCAL,db_009,local_method_006 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:08:00 CST, 2020-05-30 05:16:00 CST, 2020-05-30 05:23:00 CST
+- **Entity**: docker_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST, 2020-05-30 05:11:00 CST, 2020-05-30 05:16:00 CST (+1 more)
+- **Entity**: docker_005:LOCAL,db_003,local_method_011 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:16:00 CST, 2020-05-30 05:23:00 CST
+- **Entity**: docker_005:LOCAL,db_003,local_method_013 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST
+- **Entity**: docker_005:LOCAL,db_003,local_method_014 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST
+- **Entity**: docker_005:LOCAL,db_003,local_method_016 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_005:RemoteProcess,null,csf_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST, 2020-05-30 05:16:00 CST, 2020-05-30 05:23:00 CST
+- **Entity**: docker_005:RemoteProcess,null,csf_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST
+- **Entity**: docker_005:RemoteProcess,null,csf_004 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:08:00 CST
+- **Entity**: docker_005:RemoteProcess,null,csf_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:08:00 CST, 2020-05-30 05:17:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:16:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:16:00 CST
+- **Entity**: docker_006:RemoteProcess,null,csf_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:16:00 CST, 2020-05-30 05:23:00 CST, 2020-05-30 05:27:00 CST
+- **Entity**: docker_007 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:14:00 CST
+- **Entity**: docker_007:JDBC,db_003,null | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:14:00 CST
+- **Entity**: docker_007:RemoteProcess,null,csf_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:23:00 CST
+- **Entity**: docker_007:RemoteProcess,null,csf_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:24:00 CST, 2020-05-30 05:30:00 CST
+- **Entity**: docker_007:RemoteProcess,null,csf_005 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_008 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST, 2020-05-30 05:17:00 CST, 2020-05-30 05:24:00 CST
+- **Entity**: docker_008:LOCAL,db_003,local_method_011 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:17:00 CST
+- **Entity**: docker_008:LOCAL,db_003,local_method_015 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:24:00 CST
+- **Entity**: docker_008:LOCAL,db_003,local_method_016 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:24:00 CST
+- **Entity**: docker_008:LOCAL,db_003,local_method_017 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_008:RemoteProcess,null,csf_002 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST, 2020-05-30 05:17:00 CST
+- **Entity**: docker_008:RemoteProcess,null,csf_003 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:27:00 CST
+- **Entity**: docker_008:RemoteProcess,null,csf_004 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+- **Entity**: docker_008:RemoteProcess,null,csf_005 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:09:00 CST, 2020-05-30 05:11:00 CST
+- **Entity**: os_022 | **Attribute**: trace_duration | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:10:00 CST
+- **Entity**: os_022 | **Attribute**: trace_frequency | **Fault Type**: unknown
+  Timestamps: 2020-05-30 05:11:00 CST
+
+## Root Cause Analysis (Topology-Based)
+### Root Cause Analysis Report - Cluster #2 (Telecom Dataset)
+**Analysis Window**: 2020-05-30 05:09:00 CST to 2020-05-30 05:14:00 CST (5 minutes)
+**Total Anomalies**: 135
+
+#### Primary Root Cause Entity
+- **Entity**: redis_010 (Type: UNKNOWN)
+- **Confidence Score**: 0.49 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Predicted Fault Type**: unknown
+- **Earliest Anomaly Time**: 2020-05-30 05:07:00 CST
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for redis_010
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.00 (based on dependency impact)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+- **Component Weight**: 0.5 (UNKNOWN layer weight)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **docker_001** (Type: DOCKER): Score = 0.44, Fault = unknown, Anomalies = 3
+- **redis_009** (Type: UNKNOWN): Score = 0.32, Fault = unknown, Anomalies = 4
+- **os_022** (Type: OS): Score = 0.31, Fault = unknown, Anomalies = 2
+
+#### Fault Type Distribution
+
+#### RCA Recommendations
+1. Prioritize investigation of redis_010 (highest confidence score)
+2. Verify unknown issues in UNKNOWN layer
+3. Check dependent entities of redis_010 for cascading failures
+4. Monitor resource utilization (CPU/network/database) for redis_010
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- Clustering Algorithm: DBSCAN (eps=60s, min_samples=3)
+- RCA Weighting: Time(2.5%), Topology(2.5%), Anomaly Count(95.0%)
+- Component Weights: DB=1.0, OS=0.9, Docker/Pod=0.85
+- Fault Types: CPU fault, network delay, network loss, db connection limit, db close
+- Dependency Graph: Loaded from /root/shared-nvme/work/timeSeries/OmniTransfer_new/experiment/RQ2/all_telecom_unique_dependency_graphs.json (30 nodes, 106 edges)

@@ -1,0 +1,76 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0830_0900
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 08:30:00 CST → 2022-03-21 08:31:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647822660 (2022-03-21 08:31:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 | Attribute: istio_agent_pilot_xds_send_time
+       Timestamps: 1647822600 (2022-03-21 08:30:00 CST), 1647822660 (2022-03-21 08:31:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 08:33:00 CST → 2022-03-21 08:35:00 CST (Δ = 120 sec)
+   Total Anomalies: 5
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.adservice2-0 | Attribute: container_memory_rss
+       Timestamps: 1647822780 (2022-03-21 08:33:00 CST), 1647822840 (2022-03-21 08:34:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 | Attribute: istio_agent_pilot_xds_send_time
+       Timestamps: 1647822780 (2022-03-21 08:33:00 CST), 1647822840 (2022-03-21 08:34:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.mem.free
+       Timestamps: 1647822900 (2022-03-21 08:35:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 08:38:00 CST → 2022-03-21 08:49:00 CST (Δ = 660 sec)
+   Total Anomalies: 21
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647823080 (2022-03-21 08:38:00 CST), 1647823320 (2022-03-21 08:42:00 CST), 1647823500 (2022-03-21 08:45:00 CST), 1647823620 (2022-03-21 08:47:00 CST), 1647823680 (2022-03-21 08:48:00 CST), 1647823740 (2022-03-21 08:49:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.adservice2-0 | Attribute: container_memory_rss
+       Timestamps: 1647823080 (2022-03-21 08:38:00 CST), 1647823680 (2022-03-21 08:48:00 CST), 1647823740 (2022-03-21 08:49:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 | Attribute: istio_agent_pilot_xds_send_time
+       Timestamps: 1647823140 (2022-03-21 08:39:00 CST), 1647823320 (2022-03-21 08:42:00 CST), 1647823500 (2022-03-21 08:45:00 CST), 1647823680 (2022-03-21 08:48:00 CST), 1647823740 (2022-03-21 08:49:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.mem.free
+       Timestamps: 1647823200 (2022-03-21 08:40:00 CST), 1647823260 (2022-03-21 08:41:00 CST), 1647823320 (2022-03-21 08:42:00 CST), 1647823380 (2022-03-21 08:43:00 CST), 1647823440 (2022-03-21 08:44:00 CST), 1647823500 (2022-03-21 08:45:00 CST), 1647823560 (2022-03-21 08:46:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 08:54:00 CST → 2022-03-21 08:56:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647824040 (2022-03-21 08:54:00 CST), 1647824160 (2022-03-21 08:56:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.unknown.adservice2 | Attribute: istio_agent_pilot_xds_send_time
+       Timestamps: 1647824040 (2022-03-21 08:54:00 CST), 1647824100 (2022-03-21 08:55:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

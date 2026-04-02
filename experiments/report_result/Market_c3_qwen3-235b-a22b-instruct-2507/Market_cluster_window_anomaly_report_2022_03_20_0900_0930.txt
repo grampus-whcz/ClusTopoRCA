@@ -1,0 +1,72 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 0900_0930
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 09:10:00 CST → 2022-03-20 09:12:00 CST (Δ = 120 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647738600 (2022-03-20 09:10:00 CST), 1647738660 (2022-03-20 09:11:00 CST), 1647738720 (2022-03-20 09:12:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 09:14:00 CST → 2022-03-20 09:23:00 CST (Δ = 540 sec)
+   Total Anomalies: 17
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647738960 (2022-03-20 09:16:00 CST), 1647739080 (2022-03-20 09:18:00 CST), 1647739200 (2022-03-20 09:20:00 CST), 1647739260 (2022-03-20 09:21:00 CST), 1647739380 (2022-03-20 09:23:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647738840 (2022-03-20 09:14:00 CST), 1647738900 (2022-03-20 09:15:00 CST), 1647738960 (2022-03-20 09:16:00 CST), 1647739080 (2022-03-20 09:18:00 CST), 1647739140 (2022-03-20 09:19:00 CST), 1647739260 (2022-03-20 09:21:00 CST), 1647739380 (2022-03-20 09:23:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend2-0.destination.unknown.frontend2 | Attribute: istio_requests.http.200.
+       Timestamps: 1647738900 (2022-03-20 09:15:00 CST), 1647739020 (2022-03-20 09:17:00 CST), 1647739140 (2022-03-20 09:19:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: emailservice-1 | Attribute: ava.net.UnknownHostException: jaeger-collector: Name or service not known
+       Timestamps: 1647739080 (2022-03-20 09:18:00 CST), 1647739320 (2022-03-20 09:22:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 09:25:00 CST → 2022-03-20 09:29:00 CST (Δ = 240 sec)
+   Total Anomalies: 17
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647739500 (2022-03-20 09:25:00 CST), 1647739560 (2022-03-20 09:26:00 CST), 1647739620 (2022-03-20 09:27:00 CST), 1647739680 (2022-03-20 09:28:00 CST), 1647739740 (2022-03-20 09:29:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_memory_cache
+       Timestamps: 1647739560 (2022-03-20 09:26:00 CST), 1647739740 (2022-03-20 09:29:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend2-0.destination.unknown.frontend2 | Attribute: istio_requests.http.200.
+       Timestamps: 1647739560 (2022-03-20 09:26:00 CST), 1647739620 (2022-03-20 09:27:00 CST), 1647739680 (2022-03-20 09:28:00 CST), 1647739740 (2022-03-20 09:29:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.udp.in_errors
+       Timestamps: 1647739500 (2022-03-20 09:25:00 CST), 1647739560 (2022-03-20 09:26:00 CST), 1647739620 (2022-03-20 09:27:00 CST), 1647739680 (2022-03-20 09:28:00 CST), 1647739740 (2022-03-20 09:29:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: emailservice-1 | Attribute: ava.net.UnknownHostException: jaeger-collector: Name or service not known
+       Timestamps: 1647739680 (2022-03-20 09:28:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_runtime | adservice.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ | 1647738000 (2022-03-20 09:00:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ | 1647738240 (2022-03-20 09:04:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ | 1647738360 (2022-03-20 09:06:00 CST)
+   log | emailservice-1 | ava.net.UnknownHostException: jaeger-collector: Name or service not known | 1647738420 (2022-03-20 09:07:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,47 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1100_1130
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 11:00:00 CST → 2022-03-21 11:08:00 CST (Δ = 480 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.destination.frontend.checkoutservice (Original: checkoutservice-0.destination.frontend.checkoutservice) | Attribute: istio_agent_go_memstats_heap_alloc_bytes
+       Times (7): 2022-03-21 11:00:00 CST, 2022-03-21 11:01:00 CST, 2022-03-21 11:02:00 CST, 2022-03-21 11:03:00 CST, 2022-03-21 11:04:00 CST, 2022-03-21 11:05:00 CST, 2022-03-21 11:06:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->checkoutservice-1:hipstershop.CheckoutService/PlaceOrder (Original: frontend-2->checkoutservice-1:hipstershop.CheckoutService/PlaceOrder) | Attribute: duration
+       Times (5): 2022-03-21 11:04:00 CST, 2022-03-21 11:05:00 CST, 2022-03-21 11:06:00 CST, 2022-03-21 11:07:00 CST, 2022-03-21 11:08:00 CST
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice (Original: checkoutservice-0) | Attribute: at hipstershop.AdService.getAdsByCategory(AdService.java:186)
+       Times (6): 2022-03-21 11:01:00 CST, 2022-03-21 11:04:00 CST, 2022-03-21 11:05:00 CST, 2022-03-21 11:06:00 CST, 2022-03-21 11:07:00 CST, 2022-03-21 11:08:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: checkoutservice-0.destination.frontend.checkoutservice (Cleaned: checkoutservice-0.destination.frontend.checkoutservice, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 11:15:00 CST → 2022-03-21 11:23:00 CST (Δ = 480 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: currencyservice (Original: node-6.currencyservice2-0) | Attribute: container_file_descriptors
+       Times (9): 2022-03-21 11:15:00 CST, 2022-03-21 11:16:00 CST, 2022-03-21 11:17:00 CST, 2022-03-21 11:18:00 CST, 2022-03-21 11:19:00 CST, 2022-03-21 11:20:00 CST, 2022-03-21 11:21:00 CST, 2022-03-21 11:22:00 CST, 2022-03-21 11:23:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-6) | Attribute: system.io.util
+       Times (7): 2022-03-21 11:15:00 CST, 2022-03-21 11:16:00 CST, 2022-03-21 11:17:00 CST, 2022-03-21 11:19:00 CST, 2022-03-21 11:20:00 CST, 2022-03-21 11:21:00 CST, 2022-03-21 11:22:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-6.currencyservice2-0 (Cleaned: currencyservice, Score: 0.87)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 5
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

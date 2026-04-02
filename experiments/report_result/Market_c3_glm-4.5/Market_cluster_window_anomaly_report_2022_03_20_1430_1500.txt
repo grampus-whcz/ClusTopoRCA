@@ -1,0 +1,33 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1430_1500
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 14:49:00 CST → 2022-03-20 14:55:00 CST (Δ = 360 sec)
+   Total Anomalies: 13
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co
+       Timestamps: 1647758940 (2022-03-20 14:49:00 CST), 1647759120 (2022-03-20 14:52:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.checkoutservice-0 | Attribute: container_memory_cache
+       Timestamps: 1647758940 (2022-03-20 14:49:00 CST), 1647759000 (2022-03-20 14:50:00 CST), 1647759060 (2022-03-20 14:51:00 CST), 1647759120 (2022-03-20 14:52:00 CST), 1647759180 (2022-03-20 14:53:00 CST), 1647759240 (2022-03-20 14:54:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-2.source.frontend.checkoutservice | Attribute: istio_request_duration_milliseconds.http.0.
+       Timestamps: 1647759000 (2022-03-20 14:50:00 CST), 1647759060 (2022-03-20 14:51:00 CST), 1647759120 (2022-03-20 14:52:00 CST), 1647759180 (2022-03-20 14:53:00 CST), 1647759300 (2022-03-20 14:55:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.checkoutservice-0 | container_memory_cache | 1647757980 (2022-03-20 14:33:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co | 1647758100 (2022-03-20 14:35:00 CST)
+   metric_container | node-5.checkoutservice-0 | container_memory_cache | 1647758520 (2022-03-20 14:42:00 CST)
+   metric_runtime | adservice.ts:8088 | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Co | 1647758760 (2022-03-20 14:46:00 CST)
+   metric_container | node-5.checkoutservice-0 | container_memory_cache | 1647759420 (2022-03-20 14:57:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

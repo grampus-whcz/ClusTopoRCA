@@ -1,0 +1,299 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_23 | Window: 1500_1530
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 6 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2021-03-23 15:00:00 CST → 2021-03-23 15:00:00 CST (Duration: 0 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1
+**Analysis Window**: 2021-03-23 15:00:00 (T2) to 2021-03-23 15:04:00 (3 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: MG02 (Layer: GOVERNANCE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 1
+- **Anomaly Attributes**: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT(1 times)
+- **Earliest Anomaly Time**: 2021-03-23 15:00:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for MG02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat03** (Layer: BUSINESS): Score = 0.73, Anomalies = 1, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times)
+- **Tomcat01** (Layer: BUSINESS): Score = 0.73, Anomalies = 1, Attrs = OSLinux-OSLinux_MEMORY_MEMORY_CacheMem(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by MG02**: dockerA2, Tomcat02, Redis02, Mysql02, MG01
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 2 entities affected (Weight: 0.9)
+- **GOVERNANCE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of MG02 (highest confidence score)
+2. Check MG02 for 1 anomalies on attributes: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT(1 times)
+3. Investigate anomalies starting at 2021-03-23 15:00:00 for MG02 (analysis window starts at 2021-03-23 15:00:00 (T2))
+4. Verify downstream dependencies of MG02 for cascading failures
+5. Check GOVERNANCE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2021-03-23 15:02:00 CST → 2021-03-23 15:13:00 CST (Duration: 660 seconds)
+**Total Anomalies**: 108
+**Key Anomaly Patterns**: GC, Error/Failure, Timeout
+
+## Anomaly Breakdown
+- **Metric App**: 5 anomalies
+- **Metric Container**: 67 anomalies
+- **Trace**: 1 anomalies
+- **Log**: 35 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2
+**Analysis Window**: 2021-03-23 15:04:00 (T2) to 2021-03-23 15:08:00 (3 minutes)
+**Total Anomalies**: 108
+
+#### Primary Root Cause Entity
+- **Entity**: Tomcat02 (Layer: BUSINESS)
+- **Confidence Score**: 0.67 (1.0 = highest)
+- **Anomaly Count**: 19
+- **Anomaly Attributes**: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(3 times), OSLinux-CPU_CPU_CPUCpuUtil(3 times)
+- **Earliest Anomaly Time**: 2021-03-23 15:03:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for Tomcat02
+- **Time Score**: 0.80 (earlier anomaly = higher score)
+- **Topology Score**: 0.56 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.68 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.66, Anomalies = 21, Attrs = OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps(1 times), Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit(1 times), Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemPercent(1 times), Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent(1 times), Mysql-MySQL_3306_Created Tmp Tables(1 times), Mysql-MySQL_3306_Innodb buffer pool read ahead evicted(1 times), Mysql-MySQL_3306_Innodb buffer pool wait free(1 times), Mysql-MySQL_3306_Innodb log write requests(1 times), Mysql-MySQL_3306_Sort Scan(1 times), Mysql-MySQL_3306_Table open cache misses(1 times), OSLinux-OSLinux_FILESYSTEM_----boot_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----home_FSCapacity(1 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(1 times), OSLinux-OSLinux_SWAP_SWAP_Si(1 times), redis-Redis_6379_Redis  (evicted_keys)(1 times), redis-Redis_6379_Redis  (instantaneous_ops_per_sec)(1 times), Mysql-MySQL_3306_Bytes Received(1 times)
+- **IG01** (Layer: GATEWAY): Score = 0.52, Anomalies = 28, Attrs = PatternID_1(1 times), PatternID_17(1 times), PatternID_21(1 times), PatternID_24(1 times), PatternID_31(1 times), PatternID_36(1 times), PatternID_45(1 times), PatternID_46(1 times), PatternID_48(1 times), PatternID_51(1 times), PatternID_60(1 times), PatternID_62(1 times), PatternID_67(1 times), PatternID_69(1 times), PatternID_80(1 times), PatternID_85(1 times), PatternID_102(1 times), PatternID_115(1 times), PatternID_121(1 times), PatternID_122(1 times), PatternID_124(1 times), PatternID_147(1 times), PatternID_149(1 times), PatternID_160(1 times), PatternID_163(1 times), PatternID_164(1 times), PatternID_168(1 times), PatternID_174(1 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.51, Anomalies = 13, Attrs = Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemLimit(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times), JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed(1 times), Mysql-MySQL_3306_Com Update(1 times), Mysql-MySQL_3306_Innodb pages read(1 times), Mysql-MySQL_3306_Qcache Hits(1 times), Mysql-MySQL_3306_Qcache Not Cached(1 times), OSLinux-OSLinux_MEMORY_MEMORY_MEMUsedMemPerc(1 times), Mysql-MySQL_3306_Innodb data pending writes(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by Tomcat02**: dockerA2, Redis02, Mysql02, MG02, MG01
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of Tomcat02 (highest confidence score)
+2. Check Tomcat02 for 19 anomalies on attributes: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(3 times), OSLinux-CPU_CPU_CPUCpuUtil(3 times)
+3. Investigate anomalies starting at 2021-03-23 15:03:00 for Tomcat02 (analysis window starts at 2021-03-23 15:04:00 (T2))
+4. Verify downstream dependencies of Tomcat02 for cascading failures
+5. Check BUSINESS layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2021-03-23 15:16:00 CST → 2021-03-23 15:18:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 12
+**Key Anomaly Patterns**: GC
+
+## Anomaly Breakdown
+- **Metric App**: 3 anomalies
+- **Metric Container**: 8 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3
+**Analysis Window**: 2021-03-23 15:18:00 (T2) to 2021-03-23 15:22:00 (3 minutes)
+**Total Anomalies**: 12
+
+#### Primary Root Cause Entity
+- **Entity**: ServiceTest5 (Layer: SERVICE_TEST)
+- **Confidence Score**: 0.63 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: cnt(2 times)
+- **Earliest Anomaly Time**: 2021-03-23 15:16:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for ServiceTest5
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.67 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.43, Anomalies = 3, Attrs = Mysql-MySQL_3306_Innodb data pending writes(1 times), Mysql-MySQL_3306_Innodb row lock current waits(1 times), Mysql-MySQL_3306_Max trx rows locked(1 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.43, Anomalies = 3, Attrs = Mysql-MySQL_3306_Innodb buffer pool pages misc(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKReadWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps(1 times)
+
+#### Dependency Impact Path
+- **ServiceTest5 not found in microservice topology graph**
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **SERVICE_TEST Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of ServiceTest5 (highest confidence score)
+2. Check ServiceTest5 for 2 anomalies on attributes: cnt(2 times)
+3. Investigate anomalies starting at 2021-03-23 15:16:00 for ServiceTest5 (analysis window starts at 2021-03-23 15:18:00 (T2))
+4. Verify downstream dependencies of ServiceTest5 for cascading failures
+5. Check SERVICE_TEST layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #4
+**Time Span**: 2021-03-23 15:19:58 CST → 2021-03-23 15:23:58 CST (Duration: 240 seconds)
+**Total Anomalies**: 90
+**Key Anomaly Patterns**: GC, Error/Failure
+
+## Anomaly Breakdown
+- **Metric App**: 6 anomalies
+- **Metric Container**: 9 anomalies
+- **Trace**: 33 anomalies
+- **Log**: 42 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #4
+**Analysis Window**: 2021-03-23 15:21:00 (T2) to 2021-03-23 15:25:00 (3 minutes)
+**Total Anomalies**: 90
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.91 (1.0 = highest)
+- **Anomaly Count**: 46
+- **Anomaly Attributes**: PatternID_4(1 times), PatternID_9(1 times), PatternID_11(1 times), PatternID_13(1 times), PatternID_22(1 times), PatternID_37(1 times), PatternID_38(1 times), PatternID_42(1 times), PatternID_49(1 times), PatternID_50(1 times), PatternID_54(1 times), PatternID_58(1 times), PatternID_64(1 times), PatternID_70(1 times), PatternID_83(1 times), PatternID_86(1 times), PatternID_91(1 times), PatternID_93(1 times), PatternID_95(1 times), PatternID_96(1 times), PatternID_97(1 times), PatternID_98(1 times), PatternID_104(1 times), PatternID_106(1 times), PatternID_110(1 times), PatternID_112(1 times), PatternID_118(1 times), PatternID_120(1 times), PatternID_122(1 times), PatternID_128(1 times), PatternID_131(1 times), PatternID_134(1 times), PatternID_142(1 times), PatternID_146(1 times), PatternID_147(1 times), PatternID_149(1 times), PatternID_150(1 times), PatternID_160(1 times), PatternID_162(1 times), PatternID_170(1 times), PatternID_171(1 times), PatternID_172(1 times), duration(4 times)
+- **Earliest Anomaly Time**: 2021-03-23 15:19:58
+- **Topology Impact**: 7 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.78 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG02** (Layer: GATEWAY): Score = 0.69, Anomalies = 5, Attrs = duration(5 times)
+- **dockerA2** (Layer: CONTAINER): Score = 0.65, Anomalies = 6, Attrs = duration(6 times)
+- **dockerB1** (Layer: CONTAINER): Score = 0.65, Anomalies = 4, Attrs = duration(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Tomcat02, Redis02, dockerA1, Mysql02
+
+#### Layer-wise Impact Analysis
+- **CONTAINER Layer**: 4 entities affected (Weight: 0.7)
+- **BUSINESS Layer**: 3 entities affected (Weight: 0.9)
+- **SERVICE_TEST Layer**: 3 entities affected (Weight: 0.5)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (highest confidence score)
+2. Check IG01 for 46.0 anomalies on attributes: PatternID_4(1 times), PatternID_9(1 times), PatternID_11(1 times), PatternID_13(1 times), PatternID_22(1 times), PatternID_37(1 times), PatternID_38(1 times), PatternID_42(1 times), PatternID_49(1 times), PatternID_50(1 times), PatternID_54(1 times), PatternID_58(1 times), PatternID_64(1 times), PatternID_70(1 times), PatternID_83(1 times), PatternID_86(1 times), PatternID_91(1 times), PatternID_93(1 times), PatternID_95(1 times), PatternID_96(1 times), PatternID_97(1 times), PatternID_98(1 times), PatternID_104(1 times), PatternID_106(1 times), PatternID_110(1 times), PatternID_112(1 times), PatternID_118(1 times), PatternID_120(1 times), PatternID_122(1 times), PatternID_128(1 times), PatternID_131(1 times), PatternID_134(1 times), PatternID_142(1 times), PatternID_146(1 times), PatternID_147(1 times), PatternID_149(1 times), PatternID_150(1 times), PatternID_160(1 times), PatternID_162(1 times), PatternID_170(1 times), PatternID_171(1 times), PatternID_172(1 times), duration(4 times)
+3. Investigate anomalies starting at 2021-03-23 15:19:58 for IG01 (analysis window starts at 2021-03-23 15:21:00 (T2))
+4. Verify downstream dependencies of IG01 for cascading failures
+5. Check GATEWAY layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #5
+**Time Span**: 2021-03-23 15:25:00 CST → 2021-03-23 15:27:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 148
+
+## Anomaly Breakdown
+- **Metric App**: 4 anomalies
+- **Metric Container**: 120 anomalies
+- **Trace**: 24 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #5
+**Analysis Window**: 2021-03-23 15:26:00 (T2) to 2021-03-23 15:30:00 (3 minutes)
+**Total Anomalies**: 148
+
+#### Primary Root Cause Entity
+- **Entity**: Mysql01 (Layer: DATABASE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 118
+- **Anomaly Attributes**: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit(1 times), Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent(1 times), Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage(1 times), Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit(1 times), Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemUsage(1 times), Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent(1 times), Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent(1 times), Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemPercent(1 times), Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent(1 times), JVM-Memory_7779_JVM_Memory_HeapMemoryMax(1 times), JVM-Memory_7779_JVM_Memory_HeapMemoryUsed(1 times), JVM-Operating System_7779_JVM_JVM_CPULoad(1 times), JVM-Runtime_7778_JVM_JVM_Uptime(1 times), JVM-Runtime_7779_JVM_JVM_Uptime(1 times), Mysql-MySQL_3306_Binlog stmt cache disk use(1 times), Mysql-MySQL_3306_Bytes Received(1 times), Mysql-MySQL_3306_Bytes Sent(1 times), Mysql-MySQL_3306_Com Delete(1 times), Mysql-MySQL_3306_Com Delete Multi(1 times), Mysql-MySQL_3306_Com Replace Select(1 times), Mysql-MySQL_3306_GetResponseTimeOfMysqld(1 times), Mysql-MySQL_3306_Handler Read Next(1 times), Mysql-MySQL_3306_Handler Read Rnd Next(1 times), Mysql-MySQL_3306_Handler Rollback(1 times), Mysql-MySQL_3306_Handler Savepoint Rollback(1 times), Mysql-MySQL_3306_Innodb buffer pool pages flushed(1 times), Mysql-MySQL_3306_Innodb buffer pool pages misc(1 times), Mysql-MySQL_3306_Innodb buffer pool read ahead rnd(1 times), Mysql-MySQL_3306_Innodb buffer pool wait free(1 times), Mysql-MySQL_3306_Innodb data pending reads(1 times), Mysql-MySQL_3306_Innodb os log pending writes(1 times), Mysql-MySQL_3306_Innodb pages created(1 times), Mysql-MySQL_3306_Innodb pages read(1 times), Mysql-MySQL_3306_Key Read Requests(1 times), Mysql-MySQL_3306_Key Write Requests(1 times), Mysql-MySQL_3306_Qcache Hits(1 times), Mysql-MySQL_3306_Qcache Inserts(1 times), Mysql-MySQL_3306_Rows Read(1 times), Mysql-MySQL_3306_Slow launch threads(1 times), OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_FILESYSTEM_----_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_----boot_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_----tmp_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----tmp_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_----tomcat_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----tomcat_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-apache_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy(1 times), OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), OSLinux-OSLinux_MEMORY_MEMORY_MEMUsedMemPerc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETOutErr(1 times), OSLinux-OSLinux_NETWORK_ens160_NETOutErrPrcc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(1 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(1 times), OSLinux-OSLinux_SWAP_SWAP_Si(1 times), Tomcat-MEMORY_7441-MEMORY_JVMMemoryUsedPercent(1 times), Tomcat-Requests_7441-"http-nio-8003"_MaxTimeRequestInfo(1 times), Tomcat-Sessions_7441--_SESSIONActiveCounter(1 times), Tomcat-Sessions_7441--log.Home_IS_UNDEFINED_SESSIONActiveCounter(1 times), Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONActiveCounter(1 times), Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONKeepaliveCounter(1 times), Tomcat-Threads_7441-"http-nio-8003"_CurrentThreadsBusyThreadInfo(1 times), redis-Redis_6379_Redis  (aof_enabled)(1 times), redis-Redis_6379_Redis  (client_longest_output_list)(1 times), redis-Redis_6379_Redis  (connected_slaves)(1 times), redis-Redis_6379_Redis  (expired_keys)(1 times), redis-Redis_6379_Redis  (keyspace_misses)(1 times), redis-Redis_6379_Redis  (rdb_changes_since_last_save)(1 times), redis-Redis_6379_Redis  (redis_git_dirty)(1 times), redis-Redis_6379_Redis  (total_commands_processed)(1 times), redis-Redis_6379_Redis  (used_memory_rss)(1 times)
+- **Earliest Anomaly Time**: 2021-03-23 15:25:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for Mysql01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **UNKNOWN_PARENT** (Layer: UNKNOWN): Score = 0.44, Anomalies = 14, Attrs = frequency(12 times), duration(2 times)
+- **dockerB2** (Layer: CONTAINER): Score = 0.23, Anomalies = 5, Attrs = duration(4 times), frequency(1 times)
+- **dockerB1** (Layer: CONTAINER): Score = 0.22, Anomalies = 4, Attrs = duration(3 times), frequency(1 times)
+
+#### Dependency Impact Path
+- **Mysql01 not found in microservice topology graph**
+
+#### Layer-wise Impact Analysis
+- **CONTAINER Layer**: 4 entities affected (Weight: 0.7)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of Mysql01 (highest confidence score)
+2. Check Mysql01 for 118.0 anomalies on attributes: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit(1 times), Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent(1 times), Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage(1 times), Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit(1 times), Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemUsage(1 times), Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent(1 times), Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent(1 times), Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemPercent(1 times), Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage(1 times), Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit(1 times), Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent(1 times), JVM-Memory_7779_JVM_Memory_HeapMemoryMax(1 times), JVM-Memory_7779_JVM_Memory_HeapMemoryUsed(1 times), JVM-Operating System_7779_JVM_JVM_CPULoad(1 times), JVM-Runtime_7778_JVM_JVM_Uptime(1 times), JVM-Runtime_7779_JVM_JVM_Uptime(1 times), Mysql-MySQL_3306_Binlog stmt cache disk use(1 times), Mysql-MySQL_3306_Bytes Received(1 times), Mysql-MySQL_3306_Bytes Sent(1 times), Mysql-MySQL_3306_Com Delete(1 times), Mysql-MySQL_3306_Com Delete Multi(1 times), Mysql-MySQL_3306_Com Replace Select(1 times), Mysql-MySQL_3306_GetResponseTimeOfMysqld(1 times), Mysql-MySQL_3306_Handler Read Next(1 times), Mysql-MySQL_3306_Handler Read Rnd Next(1 times), Mysql-MySQL_3306_Handler Rollback(1 times), Mysql-MySQL_3306_Handler Savepoint Rollback(1 times), Mysql-MySQL_3306_Innodb buffer pool pages flushed(1 times), Mysql-MySQL_3306_Innodb buffer pool pages misc(1 times), Mysql-MySQL_3306_Innodb buffer pool read ahead rnd(1 times), Mysql-MySQL_3306_Innodb buffer pool wait free(1 times), Mysql-MySQL_3306_Innodb data pending reads(1 times), Mysql-MySQL_3306_Innodb os log pending writes(1 times), Mysql-MySQL_3306_Innodb pages created(1 times), Mysql-MySQL_3306_Innodb pages read(1 times), Mysql-MySQL_3306_Key Read Requests(1 times), Mysql-MySQL_3306_Key Write Requests(1 times), Mysql-MySQL_3306_Qcache Hits(1 times), Mysql-MySQL_3306_Qcache Inserts(1 times), Mysql-MySQL_3306_Rows Read(1 times), Mysql-MySQL_3306_Slow launch threads(1 times), OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_FILESYSTEM_----_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_----boot_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_----tmp_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----tmp_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_----tomcat_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_----tomcat_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-apache_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy(1 times), OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), OSLinux-OSLinux_MEMORY_MEMORY_MEMUsedMemPerc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETOutErr(1 times), OSLinux-OSLinux_NETWORK_ens160_NETOutErrPrcc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(1 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(1 times), OSLinux-OSLinux_SWAP_SWAP_Si(1 times), Tomcat-MEMORY_7441-MEMORY_JVMMemoryUsedPercent(1 times), Tomcat-Requests_7441-"http-nio-8003"_MaxTimeRequestInfo(1 times), Tomcat-Sessions_7441--_SESSIONActiveCounter(1 times), Tomcat-Sessions_7441--log.Home_IS_UNDEFINED_SESSIONActiveCounter(1 times), Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONActiveCounter(1 times), Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONKeepaliveCounter(1 times), Tomcat-Threads_7441-"http-nio-8003"_CurrentThreadsBusyThreadInfo(1 times), redis-Redis_6379_Redis  (aof_enabled)(1 times), redis-Redis_6379_Redis  (client_longest_output_list)(1 times), redis-Redis_6379_Redis  (connected_slaves)(1 times), redis-Redis_6379_Redis  (expired_keys)(1 times), redis-Redis_6379_Redis  (keyspace_misses)(1 times), redis-Redis_6379_Redis  (rdb_changes_since_last_save)(1 times), redis-Redis_6379_Redis  (redis_git_dirty)(1 times), redis-Redis_6379_Redis  (total_commands_processed)(1 times), redis-Redis_6379_Redis  (used_memory_rss)(1 times)
+3. Investigate anomalies starting at 2021-03-23 15:25:00 for Mysql01 (analysis window starts at 2021-03-23 15:26:00 (T2))
+4. Verify downstream dependencies of Mysql01 for cascading failures
+5. Check DATABASE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #6
+**Time Span**: 2021-03-23 15:29:00 CST → 2021-03-23 15:29:00 CST (Duration: 0 seconds)
+**Total Anomalies**: 5
+
+## Anomaly Breakdown
+- **Metric Container**: 5 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #6
+**Analysis Window**: 2021-03-23 15:29:00 (T2) to 2021-03-23 15:33:00 (3 minutes)
+**Total Anomalies**: 5
+
+#### Primary Root Cause Entity
+- **Entity**: Mysql01 (Layer: DATABASE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: Mysql-MySQL_3306_LongestTrxActiveTime(1 times), Mysql-MySQL_3306_ThreadsRunning(1 times), Mysql-MySQL_3306_max trx lock memory bytes(1 times)
+- **Earliest Anomaly Time**: 2021-03-23 15:29:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for Mysql01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql02** (Layer: DATABASE): Score = 0.63, Anomalies = 2, Attrs = Mysql-MySQL_3306_CurrentSQLMaxRunningTime(1 times), Mysql-MySQL_3306_LongestTrxActiveTime(1 times)
+
+#### Dependency Impact Path
+- **Mysql01 not found in microservice topology graph**
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of Mysql01 (highest confidence score)
+2. Check Mysql01 for 3 anomalies on attributes: Mysql-MySQL_3306_LongestTrxActiveTime(1 times), Mysql-MySQL_3306_ThreadsRunning(1 times), Mysql-MySQL_3306_max trx lock memory bytes(1 times)
+3. Investigate anomalies starting at 2021-03-23 15:29:00 for Mysql01 (analysis window starts at 2021-03-23 15:29:00 (T2))
+4. Verify downstream dependencies of Mysql01 for cascading failures
+5. Check DATABASE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

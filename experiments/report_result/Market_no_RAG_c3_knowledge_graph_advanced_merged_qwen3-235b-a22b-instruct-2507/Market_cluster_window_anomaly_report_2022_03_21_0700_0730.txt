@@ -1,0 +1,203 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0700_0730
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 4 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 07:09:00 CST → 2022-03-21 07:12:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 8
+
+## Anomaly Breakdown
+- **Metric Container**: 3 anomalies
+- **Metric Node**: 3 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 07:11:00 CST (T2) to 2022-03-21 07:15:00 CST (4 minutes)
+**Total Anomalies**: 8
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.productcatalogservice-2 (Cleaned: productcatalogservice, Layer: PRODUCTCATALOGSERVICE)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: container_network_receive_packets_dropped.eth0(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for node-5.productcatalogservice-2 (Cleaned: productcatalogservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-2** (Cleaned: node, Layer: UNKNOWN): Score = 0.73, Anomalies = 3, Attrs = system.net.bytes_sent(3 times)
+- **shippingservice-2** (Cleaned: shippingservice, Layer: SHIPPINGSERVICE): Score = 0.47, Anomalies = 2, Attrs = at okio.AsyncTimeout.exit(AsyncTimeout.java:286)(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.productcatalogservice-2 (Cleaned: productcatalogservice)**: currencyservice-2, emailservice2-0, frontend, productcatalogservice-2, checkoutservice-2
+
+#### Layer-wise Impact Analysis
+- **PRODUCTCATALOGSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.productcatalogservice-2 (Cleaned: productcatalogservice, highest confidence score)
+2. Check node-5.productcatalogservice-2 for 3 anomalies on attributes: container_network_receive_packets_dropped.eth0(3 times)
+3. Investigate anomalies starting at N/A for node-5.productcatalogservice-2 (analysis window starts at 2022-03-21 07:11:00 CST (T2))
+4. Verify downstream dependencies of productcatalogservice for cascading failures
+5. Check PRODUCTCATALOGSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 07:14:00 CST → 2022-03-21 07:20:00 CST (Duration: 360 seconds)
+**Total Anomalies**: 10
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 7 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 07:16:00 CST (T2) to 2022-03-21 07:20:00 CST (4 minutes)
+**Total Anomalies**: 10
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 7
+- **Anomaly Attributes**: istio_request_duration_milliseconds.http.202.(14 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-5.productcatalogservice-2** (Cleaned: productcatalogservice, Layer: PRODUCTCATALOGSERVICE): Score = 0.35, Anomalies = 2, Attrs = container_network_receive_packets_dropped.eth0(2 times)
+
+#### Dependency Impact Path
+- **frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector) not found in topology graph**
+  - Suggestion: Check if frontend-1.source.frontend.jaeger-collector is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **PRODUCTCATALOGSERVICE Layer**: 1 entities affected (Weight: 0.85)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector, highest confidence score)
+2. Check frontend-1.source.frontend.jaeger-collector for 7 anomalies on attributes: istio_request_duration_milliseconds.http.202.(14 times)
+3. Investigate anomalies starting at N/A for frontend-1.source.frontend.jaeger-collector (analysis window starts at 2022-03-21 07:16:00 CST (T2))
+4. Verify downstream dependencies of frontend-1.source.frontend.jaeger-collector for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 07:22:00 CST → 2022-03-21 07:23:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Mesh**: 2 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 07:23:00 CST (T2) to 2022-03-21 07:27:00 CST (4 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: istio_request_duration_milliseconds.http.202.(4 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector) not found in topology graph**
+  - Suggestion: Check if frontend-1.source.frontend.jaeger-collector is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector, highest confidence score)
+2. Check frontend-1.source.frontend.jaeger-collector for 2 anomalies on attributes: istio_request_duration_milliseconds.http.202.(4 times)
+3. Investigate anomalies starting at N/A for frontend-1.source.frontend.jaeger-collector (analysis window starts at 2022-03-21 07:23:00 CST (T2))
+4. Verify downstream dependencies of frontend-1.source.frontend.jaeger-collector for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #4
+**Time Span**: 2022-03-21 07:25:00 CST → 2022-03-21 07:29:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 11
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 3 anomalies
+- **Trace**: 4 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #4 (Market Dataset)
+**Analysis Window**: 2022-03-21 07:27:00 CST (T2) to 2022-03-21 07:31:00 CST (4 minutes)
+**Total Anomalies**: 11
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.productcatalogservice-2 (Cleaned: productcatalogservice, Layer: PRODUCTCATALOGSERVICE)
+- **Confidence Score**: 0.71 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: container_network_receive_packets_dropped.eth0(2 times)
+- **Earliest Anomaly Time**: 2022-03-21 07:25:00 CST
+- **Topology Impact**: 6 downstream entities affected
+
+#### Score Breakdown for node-5.productcatalogservice-2 (Cleaned: productcatalogservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.65 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.50 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **frontend-1.source.frontend.jaeger-collector** (Cleaned: frontend-1.source.frontend.jaeger-collector, Layer: FRONTEND): Score = 0.66, Anomalies = 3, Attrs = istio_request_duration_milliseconds.http.202.(6 times)
+- **frontend2-0** (Cleaned: frontend, Layer: FRONTEND): Score = 0.57, Anomalies = 4, Attrs = duration(4 times)
+- **frontend2-0:hipstershop.CartService/GetCart** (Cleaned: frontend2-0:hipstershop.CartService/GetCart, Layer: FRONTEND): Score = 0.44, Anomalies = 4, Attrs = duration(8 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.productcatalogservice-2 (Cleaned: productcatalogservice)**: currencyservice-2, emailservice2-0, frontend (Original: frontend2-0), productcatalogservice-2, checkoutservice-2
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 3 entities affected (Weight: 1.0)
+- **PRODUCTCATALOGSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.productcatalogservice-2 (Cleaned: productcatalogservice, highest confidence score)
+2. Check node-5.productcatalogservice-2 for 2.0 anomalies on attributes: container_network_receive_packets_dropped.eth0(2 times)
+3. Investigate anomalies starting at 2022-03-21 07:25:00 CST for node-5.productcatalogservice-2 (analysis window starts at 2022-03-21 07:27:00 CST (T2))
+4. Verify downstream dependencies of productcatalogservice for cascading failures
+5. Check PRODUCTCATALOGSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 2
+- metric_node | node-2 (Cleaned: node) | system.net.bytes_sent | 2022-03-21 07:00:00 CST
+- metric_container | node-5.productcatalogservice-2 (Cleaned: productcatalogservice) | container_network_receive_packets_dropped.eth0 | 2022-03-21 07:02:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+- Analysis Start Timestamp Index: T2
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

@@ -1,0 +1,85 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0700_0730
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 07:09:00 CST → 2022-03-21 07:12:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 3 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: productcatalogservice (Original: node-5.productcatalogservice-2) | Attribute: container_network_receive_packets_dropped.eth0
+       Times (3): 2022-03-21 07:09:00 CST, 2022-03-21 07:10:00 CST, 2022-03-21 07:12:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node (Original: node-2) | Attribute: system.net.bytes_sent
+       Times (3): 2022-03-21 07:09:00 CST, 2022-03-21 07:10:00 CST, 2022-03-21 07:11:00 CST
+
+   📝 Log Anomalies:
+     • Entity: shippingservice (Original: shippingservice-2) | Attribute: at okio.AsyncTimeout.exit(AsyncTimeout.java:286)
+       Times (2): 2022-03-21 07:11:00 CST, 2022-03-21 07:12:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.productcatalogservice-2 (Cleaned: productcatalogservice, Score: 0.87)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 07:14:00 CST → 2022-03-21 07:20:00 CST (Δ = 360 sec)
+   Repeated Entity-Attribute Pairs: 2 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: productcatalogservice (Original: node-5.productcatalogservice-2) | Attribute: container_network_receive_packets_dropped.eth0
+       Times (2): 2022-03-21 07:18:00 CST, 2022-03-21 07:20:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-1.source.frontend.jaeger-collector (Original: frontend-1.source.frontend.jaeger-collector) | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (7): 2022-03-21 07:14:00 CST, 2022-03-21 07:15:00 CST, 2022-03-21 07:16:00 CST, 2022-03-21 07:17:00 CST, 2022-03-21 07:18:00 CST, 2022-03-21 07:19:00 CST, 2022-03-21 07:20:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 07:22:00 CST → 2022-03-21 07:23:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1 (based on cleaned entity names)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-1.source.frontend.jaeger-collector (Original: frontend-1.source.frontend.jaeger-collector) | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (2): 2022-03-21 07:22:00 CST, 2022-03-21 07:23:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: frontend-1.source.frontend.jaeger-collector (Cleaned: frontend-1.source.frontend.jaeger-collector, Score: 0.73)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 07:25:00 CST → 2022-03-21 07:29:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 4 (based on cleaned entity names)
+
+   📝 Metric Container Anomalies:
+     • Entity: productcatalogservice (Original: node-5.productcatalogservice-2) | Attribute: container_network_receive_packets_dropped.eth0
+       Times (2): 2022-03-21 07:25:00 CST, 2022-03-21 07:27:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: frontend-1.source.frontend.jaeger-collector (Original: frontend-1.source.frontend.jaeger-collector) | Attribute: istio_request_duration_milliseconds.http.202.
+       Times (3): 2022-03-21 07:25:00 CST, 2022-03-21 07:26:00 CST, 2022-03-21 07:27:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->frontend2-0:hipstershop.CartService/GetCart (Original: frontend2-0->frontend2-0:hipstershop.CartService/GetCart) | Attribute: duration
+       Times (4): 2022-03-21 07:26:00 CST, 2022-03-21 07:27:00 CST, 2022-03-21 07:28:00 CST, 2022-03-21 07:29:00 CST
+
+   📝 Log Anomalies:
+     • Entity: shippingservice (Original: shippingservice-2) | Attribute: at okio.AsyncTimeout.exit(AsyncTimeout.java:286)
+       Times (2): 2022-03-21 07:26:00 CST, 2022-03-21 07:27:00 CST
+
+   🎯 Top Root Cause Hypothesis:
+     • Most Likely Root Cause: node-5.productcatalogservice-2 (Cleaned: productcatalogservice, Score: 0.71)
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 10
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
+   RCA Methodology: Weighted scoring (Time: 30.0%, Topology: 40.0%, Anomaly Count: 30.0%)
+   Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)

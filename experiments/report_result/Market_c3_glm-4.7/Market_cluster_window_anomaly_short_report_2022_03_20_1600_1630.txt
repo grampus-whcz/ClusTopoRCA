@@ -1,0 +1,21 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1600_1630
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 16:20:00 CST → 2022-03-20 16:23:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.cartservice2-0 | Attribute: container_fs_writes_MB./dev/vda
+       Times (2): 2022-03-20 16:20:00 CST, 2022-03-20 16:23:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice2-0.destination.frontend2.adservice2 | Attribute: istio_request_bytes.http.500.
+       Times (3): 2022-03-20 16:21:00 CST, 2022-03-20 16:22:00 CST, 2022-03-20 16:23:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 2
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)
