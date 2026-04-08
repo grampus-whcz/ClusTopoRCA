@@ -1,0 +1,115 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1830_1900
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 18:30:00 CST → 2022-03-20 18:43:00 CST (Duration: 780 seconds)
+**Total Anomalies**: 32
+
+## Anomaly Breakdown
+- **Metric Service**: 3 anomalies
+- **Metric Runtime**: 4 anomalies
+- **Metric Container**: 9 anomalies
+- **Metric Mesh**: 1 anomalies
+- **Metric Node**: 11 anomalies
+- **Trace**: 1 anomalies
+- **Log**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 18:30:00 CST (T0) to 2022-03-20 18:35:00 CST (5 minutes)
+**Total Anomalies**: 32
+
+#### Primary Root Cause Entity
+- **Entity**: node-2 (Cleaned: node, Layer: UNKNOWN)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: system.mem.free(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for node-2 (Cleaned: node)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **node-2 (Cleaned: node) not found in topology graph**
+  - Suggestion: Check if node is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-2 (Cleaned: node, highest confidence score)
+2. Check node-2 for 6 anomalies on attributes: system.mem.free(6 times)
+3. Investigate anomalies starting at N/A for node-2 (analysis window starts at 2022-03-20 18:30:00 CST (T0))
+4. Verify downstream dependencies of node for cascading failures
+5. Check UNKNOWN layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-20 18:45:00 CST → 2022-03-20 18:55:00 CST (Duration: 600 seconds)
+**Total Anomalies**: 19
+
+## Anomaly Breakdown
+- **Metric Service**: 1 anomalies
+- **Metric Runtime**: 2 anomalies
+- **Metric Container**: 3 anomalies
+- **Metric Mesh**: 6 anomalies
+- **Metric Node**: 1 anomalies
+- **Trace**: 3 anomalies
+- **Log**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-20 18:45:00 CST (T0) to 2022-03-20 18:50:00 CST (5 minutes)
+**Total Anomalies**: 19
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.currencyservice2-0 (Cleaned: currencyservice, Layer: CURRENCYSERVICE)
+- **Confidence Score**: 0.71 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: container_memory_max_usage_MB(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-6.currencyservice2-0 (Cleaned: currencyservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.75 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice-1.destination.frontend.adservice** (Cleaned: adservice-1.destination.frontend.adservice, Layer: FRONTEND): Score = 0.37, Anomalies = 4, Attrs = istio_agent_go_memstats_mcache_sys_bytes(8 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.currencyservice2-0 (Cleaned: currencyservice)**: recommendationservice, productcatalogservice-0, shippingservice-0, productcatalogservice2-0, adservice-0
+
+#### Layer-wise Impact Analysis
+- **CURRENCYSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.currencyservice2-0 (Cleaned: currencyservice, highest confidence score)
+2. Check node-6.currencyservice2-0 for 3.0 anomalies on attributes: container_memory_max_usage_MB(3 times)
+3. Investigate anomalies starting at N/A for node-6.currencyservice2-0 (analysis window starts at 2022-03-20 18:45:00 CST (T0))
+4. Verify downstream dependencies of currencyservice for cascading failures
+5. Check CURRENCYSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 2
+- metric_mesh | adservice-1.destination.frontend.adservice (Cleaned: adservice-1.destination.frontend.adservice) | istio_agent_go_memstats_mcache_sys_bytes | 2022-03-20 18:57:00 CST
+- log | cartservice-1 (Cleaned: cartservice) | at java.net.InetAddress.getAllByName0(InetAddress.java:1277) | 2022-03-20 18:58:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

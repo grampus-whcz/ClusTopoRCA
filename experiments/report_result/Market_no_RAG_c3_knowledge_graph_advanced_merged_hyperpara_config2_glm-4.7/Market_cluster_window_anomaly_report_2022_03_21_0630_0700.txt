@@ -1,0 +1,59 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0630_0700
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 06:33:00 CST → 2022-03-21 06:58:00 CST (Duration: 1500 seconds)
+**Total Anomalies**: 44
+
+## Anomaly Breakdown
+- **Metric Container**: 6 anomalies
+- **Metric Mesh**: 14 anomalies
+- **Metric Node**: 5 anomalies
+- **Trace**: 4 anomalies
+- **Log**: 15 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 06:33:00 CST (T0) to 2022-03-21 06:38:00 CST (5 minutes)
+**Total Anomalies**: 44
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-2.source.frontend.recommendationservice (Cleaned: frontend-2.source.frontend.recommendationservice, Layer: FRONTEND)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: istio_request_bytes.grpc.0.2.0(12 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for frontend-2.source.frontend.recommendationservice (Cleaned: frontend-2.source.frontend.recommendationservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **frontend-2.source.frontend.recommendationservice (Cleaned: frontend-2.source.frontend.recommendationservice) not found in topology graph**
+  - Suggestion: Check if frontend-2.source.frontend.recommendationservice is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-2.source.frontend.recommendationservice (Cleaned: frontend-2.source.frontend.recommendationservice, highest confidence score)
+2. Check frontend-2.source.frontend.recommendationservice for 6 anomalies on attributes: istio_request_bytes.grpc.0.2.0(12 times)
+3. Investigate anomalies starting at N/A for frontend-2.source.frontend.recommendationservice (analysis window starts at 2022-03-21 06:33:00 CST (T0))
+4. Verify downstream dependencies of frontend-2.source.frontend.recommendationservice for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

@@ -1,0 +1,119 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1800_1830
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 18:00:00 CST → 2022-03-20 18:09:00 CST (Duration: 540 seconds)
+**Total Anomalies**: 22
+
+## Anomaly Breakdown
+- **Metric Runtime**: 7 anomalies
+- **Metric Container**: 3 anomalies
+- **Metric Mesh**: 10 anomalies
+- **Trace**: 1 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 18:00:00 CST (T0) to 2022-03-20 18:05:00 CST (5 minutes)
+**Total Anomalies**: 22
+
+#### Primary Root Cause Entity
+- **Entity**: adservice2.ts:8088 (Cleaned: adservice, Layer: ADSERVICE)
+- **Confidence Score**: 0.72 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for adservice2.ts:8088 (Cleaned: adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.83 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **shippingservice-1.source.shippingservice.jaeger-collector** (Cleaned: shippingservice-1.source.shippingservice.jaeger-collector, Layer: UNKNOWN): Score = 0.47, Anomalies = 6, Attrs = istio_request_duration_milliseconds.http.202.(12 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by adservice2.ts:8088 (Cleaned: adservice)**: checkoutservice-1, currencyservice-0, currencyservice, shippingservice, recommendationservice-2
+
+#### Layer-wise Impact Analysis
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice2.ts:8088 (Cleaned: adservice, highest confidence score)
+2. Check adservice2.ts:8088 for 5 anomalies on attributes: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit(5 times)
+3. Investigate anomalies starting at N/A for adservice2.ts:8088 (analysis window starts at 2022-03-20 18:00:00 CST (T0))
+4. Verify downstream dependencies of adservice for cascading failures
+5. Check ADSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-20 18:11:00 CST → 2022-03-20 18:15:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 11
+
+## Anomaly Breakdown
+- **Metric Runtime**: 3 anomalies
+- **Metric Container**: 4 anomalies
+- **Metric Mesh**: 1 anomalies
+- **Trace**: 2 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-20 18:11:00 CST (T0) to 2022-03-20 18:16:00 CST (5 minutes)
+**Total Anomalies**: 11
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.frontend-1 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: container_fs_writes./dev/vda(4 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-5.frontend-1 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice2.ts:8088** (Cleaned: adservice, Layer: ADSERVICE): Score = 0.70, Anomalies = 3, Attrs = java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.frontend-1 (Cleaned: frontend)**: checkoutservice-1, currencyservice-0, currencyservice, shippingservice, recommendationservice-2
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.frontend-1 (Cleaned: frontend, highest confidence score)
+2. Check node-5.frontend-1 for 4.0 anomalies on attributes: container_fs_writes./dev/vda(4 times)
+3. Investigate anomalies starting at N/A for node-5.frontend-1 (analysis window starts at 2022-03-20 18:11:00 CST (T0))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 7
+- log | cartservice-1 (Cleaned: cartservice) | aused by: java.net.SocketException: Socket closed | 2022-03-20 18:17:00 CST
+- metric_runtime | adservice2.ts:8088 (Cleaned: adservice) | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit | 2022-03-20 18:18:00 CST
+- trace | frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder (Cleaned: frontend-1->checkoutservice-0:hipstershop.CheckoutService/PlaceOrder) | frequency | 2022-03-20 18:21:00 CST
+- metric_runtime | adservice2.ts:8088 (Cleaned: adservice) | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit | 2022-03-20 18:21:00 CST
+- metric_runtime | adservice2.ts:8088 (Cleaned: adservice) | java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit | 2022-03-20 18:23:00 CST
+- log | cartservice-1 (Cleaned: cartservice) | aused by: java.net.SocketException: Socket closed | 2022-03-20 18:24:00 CST
+- log | cartservice-1 (Cleaned: cartservice) | aused by: java.net.SocketException: Socket closed | 2022-03-20 18:26:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

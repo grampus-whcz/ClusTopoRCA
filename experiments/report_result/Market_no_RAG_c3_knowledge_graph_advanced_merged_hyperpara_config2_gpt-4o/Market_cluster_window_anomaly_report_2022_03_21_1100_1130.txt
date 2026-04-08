@@ -1,0 +1,104 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1100_1130
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 11:00:00 CST → 2022-03-21 11:08:00 CST (Duration: 480 seconds)
+**Total Anomalies**: 18
+
+## Anomaly Breakdown
+- **Metric Mesh**: 7 anomalies
+- **Trace**: 5 anomalies
+- **Log**: 6 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 11:00:00 CST (T0) to 2022-03-21 11:05:00 CST (5 minutes)
+**Total Anomalies**: 18
+
+#### Primary Root Cause Entity
+- **Entity**: checkoutservice-0 (Cleaned: checkoutservice, Layer: CHECKOUTSERVICE)
+- **Confidence Score**: 0.58 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: at hipstershop.AdService.getAdsByCategory(AdService.java:186)(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for checkoutservice-0 (Cleaned: checkoutservice)
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.50 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **checkoutservice-0.destination.frontend.checkoutservice** (Cleaned: checkoutservice-0.destination.frontend.checkoutservice, Layer: FRONTEND): Score = 0.47, Anomalies = 6, Attrs = istio_agent_go_memstats_heap_alloc_bytes(12 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by checkoutservice-0 (Cleaned: checkoutservice)**: productcatalogservice, frontend (Original: frontend-2), istio-ingressgateway, istio-egressgateway, shippingservice-1
+
+#### Layer-wise Impact Analysis
+- **CHECKOUTSERVICE Layer**: 1 entities affected (Weight: 0.95)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of checkoutservice-0 (Cleaned: checkoutservice, highest confidence score)
+2. Check checkoutservice-0 for 3.0 anomalies on attributes: at hipstershop.AdService.getAdsByCategory(AdService.java:186)(3 times)
+3. Investigate anomalies starting at N/A for checkoutservice-0 (analysis window starts at 2022-03-21 11:00:00 CST (T0))
+4. Verify downstream dependencies of checkoutservice for cascading failures
+5. Check CHECKOUTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 11:15:00 CST → 2022-03-21 11:23:00 CST (Duration: 480 seconds)
+**Total Anomalies**: 16
+
+## Anomaly Breakdown
+- **Metric Container**: 9 anomalies
+- **Metric Node**: 7 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 11:15:00 CST (T0) to 2022-03-21 11:20:00 CST (5 minutes)
+**Total Anomalies**: 16
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.currencyservice2-0 (Cleaned: currencyservice, Layer: CURRENCYSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: container_file_descriptors(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-6.currencyservice2-0 (Cleaned: currencyservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-6** (Cleaned: node, Layer: UNKNOWN): Score = 0.45, Anomalies = 5, Attrs = system.io.util(5 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.currencyservice2-0 (Cleaned: currencyservice)**: productcatalogservice, frontend, istio-ingressgateway, istio-egressgateway, shippingservice-1
+
+#### Layer-wise Impact Analysis
+- **CURRENCYSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.currencyservice2-0 (Cleaned: currencyservice, highest confidence score)
+2. Check node-6.currencyservice2-0 for 6 anomalies on attributes: container_file_descriptors(6 times)
+3. Investigate anomalies starting at N/A for node-6.currencyservice2-0 (analysis window starts at 2022-03-21 11:15:00 CST (T0))
+4. Verify downstream dependencies of currencyservice for cascading failures
+5. Check CURRENCYSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

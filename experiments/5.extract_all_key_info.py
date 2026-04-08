@@ -137,9 +137,9 @@ def process_all_combinations(base_path):
         # 'deepseek-r1-250528',
         # 'deepseek-r1-0528',
         # 'gemini-2.5-pro-preview-p',
-        # 'gpt-4o',
+        'gpt-4o',
         # 'llama3.1:8b-instruct-q8_0',
-        'qwen3-235b-a22b-instruct-2507'
+        # 'qwen3-235b-a22b-instruct-2507'
     ]
     
     # 遍历所有数据集

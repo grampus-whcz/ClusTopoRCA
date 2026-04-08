@@ -1,0 +1,113 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1830_1900
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 18:30:00 CST → 2022-03-21 18:46:00 CST (Duration: 960 seconds)
+**Total Anomalies**: 35
+
+## Anomaly Breakdown
+- **Metric Service**: 1 anomalies
+- **Metric Runtime**: 2 anomalies
+- **Metric Container**: 10 anomalies
+- **Metric Mesh**: 8 anomalies
+- **Trace**: 1 anomalies
+- **Log**: 13 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 18:30:00 CST (T0) to 2022-03-21 18:35:00 CST (5 minutes)
+**Total Anomalies**: 35
+
+#### Primary Root Cause Entity
+- **Entity**: adservice-1 (Cleaned: adservice, Layer: ADSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: info sds SDS: PUSH resource=default(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for adservice-1 (Cleaned: adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-5.cartservice-0** (Cleaned: cartservice, Layer: CARTSERVICE): Score = 0.58, Anomalies = 3, Attrs = container_memory_usage_MB(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by adservice-1 (Cleaned: adservice)**: cartservice-0, emailservice, frontend2-0, checkoutservice-1, checkoutservice2-0
+
+#### Layer-wise Impact Analysis
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice-1 (Cleaned: adservice, highest confidence score)
+2. Check adservice-1 for 6 anomalies on attributes: info sds SDS: PUSH resource=default(6 times)
+3. Investigate anomalies starting at N/A for adservice-1 (analysis window starts at 2022-03-21 18:30:00 CST (T0))
+4. Verify downstream dependencies of adservice for cascading failures
+5. Check ADSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 18:48:00 CST → 2022-03-21 18:57:00 CST (Duration: 540 seconds)
+**Total Anomalies**: 21
+
+## Anomaly Breakdown
+- **Metric Service**: 4 anomalies
+- **Metric Runtime**: 1 anomalies
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 3 anomalies
+- **Metric Node**: 6 anomalies
+- **Trace**: 5 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 18:48:00 CST (T0) to 2022-03-21 18:53:00 CST (5 minutes)
+**Total Anomalies**: 21
+
+#### Primary Root Cause Entity
+- **Entity**: node-5 (Cleaned: node, Layer: UNKNOWN)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: system.mem.used(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for node-5 (Cleaned: node)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **redis-cart-0.destination.cartservice.redis-cart** (Cleaned: redis-cart-0.destination.cartservice.redis-cart, Layer: CARTSERVICE): Score = 0.43, Anomalies = 3, Attrs = istio_tcp_connections_opened.-(6 times)
+- **cartservice-grpc** (Cleaned: cartservice-grpc, Layer: CARTSERVICE): Score = 0.43, Anomalies = 3, Attrs = count(6 times)
+
+#### Dependency Impact Path
+- **node-5 (Cleaned: node) not found in topology graph**
+  - Suggestion: Check if node is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **CARTSERVICE Layer**: 2 entities affected (Weight: 0.9)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5 (Cleaned: node, highest confidence score)
+2. Check node-5 for 5.0 anomalies on attributes: system.mem.used(5 times)
+3. Investigate anomalies starting at N/A for node-5 (analysis window starts at 2022-03-21 18:48:00 CST (T0))
+4. Verify downstream dependencies of node for cascading failures
+5. Check UNKNOWN layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

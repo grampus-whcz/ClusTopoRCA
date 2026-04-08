@@ -3,10 +3,10 @@
 
 # 定义要监控的进程的关键字
 # TARGET_PROCESS_KEYWORD="python -m rca.run_agent_standard_multi_candidate --dataset Bank"
-TARGET_PROCESS_KEYWORD="python -m rca.run_agent_standard_multi_candidate --dataset Bank --controller_max_step 1 --start_idx 0"
+TARGET_PROCESS_KEYWORD="python -m rca.run_agent_standard_multi_candidate --dataset Market/cloudbed-1 --controller_max_step 1 --start_idx 32"
 
 # 定义进程结束后要执行的命令
-COMMAND_TO_RUN="nohup bash experiments_k.sh >> Market_cloudbed-2_c3_deepseek-r1-0528.log 2>&1 &"
+COMMAND_TO_RUN="nohup bash experiments_k.sh >> Market_cloudbed-2_no_RAG_c3_knowledge_graph_advanced_merged_hyperparameter_config2_deepseek-r1-0528.log 2>&1 &"
 
 # 定义检查间隔，单位为秒 (5分钟 = 300秒)
 CHECK_INTERVAL=300

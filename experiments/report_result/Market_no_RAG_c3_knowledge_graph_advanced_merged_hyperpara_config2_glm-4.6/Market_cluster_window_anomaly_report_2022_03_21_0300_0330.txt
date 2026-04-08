@@ -1,0 +1,153 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0300_0330
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 3 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 03:01:00 CST → 2022-03-21 03:08:00 CST (Duration: 420 seconds)
+**Total Anomalies**: 15
+
+## Anomaly Breakdown
+- **Metric Container**: 6 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 5 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 03:01:00 CST (T0) to 2022-03-21 03:06:00 CST (5 minutes)
+**Total Anomalies**: 15
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.emailservice-2 (Cleaned: emailservice, Layer: EMAILSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: container_memory_max_usage_MB(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.emailservice-2 (Cleaned: emailservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.35, Anomalies = 4, Attrs = system.udp.connect.num(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.emailservice-2 (Cleaned: emailservice)**: paymentservice-0, cartservice-1, shippingservice, frontend, emailservice-1
+
+#### Layer-wise Impact Analysis
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.emailservice-2 (Cleaned: emailservice, highest confidence score)
+2. Check node-5.emailservice-2 for 5 anomalies on attributes: container_memory_max_usage_MB(5 times)
+3. Investigate anomalies starting at N/A for node-5.emailservice-2 (analysis window starts at 2022-03-21 03:01:00 CST (T0))
+4. Verify downstream dependencies of emailservice for cascading failures
+5. Check EMAILSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 03:10:00 CST → 2022-03-21 03:11:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Node**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 03:10:00 CST (T0) to 2022-03-21 03:15:00 CST (5 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.emailservice-2 (Cleaned: emailservice, Layer: EMAILSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: container_memory_max_usage_MB(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.emailservice-2 (Cleaned: emailservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.42, Anomalies = 1, Attrs = system.udp.connect.num(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.emailservice-2 (Cleaned: emailservice)**: paymentservice-0, cartservice-1, shippingservice, frontend, emailservice-1
+
+#### Layer-wise Impact Analysis
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.emailservice-2 (Cleaned: emailservice, highest confidence score)
+2. Check node-5.emailservice-2 for 2 anomalies on attributes: container_memory_max_usage_MB(2 times)
+3. Investigate anomalies starting at N/A for node-5.emailservice-2 (analysis window starts at 2022-03-21 03:10:00 CST (T0))
+4. Verify downstream dependencies of emailservice for cascading failures
+5. Check EMAILSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 03:13:00 CST → 2022-03-21 03:18:00 CST (Duration: 300 seconds)
+**Total Anomalies**: 11
+
+## Anomaly Breakdown
+- **Metric Runtime**: 6 anomalies
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 1 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 03:13:00 CST (T0) to 2022-03-21 03:18:00 CST (5 minutes)
+**Total Anomalies**: 11
+
+#### Primary Root Cause Entity
+- **Entity**: adservice.ts:8088 (Cleaned: adservice, Layer: ADSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: java_lang_OperatingSystem_FreePhysicalMemorySize(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for adservice.ts:8088 (Cleaned: adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by adservice.ts:8088 (Cleaned: adservice)**: paymentservice-0, cartservice-1, shippingservice, frontend, emailservice-1
+
+#### Layer-wise Impact Analysis
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice.ts:8088 (Cleaned: adservice, highest confidence score)
+2. Check adservice.ts:8088 for 6 anomalies on attributes: java_lang_OperatingSystem_FreePhysicalMemorySize(6 times)
+3. Investigate anomalies starting at N/A for adservice.ts:8088 (analysis window starts at 2022-03-21 03:13:00 CST (T0))
+4. Verify downstream dependencies of adservice for cascading failures
+5. Check ADSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 3
+- metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q (Cleaned: istio-egressgateway) | istio_request_bytes.http.0. | 2022-03-21 03:22:00 CST
+- metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q (Cleaned: istio-egressgateway) | istio_request_bytes.http.0. | 2022-03-21 03:26:00 CST
+- log | paymentservice-1 (Cleaned: paymentservice) | info sds SDS: PUSH resource=default | 2022-03-21 03:29:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

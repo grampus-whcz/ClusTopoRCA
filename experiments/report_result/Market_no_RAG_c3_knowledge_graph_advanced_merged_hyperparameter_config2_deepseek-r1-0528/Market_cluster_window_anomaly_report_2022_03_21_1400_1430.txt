@@ -1,0 +1,110 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1400_1430
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 14:00:00 CST → 2022-03-21 14:06:00 CST (Duration: 360 seconds)
+**Total Anomalies**: 12
+
+## Anomaly Breakdown
+- **Metric Runtime**: 4 anomalies
+- **Metric Container**: 7 anomalies
+- **Trace**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 14:00:00 CST (T0) to 2022-03-21 14:05:00 CST (5 minutes)
+**Total Anomalies**: 12
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.frontend-2 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: container_spec_cpu_shares(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-5.frontend-2 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice2.ts:8088** (Cleaned: adservice, Layer: ADSERVICE): Score = 0.68, Anomalies = 3, Attrs = java_lang_MemoryPool_PeakUsage_used.Survivor_Space(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.frontend-2 (Cleaned: frontend)**: cartservice-0, adservice (Original: adservice2.ts:8088), productcatalogservice, currencyservice, cartservice-2
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.frontend-2 (Cleaned: frontend, highest confidence score)
+2. Check node-5.frontend-2 for 6 anomalies on attributes: container_spec_cpu_shares(6 times)
+3. Investigate anomalies starting at N/A for node-5.frontend-2 (analysis window starts at 2022-03-21 14:00:00 CST (T0))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 14:08:00 CST → 2022-03-21 14:29:00 CST (Duration: 1260 seconds)
+**Total Anomalies**: 50
+
+## Anomaly Breakdown
+- **Metric Service**: 8 anomalies
+- **Metric Container**: 3 anomalies
+- **Metric Mesh**: 15 anomalies
+- **Metric Node**: 5 anomalies
+- **Trace**: 9 anomalies
+- **Log**: 10 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 14:08:00 CST (T0) to 2022-03-21 14:13:00 CST (5 minutes)
+**Total Anomalies**: 50
+
+#### Primary Root Cause Entity
+- **Entity**: productcatalogservice-grpc (Cleaned: productcatalogservice-grpc, Layer: UNKNOWN)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: rr(10 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for productcatalogservice-grpc (Cleaned: productcatalogservice-grpc)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **frontend-0.source.frontend.productcatalogservice** (Cleaned: frontend-0.source.frontend.productcatalogservice, Layer: FRONTEND): Score = 0.45, Anomalies = 4, Attrs = istio_agent_go_goroutines(8 times)
+- **node-6** (Cleaned: node, Layer: UNKNOWN): Score = 0.33, Anomalies = 3, Attrs = system.net.packets_in.count(3 times)
+
+#### Dependency Impact Path
+- **productcatalogservice-grpc (Cleaned: productcatalogservice-grpc) not found in topology graph**
+  - Suggestion: Check if productcatalogservice-grpc is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **UNKNOWN Layer**: 2 entities affected (Weight: 0.5)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of productcatalogservice-grpc (Cleaned: productcatalogservice-grpc, highest confidence score)
+2. Check productcatalogservice-grpc for 5.0 anomalies on attributes: rr(10 times)
+3. Investigate anomalies starting at N/A for productcatalogservice-grpc (analysis window starts at 2022-03-21 14:08:00 CST (T0))
+4. Verify downstream dependencies of productcatalogservice-grpc for cascading failures
+5. Check UNKNOWN layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

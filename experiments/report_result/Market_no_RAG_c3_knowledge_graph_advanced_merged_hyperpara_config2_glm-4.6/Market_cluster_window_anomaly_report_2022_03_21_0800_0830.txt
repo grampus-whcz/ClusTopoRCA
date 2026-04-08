@@ -1,0 +1,63 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0800_0830
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 08:07:00 CST → 2022-03-21 08:29:00 CST (Duration: 1320 seconds)
+**Total Anomalies**: 55
+
+## Anomaly Breakdown
+- **Metric Service**: 4 anomalies
+- **Metric Runtime**: 14 anomalies
+- **Metric Container**: 11 anomalies
+- **Metric Mesh**: 11 anomalies
+- **Metric Node**: 4 anomalies
+- **Log**: 11 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 08:07:00 CST (T0) to 2022-03-21 08:12:00 CST (5 minutes)
+**Total Anomalies**: 55
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.productcatalogservice-2 (Cleaned: productcatalogservice, Layer: PRODUCTCATALOGSERVICE)
+- **Confidence Score**: 0.63 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: container_fs_usage_MB./dev/vda1(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.productcatalogservice-2 (Cleaned: productcatalogservice)
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-4** (Cleaned: node, Layer: UNKNOWN): Score = 0.43, Anomalies = 3, Attrs = system.net.udp.out_datagrams(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.productcatalogservice-2 (Cleaned: productcatalogservice)**: shippingservice-2, recommendationservice2-0, frontend, productcatalogservice2-0, emailservice
+
+#### Layer-wise Impact Analysis
+- **PRODUCTCATALOGSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.productcatalogservice-2 (Cleaned: productcatalogservice, highest confidence score)
+2. Check node-5.productcatalogservice-2 for 5 anomalies on attributes: container_fs_usage_MB./dev/vda1(5 times)
+3. Investigate anomalies starting at N/A for node-5.productcatalogservice-2 (analysis window starts at 2022-03-21 08:07:00 CST (T0))
+4. Verify downstream dependencies of productcatalogservice for cascading failures
+5. Check PRODUCTCATALOGSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

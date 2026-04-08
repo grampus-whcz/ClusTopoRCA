@@ -1,0 +1,112 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1430_1500
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 14:30:00 CST → 2022-03-21 14:34:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 10
+
+## Anomaly Breakdown
+- **Metric Container**: 4 anomalies
+- **Metric Node**: 1 anomalies
+- **Log**: 5 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 14:30:00 CST (T0) to 2022-03-21 14:35:00 CST (5 minutes)
+**Total Anomalies**: 10
+
+#### Primary Root Cause Entity
+- **Entity**: currencyservice-1 (Cleaned: currencyservice, Layer: CURRENCYSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: "POST /api/v2/spans HTTP/1.1<:code202:>(5 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for currencyservice-1 (Cleaned: currencyservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-6.productcatalogservice2-0** (Cleaned: productcatalogservice, Layer: PRODUCTCATALOGSERVICE): Score = 0.61, Anomalies = 4, Attrs = container_memory_mapped_file(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by currencyservice-1 (Cleaned: currencyservice)**: adservice2-0, currencyservice-2, emailservice2-0, paymentservice-2, shippingservice-1
+
+#### Layer-wise Impact Analysis
+- **CURRENCYSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **PRODUCTCATALOGSERVICE Layer**: 1 entities affected (Weight: 0.85)
+
+#### RCA Recommendations
+1. Prioritize investigation of currencyservice-1 (Cleaned: currencyservice, highest confidence score)
+2. Check currencyservice-1 for 5 anomalies on attributes: "POST /api/v2/spans HTTP/1.1<:code202:>(5 times)
+3. Investigate anomalies starting at N/A for currencyservice-1 (analysis window starts at 2022-03-21 14:30:00 CST (T0))
+4. Verify downstream dependencies of currencyservice for cascading failures
+5. Check CURRENCYSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 14:47:00 CST → 2022-03-21 14:54:00 CST (Duration: 420 seconds)
+**Total Anomalies**: 9
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 5 anomalies
+- **Metric Node**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 14:47:00 CST (T0) to 2022-03-21 14:52:00 CST (5 minutes)
+**Total Anomalies**: 9
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-0.source.frontend.jaeger-collector (Cleaned: frontend-0.source.frontend.jaeger-collector, Layer: FRONTEND)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: istio_request_duration_milliseconds.http.202.(10 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for frontend-0.source.frontend.jaeger-collector (Cleaned: frontend-0.source.frontend.jaeger-collector)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **frontend-0.source.frontend.jaeger-collector (Cleaned: frontend-0.source.frontend.jaeger-collector) not found in topology graph**
+  - Suggestion: Check if frontend-0.source.frontend.jaeger-collector is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-0.source.frontend.jaeger-collector (Cleaned: frontend-0.source.frontend.jaeger-collector, highest confidence score)
+2. Check frontend-0.source.frontend.jaeger-collector for 5 anomalies on attributes: istio_request_duration_milliseconds.http.202.(10 times)
+3. Investigate anomalies starting at N/A for frontend-0.source.frontend.jaeger-collector (analysis window starts at 2022-03-21 14:47:00 CST (T0))
+4. Verify downstream dependencies of frontend-0.source.frontend.jaeger-collector for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 7
+- metric_container | node-6.productcatalogservice2-0 (Cleaned: productcatalogservice) | container_memory_mapped_file | 2022-03-21 14:36:00 CST
+- metric_container | node-6.productcatalogservice2-0 (Cleaned: productcatalogservice) | container_memory_mapped_file | 2022-03-21 14:37:00 CST
+- metric_container | node-6.productcatalogservice2-0 (Cleaned: productcatalogservice) | container_memory_mapped_file | 2022-03-21 14:40:00 CST
+- metric_container | node-6.productcatalogservice2-0 (Cleaned: productcatalogservice) | container_memory_mapped_file | 2022-03-21 14:41:00 CST
+- metric_container | node-6.productcatalogservice2-0 (Cleaned: productcatalogservice) | container_memory_mapped_file | 2022-03-21 14:45:00 CST
+- metric_node | node-5 (Cleaned: node) | system.load.15 | 2022-03-21 14:56:00 CST
+- metric_container | node-6.productcatalogservice2-0 (Cleaned: productcatalogservice) | container_memory_mapped_file | 2022-03-21 14:59:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

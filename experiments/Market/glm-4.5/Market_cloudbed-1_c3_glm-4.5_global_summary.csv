@@ -1,0 +1,3 @@
+data_type,total_tasks,total_pseudo_solved_tasks,total_actual_solved_tasks,total_partial_actual_solved_tasks,total_solved_tasks,total_actual_solved_tasks_rate,total_partial_actual_solved_tasks_rate,total_solved_tasks_rate,actual_correct_rate_percent,partial_correct_rate_percent,total_correct_rate_percent,total_input_tokens,total_output_tokens,total_tokens,total_candidates,total_score_sum,sum_max_scores,sum_avg_scores,sum_pseudo_scores,global_avg_score
+全量数据,70,5,3,18,21,0.042857,0.257143,0.3,4.2857,25.7143,30.0,995281,398626,1393907,175,13.5,9.33,4.825,11.0,0.077143
+排除训练集后,48,5,3,13,16,0.0625,0.270833,0.333333,6.25,27.0833,33.3333,691624,287299,978923,121,11.83,7.83,4.198333,9.33,0.097769

@@ -1,0 +1,165 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1630_1700
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 3 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 16:37:00 CST → 2022-03-20 16:39:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 4
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 1 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 16:37:00 CST (T0) to 2022-03-20 16:42:00 CST (5 minutes)
+**Total Anomalies**: 4
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.cartservice2-0 (Cleaned: cartservice, Layer: CARTSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: container_fs_inodes./dev/vda1(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for node-6.cartservice2-0 (Cleaned: cartservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **emailservice-2** (Cleaned: emailservice, Layer: EMAILSERVICE): Score = 0.63, Anomalies = 1, Attrs = at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171)(1 times)
+- **adservice2-0.destination.frontend2.adservice2** (Cleaned: adservice2-0.destination.frontend2.adservice2, Layer: FRONTEND): Score = 0.32, Anomalies = 1, Attrs = istio_tcp_connections_opened.UH(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.cartservice2-0 (Cleaned: cartservice)**: emailservice-2, shippingservice-2, checkoutservice-1, shippingservice-1, istio-egressgateway
+
+#### Layer-wise Impact Analysis
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.cartservice2-0 (Cleaned: cartservice, highest confidence score)
+2. Check node-6.cartservice2-0 for 2 anomalies on attributes: container_fs_inodes./dev/vda1(2 times)
+3. Investigate anomalies starting at N/A for node-6.cartservice2-0 (analysis window starts at 2022-03-20 16:37:00 CST (T0))
+4. Verify downstream dependencies of cartservice for cascading failures
+5. Check CARTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-20 16:43:00 CST → 2022-03-20 16:44:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Metric Mesh**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-20 16:43:00 CST (T0) to 2022-03-20 16:48:00 CST (5 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.cartservice2-0 (Cleaned: cartservice, Layer: CARTSERVICE)
+- **Confidence Score**: 0.58 (1.0 = highest)
+- **Anomaly Count**: 1
+- **Anomaly Attributes**: container_fs_inodes./dev/vda1(1 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-6.cartservice2-0 (Cleaned: cartservice)
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.50 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice2-0.destination.frontend2.adservice2** (Cleaned: adservice2-0.destination.frontend2.adservice2, Layer: FRONTEND): Score = 0.47, Anomalies = 2, Attrs = istio_tcp_connections_opened.UH(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.cartservice2-0 (Cleaned: cartservice)**: emailservice-2, shippingservice-2, checkoutservice-1, shippingservice-1, istio-egressgateway
+
+#### Layer-wise Impact Analysis
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.cartservice2-0 (Cleaned: cartservice, highest confidence score)
+2. Check node-6.cartservice2-0 for 1 anomalies on attributes: container_fs_inodes./dev/vda1(1 times)
+3. Investigate anomalies starting at N/A for node-6.cartservice2-0 (analysis window starts at 2022-03-20 16:43:00 CST (T0))
+4. Verify downstream dependencies of cartservice for cascading failures
+5. Check CARTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-20 16:52:00 CST → 2022-03-20 16:59:00 CST (Duration: 420 seconds)
+**Total Anomalies**: 12
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 4 anomalies
+- **Trace**: 3 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-20 16:52:00 CST (T0) to 2022-03-20 16:57:00 CST (5 minutes)
+**Total Anomalies**: 12
+
+#### Primary Root Cause Entity
+- **Entity**: cartservice-0 (Cleaned: cartservice, Layer: CARTSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: frequency(3 times)
+- **Earliest Anomaly Time**: 2022-03-20 16:52:00 CST
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for cartservice-0 (Cleaned: cartservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **cartservice-0:HGET** (Cleaned: cartservice-0:HGET, Layer: CARTSERVICE): Score = 0.47, Anomalies = 3, Attrs = frequency(6 times)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.37, Anomalies = 3, Attrs = system.mem.free(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by cartservice-0 (Cleaned: cartservice)**: emailservice-2, shippingservice-2, checkoutservice-1, shippingservice-1, istio-egressgateway
+
+#### Layer-wise Impact Analysis
+- **CARTSERVICE Layer**: 2 entities affected (Weight: 0.9)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of cartservice-0 (Cleaned: cartservice, highest confidence score)
+2. Check cartservice-0 for 3.0 anomalies on attributes: frequency(3 times)
+3. Investigate anomalies starting at 2022-03-20 16:52:00 CST for cartservice-0 (analysis window starts at 2022-03-20 16:52:00 CST (T0))
+4. Verify downstream dependencies of cartservice for cascading failures
+5. Check CARTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 8
+- metric_mesh | adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2) | istio_tcp_connections_opened.UH | 2022-03-20 16:30:00 CST
+- metric_mesh | adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2) | istio_tcp_connections_opened.UH | 2022-03-20 16:31:00 CST
+- metric_mesh | adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2) | istio_tcp_connections_opened.UH | 2022-03-20 16:33:00 CST
+- metric_mesh | adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2) | istio_tcp_connections_opened.UH | 2022-03-20 16:35:00 CST
+- metric_mesh | adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2) | istio_tcp_connections_opened.UH | 2022-03-20 16:47:00 CST
+- metric_mesh | adservice2-0.destination.frontend2.adservice2 (Cleaned: adservice2-0.destination.frontend2.adservice2) | istio_tcp_connections_opened.UH | 2022-03-20 16:48:00 CST
+- log | emailservice-2 (Cleaned: emailservice) | at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.java:171) | 2022-03-20 16:50:00 CST
+- trace | cartservice-0->cartservice-0:HGET (Cleaned: cartservice-0->cartservice-0:HGET) | frequency | 2022-03-20 16:50:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

@@ -1,0 +1,162 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 1900_1930
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 3 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 19:00:00 CST → 2022-03-21 19:10:00 CST (Duration: 600 seconds)
+**Total Anomalies**: 25
+
+## Anomaly Breakdown
+- **Metric Service**: 2 anomalies
+- **Metric Container**: 7 anomalies
+- **Metric Mesh**: 3 anomalies
+- **Metric Node**: 3 anomalies
+- **Trace**: 2 anomalies
+- **Log**: 8 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 19:00:00 CST (T0) to 2022-03-21 19:05:00 CST (5 minutes)
+**Total Anomalies**: 25
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.shippingservice-0 (Cleaned: shippingservice, Layer: SHIPPINGSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: container_memory_failcnt(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for node-5.shippingservice-0 (Cleaned: shippingservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **cartservice-0** (Cleaned: cartservice, Layer: CARTSERVICE): Score = 0.72, Anomalies = 5, Attrs = at java.net.InetAddress.getAllByName(InetAddress.java:1127)(5 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.shippingservice-0 (Cleaned: shippingservice)**: frontend-2, currencyservice2-0, adservice, shippingservice-2, frontend2-0
+
+#### Layer-wise Impact Analysis
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.shippingservice-0 (Cleaned: shippingservice, highest confidence score)
+2. Check node-5.shippingservice-0 for 6.0 anomalies on attributes: container_memory_failcnt(6 times)
+3. Investigate anomalies starting at N/A for node-5.shippingservice-0 (analysis window starts at 2022-03-21 19:00:00 CST (T0))
+4. Verify downstream dependencies of shippingservice for cascading failures
+5. Check SHIPPINGSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 19:12:00 CST → 2022-03-21 19:17:00 CST (Duration: 300 seconds)
+**Total Anomalies**: 9
+
+## Anomaly Breakdown
+- **Metric Service**: 2 anomalies
+- **Metric Container**: 1 anomalies
+- **Metric Mesh**: 3 anomalies
+- **Metric Node**: 2 anomalies
+- **Log**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 19:12:00 CST (T0) to 2022-03-21 19:17:00 CST (5 minutes)
+**Total Anomalies**: 9
+
+#### Primary Root Cause Entity
+- **Entity**: adservice-0.destination.frontend.adservice (Cleaned: adservice-0.destination.frontend.adservice, Layer: FRONTEND)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: istio_request_bytes.grpc.200.14.0(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for adservice-0.destination.frontend.adservice (Cleaned: adservice-0.destination.frontend.adservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **adservice-0.destination.frontend.adservice (Cleaned: adservice-0.destination.frontend.adservice) not found in topology graph**
+  - Suggestion: Check if adservice-0.destination.frontend.adservice is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of adservice-0.destination.frontend.adservice (Cleaned: adservice-0.destination.frontend.adservice, highest confidence score)
+2. Check adservice-0.destination.frontend.adservice for 3 anomalies on attributes: istio_request_bytes.grpc.200.14.0(6 times)
+3. Investigate anomalies starting at N/A for adservice-0.destination.frontend.adservice (analysis window starts at 2022-03-21 19:12:00 CST (T0))
+4. Verify downstream dependencies of adservice-0.destination.frontend.adservice for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 19:21:00 CST → 2022-03-21 19:23:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 5
+
+## Anomaly Breakdown
+- **Metric Mesh**: 1 anomalies
+- **Metric Node**: 2 anomalies
+- **Trace**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 19:21:00 CST (T0) to 2022-03-21 19:26:00 CST (5 minutes)
+**Total Anomalies**: 5
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-0 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: frequency(2 times)
+- **Earliest Anomaly Time**: 2022-03-21 19:21:00 CST
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for frontend-0 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **cartservice-0:/hipstershop.CartService/GetCart** (Cleaned: cartservice-0:/hipstershop.CartService/GetCart, Layer: CARTSERVICE): Score = 0.51, Anomalies = 2, Attrs = frequency(4 times)
+- **node-1** (Cleaned: node, Layer: UNKNOWN): Score = 0.47, Anomalies = 2, Attrs = system.cpu.pct_usage(2 times)
+- **adservice-0.destination.frontend.adservice** (Cleaned: adservice-0.destination.frontend.adservice, Layer: FRONTEND): Score = 0.32, Anomalies = 1, Attrs = istio_request_bytes.grpc.200.14.0(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by frontend-0 (Cleaned: frontend)**: frontend-2, currencyservice2-0, adservice, frontend2-0, shippingservice-2
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 2 entities affected (Weight: 1.0)
+- **CARTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-0 (Cleaned: frontend, highest confidence score)
+2. Check frontend-0 for 2.0 anomalies on attributes: frequency(2 times)
+3. Investigate anomalies starting at 2022-03-21 19:21:00 CST for frontend-0 (analysis window starts at 2022-03-21 19:21:00 CST (T0))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 4
+- metric_service | currencyservice-grpc (Cleaned: currencyservice-grpc) | count | 2022-03-21 19:19:00 CST
+- trace | frontend-0->cartservice-0:/hipstershop.CartService/GetCart (Cleaned: frontend-0->cartservice-0:/hipstershop.CartService/GetCart) | frequency | 2022-03-21 19:19:00 CST
+- metric_mesh | adservice-0.destination.frontend.adservice (Cleaned: adservice-0.destination.frontend.adservice) | istio_request_bytes.grpc.200.14.0 | 2022-03-21 19:27:00 CST
+- metric_container | node-5.shippingservice-0 (Cleaned: shippingservice) | container_memory_failcnt | 2022-03-21 19:28:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

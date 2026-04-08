@@ -1,0 +1,199 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 2200_2230
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 4 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 22:00:00 CST → 2022-03-21 22:03:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 6
+
+## Anomaly Breakdown
+- **Metric Runtime**: 1 anomalies
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 22:00:00 CST (T0) to 2022-03-21 22:05:00 CST (5 minutes)
+**Total Anomalies**: 6
+
+#### Primary Root Cause Entity
+- **Entity**: istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: istio_response_bytes.http.500.(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-5.emailservice-1** (Cleaned: emailservice, Layer: EMAILSERVICE): Score = 0.70, Anomalies = 2, Attrs = container_fs_usage_MB./dev/vda1(2 times)
+- **adservice2.ts:8088** (Cleaned: adservice, Layer: ADSERVICE): Score = 0.62, Anomalies = 1, Attrs = java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Su(1 times)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.32, Anomalies = 1, Attrs = system.net.udp.in_errors(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway)**: productcatalogservice-0, paymentservice-2, emailservice (Original: node-5.emailservice-1), checkoutservice2-0, frontend-2
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, highest confidence score)
+2. Check istio-ingressgateway-565bffd4d-rn678 for 2 anomalies on attributes: istio_response_bytes.http.500.(2 times)
+3. Investigate anomalies starting at N/A for istio-ingressgateway-565bffd4d-rn678 (analysis window starts at 2022-03-21 22:00:00 CST (T0))
+4. Verify downstream dependencies of istio-ingressgateway for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 22:05:00 CST → 2022-03-21 22:09:00 CST (Duration: 240 seconds)
+**Total Anomalies**: 10
+
+## Anomaly Breakdown
+- **Metric Runtime**: 3 anomalies
+- **Metric Container**: 4 anomalies
+- **Metric Mesh**: 1 anomalies
+- **Metric Node**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 22:05:00 CST (T0) to 2022-03-21 22:10:00 CST (5 minutes)
+**Total Anomalies**: 10
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.emailservice-1 (Cleaned: emailservice, Layer: EMAILSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: container_fs_usage_MB./dev/vda1(4 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-5.emailservice-1 (Cleaned: emailservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice2.ts:8088** (Cleaned: adservice, Layer: ADSERVICE): Score = 0.71, Anomalies = 3, Attrs = java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Su(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.emailservice-1 (Cleaned: emailservice)**: productcatalogservice-0, paymentservice-2, checkoutservice2-0, frontend-2, currencyservice2-0
+
+#### Layer-wise Impact Analysis
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.emailservice-1 (Cleaned: emailservice, highest confidence score)
+2. Check node-5.emailservice-1 for 4 anomalies on attributes: container_fs_usage_MB./dev/vda1(4 times)
+3. Investigate anomalies starting at N/A for node-5.emailservice-1 (analysis window starts at 2022-03-21 22:05:00 CST (T0))
+4. Verify downstream dependencies of emailservice for cascading failures
+5. Check EMAILSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 22:11:00 CST → 2022-03-21 22:17:00 CST (Duration: 360 seconds)
+**Total Anomalies**: 8
+
+## Anomaly Breakdown
+- **Metric Container**: 3 anomalies
+- **Metric Mesh**: 3 anomalies
+- **Metric Node**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 22:11:00 CST (T0) to 2022-03-21 22:16:00 CST (5 minutes)
+**Total Anomalies**: 8
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.emailservice-1 (Cleaned: emailservice, Layer: EMAILSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: container_fs_usage_MB./dev/vda1(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.emailservice-1 (Cleaned: emailservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.emailservice-1 (Cleaned: emailservice)**: productcatalogservice-0, paymentservice-2, checkoutservice2-0, frontend-2, currencyservice2-0
+
+#### Layer-wise Impact Analysis
+- **EMAILSERVICE Layer**: 1 entities affected (Weight: 0.75)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.emailservice-1 (Cleaned: emailservice, highest confidence score)
+2. Check node-5.emailservice-1 for 3 anomalies on attributes: container_fs_usage_MB./dev/vda1(3 times)
+3. Investigate anomalies starting at N/A for node-5.emailservice-1 (analysis window starts at 2022-03-21 22:11:00 CST (T0))
+4. Verify downstream dependencies of emailservice for cascading failures
+5. Check EMAILSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #4
+**Time Span**: 2022-03-21 22:22:00 CST → 2022-03-21 22:24:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 4
+
+## Anomaly Breakdown
+- **Metric Runtime**: 1 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #4 (Market Dataset)
+**Analysis Window**: 2022-03-21 22:22:00 CST (T0) to 2022-03-21 22:27:00 CST (5 minutes)
+**Total Anomalies**: 4
+
+#### Primary Root Cause Entity
+- **Entity**: istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: istio_response_bytes.http.500.(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **adservice2.ts:8088** (Cleaned: adservice, Layer: ADSERVICE): Score = 0.63, Anomalies = 1, Attrs = java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_max.Su(1 times)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.32, Anomalies = 1, Attrs = system.net.udp.in_errors(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway)**: productcatalogservice-0, paymentservice-2, emailservice, checkoutservice2-0, frontend-2
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **ADSERVICE Layer**: 1 entities affected (Weight: 0.5)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, highest confidence score)
+2. Check istio-ingressgateway-565bffd4d-rn678 for 2 anomalies on attributes: istio_response_bytes.http.500.(2 times)
+3. Investigate anomalies starting at N/A for istio-ingressgateway-565bffd4d-rn678 (analysis window starts at 2022-03-21 22:22:00 CST (T0))
+4. Verify downstream dependencies of istio-ingressgateway for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

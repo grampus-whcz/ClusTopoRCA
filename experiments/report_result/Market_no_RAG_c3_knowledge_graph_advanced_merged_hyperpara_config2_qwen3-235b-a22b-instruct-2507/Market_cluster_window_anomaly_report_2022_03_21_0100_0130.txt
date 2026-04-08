@@ -1,0 +1,108 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 0100_0130
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 01:00:00 CST → 2022-03-21 01:03:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 5
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 3 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 01:00:00 CST (T0) to 2022-03-21 01:05:00 CST (5 minutes)
+**Total Anomalies**: 5
+
+#### Primary Root Cause Entity
+- **Entity**: currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2, Layer: CHECKOUTSERVICE)
+- **Confidence Score**: 0.47 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: istio_agent_go_memstats_alloc_bytes(6 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2) not found in topology graph**
+  - Suggestion: Check if currencyservice2-0.destination.checkoutservice2.currencyservice2 is a valid Market microservice/pod name
+
+#### Layer-wise Impact Analysis
+- **CHECKOUTSERVICE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2, highest confidence score)
+2. Check currencyservice2-0.destination.checkoutservice2.currencyservice2 for 3 anomalies on attributes: istio_agent_go_memstats_alloc_bytes(6 times)
+3. Investigate anomalies starting at N/A for currencyservice2-0.destination.checkoutservice2.currencyservice2 (analysis window starts at 2022-03-21 01:00:00 CST (T0))
+4. Verify downstream dependencies of currencyservice2-0.destination.checkoutservice2.currencyservice2 for cascading failures
+5. Check CHECKOUTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 01:06:00 CST → 2022-03-21 01:07:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Node**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 01:06:00 CST (T0) to 2022-03-21 01:11:00 CST (5 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: node-5.checkoutservice-1 (Cleaned: checkoutservice, Layer: CHECKOUTSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: container_spec_cpu_shares(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for node-5.checkoutservice-1 (Cleaned: checkoutservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-4** (Cleaned: node, Layer: UNKNOWN): Score = 0.42, Anomalies = 1, Attrs = system.mem.usable(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-5.checkoutservice-1 (Cleaned: checkoutservice)**: productcatalogservice2-0, frontend, shippingservice-1, adservice, paymentservice2-0
+
+#### Layer-wise Impact Analysis
+- **CHECKOUTSERVICE Layer**: 1 entities affected (Weight: 0.95)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-5.checkoutservice-1 (Cleaned: checkoutservice, highest confidence score)
+2. Check node-5.checkoutservice-1 for 2 anomalies on attributes: container_spec_cpu_shares(2 times)
+3. Investigate anomalies starting at N/A for node-5.checkoutservice-1 (analysis window starts at 2022-03-21 01:06:00 CST (T0))
+4. Verify downstream dependencies of checkoutservice for cascading failures
+5. Check CHECKOUTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 5
+- metric_node | node-4 (Cleaned: node) | system.mem.usable | 2022-03-21 01:11:00 CST
+- metric_node | node-4 (Cleaned: node) | system.mem.usable | 2022-03-21 01:16:00 CST
+- metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 (Cleaned: currencyservice2-0.destination.checkoutservice2.currencyservice2) | istio_agent_go_memstats_alloc_bytes | 2022-03-21 01:17:00 CST
+- metric_node | node-4 (Cleaned: node) | system.mem.usable | 2022-03-21 01:21:00 CST
+- metric_node | node-4 (Cleaned: node) | system.mem.usable | 2022-03-21 01:26:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

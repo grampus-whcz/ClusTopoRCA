@@ -1,0 +1,72 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1300_1330
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 13:07:00 CST → 2022-03-20 13:13:00 CST (Duration: 360 seconds)
+**Total Anomalies**: 14
+
+## Anomaly Breakdown
+- **Metric Container**: 4 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 4 anomalies
+- **Log**: 4 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 13:07:00 CST (T0) to 2022-03-20 13:12:00 CST (5 minutes)
+**Total Anomalies**: 14
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.paymentservice2-0 (Cleaned: paymentservice, Layer: PAYMENTSERVICE)
+- **Confidence Score**: 0.66 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: container_memory_cache(3 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for node-6.paymentservice2-0 (Cleaned: paymentservice)
+- **Time Score**: 0.50 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.75 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **shippingservice-0** (Cleaned: shippingservice, Layer: SHIPPINGSERVICE): Score = 0.63, Anomalies = 4, Attrs = info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:(4 times)
+- **node-1** (Cleaned: node, Layer: UNKNOWN): Score = 0.47, Anomalies = 4, Attrs = system.mem.free(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.paymentservice2-0 (Cleaned: paymentservice)**: cartservice2-0, emailservice-2, shippingservice (Original: shippingservice-0), adservice-0, currencyservice-2
+
+#### Layer-wise Impact Analysis
+- **PAYMENTSERVICE Layer**: 1 entities affected (Weight: 0.9)
+- **SHIPPINGSERVICE Layer**: 1 entities affected (Weight: 0.8)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.paymentservice2-0 (Cleaned: paymentservice, highest confidence score)
+2. Check node-6.paymentservice2-0 for 3 anomalies on attributes: container_memory_cache(3 times)
+3. Investigate anomalies starting at N/A for node-6.paymentservice2-0 (analysis window starts at 2022-03-20 13:07:00 CST (T0))
+4. Verify downstream dependencies of paymentservice for cascading failures
+5. Check PAYMENTSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 6
+- metric_mesh | checkoutservice-0.source.checkoutservice.productcatalogservice (Cleaned: checkoutservice-0.source.checkoutservice.productcatalogservice) | istio_requests.http.500. | 2022-03-20 13:04:00 CST
+- metric_node | node-1 (Cleaned: node) | system.mem.free | 2022-03-20 13:15:00 CST
+- metric_container | node-6.paymentservice2-0 (Cleaned: paymentservice) | container_memory_cache | 2022-03-20 13:16:00 CST
+- metric_container | node-6.paymentservice2-0 (Cleaned: paymentservice) | container_memory_cache | 2022-03-20 13:20:00 CST
+- metric_mesh | checkoutservice-0.source.checkoutservice.productcatalogservice (Cleaned: checkoutservice-0.source.checkoutservice.productcatalogservice) | istio_requests.http.500. | 2022-03-20 13:21:00 CST
+- metric_container | node-6.paymentservice2-0 (Cleaned: paymentservice) | container_memory_cache | 2022-03-20 13:29:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges
