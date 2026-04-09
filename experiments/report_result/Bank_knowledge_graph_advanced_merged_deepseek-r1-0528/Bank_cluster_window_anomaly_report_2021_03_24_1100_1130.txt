@@ -1,0 +1,61 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_24 | Window: 1100_1130
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 1036
+## Anomaly Breakdown
+- **Metric App**: 8 anomalies
+- **Metric Container**: 915 anomalies
+- **Trace**: 5 anomalies
+- **Log**: 108 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-24 11:01:00 (T2) to 2021-03-24 11:05:00 (4 minutes)
+**Total Anomalies in Full Domain**: 1036
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.78 (1.0 = highest)
+- **Anomaly Count**: 29
+- **Anomaly Attributes**: PatternID_38(2 times), PatternID_65(2 times), PatternID_81(1 times), PatternID_96(1 times), PatternID_107(1 times), PatternID_122(1 times), PatternID_149(1 times), OSLinux-CPU_CPU_CPUUserTime(1 times), PatternID_17(1 times), PatternID_26(1 times), PatternID_29(1 times), PatternID_45(1 times), PatternID_48(1 times), PatternID_55(1 times), PatternID_59(1 times), PatternID_84(1 times), PatternID_85(1 times), PatternID_91(1 times), PatternID_92(1 times), PatternID_103(1 times), PatternID_111(1 times), PatternID_129(1 times), PatternID_138(1 times), PatternID_157(1 times), PatternID_163(1 times), PatternID_170(1 times), PatternID_173(1 times)
+- **Earliest Anomaly Time**: 2021-03-24 11:00:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.44 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **apache02** (Layer: ENTRY_POINT): Score = 0.70, Anomalies = 4, Attrs = OSLinux-OSLinux_MEMORY_MEMORY_MEMFreeMem(4 times)
+- **Redis02** (Layer: CACHE): Score = 0.50, Anomalies = 2, Attrs = OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKTps(1 times)
+- **Redis01** (Layer: CACHE): Score = 0.15, Anomalies = 2, Attrs = OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: MG01, Redis02, dockerA2, MG02, Mysql02
+
+#### Layer-wise Impact Analysis
+- **CACHE Layer**: 2 entities affected (Weight: 0.6)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: PatternID_38(2 times), PatternID_65(2 times), PatternID_81(1 times), PatternID_96(1 times), PatternID_107(1 times), PatternID_122(1 times), PatternID_149(1 times), OSLinux-CPU_CPU_CPUUserTime(1 times), PatternID_17(1 times), PatternID_26(1 times), PatternID_29(1 times), PatternID_45(1 times), PatternID_48(1 times), PatternID_55(1 times), PatternID_59(1 times), PatternID_84(1 times), PatternID_85(1 times), PatternID_91(1 times), PatternID_92(1 times), PatternID_103(1 times), PatternID_111(1 times), PatternID_129(1 times), PatternID_138(1 times), PatternID_157(1 times), PatternID_163(1 times), PatternID_170(1 times), PatternID_173(1 times)
+3. Investigate starting at 2021-03-24 11:00:00 (analysis window: 2021-03-24 11:01:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

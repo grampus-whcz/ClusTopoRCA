@@ -1,0 +1,65 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_09 | Window: 0500_0530
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 314
+## Anomaly Breakdown
+- **Metric App**: 35 anomalies
+- **Metric Container**: 231 anomalies
+- **Trace**: 35 anomalies
+- **Log**: 13 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-09 05:01:00 (T2) to 2021-03-09 05:05:00 (4 minutes)
+**Total Anomalies in Full Domain**: 314
+
+#### Primary Root Cause Entity
+- **Entity**: Tomcat02 (Layer: BUSINESS)
+- **Confidence Score**: 0.80 (1.0 = highest)
+- **Anomaly Count**: 10
+- **Anomaly Attributes**: duration(5 times), frequency(5 times)
+- **Earliest Anomaly Time**: 2021-03-09 05:00:31
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for Tomcat02
+- **Time Score**: 0.90 (earlier anomaly = higher score)
+- **Topology Score**: 0.57 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **MG02** (Layer: GOVERNANCE): Score = 0.74, Anomalies = 6, Attrs = JVM-Memory_7779_JVM_Memory_NoHeapMemoryUsed(6 times)
+- **IG02** (Layer: GATEWAY): Score = 0.64, Anomalies = 4, Attrs = duration(2 times), frequency(2 times)
+- **UNKNOWN_PARENT** (Layer: UNKNOWN): Score = 0.62, Anomalies = 2, Attrs = duration(1 times), frequency(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by Tomcat02**: dockerB1, MG02, Redis02, MG01, Mysql02
+
+#### Layer-wise Impact Analysis
+- **SERVICE_TEST Layer**: 5 entities affected (Weight: 0.5)
+- **BUSINESS Layer**: 3 entities affected (Weight: 0.9)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of Tomcat02 (global highest confidence)
+2. Check Tomcat02 for anomalies on attributes: duration(5 times), frequency(5 times)
+3. Investigate starting at 2021-03-09 05:00:31 (analysis window: 2021-03-09 05:01:00)
+4. Verify cascading failures in downstream dependencies
+5. Check BUSINESS layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

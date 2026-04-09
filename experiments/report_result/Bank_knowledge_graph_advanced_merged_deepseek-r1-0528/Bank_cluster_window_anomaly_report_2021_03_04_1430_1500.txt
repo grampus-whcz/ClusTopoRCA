@@ -1,0 +1,62 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_04 | Window: 1430_1500
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 1147
+## Anomaly Breakdown
+- **Metric App**: 9 anomalies
+- **Metric Container**: 1019 anomalies
+- **Trace**: 38 anomalies
+- **Log**: 81 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-04 14:33:00 (T2) to 2021-03-04 14:37:00 (4 minutes)
+**Total Anomalies in Full Domain**: 1147
+
+#### Primary Root Cause Entity
+- **Entity**: Redis01 (Layer: CACHE)
+- **Confidence Score**: 0.66 (1.0 = highest)
+- **Anomaly Count**: 21
+- **Anomaly Attributes**: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit(1 times), Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage(1 times), Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times), JVM-Memory_7778_JVM_Memory_HeapMemoryUsed(1 times), Mysql-MySQL_3306_Innodb buffer pool pages misc(1 times), Mysql-MySQL_3306_Innodb data read(1 times), Mysql-MySQL_3306_Threads Created(1 times), OSLinux-NTP_197.30.1.67_NtpServerTimeOffset(1 times), OSLinux-OSLinux_FILESYSTEM_----_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace(1 times), OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMemPerc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETKBTotalPerSec(1 times), redis-Redis_6379_Redis  (connected_clients)(1 times), redis-Redis_6379_Redis  (used_memory_rss)(1 times)
+- **Earliest Anomaly Time**: 2021-03-04 14:30:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for Redis01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.75 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG01** (Layer: GATEWAY): Score = 0.57, Anomalies = 28, Attrs = JVM-Memory_7778_JVM_Memory_HeapMemoryUsage(1 times), PatternID_9(1 times), PatternID_27(1 times), PatternID_30(1 times), PatternID_33(1 times), PatternID_49(1 times), PatternID_50(1 times), PatternID_54(1 times), PatternID_56(1 times), PatternID_90(1 times), PatternID_99(1 times), PatternID_101(1 times), PatternID_105(1 times), PatternID_120(1 times), PatternID_140(1 times), PatternID_151(1 times), PatternID_167(1 times), PatternID_39(1 times), PatternID_42(1 times), PatternID_109(1 times), PatternID_117(1 times), PatternID_43(1 times), PatternID_51(1 times), PatternID_60(1 times), PatternID_147(1 times), PatternID_159(1 times), PatternID_168(1 times), PatternID_174(1 times)
+- **ServiceTest1** (Layer: SERVICE_TEST): Score = 0.45, Anomalies = 2, Attrs = cnt(2 times)
+- **Mysql01** (Layer: DATABASE): Score = 0.30, Anomalies = 2, Attrs = Mysql-MySQL_3306_Innodb data fsyncs(1 times), Mysql-MySQL_3306_Innodb dblwr writes(1 times)
+
+#### Dependency Impact Path
+- **Redis01 not found in topology**
+
+#### Layer-wise Impact Analysis
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **SERVICE_TEST Layer**: 1 entities affected (Weight: 0.5)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of Redis01 (global highest confidence)
+2. Check Redis01 for anomalies on attributes: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit(1 times), Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage(1 times), Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes(1 times), Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage(1 times), Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent(1 times), Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times), JVM-Memory_7778_JVM_Memory_HeapMemoryUsed(1 times), Mysql-MySQL_3306_Innodb buffer pool pages misc(1 times), Mysql-MySQL_3306_Innodb data read(1 times), Mysql-MySQL_3306_Threads Created(1 times), OSLinux-NTP_197.30.1.67_NtpServerTimeOffset(1 times), OSLinux-OSLinux_FILESYSTEM_----_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace(1 times), OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMemPerc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETKBTotalPerSec(1 times), redis-Redis_6379_Redis  (connected_clients)(1 times), redis-Redis_6379_Redis  (used_memory_rss)(1 times)
+3. Investigate starting at 2021-03-04 14:30:00 (analysis window: 2021-03-04 14:33:00)
+4. Verify cascading failures in downstream dependencies
+5. Check CACHE layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

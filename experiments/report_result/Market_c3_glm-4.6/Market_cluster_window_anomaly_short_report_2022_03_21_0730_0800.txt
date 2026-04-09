@@ -1,0 +1,69 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 0730_0800
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 07:30:00 CST → 2022-03-21 07:32:00 CST (Δ = 120 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Times (2): 2022-03-21 07:31:00 CST, 2022-03-21 07:32:00 CST
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-2 | Attribute: at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+       Times (2): 2022-03-21 07:30:00 CST, 2022-03-21 07:31:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 07:37:00 CST → 2022-03-21 07:40:00 CST (Δ = 180 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Times (2): 2022-03-21 07:37:00 CST, 2022-03-21 07:38:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Times (2): 2022-03-21 07:38:00 CST, 2022-03-21 07:39:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 07:44:00 CST → 2022-03-21 07:45:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Mesh Anomalies:
+     • Entity: recommendationservice-1.source.recommendationservice.jaeger-coll | Attribute: istio_response_bytes.http.200.
+       Times (2): 2022-03-21 07:44:00 CST, 2022-03-21 07:45:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2022-03-21 07:47:00 CST → 2022-03-21 07:48:00 CST (Δ = 60 sec)
+   Repeated Entity-Attribute Pairs: 1
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Times (2): 2022-03-21 07:47:00 CST, 2022-03-21 07:48:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #6
+   Time Span: 2022-03-21 07:53:00 CST → 2022-03-21 07:57:00 CST (Δ = 240 sec)
+   Repeated Entity-Attribute Pairs: 2
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.productcatalogservice-2 | Attribute: container_spec_memory_swap_limit_MB
+       Times (2): 2022-03-21 07:54:00 CST, 2022-03-21 07:55:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.load.15
+       Times (2): 2022-03-21 07:53:00 CST, 2022-03-21 07:54:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 8
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

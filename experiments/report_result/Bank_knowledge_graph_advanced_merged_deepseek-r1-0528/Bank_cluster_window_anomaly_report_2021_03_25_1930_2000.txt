@@ -1,0 +1,58 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_25 | Window: 1930_2000
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 77
+## Anomaly Breakdown
+- **Metric App**: 2 anomalies
+- **Metric Container**: 49 anomalies
+- **Trace**: 14 anomalies
+- **Log**: 12 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-25 19:34:00 (T2) to 2021-03-25 19:38:00 (4 minutes)
+**Total Anomalies in Full Domain**: 77
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: PatternID_124(1 times), PatternID_3(1 times), PatternID_83(1 times), PatternID_135(1 times), PatternID_136(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 19:32:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.67, Anomalies = 4, Attrs = OSLinux-OSLinux_MEMORY_MEMORY_MEMFreeMem(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: Mysql02, Tomcat02, MG01, MG02, dockerA2
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: PatternID_124(1 times), PatternID_3(1 times), PatternID_83(1 times), PatternID_135(1 times), PatternID_136(1 times)
+3. Investigate starting at 2021-03-25 19:32:00 (analysis window: 2021-03-25 19:34:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

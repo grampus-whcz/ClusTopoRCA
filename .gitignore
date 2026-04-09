@@ -8,6 +8,7 @@ faiss_index_postmortem_old/
 rca/baseline/rag_agent/
 RAG/
 *.log
+rca/api_config.yaml
 
 # exclude
 !experiments/

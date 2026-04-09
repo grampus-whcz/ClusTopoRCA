@@ -1,0 +1,27 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_05_27 0230_0300
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-05-27 02:55:00 CST → 2020-05-27 02:55:00 CST (Δ = 0 sec)
+   Total Anomalies: 4
+
+   📝 Trace Anomalies:
+     • Entity: ROOT->os_022:OSB,null,osb_001 | Attribute: frequency
+       Timestamps: 1590519300 (2020-05-27 02:55:00 CST)
+     • Entity: docker_005->docker_005:LOCAL,db_003,local_method_017 | Attribute: frequency
+       Timestamps: 1590519300 (2020-05-27 02:55:00 CST)
+     • Entity: docker_008->docker_008:LOCAL,db_003,local_method_016 | Attribute: frequency
+       Timestamps: 1590519300 (2020-05-27 02:55:00 CST)
+     • Entity: os_022->os_022:CSF,null,csf_001 | Attribute: frequency
+       Timestamps: 1590519300 (2020-05-27 02:55:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   trace | docker_003->docker_003:LOCAL,db_007,local_method_010 | duration | 1590517800 (2020-05-27 02:30:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,96 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1100_1130
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 11:08:00 CST → 2022-03-20 11:10:00 CST (Δ = 120 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: jvm_memory_MB_max.nonheap
+       Timestamps: 1647745680 (2022-03-20 11:08:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.200.
+       Timestamps: 1647745800 (2022-03-20 11:10:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.mem.total
+       Timestamps: 1647745680 (2022-03-20 11:08:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647745740 (2022-03-20 11:09:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 11:12:00 CST → 2022-03-20 11:12:00 CST (Δ = 0 sec)
+   Total Anomalies: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: jvm_memory_MB_max.nonheap
+       Timestamps: 1647745920 (2022-03-20 11:12:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.200.
+       Timestamps: 1647745920 (2022-03-20 11:12:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647745920 (2022-03-20 11:12:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 11:14:00 CST → 2022-03-20 11:20:00 CST (Δ = 360 sec)
+   Total Anomalies: 14
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: jvm_memory_MB_max.nonheap
+       Timestamps: 1647746280 (2022-03-20 11:18:00 CST), 1647746340 (2022-03-20 11:19:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-0 | Attribute: container_cpu_cfs_periods
+       Timestamps: 1647746040 (2022-03-20 11:14:00 CST), 1647746100 (2022-03-20 11:15:00 CST), 1647746160 (2022-03-20 11:16:00 CST), 1647746220 (2022-03-20 11:17:00 CST), 1647746280 (2022-03-20 11:18:00 CST), 1647746340 (2022-03-20 11:19:00 CST), 1647746400 (2022-03-20 11:20:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.200.
+       Timestamps: 1647746160 (2022-03-20 11:16:00 CST), 1647746220 (2022-03-20 11:17:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.mem.total
+       Timestamps: 1647746220 (2022-03-20 11:17:00 CST), 1647746400 (2022-03-20 11:20:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647746100 (2022-03-20 11:15:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 11:22:00 CST → 2022-03-20 11:24:00 CST (Δ = 120 sec)
+   Total Anomalies: 3
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_duration_milliseconds.http.200.
+       Timestamps: 1647746580 (2022-03-20 11:23:00 CST), 1647746640 (2022-03-20 11:24:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: frequency
+       Timestamps: 1647746520 (2022-03-20 11:22:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_node | node-2 | system.mem.total | 1647745200 (2022-03-20 11:00:00 CST)
+   metric_runtime | adservice.ts:8088 | jvm_memory_MB_max.nonheap | 1647745260 (2022-03-20 11:01:00 CST)
+   metric_runtime | adservice.ts:8088 | jvm_memory_MB_max.nonheap | 1647745380 (2022-03-20 11:03:00 CST)
+   metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q | istio_request_duration_milliseconds.http.200. | 1647745560 (2022-03-20 11:06:00 CST)
+   metric_mesh | istio-egressgateway-7bfdcc9d86-g2d4q | istio_request_duration_milliseconds.http.200. | 1647746760 (2022-03-20 11:26:00 CST)
+   trace | frontend2-0->currencyservice2-0:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | frequency | 1647746940 (2022-03-20 11:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

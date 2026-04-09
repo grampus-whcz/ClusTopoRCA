@@ -1,0 +1,161 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_21 | Window: 2300_2330
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 3 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-21 23:00:00 CST → 2022-03-21 23:02:00 CST (Duration: 120 seconds)
+**Total Anomalies**: 5
+
+## Anomaly Breakdown
+- **Metric Container**: 1 anomalies
+- **Metric Mesh**: 2 anomalies
+- **Metric Node**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-21 23:00:00 CST (T0) to 2022-03-21 23:05:00 CST (5 minutes)
+**Total Anomalies**: 5
+
+#### Primary Root Cause Entity
+- **Entity**: istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: istio_tcp_connections_closed.-(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-6.recommendationservice2-0** (Cleaned: recommendationservice, Layer: RECOMMENDATIONSERVICE): Score = 0.58, Anomalies = 1, Attrs = container_memory_rss(1 times)
+- **node-3** (Cleaned: node, Layer: UNKNOWN): Score = 0.47, Anomalies = 2, Attrs = system.load.15(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway)**: adservice-2, frontend2-0, recommendationservice-1, emailservice2-0, shippingservice2-0
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway, highest confidence score)
+2. Check istio-ingressgateway-565bffd4d-rn678 for 2 anomalies on attributes: istio_tcp_connections_closed.-(2 times)
+3. Investigate anomalies starting at N/A for istio-ingressgateway-565bffd4d-rn678 (analysis window starts at 2022-03-21 23:00:00 CST (T0))
+4. Verify downstream dependencies of istio-ingressgateway for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2022-03-21 23:15:00 CST → 2022-03-21 23:26:00 CST (Duration: 660 seconds)
+**Total Anomalies**: 17
+
+## Anomaly Breakdown
+- **Metric Runtime**: 5 anomalies
+- **Metric Container**: 5 anomalies
+- **Metric Mesh**: 5 anomalies
+- **Metric Node**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2 (Market Dataset)
+**Analysis Window**: 2022-03-21 23:15:00 CST (T0) to 2022-03-21 23:20:00 CST (5 minutes)
+**Total Anomalies**: 17
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.recommendationservice2-0 (Cleaned: recommendationservice, Layer: RECOMMENDATIONSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: container_memory_rss(4 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-6.recommendationservice2-0 (Cleaned: recommendationservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **istio-ingressgateway-565bffd4d-rn678** (Cleaned: istio-ingressgateway, Layer: FRONTEND): Score = 0.61, Anomalies = 3, Attrs = istio_tcp_connections_closed.-(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.recommendationservice2-0 (Cleaned: recommendationservice)**: adservice-2, frontend2-0, recommendationservice-1, emailservice2-0, shippingservice2-0
+
+#### Layer-wise Impact Analysis
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.recommendationservice2-0 (Cleaned: recommendationservice, highest confidence score)
+2. Check node-6.recommendationservice2-0 for 4 anomalies on attributes: container_memory_rss(4 times)
+3. Investigate anomalies starting at N/A for node-6.recommendationservice2-0 (analysis window starts at 2022-03-21 23:15:00 CST (T0))
+4. Verify downstream dependencies of recommendationservice for cascading failures
+5. Check RECOMMENDATIONSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #3
+**Time Span**: 2022-03-21 23:28:00 CST → 2022-03-21 23:29:00 CST (Duration: 60 seconds)
+**Total Anomalies**: 3
+
+## Anomaly Breakdown
+- **Metric Container**: 2 anomalies
+- **Metric Mesh**: 1 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #3 (Market Dataset)
+**Analysis Window**: 2022-03-21 23:28:00 CST (T0) to 2022-03-21 23:33:00 CST (5 minutes)
+**Total Anomalies**: 3
+
+#### Primary Root Cause Entity
+- **Entity**: node-6.recommendationservice2-0 (Cleaned: recommendationservice, Layer: RECOMMENDATIONSERVICE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: container_memory_rss(2 times)
+- **Earliest Anomaly Time**: N/A
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for node-6.recommendationservice2-0 (Cleaned: recommendationservice)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **istio-ingressgateway-565bffd4d-rn678** (Cleaned: istio-ingressgateway, Layer: FRONTEND): Score = 0.68, Anomalies = 1, Attrs = istio_tcp_connections_closed.-(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by node-6.recommendationservice2-0 (Cleaned: recommendationservice)**: adservice-2, frontend2-0, recommendationservice-1, emailservice2-0, shippingservice2-0
+
+#### Layer-wise Impact Analysis
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of node-6.recommendationservice2-0 (Cleaned: recommendationservice, highest confidence score)
+2. Check node-6.recommendationservice2-0 for 2 anomalies on attributes: container_memory_rss(2 times)
+3. Investigate anomalies starting at N/A for node-6.recommendationservice2-0 (analysis window starts at 2022-03-21 23:28:00 CST (T0))
+4. Verify downstream dependencies of recommendationservice for cascading failures
+5. Check RECOMMENDATIONSERVICE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 6
+- metric_node | node-3 (Cleaned: node) | system.load.15 | 2022-03-21 23:05:00 CST
+- metric_container | node-6.recommendationservice2-0 (Cleaned: recommendationservice) | container_memory_rss | 2022-03-21 23:05:00 CST
+- metric_mesh | istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway) | istio_tcp_connections_closed.- | 2022-03-21 23:07:00 CST
+- metric_node | node-3 (Cleaned: node) | system.load.15 | 2022-03-21 23:11:00 CST
+- metric_node | node-3 (Cleaned: node) | system.load.15 | 2022-03-21 23:13:00 CST
+- metric_mesh | istio-ingressgateway-565bffd4d-rn678 (Cleaned: istio-ingressgateway) | istio_tcp_connections_closed.- | 2022-03-21 23:13:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges

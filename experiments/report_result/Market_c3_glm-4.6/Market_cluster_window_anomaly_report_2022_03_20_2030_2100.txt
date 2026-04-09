@@ -1,0 +1,88 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 2030_2100
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 20:32:00 CST → 2022-03-20 20:33:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_file_descriptors
+       Timestamps: 1647779580 (2022-03-20 20:33:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.net.packets_out.count
+       Timestamps: 1647779520 (2022-03-20 20:32:00 CST), 1647779580 (2022-03-20 20:33:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 20:36:00 CST → 2022-03-20 20:47:00 CST (Δ = 660 sec)
+   Total Anomalies: 25
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647779760 (2022-03-20 20:36:00 CST), 1647779880 (2022-03-20 20:38:00 CST), 1647779940 (2022-03-20 20:39:00 CST), 1647780060 (2022-03-20 20:41:00 CST), 1647780180 (2022-03-20 20:43:00 CST), 1647780300 (2022-03-20 20:45:00 CST), 1647780420 (2022-03-20 20:47:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_file_descriptors
+       Timestamps: 1647779820 (2022-03-20 20:37:00 CST), 1647780060 (2022-03-20 20:41:00 CST), 1647780180 (2022-03-20 20:43:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_outgoing_latency.csr
+       Timestamps: 1647779820 (2022-03-20 20:37:00 CST), 1647779880 (2022-03-20 20:38:00 CST), 1647779940 (2022-03-20 20:39:00 CST), 1647780000 (2022-03-20 20:40:00 CST), 1647780060 (2022-03-20 20:41:00 CST), 1647780120 (2022-03-20 20:42:00 CST), 1647780180 (2022-03-20 20:43:00 CST), 1647780240 (2022-03-20 20:44:00 CST), 1647780300 (2022-03-20 20:45:00 CST), 1647780360 (2022-03-20 20:46:00 CST), 1647780420 (2022-03-20 20:47:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.net.packets_out.count
+       Timestamps: 1647779760 (2022-03-20 20:36:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-1->cartservice-2:/hipstershop.CartService/GetCart | Attribute: frequency
+       Timestamps: 1647779760 (2022-03-20 20:36:00 CST), 1647779880 (2022-03-20 20:38:00 CST), 1647780180 (2022-03-20 20:43:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 20:50:00 CST → 2022-03-20 20:51:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_file_descriptors
+       Timestamps: 1647780600 (2022-03-20 20:50:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-ingressgateway-565bffd4d-rn678 | Attribute: istio_agent_outgoing_latency.csr
+       Timestamps: 1647780660 (2022-03-20 20:51:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.net.packets_out.count
+       Timestamps: 1647780600 (2022-03-20 20:50:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-1->cartservice-2:/hipstershop.CartService/GetCart | Attribute: frequency
+       Timestamps: 1647780600 (2022-03-20 20:50:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 20:54:00 CST → 2022-03-20 20:57:00 CST (Δ = 180 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Timestamps: 1647780840 (2022-03-20 20:54:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_file_descriptors
+       Timestamps: 1647780900 (2022-03-20 20:55:00 CST), 1647780960 (2022-03-20 20:56:00 CST), 1647781020 (2022-03-20 20:57:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_node | node-4 | system.net.packets_out.count | 1647781140 (2022-03-20 20:59:00 CST)
+   metric_container | node-5.frontend-1 | container_file_descriptors | 1647781140 (2022-03-20 20:59:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

@@ -1,0 +1,31 @@
+🔍 Anomaly Clustering Report for Telecom on 2020_05_31 0300_0330
+================================================================================
+
+🔍 The number of clusters are 1
+========================================
+
+🚨 Cluster #1
+   Time Span: 2020-05-31 03:06:00 CST → 2020-05-31 03:07:00 CST (Δ = 60 sec)
+   Total Anomalies: 5
+
+   📝 Trace Anomalies:
+     • Entity: docker_001->docker_008:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1590865560 (2020-05-31 03:06:00 CST)
+     • Entity: docker_002->docker_008:RemoteProcess,null,csf_002 | Attribute: duration
+       Timestamps: 1590865560 (2020-05-31 03:06:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_007,local_method_010 | Attribute: frequency
+       Timestamps: 1590865620 (2020-05-31 03:07:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_004 | Attribute: frequency
+       Timestamps: 1590865620 (2020-05-31 03:07:00 CST)
+     • Entity: docker_003->docker_003:LOCAL,db_009,local_method_007 | Attribute: frequency
+       Timestamps: 1590865620 (2020-05-31 03:07:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   trace | os_022->docker_002:RemoteProcess,null,csf_001 | duration | 1590866040 (2020-05-31 03:14:00 CST)
+   trace | docker_003->docker_006:RemoteProcess,null,csf_002 | duration | 1590866340 (2020-05-31 03:19:00 CST)
+   trace | docker_004->docker_005:RemoteProcess,null,csf_003 | duration | 1590866580 (2020-05-31 03:23:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

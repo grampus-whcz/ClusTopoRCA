@@ -1,0 +1,112 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1930_2000
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 19:30:00 CST → 2022-03-21 19:34:00 CST (Δ = 240 sec)
+   Total Anomalies: 9
+
+   📝 Metric Service Anomalies:
+     • Entity: paymentservice-grpc | Attribute: count
+       Timestamps: 1647862260 (2022-03-21 19:31:00 CST), 1647862380 (2022-03-21 19:33:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647862320 (2022-03-21 19:32:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-2.source.cartservice.redis-cart | Attribute: istio_tcp_connections_closed.-
+       Timestamps: 1647862440 (2022-03-21 19:34:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.bytes_sent
+       Timestamps: 1647862200 (2022-03-21 19:30:00 CST), 1647862320 (2022-03-21 19:32:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | Attribute: frequency
+       Timestamps: 1647862320 (2022-03-21 19:32:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at hipstershop.AdService.access$400(AdService.java:64)
+       Timestamps: 1647862260 (2022-03-21 19:31:00 CST), 1647862440 (2022-03-21 19:34:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 19:36:00 CST → 2022-03-21 19:48:00 CST (Δ = 720 sec)
+   Total Anomalies: 20
+
+   📝 Metric Service Anomalies:
+     • Entity: paymentservice-grpc | Attribute: count
+       Timestamps: 1647862860 (2022-03-21 19:41:00 CST), 1647862980 (2022-03-21 19:43:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-0 | Attribute: container_fs_inodes./dev/vda1
+       Timestamps: 1647862560 (2022-03-21 19:36:00 CST), 1647862740 (2022-03-21 19:39:00 CST), 1647862860 (2022-03-21 19:41:00 CST), 1647862920 (2022-03-21 19:42:00 CST), 1647863280 (2022-03-21 19:48:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-2.source.cartservice.redis-cart | Attribute: istio_tcp_connections_closed.-
+       Timestamps: 1647862560 (2022-03-21 19:36:00 CST), 1647862680 (2022-03-21 19:38:00 CST), 1647863040 (2022-03-21 19:44:00 CST), 1647863100 (2022-03-21 19:45:00 CST), 1647863160 (2022-03-21 19:46:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.bytes_sent
+       Timestamps: 1647862800 (2022-03-21 19:40:00 CST), 1647863160 (2022-03-21 19:46:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | Attribute: frequency
+       Timestamps: 1647862740 (2022-03-21 19:39:00 CST), 1647863100 (2022-03-21 19:45:00 CST), 1647863220 (2022-03-21 19:47:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at hipstershop.AdService.access$400(AdService.java:64)
+       Timestamps: 1647862620 (2022-03-21 19:37:00 CST), 1647862740 (2022-03-21 19:39:00 CST), 1647863100 (2022-03-21 19:45:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 19:50:00 CST → 2022-03-21 19:51:00 CST (Δ = 60 sec)
+   Total Anomalies: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647863400 (2022-03-21 19:50:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-2.source.cartservice.redis-cart | Attribute: istio_tcp_connections_closed.-
+       Timestamps: 1647863400 (2022-03-21 19:50:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.bytes_sent
+       Timestamps: 1647863400 (2022-03-21 19:50:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: currencyservice-1 | Attribute: at hipstershop.AdService.access$400(AdService.java:64)
+       Timestamps: 1647863460 (2022-03-21 19:51:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-21 19:54:00 CST → 2022-03-21 19:55:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647863640 (2022-03-21 19:54:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-0 | Attribute: container_fs_inodes./dev/vda1
+       Timestamps: 1647863700 (2022-03-21 19:55:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.net.bytes_sent
+       Timestamps: 1647863700 (2022-03-21 19:55:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.shippingservice-0 | container_fs_inodes./dev/vda1 | 1647863820 (2022-03-21 19:57:00 CST)
+   trace | frontend-0->productcatalogservice-0:hipstershop.ProductCatalogService/GetProduct | frequency | 1647863880 (2022-03-21 19:58:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

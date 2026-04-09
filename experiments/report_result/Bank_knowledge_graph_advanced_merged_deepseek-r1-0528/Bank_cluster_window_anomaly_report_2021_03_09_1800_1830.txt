@@ -1,0 +1,66 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_09 | Window: 1800_1830
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 556
+## Anomaly Breakdown
+- **Metric App**: 1 anomalies
+- **Metric Container**: 443 anomalies
+- **Trace**: 44 anomalies
+- **Log**: 68 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-09 18:01:00 (T2) to 2021-03-09 18:05:00 (4 minutes)
+**Total Anomalies in Full Domain**: 556
+
+#### Primary Root Cause Entity
+- **Entity**: UNKNOWN_PARENT (Layer: UNKNOWN)
+- **Confidence Score**: 0.70 (1.0 = highest)
+- **Anomaly Count**: 19
+- **Anomaly Attributes**: duration(5 times), frequency(14 times)
+- **Earliest Anomaly Time**: 2021-03-09 18:00:31
+- **Topology Impact**: 10 downstream entities affected
+
+#### Score Breakdown for UNKNOWN_PARENT
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **apache01** (Layer: ENTRY_POINT): Score = 0.63, Anomalies = 6, Attrs = OSLinux-CPU_CPU_CPUidleutil(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(3 times), OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times)
+- **Mysql01** (Layer: DATABASE): Score = 0.62, Anomalies = 12, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRead(1 times), Mysql-MySQL_3306_Connections(1 times), Mysql-MySQL_3306_Created Tmp Tables(1 times), Mysql-MySQL_3306_Handler Write(1 times), Mysql-MySQL_3306_Table Locks Immediate(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(1 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.51, Anomalies = 6, Attrs = OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc(1 times), OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times), Mysql-MySQL_3306_Connections(1 times), Mysql-MySQL_3306_Handler Read Rnd Next(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by UNKNOWN_PARENT**: dockerB1, dockerB2, dockerA1, MG02, Tomcat04
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **BUSINESS Layer**: 2 entities affected (Weight: 0.9)
+- **CONTAINER Layer**: 2 entities affected (Weight: 0.7)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **GOVERNANCE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of UNKNOWN_PARENT (global highest confidence)
+2. Check UNKNOWN_PARENT for anomalies on attributes: duration(5 times), frequency(14 times)
+3. Investigate starting at 2021-03-09 18:00:31 (analysis window: 2021-03-09 18:01:00)
+4. Verify cascading failures in downstream dependencies
+5. Check UNKNOWN layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

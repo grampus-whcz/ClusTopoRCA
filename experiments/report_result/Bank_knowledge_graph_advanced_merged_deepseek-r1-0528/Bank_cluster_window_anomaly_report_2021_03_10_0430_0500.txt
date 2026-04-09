@@ -1,0 +1,65 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_10 | Window: 0430_0500
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 426
+## Anomaly Breakdown
+- **Metric App**: 6 anomalies
+- **Metric Container**: 258 anomalies
+- **Trace**: 136 anomalies
+- **Log**: 26 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-10 04:32:00 (T2) to 2021-03-10 04:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 426
+
+#### Primary Root Cause Entity
+- **Entity**: IG02 (Layer: GATEWAY)
+- **Confidence Score**: 0.63 (1.0 = highest)
+- **Anomaly Count**: 9
+- **Anomaly Attributes**: JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed(2 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), frequency(6 times)
+- **Earliest Anomaly Time**: 2021-03-10 04:30:00
+- **Topology Impact**: 12 downstream entities affected
+
+#### Score Breakdown for IG02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.80 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.05 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat03** (Layer: BUSINESS): Score = 0.56, Anomalies = 9, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(1 times), OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc(1 times), frequency(6 times)
+- **Tomcat02** (Layer: BUSINESS): Score = 0.48, Anomalies = 8, Attrs = OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), frequency(6 times)
+- **Tomcat01** (Layer: BUSINESS): Score = 0.48, Anomalies = 7, Attrs = OSLinux-CPU_CPU-3_SingleCpuidle(1 times), frequency(6 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG02**: Tomcat02, dockerB2, MG01, Tomcat04, Tomcat03
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **CONTAINER Layer**: 4 entities affected (Weight: 0.7)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG02 (global highest confidence)
+2. Check IG02 for anomalies on attributes: JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed(2 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), frequency(6 times)
+3. Investigate starting at 2021-03-10 04:30:00 (analysis window: 2021-03-10 04:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

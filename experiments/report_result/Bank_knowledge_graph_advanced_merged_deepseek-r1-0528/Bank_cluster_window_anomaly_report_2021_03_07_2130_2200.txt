@@ -1,0 +1,63 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 2130_2200
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 481
+## Anomaly Breakdown
+- **Metric App**: 16 anomalies
+- **Metric Container**: 438 anomalies
+- **Trace**: 5 anomalies
+- **Log**: 22 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 21:32:00 (T2) to 2021-03-07 21:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 481
+
+#### Primary Root Cause Entity
+- **Entity**: apache01 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: OSLinux-CPU_CPU-3_SingleCpuidle(3 times)
+- **Earliest Anomaly Time**: 2021-03-07 21:31:00
+- **Topology Impact**: 3 downstream entities affected
+
+#### Score Breakdown for apache01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.11 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql02** (Layer: DATABASE): Score = 0.64, Anomalies = 19, Attrs = OSLinux-NTP_197.30.1.68_NtpServerTimeOffset(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-boot_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-boot_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-home_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-mysql_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSUsedSpace(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKAvgServ(1 times)
+- **IG01** (Layer: GATEWAY): Score = 0.46, Anomalies = 8, Attrs = PatternID_31(1 times), PatternID_35(1 times), PatternID_43(1 times), PatternID_60(1 times), PatternID_67(1 times), PatternID_148(1 times), PatternID_159(1 times), PatternID_174(1 times)
+- **dockerA1** (Layer: CONTAINER): Score = 0.46, Anomalies = 2, Attrs = Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes(1 times), Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache01**: dockerA2, IG02, Tomcat02, Mysql02, MG01
+
+#### Layer-wise Impact Analysis
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **CONTAINER Layer**: 1 entities affected (Weight: 0.7)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache01 (global highest confidence)
+2. Check apache01 for anomalies on attributes: OSLinux-CPU_CPU-3_SingleCpuidle(3 times)
+3. Investigate starting at 2021-03-07 21:31:00 (analysis window: 2021-03-07 21:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check ENTRY_POINT layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

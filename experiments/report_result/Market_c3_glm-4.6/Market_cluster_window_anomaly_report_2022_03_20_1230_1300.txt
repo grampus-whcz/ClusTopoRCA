@@ -1,0 +1,79 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1230_1300
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 12:30:00 CST → 2022-03-20 12:35:00 CST (Δ = 300 sec)
+   Total Anomalies: 7
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_max.Cod
+       Timestamps: 1647750900 (2022-03-20 12:35:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: shippingservice-1.destination.frontend.shippingservice | Attribute: istio_request_bytes.grpc.200.0.0
+       Timestamps: 1647750660 (2022-03-20 12:31:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.udp.connect.num
+       Timestamps: 1647750600 (2022-03-20 12:30:00 CST), 1647750720 (2022-03-20 12:32:00 CST), 1647750780 (2022-03-20 12:33:00 CST), 1647750840 (2022-03-20 12:34:00 CST), 1647750900 (2022-03-20 12:35:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 12:37:00 CST → 2022-03-20 12:38:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.udp.connect.num
+       Timestamps: 1647751080 (2022-03-20 12:38:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-1->checkoutservice-1:hipstershop.ShippingService/ShipOrder | Attribute: frequency
+       Timestamps: 1647751020 (2022-03-20 12:37:00 CST), 1647751080 (2022-03-20 12:38:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 12:40:00 CST → 2022-03-20 12:51:00 CST (Δ = 660 sec)
+   Total Anomalies: 18
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_max.Cod
+       Timestamps: 1647751200 (2022-03-20 12:40:00 CST), 1647751260 (2022-03-20 12:41:00 CST), 1647751440 (2022-03-20 12:44:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.paymentservice-0 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647751260 (2022-03-20 12:41:00 CST), 1647751320 (2022-03-20 12:42:00 CST), 1647751380 (2022-03-20 12:43:00 CST), 1647751440 (2022-03-20 12:44:00 CST), 1647751500 (2022-03-20 12:45:00 CST), 1647751560 (2022-03-20 12:46:00 CST), 1647751620 (2022-03-20 12:47:00 CST), 1647751680 (2022-03-20 12:48:00 CST), 1647751740 (2022-03-20 12:49:00 CST), 1647751800 (2022-03-20 12:50:00 CST), 1647751860 (2022-03-20 12:51:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: shippingservice-1.destination.frontend.shippingservice | Attribute: istio_request_bytes.grpc.200.0.0
+       Timestamps: 1647751260 (2022-03-20 12:41:00 CST), 1647751440 (2022-03-20 12:44:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: checkoutservice-1->checkoutservice-1:hipstershop.ShippingService/ShipOrder | Attribute: frequency
+       Timestamps: 1647751380 (2022-03-20 12:43:00 CST), 1647751680 (2022-03-20 12:48:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2022-03-20 12:56:00 CST → 2022-03-20 12:59:00 CST (Δ = 180 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.paymentservice-0 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647752340 (2022-03-20 12:59:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: shippingservice-1.destination.frontend.shippingservice | Attribute: istio_request_bytes.grpc.200.0.0
+       Timestamps: 1647752160 (2022-03-20 12:56:00 CST), 1647752220 (2022-03-20 12:57:00 CST), 1647752280 (2022-03-20 12:58:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_mesh | shippingservice-1.destination.frontend.shippingservice | istio_request_bytes.grpc.200.0.0 | 1647751980 (2022-03-20 12:53:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

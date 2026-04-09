@@ -1,0 +1,54 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_09 | Window: 0900_0930
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 144
+## Anomaly Breakdown
+- **Metric App**: 1 anomalies
+- **Metric Container**: 38 anomalies
+- **Trace**: 2 anomalies
+- **Log**: 103 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-09 09:03:00 (T2) to 2021-03-09 09:07:00 (4 minutes)
+**Total Anomalies in Full Domain**: 144
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 68
+- **Anomaly Attributes**: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), OSLinux-CPU_CPU_CPUidleutil(1 times), PatternID_7(2 times), PatternID_26(1 times), PatternID_27(1 times), PatternID_38(1 times), PatternID_40(2 times), PatternID_41(1 times), PatternID_50(1 times), PatternID_58(1 times), PatternID_86(1 times), PatternID_92(2 times), PatternID_93(1 times), PatternID_111(1 times), PatternID_117(1 times), PatternID_123(1 times), PatternID_126(1 times), PatternID_138(1 times), PatternID_161(2 times), PatternID_162(1 times), PatternID_170(1 times), PatternID_173(1 times), PatternID_6(1 times), PatternID_11(1 times), PatternID_16(1 times), PatternID_20(1 times), PatternID_25(1 times), PatternID_37(1 times), PatternID_43(1 times), PatternID_45(1 times), PatternID_46(1 times), PatternID_47(1 times), PatternID_52(1 times), PatternID_60(1 times), PatternID_61(1 times), PatternID_64(1 times), PatternID_66(1 times), PatternID_72(1 times), PatternID_82(1 times), PatternID_83(1 times), PatternID_84(1 times), PatternID_89(1 times), PatternID_94(1 times), PatternID_97(1 times), PatternID_108(1 times), PatternID_109(1 times), PatternID_110(1 times), PatternID_113(1 times), PatternID_119(1 times), PatternID_121(1 times), PatternID_129(1 times), PatternID_134(1 times), PatternID_139(1 times), PatternID_143(1 times), PatternID_145(1 times), PatternID_148(1 times), PatternID_158(1 times), PatternID_159(1 times), PatternID_160(1 times), PatternID_163(1 times), PatternID_165(1 times), PatternID_169(1 times), PatternID_174(1 times)
+- **Earliest Anomaly Time**: 2021-03-09 09:02:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Redis02, MG02, Tomcat02, MG01
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), OSLinux-CPU_CPU_CPUidleutil(1 times), PatternID_7(2 times), PatternID_26(1 times), PatternID_27(1 times), PatternID_38(1 times), PatternID_40(2 times), PatternID_41(1 times), PatternID_50(1 times), PatternID_58(1 times), PatternID_86(1 times), PatternID_92(2 times), PatternID_93(1 times), PatternID_111(1 times), PatternID_117(1 times), PatternID_123(1 times), PatternID_126(1 times), PatternID_138(1 times), PatternID_161(2 times), PatternID_162(1 times), PatternID_170(1 times), PatternID_173(1 times), PatternID_6(1 times), PatternID_11(1 times), PatternID_16(1 times), PatternID_20(1 times), PatternID_25(1 times), PatternID_37(1 times), PatternID_43(1 times), PatternID_45(1 times), PatternID_46(1 times), PatternID_47(1 times), PatternID_52(1 times), PatternID_60(1 times), PatternID_61(1 times), PatternID_64(1 times), PatternID_66(1 times), PatternID_72(1 times), PatternID_82(1 times), PatternID_83(1 times), PatternID_84(1 times), PatternID_89(1 times), PatternID_94(1 times), PatternID_97(1 times), PatternID_108(1 times), PatternID_109(1 times), PatternID_110(1 times), PatternID_113(1 times), PatternID_119(1 times), PatternID_121(1 times), PatternID_129(1 times), PatternID_134(1 times), PatternID_139(1 times), PatternID_143(1 times), PatternID_145(1 times), PatternID_148(1 times), PatternID_158(1 times), PatternID_159(1 times), PatternID_160(1 times), PatternID_163(1 times), PatternID_165(1 times), PatternID_169(1 times), PatternID_174(1 times)
+3. Investigate starting at 2021-03-09 09:02:00 (analysis window: 2021-03-09 09:03:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

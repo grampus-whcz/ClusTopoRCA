@@ -1,0 +1,60 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_23 | Window: 1830_1900
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 727
+## Anomaly Breakdown
+- **Metric App**: 3 anomalies
+- **Metric Container**: 672 anomalies
+- **Trace**: 8 anomalies
+- **Log**: 44 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-23 18:32:00 (T2) to 2021-03-23 18:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 727
+
+#### Primary Root Cause Entity
+- **Entity**: Mysql02 (Layer: DATABASE)
+- **Confidence Score**: 0.63 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemUsage(1 times), JVM-Threads_7778_JVM_ThreadCount_Threads(1 times), redis-Redis_6379_Redis  (mem_fragmentation_ratio)(1 times), redis-Redis_6379_Redis  (used_cpu_sys)(1 times), Mysql-MySQL_3306_ThreadsRunning(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps(1 times)
+- **Earliest Anomaly Time**: 2021-03-23 18:32:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for Mysql02
+- **Time Score**: 0.50 (earlier anomaly = higher score)
+- **Topology Score**: 0.44 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat04** (Layer: BUSINESS): Score = 0.53, Anomalies = 2, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times)
+- **MG02** (Layer: GOVERNANCE): Score = 0.37, Anomalies = 2, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT(1 times)
+
+#### Dependency Impact Path
+- **Mysql02 has no direct downstream dependencies**
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+- **GOVERNANCE Layer**: 1 entities affected (Weight: 0.8)
+
+#### RCA Recommendations
+1. Prioritize investigation of Mysql02 (global highest confidence)
+2. Check Mysql02 for anomalies on attributes: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemUsage(1 times), JVM-Threads_7778_JVM_ThreadCount_Threads(1 times), redis-Redis_6379_Redis  (mem_fragmentation_ratio)(1 times), redis-Redis_6379_Redis  (used_cpu_sys)(1 times), Mysql-MySQL_3306_ThreadsRunning(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps(1 times)
+3. Investigate starting at 2021-03-23 18:32:00 (analysis window: 2021-03-23 18:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check DATABASE layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

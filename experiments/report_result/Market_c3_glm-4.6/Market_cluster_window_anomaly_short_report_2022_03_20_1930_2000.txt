@@ -1,0 +1,55 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_20 1930_2000
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 19:31:00 CST → 2022-03-20 19:40:00 CST (Δ = 540 sec)
+   Repeated Entity-Attribute Pairs: 4
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Times (3): 2022-03-20 19:32:00 CST, 2022-03-20 19:33:00 CST, 2022-03-20 19:37:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.recommendationservice-2 | Attribute: container_memory_max_usage_MB
+       Times (9): 2022-03-20 19:31:00 CST, 2022-03-20 19:32:00 CST, 2022-03-20 19:33:00 CST, 2022-03-20 19:34:00 CST, 2022-03-20 19:35:00 CST, 2022-03-20 19:36:00 CST, 2022-03-20 19:37:00 CST, 2022-03-20 19:38:00 CST, 2022-03-20 19:40:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.fs.inodes.free
+       Times (3): 2022-03-20 19:33:00 CST, 2022-03-20 19:34:00 CST, 2022-03-20 19:36:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend-0 | Attribute: info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+       Times (4): 2022-03-20 19:34:00 CST, 2022-03-20 19:35:00 CST, 2022-03-20 19:38:00 CST, 2022-03-20 19:39:00 CST
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-20 19:46:00 CST → 2022-03-20 19:58:00 CST (Δ = 720 sec)
+   Repeated Entity-Attribute Pairs: 5
+
+   📝 Metric Service Anomalies:
+     • Entity: cartservice-grpc | Attribute: mrt
+       Times (4): 2022-03-20 19:47:00 CST, 2022-03-20 19:50:00 CST, 2022-03-20 19:56:00 CST, 2022-03-20 19:57:00 CST
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_commit
+       Times (3): 2022-03-20 19:46:00 CST, 2022-03-20 19:49:00 CST, 2022-03-20 19:50:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: cartservice-2.destination.frontend.cartservice | Attribute: istio_agent_istiod_connection_terminations.cancelled
+       Times (13): 2022-03-20 19:46:00 CST, 2022-03-20 19:47:00 CST, 2022-03-20 19:48:00 CST, 2022-03-20 19:49:00 CST, 2022-03-20 19:50:00 CST, 2022-03-20 19:51:00 CST, 2022-03-20 19:52:00 CST, 2022-03-20 19:53:00 CST, 2022-03-20 19:54:00 CST, 2022-03-20 19:55:00 CST, 2022-03-20 19:56:00 CST, 2022-03-20 19:57:00 CST, 2022-03-20 19:58:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-5 | Attribute: system.fs.inodes.free
+       Times (3): 2022-03-20 19:47:00 CST, 2022-03-20 19:48:00 CST, 2022-03-20 19:53:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend-0 | Attribute: info ads XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+       Times (3): 2022-03-20 19:47:00 CST, 2022-03-20 19:48:00 CST, 2022-03-20 19:49:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 9
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

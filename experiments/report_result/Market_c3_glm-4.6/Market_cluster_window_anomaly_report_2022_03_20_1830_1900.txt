@@ -1,0 +1,80 @@
+🔍 Market Anomaly Clustering Report for 2022_03_20 1830_1900
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-20 18:30:00 CST → 2022-03-20 18:43:00 CST (Δ = 780 sec)
+   Total Anomalies: 32
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc | Attribute: count
+       Timestamps: 1647772380 (2022-03-20 18:33:00 CST), 1647772500 (2022-03-20 18:35:00 CST), 1647772920 (2022-03-20 18:42:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647772260 (2022-03-20 18:31:00 CST), 1647772620 (2022-03-20 18:37:00 CST), 1647772740 (2022-03-20 18:39:00 CST), 1647772920 (2022-03-20 18:42:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.currencyservice2-0 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647772500 (2022-03-20 18:35:00 CST), 1647772560 (2022-03-20 18:36:00 CST), 1647772620 (2022-03-20 18:37:00 CST), 1647772680 (2022-03-20 18:38:00 CST), 1647772740 (2022-03-20 18:39:00 CST), 1647772800 (2022-03-20 18:40:00 CST), 1647772860 (2022-03-20 18:41:00 CST), 1647772920 (2022-03-20 18:42:00 CST), 1647772980 (2022-03-20 18:43:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-1.destination.frontend.adservice | Attribute: istio_agent_go_memstats_mcache_sys_bytes
+       Timestamps: 1647772860 (2022-03-20 18:41:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.mem.free
+       Timestamps: 1647772200 (2022-03-20 18:30:00 CST), 1647772260 (2022-03-20 18:31:00 CST), 1647772320 (2022-03-20 18:32:00 CST), 1647772380 (2022-03-20 18:33:00 CST), 1647772440 (2022-03-20 18:34:00 CST), 1647772500 (2022-03-20 18:35:00 CST), 1647772620 (2022-03-20 18:37:00 CST), 1647772740 (2022-03-20 18:39:00 CST), 1647772860 (2022-03-20 18:41:00 CST), 1647772920 (2022-03-20 18:42:00 CST), 1647772980 (2022-03-20 18:43:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->currencyservice-2:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: duration
+       Timestamps: 1647772980 (2022-03-20 18:43:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-1 | Attribute: at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+       Timestamps: 1647772320 (2022-03-20 18:32:00 CST), 1647772800 (2022-03-20 18:40:00 CST), 1647772980 (2022-03-20 18:43:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-20 18:45:00 CST → 2022-03-20 18:55:00 CST (Δ = 600 sec)
+   Total Anomalies: 19
+
+   📝 Metric Service Anomalies:
+     • Entity: adservice-grpc | Attribute: count
+       Timestamps: 1647773160 (2022-03-20 18:46:00 CST)
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647773100 (2022-03-20 18:45:00 CST), 1647773700 (2022-03-20 18:55:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.currencyservice2-0 | Attribute: container_memory_max_usage_MB
+       Timestamps: 1647773100 (2022-03-20 18:45:00 CST), 1647773160 (2022-03-20 18:46:00 CST), 1647773220 (2022-03-20 18:47:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-1.destination.frontend.adservice | Attribute: istio_agent_go_memstats_mcache_sys_bytes
+       Timestamps: 1647773220 (2022-03-20 18:47:00 CST), 1647773280 (2022-03-20 18:48:00 CST), 1647773340 (2022-03-20 18:49:00 CST), 1647773400 (2022-03-20 18:50:00 CST), 1647773460 (2022-03-20 18:51:00 CST), 1647773640 (2022-03-20 18:54:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-2 | Attribute: system.mem.free
+       Timestamps: 1647773280 (2022-03-20 18:48:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->currencyservice-2:grpc.hipstershop.CurrencyService/GetSupportedCurrencies | Attribute: duration
+       Timestamps: 1647773340 (2022-03-20 18:49:00 CST), 1647773520 (2022-03-20 18:52:00 CST), 1647773700 (2022-03-20 18:55:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-1 | Attribute: at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+       Timestamps: 1647773100 (2022-03-20 18:45:00 CST), 1647773520 (2022-03-20 18:52:00 CST), 1647773580 (2022-03-20 18:53:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_mesh | adservice-1.destination.frontend.adservice | istio_agent_go_memstats_mcache_sys_bytes | 1647773820 (2022-03-20 18:57:00 CST)
+   log | cartservice-1 | at java.net.InetAddress.getAllByName0(InetAddress.java:1277) | 1647773880 (2022-03-20 18:58:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

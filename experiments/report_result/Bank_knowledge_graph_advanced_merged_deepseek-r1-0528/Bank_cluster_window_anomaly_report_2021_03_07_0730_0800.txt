@@ -1,0 +1,63 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 0730_0800
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 432
+## Anomaly Breakdown
+- **Metric App**: 67 anomalies
+- **Metric Container**: 284 anomalies
+- **Trace**: 12 anomalies
+- **Log**: 69 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 07:32:00 (T2) to 2021-03-07 07:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 432
+
+#### Primary Root Cause Entity
+- **Entity**: apache02 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.69 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), OSLinux-CPU_CPU-1_SingleCpuidle(2 times)
+- **Earliest Anomaly Time**: 2021-03-07 07:30:00
+- **Topology Impact**: 5 downstream entities affected
+
+#### Score Breakdown for apache02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.89 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.11 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG01** (Layer: GATEWAY): Score = 0.65, Anomalies = 45, Attrs = JVM-Threads_7778_JVM_ThreadCount_Threads(1 times), PatternID_46(1 times), PatternID_49(1 times), PatternID_135(1 times), PatternID_172(1 times), PatternID_4(1 times), PatternID_5(1 times), PatternID_6(1 times), PatternID_21(1 times), PatternID_26(1 times), PatternID_30(1 times), PatternID_44(1 times), PatternID_45(1 times), PatternID_48(1 times), PatternID_55(1 times), PatternID_59(1 times), PatternID_64(1 times), PatternID_65(1 times), PatternID_72(1 times), PatternID_78(1 times), PatternID_84(1 times), PatternID_85(1 times), PatternID_103(1 times), PatternID_107(1 times), PatternID_108(1 times), PatternID_121(1 times), PatternID_122(1 times), PatternID_127(1 times), PatternID_129(1 times), PatternID_137(1 times), PatternID_157(1 times), PatternID_161(1 times), PatternID_173(1 times), duration(6 times), frequency(6 times)
+- **Redis02** (Layer: CACHE): Score = 0.59, Anomalies = 16, Attrs = OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times), redis-Redis_6379_Redis  (connected_clients)(1 times), redis-Redis_6379_Redis  (expired_keys)(1 times), redis-Redis_6379_Redis  (keyspace_hits)(1 times), redis-Redis_6379_Redis  (keyspace_misses)(1 times), redis-Redis_6379_Redis  (lru_clock)(1 times), redis-Redis_6379_Redis  (maxmemory)(1 times), redis-Redis_6379_Redis  (rdb_changes_since_last_save)(1 times), redis-Redis_6379_Redis  (total_commands_processed)(1 times), redis-Redis_6379_Redis  (total_connections_received)(1 times), redis-Redis_6379_Redis  (uptime_in_seconds)(1 times), redis-Redis_6379_Redis  (used_memory)(1 times), redis-Redis_6379_Redis  (used_memory_peak)(1 times), redis-Redis_6379_Redis  (used_memory_rss)(1 times), redis-Redis_6379_redis server(1 times)
+- **Redis01** (Layer: CACHE): Score = 0.51, Anomalies = 12, Attrs = redis-Redis_6379_Redis  (expired_keys)(1 times), redis-Redis_6379_Redis  (keyspace_hits)(1 times), redis-Redis_6379_Redis  (keyspace_misses)(1 times), redis-Redis_6379_Redis  (lru_clock)(1 times), redis-Redis_6379_Redis  (maxmemory)(1 times), redis-Redis_6379_Redis  (rdb_changes_since_last_save)(1 times), redis-Redis_6379_Redis  (total_commands_processed)(1 times), redis-Redis_6379_Redis  (total_connections_received)(1 times), redis-Redis_6379_Redis  (uptime_in_seconds)(1 times), redis-Redis_6379_Redis  (used_memory_peak)(1 times), redis-Redis_6379_redis server(1 times), OSLinux-OSLinux_FILESYSTEM_-home_FSUsedSpace(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache02**: MG01, Mysql02, Tomcat02, IG01, IG02
+
+#### Layer-wise Impact Analysis
+- **SERVICE_TEST Layer**: 11 entities affected (Weight: 0.5)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **CACHE Layer**: 2 entities affected (Weight: 0.6)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache02 (global highest confidence)
+2. Check apache02 for anomalies on attributes: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), OSLinux-CPU_CPU-1_SingleCpuidle(2 times)
+3. Investigate starting at 2021-03-07 07:30:00 (analysis window: 2021-03-07 07:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check ENTRY_POINT layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

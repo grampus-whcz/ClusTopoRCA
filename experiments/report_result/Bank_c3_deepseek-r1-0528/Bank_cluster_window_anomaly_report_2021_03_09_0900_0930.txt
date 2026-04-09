@@ -1,0 +1,382 @@
+🔍 Anomaly Clustering Report for 2021_03_09 0900_0930
+🔍 The number of clusters are 2021_03_09 0900_0930
+================================================================================
+
+🔍 The number of clusters are 8
+========================================
+
+🚨 Cluster #1
+   Time Span: 2021-03-09 09:01:00 CST → 2021-03-09 09:04:00 CST (Δ = 180 sec)
+   Total Anomalies: 27
+   🔑 Keywords: Error/Failure, GC
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: OSLinux-CPU_CPU_CPUidleutil
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1615251720 (2021-03-09 09:02:00 CST)
+     • Entity: IG01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead
+       Timestamps: 1615251720 (2021-03-09 09:02:00 CST)
+     • Entity: Mysql01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps
+       Timestamps: 1615251660 (2021-03-09 09:01:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1615251720 (2021-03-09 09:02:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-CPU_CPU_CPULoad
+       Timestamps: 1615251660 (2021-03-09 09:01:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKPercentBusy
+       Timestamps: 1615251840 (2021-03-09 09:04:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_111
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_117
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_123
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_126
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_138
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_161
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_162
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_170
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_173
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_26
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_27
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_38
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_40
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_41
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_50
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_58
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_7
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_86
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_92
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+     • Entity: IG01 | Attribute: PatternID_93
+       Timestamps: 1615251780 (2021-03-09 09:03:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2021-03-09 09:06:00 CST → 2021-03-09 09:06:00 CST (Δ = 0 sec)
+   Total Anomalies: 45
+   🔑 Keywords: Error/Failure, GC, Timeout
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_108
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_109
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_11
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_110
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_113
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_119
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_121
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_129
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_134
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_139
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_143
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_145
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_148
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_158
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_159
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_16
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_160
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_161
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_163
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_165
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_169
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_174
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_20
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_25
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_37
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_40
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_43
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_45
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_46
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_47
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_52
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_6
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_60
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_61
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_64
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_66
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_7
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_72
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_82
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_83
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_84
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_89
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_92
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_94
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+     • Entity: IG01 | Attribute: PatternID_97
+       Timestamps: 1615251960 (2021-03-09 09:06:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2021-03-09 09:09:00 CST → 2021-03-09 09:12:31 CST (Δ = 211 sec)
+   Total Anomalies: 41
+   🔑 Keywords: GC, Error/Failure
+
+   📝 Metric Container Anomalies:
+     • Entity: MG01 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615252200 (2021-03-09 09:10:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1615252320 (2021-03-09 09:12:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSCapacity
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSInodeUsedPercent
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSInodeUsedPercent
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILE_-home-zabbix_DirSizeMB
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SYSTEM_SYSTEM_Check-DefaultRoute
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (redis_git_dirty)
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1615252200 (2021-03-09 09:10:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead
+       Timestamps: 1615252200 (2021-03-09 09:10:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+     • Entity: Tomcat03 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1615252140 (2021-03-09 09:09:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: IG02->Tomcat02 | Attribute: duration
+       Timestamps: 1615252351 (2021-03-09 09:12:31 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_0
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_106
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_11
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_113
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_121
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_127
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_129
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_138
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_14
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_147
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_15
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_160
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_161
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_167
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_22
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_28
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_4
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_6
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_63
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_71
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_76
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_91
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_93
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+     • Entity: IG01 | Attribute: PatternID_94
+       Timestamps: 1615252260 (2021-03-09 09:11:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2021-03-09 09:16:00 CST → 2021-03-09 09:17:00 CST (Δ = 60 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: IG02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615252620 (2021-03-09 09:17:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc
+       Timestamps: 1615252620 (2021-03-09 09:17:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_37
+       Timestamps: 1615252560 (2021-03-09 09:16:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #5
+   Time Span: 2021-03-09 09:19:00 CST → 2021-03-09 09:21:00 CST (Δ = 120 sec)
+   Total Anomalies: 9
+   🔑 Keywords: Error/Failure, OOM
+
+   📝 Metric Container Anomalies:
+     • Entity: MG01 | Attribute: OSLinux-OSLinux_PROCESS_zabbix-zabbix_agentd_PROCPPCPUPerc
+       Timestamps: 1615252800 (2021-03-09 09:20:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Connections
+       Timestamps: 1615252860 (2021-03-09 09:21:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Created Tmp Tables
+       Timestamps: 1615252860 (2021-03-09 09:21:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Handler Write
+       Timestamps: 1615252860 (2021-03-09 09:21:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Table Locks Immediate
+       Timestamps: 1615252860 (2021-03-09 09:21:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_142
+       Timestamps: 1615252740 (2021-03-09 09:19:00 CST)
+     • Entity: IG01 | Attribute: PatternID_156
+       Timestamps: 1615252800 (2021-03-09 09:20:00 CST)
+     • Entity: IG01 | Attribute: PatternID_33
+       Timestamps: 1615252800 (2021-03-09 09:20:00 CST)
+     • Entity: IG01 | Attribute: PatternID_98
+       Timestamps: 1615252800 (2021-03-09 09:20:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #6
+   Time Span: 2021-03-09 09:23:00 CST → 2021-03-09 09:23:00 CST (Δ = 0 sec)
+   Total Anomalies: 10
+   🔑 Keywords: Error/Failure, GC
+
+   📝 Metric Container Anomalies:
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU-0_SingleCpuUtil
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_133
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_146
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_169
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_170
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_25
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_37
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_86
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_92
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+     • Entity: IG01 | Attribute: PatternID_93
+       Timestamps: 1615252980 (2021-03-09 09:23:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #7
+   Time Span: 2021-03-09 09:25:00 CST → 2021-03-09 09:28:00 CST (Δ = 180 sec)
+   Total Anomalies: 5
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest5 | Attribute: cnt
+       Timestamps: 1615253160 (2021-03-09 09:26:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: IG02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1615253280 (2021-03-09 09:28:00 CST)
+     • Entity: IG02 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615253220 (2021-03-09 09:27:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKPercentBusy
+       Timestamps: 1615253100 (2021-03-09 09:25:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: Tomcat02->MG02 | Attribute: duration
+       Timestamps: 1615253251 (2021-03-09 09:27:31 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #8
+   Time Span: 2021-03-09 09:30:00 CST → 2021-03-09 09:30:00 CST (Δ = 0 sec)
+   Total Anomalies: 4
+
+   📝 Metric Container Anomalies:
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1615253400 (2021-03-09 09:30:00 CST)
+     • Entity: IG02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead
+       Timestamps: 1615253400 (2021-03-09 09:30:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb pages created
+       Timestamps: 1615253400 (2021-03-09 09:30:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps
+       Timestamps: 1615253400 (2021-03-09 09:30:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

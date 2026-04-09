@@ -1,0 +1,88 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1900_1930
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 19:00:00 CST → 2022-03-21 19:10:00 CST (Δ = 600 sec)
+   Total Anomalies: 25
+
+   📝 Metric Service Anomalies:
+     • Entity: currencyservice-grpc | Attribute: count
+       Timestamps: 1647860700 (2022-03-21 19:05:00 CST), 1647860880 (2022-03-21 19:08:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-0 | Attribute: container_memory_failcnt
+       Timestamps: 1647860400 (2022-03-21 19:00:00 CST), 1647860460 (2022-03-21 19:01:00 CST), 1647860520 (2022-03-21 19:02:00 CST), 1647860580 (2022-03-21 19:03:00 CST), 1647860640 (2022-03-21 19:04:00 CST), 1647860700 (2022-03-21 19:05:00 CST), 1647860760 (2022-03-21 19:06:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.grpc.200.14.0
+       Timestamps: 1647860700 (2022-03-21 19:05:00 CST), 1647860940 (2022-03-21 19:09:00 CST), 1647861000 (2022-03-21 19:10:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.cpu.pct_usage
+       Timestamps: 1647860460 (2022-03-21 19:01:00 CST), 1647860700 (2022-03-21 19:05:00 CST), 1647860820 (2022-03-21 19:07:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->cartservice-0:/hipstershop.CartService/GetCart | Attribute: frequency
+       Timestamps: 1647860400 (2022-03-21 19:00:00 CST), 1647860760 (2022-03-21 19:06:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+       Timestamps: 1647860400 (2022-03-21 19:00:00 CST), 1647860460 (2022-03-21 19:01:00 CST), 1647860520 (2022-03-21 19:02:00 CST), 1647860640 (2022-03-21 19:04:00 CST), 1647860700 (2022-03-21 19:05:00 CST), 1647860760 (2022-03-21 19:06:00 CST), 1647860880 (2022-03-21 19:08:00 CST), 1647861000 (2022-03-21 19:10:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 19:12:00 CST → 2022-03-21 19:17:00 CST (Δ = 300 sec)
+   Total Anomalies: 9
+
+   📝 Metric Service Anomalies:
+     • Entity: currencyservice-grpc | Attribute: count
+       Timestamps: 1647861120 (2022-03-21 19:12:00 CST), 1647861300 (2022-03-21 19:15:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.shippingservice-0 | Attribute: container_memory_failcnt
+       Timestamps: 1647861240 (2022-03-21 19:14:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.grpc.200.14.0
+       Timestamps: 1647861120 (2022-03-21 19:12:00 CST), 1647861240 (2022-03-21 19:14:00 CST), 1647861360 (2022-03-21 19:16:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.cpu.pct_usage
+       Timestamps: 1647861180 (2022-03-21 19:13:00 CST), 1647861420 (2022-03-21 19:17:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: cartservice-0 | Attribute: at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+       Timestamps: 1647861120 (2022-03-21 19:12:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 19:21:00 CST → 2022-03-21 19:23:00 CST (Δ = 120 sec)
+   Total Anomalies: 5
+
+   📝 Metric Mesh Anomalies:
+     • Entity: adservice-0.destination.frontend.adservice | Attribute: istio_request_bytes.grpc.200.14.0
+       Timestamps: 1647861780 (2022-03-21 19:23:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-1 | Attribute: system.cpu.pct_usage
+       Timestamps: 1647861660 (2022-03-21 19:21:00 CST), 1647861780 (2022-03-21 19:23:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-0->cartservice-0:/hipstershop.CartService/GetCart | Attribute: frequency
+       Timestamps: 1647861660 (2022-03-21 19:21:00 CST), 1647861720 (2022-03-21 19:22:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   trace | frontend-0->cartservice-0:/hipstershop.CartService/GetCart | frequency | 1647861540 (2022-03-21 19:19:00 CST)
+   metric_service | currencyservice-grpc | count | 1647861540 (2022-03-21 19:19:00 CST)
+   metric_mesh | adservice-0.destination.frontend.adservice | istio_request_bytes.grpc.200.14.0 | 1647862020 (2022-03-21 19:27:00 CST)
+   metric_container | node-5.shippingservice-0 | container_memory_failcnt | 1647862080 (2022-03-21 19:28:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

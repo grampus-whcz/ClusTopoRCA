@@ -1,0 +1,62 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_12 | Window: 1700_1730
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 288
+## Anomaly Breakdown
+- **Metric App**: 7 anomalies
+- **Metric Container**: 243 anomalies
+- **Trace**: 6 anomalies
+- **Log**: 32 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-12 17:02:00 (T2) to 2021-03-12 17:06:00 (4 minutes)
+**Total Anomalies in Full Domain**: 288
+
+#### Primary Root Cause Entity
+- **Entity**: UNKNOWN_PARENT (Layer: UNKNOWN)
+- **Confidence Score**: 0.69 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: duration(2 times), frequency(1 times)
+- **Earliest Anomaly Time**: 2021-03-12 17:01:59
+- **Topology Impact**: 4 downstream entities affected
+
+#### Score Breakdown for UNKNOWN_PARENT
+- **Time Score**: 0.75 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.21 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **MG01** (Layer: GOVERNANCE): Score = 0.56, Anomalies = 3, Attrs = JVM-Memory_7779_JVM_Memory_HeapMemoryUsage(1 times), JVM-Memory_7779_JVM_Memory_HeapMemoryUsed(1 times), OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT(1 times)
+- **Redis02** (Layer: CACHE): Score = 0.55, Anomalies = 14, Attrs = OSLinux-OSLinux_FILESYSTEM_-_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-app_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-boot_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-boot_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-boot_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSUsedSpace(1 times), OSLinux-OSLinux_FILE_-tmp-zabbix_agentd.log_FileSizeMB(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKAvgServ(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times), OSLinux-OSLinux_NETWORK_NETWORK_TotalTcpConnNum(1 times), OSLinux-OSLinux_SYSTEM_SYSTEM_Check-Hostname(1 times)
+- **MG02** (Layer: GOVERNANCE): Score = 0.44, Anomalies = 3, Attrs = JVM-Memory_7779_JVM_Memory_HeapMemoryUsed(1 times), duration(1 times), frequency(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by UNKNOWN_PARENT**: IG02, Redis02, Mysql02, MG02, dockerA2
+
+#### Layer-wise Impact Analysis
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of UNKNOWN_PARENT (global highest confidence)
+2. Check UNKNOWN_PARENT for anomalies on attributes: duration(2 times), frequency(1 times)
+3. Investigate starting at 2021-03-12 17:01:59 (analysis window: 2021-03-12 17:02:00)
+4. Verify cascading failures in downstream dependencies
+5. Check UNKNOWN layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

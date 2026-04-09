@@ -1,0 +1,64 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_10 | Window: 0330_0400
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 1421
+## Anomaly Breakdown
+- **Metric App**: 9 anomalies
+- **Metric Container**: 1275 anomalies
+- **Trace**: 87 anomalies
+- **Log**: 50 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-10 03:31:00 (T2) to 2021-03-10 03:35:00 (4 minutes)
+**Total Anomalies in Full Domain**: 1421
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.83 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed(2 times), OSLinux-CPU_CPU_CPUUserTime(1 times), OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies(1 times), OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times)
+- **Earliest Anomaly Time**: 2021-03-10 03:30:00
+- **Topology Impact**: 6 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.75 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.75 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.73, Anomalies = 8, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(2 times), Mysql-MySQL_3306_Connections(1 times), Mysql-MySQL_3306_Innodb buffer pool pages misc(1 times), Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite(1 times)
+- **dockerB1** (Layer: CONTAINER): Score = 0.63, Anomalies = 4, Attrs = duration(4 times)
+- **MG02** (Layer: GOVERNANCE): Score = 0.54, Anomalies = 2, Attrs = duration(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: Redis02, dockerB1, Tomcat03, Tomcat04, dockerA1
+
+#### Layer-wise Impact Analysis
+- **CONTAINER Layer**: 3 entities affected (Weight: 0.7)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **SERVICE_TEST Layer**: 2 entities affected (Weight: 0.5)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed(2 times), OSLinux-CPU_CPU_CPUUserTime(1 times), OSLinux-OSLinux_PROCESS_PROCESS_PROCNoZombies(1 times), OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times)
+3. Investigate starting at 2021-03-10 03:30:00 (analysis window: 2021-03-10 03:31:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

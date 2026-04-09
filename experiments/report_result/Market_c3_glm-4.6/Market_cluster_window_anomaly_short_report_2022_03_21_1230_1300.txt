@@ -1,0 +1,41 @@
+🔍 Market Condensed Anomaly Report (Repeated Entity-Attribute Only)
+   For 2022_03_21 1230_1300
+================================================================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 12:35:00 CST → 2022-03-21 12:52:00 CST (Δ = 1020 sec)
+   Repeated Entity-Attribute Pairs: 7
+
+   📝 Metric Service Anomalies:
+     • Entity: checkoutservice-grpc | Attribute: rr
+       Times (5): 2022-03-21 12:35:00 CST, 2022-03-21 12:36:00 CST, 2022-03-21 12:37:00 CST, 2022-03-21 12:38:00 CST, 2022-03-21 12:40:00 CST
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_init.C
+       Times (3): 2022-03-21 12:39:00 CST, 2022-03-21 12:43:00 CST, 2022-03-21 12:46:00 CST
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.frontend2-0 | Attribute: container_fs_writes_MB./dev/vda
+       Times (6): 2022-03-21 12:40:00 CST, 2022-03-21 12:43:00 CST, 2022-03-21 12:44:00 CST, 2022-03-21 12:46:00 CST, 2022-03-21 12:50:00 CST, 2022-03-21 12:51:00 CST
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.source.checkoutservice.shippingservice | Attribute: istio_request_bytes.grpc.0.2.0
+       Times (15): 2022-03-21 12:35:00 CST, 2022-03-21 12:36:00 CST, 2022-03-21 12:37:00 CST, 2022-03-21 12:38:00 CST, 2022-03-21 12:39:00 CST, 2022-03-21 12:40:00 CST, 2022-03-21 12:41:00 CST, 2022-03-21 12:42:00 CST, 2022-03-21 12:43:00 CST, 2022-03-21 12:44:00 CST, 2022-03-21 12:45:00 CST, 2022-03-21 12:46:00 CST, 2022-03-21 12:47:00 CST, 2022-03-21 12:48:00 CST, 2022-03-21 12:49:00 CST
+
+   📝 Metric Node Anomalies:
+     • Entity: node-4 | Attribute: system.mem.total
+       Times (4): 2022-03-21 12:44:00 CST, 2022-03-21 12:45:00 CST, 2022-03-21 12:48:00 CST, 2022-03-21 12:52:00 CST
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->frontend-2:hipstershop.ShippingService/GetQuote | Attribute: duration
+       Times (5): 2022-03-21 12:47:00 CST, 2022-03-21 12:48:00 CST, 2022-03-21 12:49:00 CST, 2022-03-21 12:50:00 CST, 2022-03-21 12:51:00 CST
+
+   📝 Log Anomalies:
+     • Entity: frontend-2 | Attribute: "POST /api/v2/spans HTTP/1.1<:code202:>
+       Times (5): 2022-03-21 12:48:00 CST, 2022-03-21 12:49:00 CST, 2022-03-21 12:50:00 CST, 2022-03-21 12:51:00 CST, 2022-03-21 12:52:00 CST
+
+------------------------------------------------------------
+
+💡 Total repeated entity-attribute entries: 7
+💡 Note: Only entries with ≥2 distinct timestamps are shown.
+   Clustering: DBSCAN(eps=60s, min_samples=3)

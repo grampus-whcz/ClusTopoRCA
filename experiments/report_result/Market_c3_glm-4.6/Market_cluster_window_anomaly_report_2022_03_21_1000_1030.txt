@@ -1,0 +1,48 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1000_1030
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 10:06:00 CST → 2022-03-21 10:08:00 CST (Δ = 120 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_memory_usage_MB
+       Timestamps: 1647828360 (2022-03-21 10:06:00 CST), 1647828480 (2022-03-21 10:08:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 | Attribute: istio_tcp_connections_opened.UH
+       Timestamps: 1647828420 (2022-03-21 10:07:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 10:17:00 CST → 2022-03-21 10:21:00 CST (Δ = 240 sec)
+   Total Anomalies: 9
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_Compilation_TotalCompilationTime
+       Timestamps: 1647829020 (2022-03-21 10:17:00 CST), 1647829080 (2022-03-21 10:18:00 CST), 1647829140 (2022-03-21 10:19:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.frontend-1 | Attribute: container_memory_usage_MB
+       Timestamps: 1647829020 (2022-03-21 10:17:00 CST), 1647829080 (2022-03-21 10:18:00 CST), 1647829140 (2022-03-21 10:19:00 CST), 1647829200 (2022-03-21 10:20:00 CST), 1647829260 (2022-03-21 10:21:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: currencyservice2-0.destination.checkoutservice2.currencyservice2 | Attribute: istio_tcp_connections_opened.UH
+       Timestamps: 1647829020 (2022-03-21 10:17:00 CST)
+
+------------------------------------------------------------
+
+🔕 Isolated Anomalies (Noise / Single Events):
+   metric_container | node-5.frontend-1 | container_memory_usage_MB | 1647828600 (2022-03-21 10:10:00 CST)
+   metric_container | node-5.frontend-1 | container_memory_usage_MB | 1647828720 (2022-03-21 10:12:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_Compilation_TotalCompilationTime | 1647828840 (2022-03-21 10:14:00 CST)
+   metric_runtime | adservice2.ts:8088 | java_lang_Compilation_TotalCompilationTime | 1647829440 (2022-03-21 10:24:00 CST)
+   metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 | istio_tcp_connections_opened.UH | 1647829620 (2022-03-21 10:27:00 CST)
+   metric_mesh | currencyservice2-0.destination.checkoutservice2.currencyservice2 | istio_tcp_connections_opened.UH | 1647829740 (2022-03-21 10:29:00 CST)
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

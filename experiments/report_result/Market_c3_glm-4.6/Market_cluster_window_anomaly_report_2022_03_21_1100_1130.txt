@@ -1,0 +1,40 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 1100_1130
+================================================================================
+
+🔍 The number of clusters are 2
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 11:00:00 CST → 2022-03-21 11:08:00 CST (Δ = 480 sec)
+   Total Anomalies: 18
+
+   📝 Metric Mesh Anomalies:
+     • Entity: checkoutservice-0.destination.frontend.checkoutservice | Attribute: istio_agent_go_memstats_heap_alloc_bytes
+       Timestamps: 1647831600 (2022-03-21 11:00:00 CST), 1647831660 (2022-03-21 11:01:00 CST), 1647831720 (2022-03-21 11:02:00 CST), 1647831780 (2022-03-21 11:03:00 CST), 1647831840 (2022-03-21 11:04:00 CST), 1647831900 (2022-03-21 11:05:00 CST), 1647831960 (2022-03-21 11:06:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: frontend-2->checkoutservice-1:hipstershop.CheckoutService/PlaceOrder | Attribute: duration
+       Timestamps: 1647831840 (2022-03-21 11:04:00 CST), 1647831900 (2022-03-21 11:05:00 CST), 1647831960 (2022-03-21 11:06:00 CST), 1647832020 (2022-03-21 11:07:00 CST), 1647832080 (2022-03-21 11:08:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: checkoutservice-0 | Attribute: at hipstershop.AdService.getAdsByCategory(AdService.java:186)
+       Timestamps: 1647831660 (2022-03-21 11:01:00 CST), 1647831840 (2022-03-21 11:04:00 CST), 1647831900 (2022-03-21 11:05:00 CST), 1647831960 (2022-03-21 11:06:00 CST), 1647832020 (2022-03-21 11:07:00 CST), 1647832080 (2022-03-21 11:08:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 11:15:00 CST → 2022-03-21 11:23:00 CST (Δ = 480 sec)
+   Total Anomalies: 16
+
+   📝 Metric Container Anomalies:
+     • Entity: node-6.currencyservice2-0 | Attribute: container_file_descriptors
+       Timestamps: 1647832500 (2022-03-21 11:15:00 CST), 1647832560 (2022-03-21 11:16:00 CST), 1647832620 (2022-03-21 11:17:00 CST), 1647832680 (2022-03-21 11:18:00 CST), 1647832740 (2022-03-21 11:19:00 CST), 1647832800 (2022-03-21 11:20:00 CST), 1647832860 (2022-03-21 11:21:00 CST), 1647832920 (2022-03-21 11:22:00 CST), 1647832980 (2022-03-21 11:23:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-6 | Attribute: system.io.util
+       Timestamps: 1647832500 (2022-03-21 11:15:00 CST), 1647832560 (2022-03-21 11:16:00 CST), 1647832620 (2022-03-21 11:17:00 CST), 1647832740 (2022-03-21 11:19:00 CST), 1647832800 (2022-03-21 11:20:00 CST), 1647832860 (2022-03-21 11:21:00 CST), 1647832920 (2022-03-21 11:22:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

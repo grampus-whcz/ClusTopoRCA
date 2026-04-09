@@ -1,0 +1,54 @@
+🔍 Market Anomaly Clustering Report for 2022_03_21 0030_0100
+================================================================================
+
+🔍 The number of clusters are 3
+========================================
+
+🚨 Cluster #1
+   Time Span: 2022-03-21 00:30:00 CST → 2022-03-21 00:32:00 CST (Δ = 120 sec)
+   Total Anomalies: 3
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.checkoutservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647793800 (2022-03-21 00:30:00 CST), 1647793860 (2022-03-21 00:31:00 CST), 1647793920 (2022-03-21 00:32:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2022-03-21 00:34:00 CST → 2022-03-21 00:38:00 CST (Δ = 240 sec)
+   Total Anomalies: 5
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.checkoutservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647794100 (2022-03-21 00:35:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_bytes.http.500.
+       Timestamps: 1647794040 (2022-03-21 00:34:00 CST), 1647794160 (2022-03-21 00:36:00 CST), 1647794220 (2022-03-21 00:37:00 CST), 1647794280 (2022-03-21 00:38:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2022-03-21 00:41:00 CST → 2022-03-21 00:54:00 CST (Δ = 780 sec)
+   Total Anomalies: 20
+
+   📝 Metric Runtime Anomalies:
+     • Entity: adservice2.ts:8088 | Attribute: java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_committ
+       Timestamps: 1647794580 (2022-03-21 00:43:00 CST), 1647794640 (2022-03-21 00:44:00 CST), 1647794700 (2022-03-21 00:45:00 CST), 1647794940 (2022-03-21 00:49:00 CST), 1647795060 (2022-03-21 00:51:00 CST), 1647795120 (2022-03-21 00:52:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: node-5.checkoutservice-1 | Attribute: container_memory_cache
+       Timestamps: 1647794520 (2022-03-21 00:42:00 CST), 1647794880 (2022-03-21 00:48:00 CST), 1647794940 (2022-03-21 00:49:00 CST)
+
+   📝 Metric Mesh Anomalies:
+     • Entity: istio-egressgateway-7bfdcc9d86-g2d4q | Attribute: istio_request_bytes.http.500.
+       Timestamps: 1647794460 (2022-03-21 00:41:00 CST), 1647794580 (2022-03-21 00:43:00 CST), 1647794700 (2022-03-21 00:45:00 CST), 1647794760 (2022-03-21 00:46:00 CST), 1647794820 (2022-03-21 00:47:00 CST)
+
+   📝 Metric Node Anomalies:
+     • Entity: node-3 | Attribute: system.mem.used
+       Timestamps: 1647794880 (2022-03-21 00:48:00 CST), 1647794940 (2022-03-21 00:49:00 CST), 1647795000 (2022-03-21 00:50:00 CST), 1647795060 (2022-03-21 00:51:00 CST), 1647795180 (2022-03-21 00:53:00 CST), 1647795240 (2022-03-21 00:54:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

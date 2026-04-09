@@ -1,0 +1,987 @@
+🔍 Anomaly Clustering Report for 2021_03_07 2130_2200
+🔍 The number of clusters are 2021_03_07 2130_2200
+================================================================================
+
+🔍 The number of clusters are 4
+========================================
+
+🚨 Cluster #1
+   Time Span: 2021-03-07 21:31:00 CST → 2021-03-07 21:33:00 CST (Δ = 120 sec)
+   Total Anomalies: 35
+   🔑 Keywords: Error/Failure, GC
+
+   📝 Metric Container Anomalies:
+     • Entity: Mysql02 | Attribute: OSLinux-NTP_197.30.1.68_NtpServerTimeOffset
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSAvailableSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSCapacity
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSInodeUsedPercent
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSCapacity
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSAvailableSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSAvailableSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSCapacity
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSUsedSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSCapacity
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSUsedSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSUsedSpace
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKAvgServ
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkTxBytes
+       Timestamps: 1615123980 (2021-03-07 21:33:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1615123980 (2021-03-07 21:33:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU_CPULoad
+       Timestamps: 1615123980 (2021-03-07 21:33:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST), 1615123980 (2021-03-07 21:33:00 CST)
+     • Entity: dockerA1 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+     • Entity: dockerA1 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615123860 (2021-03-07 21:31:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: dockerA2->MG02 | Attribute: frequency
+       Timestamps: 1615123918 (2021-03-07 21:31:58 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_148
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_159
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_174
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_31
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_35
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_43
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_60
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+     • Entity: IG01 | Attribute: PatternID_67
+       Timestamps: 1615123920 (2021-03-07 21:32:00 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #2
+   Time Span: 2021-03-07 21:35:00 CST → 2021-03-07 21:41:00 CST (Δ = 360 sec)
+   Total Anomalies: 57
+
+   📝 Metric App Anomalies:
+     • Entity: ServiceTest1 | Attribute: cnt
+       Timestamps: 1615124280 (2021-03-07 21:38:00 CST)
+     • Entity: ServiceTest1 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest10 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest11 | Attribute: cnt
+       Timestamps: 1615124400 (2021-03-07 21:40:00 CST)
+     • Entity: ServiceTest11 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest2 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest3 | Attribute: cnt
+       Timestamps: 1615124220 (2021-03-07 21:37:00 CST)
+     • Entity: ServiceTest3 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST), 1615124220 (2021-03-07 21:37:00 CST)
+     • Entity: ServiceTest5 | Attribute: cnt
+       Timestamps: 1615124400 (2021-03-07 21:40:00 CST)
+     • Entity: ServiceTest5 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest6 | Attribute: cnt
+       Timestamps: 1615124400 (2021-03-07 21:40:00 CST)
+     • Entity: ServiceTest6 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest8 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST)
+     • Entity: ServiceTest9 | Attribute: mrt
+       Timestamps: 1615124160 (2021-03-07 21:36:00 CST), 1615124220 (2021-03-07 21:37:00 CST)
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615124460 (2021-03-07 21:41:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead
+       Timestamps: 1615124400 (2021-03-07 21:40:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemLimit
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemLimit
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Aborted Clients
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Delete
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool write requests
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb row lock time max
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_MaxConnections
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Select Full Range Join
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSInodeUsedPercent
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKBps
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKAvgServ
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_CacheMem
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMUsedMemPerc
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETInErr
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMem
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SYSTEM_SYSTEM_Check-Hostname
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--_SESSIONActiveCounter
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-CPU_CPU_CPUidleutil
+       Timestamps: 1615124340 (2021-03-07 21:39:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1615124340 (2021-03-07 21:39:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1615124340 (2021-03-07 21:39:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-FIN-WAIT
+       Timestamps: 1615124220 (2021-03-07 21:37:00 CST), 1615124280 (2021-03-07 21:38:00 CST), 1615124400 (2021-03-07 21:40:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615124100 (2021-03-07 21:35:00 CST), 1615124340 (2021-03-07 21:39:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps
+       Timestamps: 1615124280 (2021-03-07 21:38:00 CST), 1615124400 (2021-03-07 21:40:00 CST)
+     • Entity: apache02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT
+       Timestamps: 1615124220 (2021-03-07 21:37:00 CST), 1615124400 (2021-03-07 21:40:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: IG01->IG01 | Attribute: duration
+       Timestamps: 1615124398 (2021-03-07 21:39:58 CST)
+     • Entity: IG02->IG02 | Attribute: duration
+       Timestamps: 1615124398 (2021-03-07 21:39:58 CST)
+     • Entity: Tomcat01->MG02 | Attribute: frequency
+       Timestamps: 1615124218 (2021-03-07 21:36:58 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #3
+   Time Span: 2021-03-07 21:43:00 CST → 2021-03-07 21:45:58 CST (Δ = 178 sec)
+   Total Anomalies: 261
+
+   📝 Metric Container Anomalies:
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_01eeda2c9f0b--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_1bc4fc80d241--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_23bdcf67c7e3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2c2336e2994f--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2d16f5b2e830--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_2fa7eaebac26--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_350771a68ac2--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_3bf443a64876--bcou-role-st-uat-statefulset-1--bcou--UATWKR03_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_464dc801314b--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_6d83a96887c3--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_76d31070b844--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_89f0c1e5346c--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_94eca4f96efe--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b2fc383d2438--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b30097144a13--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_b6760337dc49--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_bbc780df1fce--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemLimit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_MemUsage
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_f861998c398e--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Memory_7778_JVM_Memory_NoHeapMemoryUsed
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Operating System_7778_JVM_JVM_CPULoad
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Operating System_7779_JVM_JVM_CPULoad
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Runtime_7778_JVM_JVM_Uptime
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: JVM-Runtime_7779_JVM_JVM_Uptime
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Aborted Clients
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Binlog Cache Disk Use
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Binlog Cache Use
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Binlog stmt cache use
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Bytes Received
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Delete
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Delete Multi
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Load
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Replace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Replace Select
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Select
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Created Tmp Disk Tables
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Created Tmp Files
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Created Tmp Tables
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_GetResponseTimeOfMysqld
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Commit
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Read Next
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Read Prev
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Read Rnd
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Read Rnd Next
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Time
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Waits
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages dirty
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages free
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages misc
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages total
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead rnd
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool reads
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data pending reads
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data read
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data reads
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data written
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb dblwr pages written
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb log waits
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb log write requests
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb os log fsyncs
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb os log pending fsyncs
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb os log pending writes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb pages created
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb pages read
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb row lock time avg
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb row lock time max
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Key Writes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Max trx rows locked
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_MaxTrxRowsModified
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Open Files
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Open Tables
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Opened Tables
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Qcache Free Blocks
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Qcache Hits
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Qcache Not Cached
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Rows Read
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Select Full Range Join
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Select Range Check
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Select Scan
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_SlowQueries
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Sort Merge Passes
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Sort Scan
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Table Locks Immediate
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Tc log max pages used
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Tc log page waits
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Threads Cached
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Threads Created
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_ThreadsConnected
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_ThreadsRunning
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU-1_SingleCpuUtil
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuUtil
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-NTP_40.2.208.64_NtpServerTimeOffset
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----boot_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----cmbc_admin_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----home_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tmp_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----tmp_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSAvailableSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-apache_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-app_FSUsedSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSUsedSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSAvailableSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysql_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSUsedSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSAvailableSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSCapacity
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSInodeUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSUsedSpace
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKBps
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKAvgServ
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKBps
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKPercentBusy
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRead
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKReadWrite
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKTps
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKWrite
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETInErr
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETInErrPrc
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETOutErr
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_NETWORK_ens160_NETOutErrPrcc
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMemPerc
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_apache_10001_PROCPPCount
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SWAP_SWAP_SWPTotSwapSize
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SWAP_SWAP_SWPTotSwapUsedPercent
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SWAP_SWAP_Si
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SWAP_SWAP_So
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMFreeMemory
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-MEMORY_7441-MEMORY_JVMUsedMemory
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Requests_7441-"http-nio-8003"_RequestCountRequestInfo
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--UOCP_SESSIONKeepaliveCounter
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--_SESSIONActiveCounter
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--_SESSIONKeepaliveCounter
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--_SESSIONRejectedSessions
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--log.Home_IS_UNDEFINED_SESSIONKeepaliveCounter
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--log.Home_IS_UNDEFINED_SESSIONRejectedSessions
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONActiveCounter
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONKeepaliveCounter
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Sessions_7441--logHome_IS_UNDEFINED_SESSIONRejectedSessions
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Threads_7441-"http-nio-8003"_CurrentThreadsBusyThreadInfo
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (aof_rewrite_scheduled)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (blocked_clients)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (client_biggest_input_buf)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (connected_slaves)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (latest_fork_usec)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (loading)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (maxmemory)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (pubsub_channels)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (used_cpu_sys_children)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (used_cpu_user_children)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (used_memory_peak)
+       Timestamps: 1615124640 (2021-03-07 21:44:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead
+       Timestamps: 1615124700 (2021-03-07 21:45:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615124580 (2021-03-07 21:43:00 CST)
+     • Entity: dockerA1 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615124700 (2021-03-07 21:45:00 CST)
+
+   📝 Trace Anomalies:
+     • Entity: dockerB1->MG02 | Attribute: frequency
+       Timestamps: 1615124758 (2021-03-07 21:45:58 CST)
+
+------------------------------------------------------------
+
+🚨 Cluster #4
+   Time Span: 2021-03-07 21:47:00 CST → 2021-03-07 22:00:00 CST (Δ = 780 sec)
+   Total Anomalies: 128
+   🔑 Keywords: Error/Failure, GC
+
+   📝 Metric Container Anomalies:
+     • Entity: IG01 | Attribute: JVM-Memory_7778_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615124880 (2021-03-07 21:48:00 CST)
+     • Entity: MG02 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsage
+       Timestamps: 1615125120 (2021-03-07 21:52:00 CST)
+     • Entity: MG02 | Attribute: JVM-Memory_7779_JVM_Memory_HeapMemoryUsed
+       Timestamps: 1615125060 (2021-03-07 21:51:00 CST)
+     • Entity: MG02 | Attribute: OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT
+       Timestamps: 1615124820 (2021-03-07 21:47:00 CST)
+     • Entity: Mysql01 | Attribute: Mysql-MySQL_3306_Innodb Row Lock Time
+       Timestamps: 1615124880 (2021-03-07 21:48:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace
+       Timestamps: 1615125360 (2021-03-07 21:56:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy
+       Timestamps: 1615125300 (2021-03-07 21:55:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Mysql02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRTps
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_0f6f3aa7920c--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_CpuPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_69b53a78b2eb--bcou-role-st-uat-statefulset-1--bcou--UATWKR06_CpuPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemLimit
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_MemUsage
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_7b4b80f345e0--bcou-role-st-uat-statefulset-0--bcou--UATWKR04_NetworkRxBytes
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_9e8c309d0aab--bcou-trace-st-uat-statefulset-0--bcou--UATWKR04_MemPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ac3ba8476104--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_c67422614c81--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_MemLimit
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cb2bbb5e3f90--bcou-role-st-uat-statefulset-1--bcou--UATWKR02_CpuPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_cd2b4a29291e--bcou-role-st-uat-statefulset-1--bcou--UATWKR04_NetworkTxBytes
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemLimit
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_MemUsage
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_d27123361435--bcou-trace-st-uat-statefulset-1--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Load
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Select
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Com Update
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Created Tmp Files
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Commit
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Read Key
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Rollback
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Handler Savepoint
+       Timestamps: 1615125180 (2021-03-07 21:53:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool pages flushed
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead evicted
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb buffer pool read ahead rnd
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data fsyncs
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data pending reads
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb data writes
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Innodb pages created
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Opened Tables
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Select Scan
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Slow launch threads
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Table Locks Waited
+       Timestamps: 1615125180 (2021-03-07 21:53:00 CST)
+     • Entity: Redis01 | Attribute: Mysql-MySQL_3306_Threads Cached
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_----boot_FSInodeUsedPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-_FSInodeUsedPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-boot_FSAvailableSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSAvailableSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSUsedSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-home_FSUsedSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSAvailableSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tmp_FSUsedSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_FILE_-tmp-zabbix_agentd.log_FileSizeMB
+       Timestamps: 1615125180 (2021-03-07 21:53:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKAvgServ
+       Timestamps: 1615125300 (2021-03-07 21:55:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKReadWrite
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKWrite
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMFreeMem
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_NoCacheMemPerc
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_UserMem
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_PROCESS_PROCESS_PROCPPMem
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: OSLinux-OSLinux_SYSTEM_SYSTEM_Check-Hostname
+       Timestamps: 1615125300 (2021-03-07 21:55:00 CST)
+     • Entity: Redis01 | Attribute: Tomcat-Threads_7441-"http-nio-8003"_MaxThreadsThreadInfo
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (client_biggest_input_buf)
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (expired_keys)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (keyspace_misses)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (loading)
+       Timestamps: 1615125180 (2021-03-07 21:53:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (lru_clock)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (maxmemory)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (rdb_changes_since_last_save)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (redis_git_dirty)
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (rejected_connections)
+       Timestamps: 1615125180 (2021-03-07 21:53:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (total_commands_processed)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (total_connections_received)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (uptime_in_seconds)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_Redis  (used_memory_peak)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis01 | Attribute: redis-Redis_6379_redis server
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: OSLinux-OSLinux_ZABBIX_Host_Uptime
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (connected_clients)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (expired_keys)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (keyspace_hits)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (keyspace_misses)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (lru_clock)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (maxmemory)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (rdb_changes_since_last_save)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (total_commands_processed)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (total_connections_received)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (uptime_in_seconds)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (used_memory)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (used_memory_peak)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_Redis  (used_memory_rss)
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Redis02 | Attribute: redis-Redis_6379_redis server
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: Tomcat01 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead
+       Timestamps: 1615125000 (2021-03-07 21:50:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-CPU_CPU_CPULoad
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: Tomcat02 | Attribute: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead
+       Timestamps: 1615125240 (2021-03-07 21:54:00 CST)
+     • Entity: Tomcat04 | Attribute: OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem
+       Timestamps: 1615124820 (2021-03-07 21:47:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-0_SingleCpuidle
+       Timestamps: 1615124820 (2021-03-07 21:47:00 CST), 1615125060 (2021-03-07 21:51:00 CST), 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-2_SingleCpuidle
+       Timestamps: 1615124940 (2021-03-07 21:49:00 CST), 1615125180 (2021-03-07 21:53:00 CST), 1615125300 (2021-03-07 21:55:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-CPU_CPU-3_SingleCpuidle
+       Timestamps: 1615124820 (2021-03-07 21:47:00 CST), 1615124940 (2021-03-07 21:49:00 CST), 1615125300 (2021-03-07 21:55:00 CST), 1615125420 (2021-03-07 21:57:00 CST)
+     • Entity: apache01 | Attribute: OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount
+       Timestamps: 1615125600 (2021-03-07 22:00:00 CST)
+     • Entity: dockerA1 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkRxBytes
+       Timestamps: 1615125480 (2021-03-07 21:58:00 CST)
+     • Entity: dockerA1 | Attribute: Container-DOCKER_CONTAINER_ef6cb138bb10--bcou-role-st-uat-statefulset-0--bcou--UATWKR18_NetworkTxBytes
+       Timestamps: 1615125480 (2021-03-07 21:58:00 CST)
+
+   📝 Log Anomalies:
+     • Entity: IG01 | Attribute: PatternID_118
+       Timestamps: 1615125420 (2021-03-07 21:57:00 CST)
+     • Entity: IG01 | Attribute: PatternID_130
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_141
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_19
+       Timestamps: 1615125060 (2021-03-07 21:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_24
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_25
+       Timestamps: 1615125420 (2021-03-07 21:57:00 CST)
+     • Entity: IG01 | Attribute: PatternID_37
+       Timestamps: 1615125420 (2021-03-07 21:57:00 CST)
+     • Entity: IG01 | Attribute: PatternID_55
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_57
+       Timestamps: 1615125060 (2021-03-07 21:51:00 CST)
+     • Entity: IG01 | Attribute: PatternID_62
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_69
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_75
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_80
+       Timestamps: 1615125540 (2021-03-07 21:59:00 CST)
+     • Entity: IG01 | Attribute: PatternID_81
+       Timestamps: 1615125060 (2021-03-07 21:51:00 CST)
+
+------------------------------------------------------------
+
+💡 Note: 'CST' = China Standard Time (UTC+8).
+   Clustering: DBSCAN(eps=60s, min_samples=3)

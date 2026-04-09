@@ -1,0 +1,74 @@
+🔍 Market Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2022_03_20 | Window: 1400_1430
+⚙️  Analysis Start Timestamp Index: T0
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=3)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2022-03-20 14:00:00 CST → 2022-03-20 14:12:00 CST (Duration: 720 seconds)
+**Total Anomalies**: 28
+
+## Anomaly Breakdown
+- **Metric Container**: 12 anomalies
+- **Metric Mesh**: 3 anomalies
+- **Metric Node**: 3 anomalies
+- **Trace**: 6 anomalies
+- **Log**: 4 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1 (Market Dataset)
+**Analysis Window**: 2022-03-20 14:00:00 CST (T0) to 2022-03-20 14:05:00 CST (5 minutes)
+**Total Anomalies**: 28
+
+#### Primary Root Cause Entity
+- **Entity**: frontend-2 (Cleaned: frontend, Layer: FRONTEND)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: frequency(5 times)
+- **Earliest Anomaly Time**: 2022-03-20 14:00:00 CST
+- **Topology Impact**: 4 downstream entities affected
+
+#### Score Breakdown for frontend-2 (Cleaned: frontend)
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **node-5.checkoutservice2-0** (Cleaned: checkoutservice, Layer: CHECKOUTSERVICE): Score = 0.62, Anomalies = 5, Attrs = container_memory_mapped_file(5 times)
+- **recommendationservice-0:/hipstershop.RecommendationService/ListRecommendations** (Cleaned: recommendationservice-0:/hipstershop.RecommendationService/ListRecommendations, Layer: RECOMMENDATIONSERVICE): Score = 0.49, Anomalies = 5, Attrs = frequency(10 times)
+- **node-5** (Cleaned: node, Layer: UNKNOWN): Score = 0.33, Anomalies = 3, Attrs = system.net.tcp.in_segs(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by frontend-2 (Cleaned: frontend)**: productcatalogservice, emailservice2-0, adservice2-0, recommendationservice, recommendationservice-0
+
+#### Layer-wise Impact Analysis
+- **FRONTEND Layer**: 1 entities affected (Weight: 1.0)
+- **CHECKOUTSERVICE Layer**: 1 entities affected (Weight: 0.95)
+- **RECOMMENDATIONSERVICE Layer**: 1 entities affected (Weight: 0.85)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of frontend-2 (Cleaned: frontend, highest confidence score)
+2. Check frontend-2 for 5.0 anomalies on attributes: frequency(5 times)
+3. Investigate anomalies starting at 2022-03-20 14:00:00 CST for frontend-2 (analysis window starts at 2022-03-20 14:00:00 CST (T0))
+4. Verify downstream dependencies of frontend for cascading failures
+5. Check FRONTEND layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Isolated Anomalies (Noise)
+**Total Isolated Anomalies**: 5
+- metric_container | node-5.checkoutservice2-0 (Cleaned: checkoutservice) | container_memory_mapped_file | 2022-03-20 14:15:00 CST
+- metric_mesh | checkoutservice-1.source.checkoutservice.shippingservice (Cleaned: checkoutservice-1.source.checkoutservice.shippingservice) | istio_agent_process_resident_memory_bytes | 2022-03-20 14:15:00 CST
+- metric_container | node-5.checkoutservice2-0 (Cleaned: checkoutservice) | container_memory_mapped_file | 2022-03-20 14:17:00 CST
+- metric_node | node-5 (Cleaned: node) | system.net.tcp.in_segs | 2022-03-20 14:21:00 CST
+- metric_mesh | checkoutservice-1.source.checkoutservice.shippingservice (Cleaned: checkoutservice-1.source.checkoutservice.shippingservice) | istio_agent_process_resident_memory_bytes | 2022-03-20 14:21:00 CST
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 10.0%, Topology: 80.0%, Anomaly Count: 10.0%)
+- Analysis Start Timestamp Index: T0
+- Entity Cleaning: Enabled (handles node-x.pod, service.ts:port, istio-gateway formats)
+- Topology Graph: Market microservice call chain (frontend → checkoutservice → cartservice etc.) + service-pod relationships + istio gateway edges
