@@ -1,0 +1,58 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 0800_0830
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 160
+## Anomaly Breakdown
+- **Metric App**: 6 anomalies
+- **Metric Container**: 99 anomalies
+- **Trace**: 2 anomalies
+- **Log**: 53 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 08:02:00 (T2) to 2021-03-07 08:06:00 (4 minutes)
+**Total Anomalies in Full Domain**: 160
+
+#### Primary Root Cause Entity
+- **Entity**: Mysql01 (Layer: DATABASE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+- **Earliest Anomaly Time**: 2021-03-07 08:00:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for Mysql01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **ServiceTest10** (Layer: SERVICE_TEST): Score = 0.33, Anomalies = 2, Attrs = cnt(2 times)
+
+#### Dependency Impact Path
+- **Mysql01 not found in topology**
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **SERVICE_TEST Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of Mysql01 (global highest confidence)
+2. Check Mysql01 for anomalies on attributes: Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+3. Investigate starting at 2021-03-07 08:00:00 (analysis window: 2021-03-07 08:02:00)
+4. Verify cascading failures in downstream dependencies
+5. Check DATABASE layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

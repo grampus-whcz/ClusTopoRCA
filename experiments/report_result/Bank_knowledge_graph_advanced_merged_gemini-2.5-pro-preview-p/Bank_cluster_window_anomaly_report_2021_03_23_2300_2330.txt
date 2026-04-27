@@ -1,0 +1,61 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_23 | Window: 2300_2330
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 581
+## Anomaly Breakdown
+- **Metric App**: 2 anomalies
+- **Metric Container**: 443 anomalies
+- **Trace**: 75 anomalies
+- **Log**: 61 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-23 23:04:00 (T2) to 2021-03-23 23:08:00 (4 minutes)
+**Total Anomalies in Full Domain**: 581
+
+#### Primary Root Cause Entity
+- **Entity**: Tomcat04 (Layer: BUSINESS)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 9
+- **Anomaly Attributes**: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(3 times)
+- **Earliest Anomaly Time**: 2021-03-23 23:01:00
+- **Topology Impact**: 4 downstream entities affected
+
+#### Score Breakdown for Tomcat04
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.78 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.41 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat02** (Layer: BUSINESS): Score = 0.70, Anomalies = 7, Attrs = OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(3 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity(1 times)
+- **MG01** (Layer: GOVERNANCE): Score = 0.63, Anomalies = 7, Attrs = OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(3 times), OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(1 times)
+- **MG02** (Layer: GOVERNANCE): Score = 0.62, Anomalies = 6, Attrs = OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(3 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by Tomcat04**: Redis02, Mysql02, MG01, dockerA2, Tomcat02
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of Tomcat04 (global highest confidence)
+2. Check Tomcat04 for anomalies on attributes: OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(3 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsOut(3 times)
+3. Investigate starting at 2021-03-23 23:01:00 (analysis window: 2021-03-23 23:04:00)
+4. Verify cascading failures in downstream dependencies
+5. Check BUSINESS layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

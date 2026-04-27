@@ -1,0 +1,62 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_09 | Window: 1900_1930
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 995
+## Anomaly Breakdown
+- **Metric App**: 33 anomalies
+- **Metric Container**: 920 anomalies
+- **Trace**: 5 anomalies
+- **Log**: 37 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-09 19:02:00 (T2) to 2021-03-09 19:06:00 (4 minutes)
+**Total Anomalies in Full Domain**: 995
+
+#### Primary Root Cause Entity
+- **Entity**: apache01 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.91 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps(1 times), OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times)
+- **Earliest Anomaly Time**: 2021-03-09 19:00:00
+- **Topology Impact**: 4 downstream entities affected
+
+#### Score Breakdown for apache01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.89 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.83 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG01** (Layer: GATEWAY): Score = 0.59, Anomalies = 6, Attrs = PatternID_5(1 times), PatternID_6(1 times), PatternID_94(1 times), PatternID_106(1 times), PatternID_116(1 times), PatternID_119(1 times)
+- **Redis01** (Layer: CACHE): Score = 0.58, Anomalies = 3, Attrs = OSLinux-CPU_CPU_CPUUserTime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite(1 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.52, Anomalies = 2, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache01**: Mysql02, dockerA2, Tomcat02, MG01, Redis02
+
+#### Layer-wise Impact Analysis
+- **CACHE Layer**: 2 entities affected (Weight: 0.6)
+- **ENTRY_POINT Layer**: 1 entities affected (Weight: 0.5)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache01 (global highest confidence)
+2. Check apache01 for anomalies on attributes: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWTps(1 times), OSLinux-OSLinux_PROCESS_zabbix_PROCPPCount(1 times), OSLinux-OSLinux_ZABBIX_Host_Uptime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times)
+3. Investigate starting at 2021-03-09 19:00:00 (analysis window: 2021-03-09 19:02:00)
+4. Verify cascading failures in downstream dependencies
+5. Check ENTRY_POINT layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

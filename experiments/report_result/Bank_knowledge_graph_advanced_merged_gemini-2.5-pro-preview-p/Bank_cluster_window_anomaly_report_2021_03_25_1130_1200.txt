@@ -1,0 +1,58 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_25 | Window: 1130_1200
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 211
+## Anomaly Breakdown
+- **Metric App**: 4 anomalies
+- **Metric Container**: 170 anomalies
+- **Log**: 37 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-25 11:33:00 (T2) to 2021-03-25 11:37:00 (4 minutes)
+**Total Anomalies in Full Domain**: 211
+
+#### Primary Root Cause Entity
+- **Entity**: IG02 (Layer: GATEWAY)
+- **Confidence Score**: 0.59 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-CPU_CPU_CPUSysTime(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 11:30:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for IG02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.09 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.46, Anomalies = 2, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy(2 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.43, Anomalies = 22, Attrs = Mysql-MySQL_3306_Binlog Cache Disk Use(1 times), Mysql-MySQL_3306_Binlog Cache Use(1 times), Mysql-MySQL_3306_Innodb Row Lock Waits(1 times), Mysql-MySQL_3306_Innodb buffer pool read ahead(1 times), Mysql-MySQL_3306_Innodb buffer pool read requests(1 times), Mysql-MySQL_3306_Innodb pages created(1 times), Mysql-MySQL_3306_Max trx rows locked(1 times), Mysql-MySQL_3306_Rows Read(1 times), Mysql-MySQL_3306_Sort Range(1 times), OSLinux-CPU_CPU-0_SingleCpuUtil(1 times), OSLinux-CPU_CPU-1_SingleCpuUtil(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-cmbc_admin_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSInodeUsedPercent(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKWrite(1 times), OSLinux-OSLinux_MEMORY_MEMORY_NoCacheMemPerc(1 times), redis-Redis_6379_Redis  (used_memory_peak)(1 times), OSLinux-CPU_CPU_CPULoad(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG02**: Redis02, MG02, dockerA2, MG01, Mysql02
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG02 (global highest confidence)
+2. Check IG02 for anomalies on attributes: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-CPU_CPU_CPUSysTime(1 times)
+3. Investigate starting at 2021-03-25 11:30:00 (analysis window: 2021-03-25 11:33:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

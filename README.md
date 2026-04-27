@@ -8,7 +8,7 @@
 
 ClusTopoRCA is a Clustering-Enhanced Topological Approach to LLM-Augmented microservice failure Root Cause Analysis. ClusTopoRCA follows a four-stage workflow for RCA in microservice systems. It first preprocesses multimodal anomaly data to ensure temporal and structural consistency across metrics, logs, and traces. It then applies temporal clustering to separate valid fault events from spurious noise. Next, a topology-aware scoring model ranks candidate entities according to their root-cause likelihood. Finally, an LLM-based synthesis stage converts the quantitative RCA results into structured and actionable diagnostic reports.
 
-<img src="./.asset/framework.png"/> 
+<img src="./.asset/framework.png"/>
 
 ## 1.Quick Start
 
@@ -17,6 +17,7 @@ ClusTopoRCA is a Clustering-Enhanced Topological Approach to LLM-Augmented micro
 ## 2.Installation
 
 ClusTopoRCA requires **Python >= 3.10**. It can be installed by running the following command:
+
 ```bash
 # [optional to create conda environment]
 # conda create -n openrca python=3.10
@@ -43,7 +44,7 @@ The directory structure of the data is:
 │       │   ├── log
 │       │   ├── metric
 │       │   └── trace
-│       └── ... 
+│       └── ...
 └── ...
 ```
 
@@ -59,16 +60,17 @@ cd OmniTransfer
 # following the readme.md to install
 pip install -r requirements.txt
 ```
-Note: path used in ClusTopoRCA with OmniTransfer needs to be reconfigured. 
+
+Note: path used in ClusTopoRCA with OmniTransfer needs to be reconfigured.
 
 ## 3.Reproduction
 
 To reproduce results in the paper, please first setup your API configurations before running OpenRCA's baselines. Taking OpenAI as an example, you can configure `rca/api_config.yaml` file as follows:
 
 ```yaml
-SOURCE:   "AI"
-MODEL:    "gpt-4o"
-API_KEY:  "sk-xxxxxxxxxxxxxx"
+SOURCE: "AI"
+MODEL: "gpt-4o"
+API_KEY: "sk-xxxxxxxxxxxxxx"
 ```
 
 Then, run the following commands for result reproduction:
@@ -90,15 +92,31 @@ You can also generate log file like those in experiments folder, and use two scr
 ## 4.some tips
 
 ### Method 1: Quickly load pkl
+
 ```bash
 python -c "import pickle; data=pickle.load(open('index.pkl','rb')); print(f'Number of records: {len(data)}')"
 ```
 
 ### Method 2: Quickly load faiss index
+
 ```bash
 python -c "import faiss; idx=faiss.read_index('index.faiss'); print(f'Number of records: {idx.ntotal}')"
 ```
 
+### hyperparameter min_samples
+
+```bash
+# camel/agents/tool_agents/local_script_tool_agent_5tools_fast.py
+# line 51, ->
+# min_samples: str = "3"
+```
+
 ## 5.copy framework
+
 1. cp -r /root/shared-nvme/work/agent/OpenRCA XXX
-2. replace "OmniTransfer_new" with a "OmniTransfer_new?", exclude files like "*.md, *.log, *.txt, *.json, *.ipynb"
+2. replace "OmniTransfer_new" with a "OmniTransfer_new?", exclude files like "_.md, _.log, _.txt, _.json, \*.ipynb"
+
+## 6.Omnitransfer
+
+We have released a runnable version of OmniTransfer in our environment for researchers to download and use.
+The repository link is https://github.com/grampus-whcz/OmniTransfer.

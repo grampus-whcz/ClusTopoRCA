@@ -1,0 +1,60 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_10 | Window: 2200_2230
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 320
+## Anomaly Breakdown
+- **Metric Container**: 246 anomalies
+- **Trace**: 1 anomalies
+- **Log**: 73 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-10 22:02:00 (T2) to 2021-03-10 22:06:00 (4 minutes)
+**Total Anomalies in Full Domain**: 320
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.72 (1.0 = highest)
+- **Anomaly Count**: 23
+- **Anomaly Attributes**: PatternID_21(1 times), PatternID_62(1 times), PatternID_3(1 times), PatternID_8(1 times), PatternID_12(1 times), PatternID_13(1 times), PatternID_25(1 times), PatternID_68(1 times), PatternID_73(1 times), PatternID_74(1 times), PatternID_77(1 times), PatternID_87(1 times), PatternID_89(1 times), PatternID_94(1 times), PatternID_98(1 times), PatternID_110(1 times), PatternID_114(1 times), PatternID_118(1 times), PatternID_154(1 times), PatternID_158(1 times), PatternID_160(1 times), PatternID_31(1 times), PatternID_61(1 times)
+- **Earliest Anomaly Time**: 2021-03-10 22:02:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 0.50 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Redis01** (Layer: CACHE): Score = 0.58, Anomalies = 11, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKAvgServ(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKAvgServ(1 times), OSLinux-OSLinux_MEMORY_MEMORY_MEMUsedMemPerc(1 times), OSLinux-OSLinux_NETWORK_ens160_NETPacketsIn(1 times), OSLinux-OSLinux_SYSTEM_SYSTEM_Check-Hostname(1 times), redis-Redis_6379_Redis  (keyspace_misses)(1 times), redis-Redis_6379_Redis  (rdb_changes_since_last_save)(1 times), redis-Redis_6379_Redis  (total_connections_received)(1 times), redis-Redis_6379_Redis  (uptime_in_seconds)(1 times), redis-Redis_6379_Redis  (used_memory_peak)(1 times), redis-Redis_6379_Redis  (used_memory_rss)(1 times)
+- **Mysql01** (Layer: DATABASE): Score = 0.47, Anomalies = 3, Attrs = Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times)
+- **Mysql02** (Layer: DATABASE): Score = 0.47, Anomalies = 3, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA2, Mysql02, Redis02, Tomcat02, MG01
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: PatternID_21(1 times), PatternID_62(1 times), PatternID_3(1 times), PatternID_8(1 times), PatternID_12(1 times), PatternID_13(1 times), PatternID_25(1 times), PatternID_68(1 times), PatternID_73(1 times), PatternID_74(1 times), PatternID_77(1 times), PatternID_87(1 times), PatternID_89(1 times), PatternID_94(1 times), PatternID_98(1 times), PatternID_110(1 times), PatternID_114(1 times), PatternID_118(1 times), PatternID_154(1 times), PatternID_158(1 times), PatternID_160(1 times), PatternID_31(1 times), PatternID_61(1 times)
+3. Investigate starting at 2021-03-10 22:02:00 (analysis window: 2021-03-10 22:02:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

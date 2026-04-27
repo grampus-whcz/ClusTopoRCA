@@ -1,0 +1,60 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_25 | Window: 0730_0800
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 182
+## Anomaly Breakdown
+- **Metric App**: 30 anomalies
+- **Metric Container**: 55 anomalies
+- **Trace**: 28 anomalies
+- **Log**: 69 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-25 07:32:00 (T2) to 2021-03-25 07:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 182
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.57 (1.0 = highest)
+- **Anomaly Count**: 32
+- **Anomaly Attributes**: PatternID_46(1 times), PatternID_49(1 times), PatternID_135(1 times), PatternID_172(1 times), PatternID_4(1 times), PatternID_5(1 times), PatternID_6(1 times), PatternID_21(1 times), PatternID_26(1 times), PatternID_30(1 times), PatternID_44(1 times), PatternID_45(1 times), PatternID_48(1 times), PatternID_55(1 times), PatternID_59(1 times), PatternID_64(1 times), PatternID_65(1 times), PatternID_72(1 times), PatternID_78(1 times), PatternID_84(1 times), PatternID_85(1 times), PatternID_103(1 times), PatternID_107(1 times), PatternID_108(1 times), PatternID_121(1 times), PatternID_122(1 times), PatternID_127(1 times), PatternID_129(1 times), PatternID_137(1 times), PatternID_157(1 times), PatternID_161(1 times), PatternID_173(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 07:33:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 0.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql01** (Layer: DATABASE): Score = 0.46, Anomalies = 3, Attrs = Mysql-MySQL_3306_Innodb data pending writes(1 times), OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+- **Tomcat01** (Layer: BUSINESS): Score = 0.34, Anomalies = 2, Attrs = OSLinux-OSLinux_NETWORK_NETWORK_TCP-FIN-WAIT(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: dockerA1, MG01, Tomcat03, Mysql02, Redis02
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: PatternID_46(1 times), PatternID_49(1 times), PatternID_135(1 times), PatternID_172(1 times), PatternID_4(1 times), PatternID_5(1 times), PatternID_6(1 times), PatternID_21(1 times), PatternID_26(1 times), PatternID_30(1 times), PatternID_44(1 times), PatternID_45(1 times), PatternID_48(1 times), PatternID_55(1 times), PatternID_59(1 times), PatternID_64(1 times), PatternID_65(1 times), PatternID_72(1 times), PatternID_78(1 times), PatternID_84(1 times), PatternID_85(1 times), PatternID_103(1 times), PatternID_107(1 times), PatternID_108(1 times), PatternID_121(1 times), PatternID_122(1 times), PatternID_127(1 times), PatternID_129(1 times), PatternID_137(1 times), PatternID_157(1 times), PatternID_161(1 times), PatternID_173(1 times)
+3. Investigate starting at 2021-03-25 07:33:00 (analysis window: 2021-03-25 07:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

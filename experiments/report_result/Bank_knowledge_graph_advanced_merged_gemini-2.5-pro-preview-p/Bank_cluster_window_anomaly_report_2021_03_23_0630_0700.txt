@@ -1,0 +1,60 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_23 | Window: 0630_0700
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 302
+## Anomaly Breakdown
+- **Metric App**: 6 anomalies
+- **Metric Container**: 251 anomalies
+- **Trace**: 11 anomalies
+- **Log**: 34 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-23 06:32:00 (T2) to 2021-03-23 06:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 302
+
+#### Primary Root Cause Entity
+- **Entity**: MG02 (Layer: GOVERNANCE)
+- **Confidence Score**: 0.68 (1.0 = highest)
+- **Anomaly Count**: 4
+- **Anomaly Attributes**: JVM-Memory_7779_JVM_Memory_NoHeapMemoryUsed(4 times)
+- **Earliest Anomaly Time**: 2021-03-23 06:30:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for MG02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.36 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql02** (Layer: DATABASE): Score = 0.58, Anomalies = 11, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKAvgServ(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKRead(1 times), Mysql-MySQL_3306_Innodb data pending writes(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSUsedSpace(1 times), OSLinux-NTP_197.30.1.67_NtpServerTimeOffset(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSInodeUsedPercent(1 times), OSLinux-OSLinux_FILESYSTEM_-usr-openv_FSAvailableSpace(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKBps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKAvgServ(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdc_DSKWrite(1 times), OSLinux-OSLinux_SYSTEM_SYSTEM_Check-Hostname(1 times)
+- **IG01** (Layer: GATEWAY): Score = 0.47, Anomalies = 10, Attrs = PatternID_11(1 times), PatternID_16(1 times), PatternID_51(1 times), PatternID_63(1 times), PatternID_90(1 times), PatternID_124(1 times), PatternID_147(1 times), PatternID_148(1 times), PatternID_159(1 times), PatternID_174(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by MG02**: Tomcat02, Mysql02, MG01, Redis02, dockerA2
+
+#### Layer-wise Impact Analysis
+- **GOVERNANCE Layer**: 1 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of MG02 (global highest confidence)
+2. Check MG02 for anomalies on attributes: JVM-Memory_7779_JVM_Memory_NoHeapMemoryUsed(4 times)
+3. Investigate starting at 2021-03-23 06:30:00 (analysis window: 2021-03-23 06:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check GOVERNANCE layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

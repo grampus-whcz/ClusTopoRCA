@@ -1,0 +1,63 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 0330_0400
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 294
+## Anomaly Breakdown
+- **Metric App**: 15 anomalies
+- **Metric Container**: 103 anomalies
+- **Trace**: 126 anomalies
+- **Log**: 50 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 03:31:00 (T2) to 2021-03-07 03:35:00 (4 minutes)
+**Total Anomalies in Full Domain**: 294
+
+#### Primary Root Cause Entity
+- **Entity**: dockerB1 (Layer: CONTAINER)
+- **Confidence Score**: 0.78 (1.0 = highest)
+- **Anomaly Count**: 6
+- **Anomaly Attributes**: duration(6 times)
+- **Earliest Anomaly Time**: 2021-03-07 03:30:58
+- **Topology Impact**: 8 downstream entities affected
+
+#### Score Breakdown for dockerB1
+- **Time Score**: 0.68 (earlier anomaly = higher score)
+- **Topology Score**: 0.70 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **MG02** (Layer: GOVERNANCE): Score = 0.76, Anomalies = 6, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(1 times), duration(5 times)
+- **MG01** (Layer: GOVERNANCE): Score = 0.76, Anomalies = 6, Attrs = duration(6 times)
+- **dockerA2** (Layer: CONTAINER): Score = 0.70, Anomalies = 4, Attrs = duration(4 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by dockerB1**: Redis02, MG01, Mysql02, dockerA1, dockerA2
+
+#### Layer-wise Impact Analysis
+- **CONTAINER Layer**: 4 entities affected (Weight: 0.7)
+- **SERVICE_TEST Layer**: 4 entities affected (Weight: 0.5)
+- **BUSINESS Layer**: 3 entities affected (Weight: 0.9)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of dockerB1 (global highest confidence)
+2. Check dockerB1 for anomalies on attributes: duration(6 times)
+3. Investigate starting at 2021-03-07 03:30:58 (analysis window: 2021-03-07 03:31:00)
+4. Verify cascading failures in downstream dependencies
+5. Check CONTAINER layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

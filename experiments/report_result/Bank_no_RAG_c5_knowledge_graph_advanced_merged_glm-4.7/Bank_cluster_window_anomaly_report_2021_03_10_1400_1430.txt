@@ -1,0 +1,112 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_10 | Window: 1400_1430
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 2 anomaly clusters (DBSCAN: eps=60s, min_samples=5)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2021-03-10 14:00:00 CST → 2021-03-10 14:03:00 CST (Duration: 180 seconds)
+**Total Anomalies**: 8
+**Key Anomaly Patterns**: Error/Failure
+
+## Anomaly Breakdown
+- **Metric Container**: 6 anomalies
+- **Log**: 2 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1
+**Analysis Window**: 2021-03-10 14:02:00 (T2) to 2021-03-10 14:06:00 (3 minutes)
+**Total Anomalies**: 8
+
+#### Primary Root Cause Entity
+- **Entity**: Mysql01 (Layer: DATABASE)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 3
+- **Anomaly Attributes**: Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), Mysql-MySQL_3306_Innodb data fsyncs(1 times)
+- **Earliest Anomaly Time**: 2021-03-10 14:00:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for Mysql01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG01** (Layer: GATEWAY): Score = 0.47, Anomalies = 2, Attrs = PatternID_100(1 times), PatternID_140(1 times)
+
+#### Dependency Impact Path
+- **Mysql01 not found in microservice topology graph**
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+
+#### RCA Recommendations
+1. Prioritize investigation of Mysql01 (highest confidence score)
+2. Check Mysql01 for 3 anomalies on attributes: Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), Mysql-MySQL_3306_Innodb data fsyncs(1 times)
+3. Investigate anomalies starting at 2021-03-10 14:00:00 for Mysql01 (analysis window starts at 2021-03-10 14:02:00 (T2))
+4. Verify downstream dependencies of Mysql01 for cascading failures
+5. Check DATABASE layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+# Cluster #2
+**Time Span**: 2021-03-10 14:04:59 CST → 2021-03-10 14:30:00 CST (Duration: 1501 seconds)
+**Total Anomalies**: 1066
+**Key Anomaly Patterns**: Error/Failure
+
+## Anomaly Breakdown
+- **Metric App**: 39 anomalies
+- **Metric Container**: 896 anomalies
+- **Trace**: 115 anomalies
+- **Log**: 16 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #2
+**Analysis Window**: 2021-03-10 14:05:59 (T2) to 2021-03-10 14:09:59 (3 minutes)
+**Total Anomalies**: 1066
+
+#### Primary Root Cause Entity
+- **Entity**: UNKNOWN_PARENT (Layer: UNKNOWN)
+- **Confidence Score**: 1.00 (1.0 = highest)
+- **Anomaly Count**: 32
+- **Anomaly Attributes**: duration(21 times), frequency(11 times)
+- **Earliest Anomaly Time**: 2021-03-10 14:04:59
+- **Topology Impact**: 13 downstream entities affected
+
+#### Score Breakdown for UNKNOWN_PARENT
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 1.00 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG01** (Layer: GATEWAY): Score = 0.60, Anomalies = 8, Attrs = PatternID_36(1 times), PatternID_57(1 times), PatternID_68(1 times), PatternID_69(1 times), PatternID_141(1 times), PatternID_165(1 times), duration(2 times)
+- **dockerB1** (Layer: CONTAINER): Score = 0.54, Anomalies = 3, Attrs = duration(1 times), frequency(2 times)
+- **IG02** (Layer: GATEWAY): Score = 0.54, Anomalies = 2, Attrs = duration(2 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by UNKNOWN_PARENT**: Tomcat03, Mysql02, IG02, dockerA2, Tomcat02
+
+#### Layer-wise Impact Analysis
+- **SERVICE_TEST Layer**: 5 entities affected (Weight: 0.5)
+- **CONTAINER Layer**: 4 entities affected (Weight: 0.7)
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **UNKNOWN Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of UNKNOWN_PARENT (highest confidence score)
+2. Check UNKNOWN_PARENT for 32.0 anomalies on attributes: duration(21 times), frequency(11 times)
+3. Investigate anomalies starting at 2021-03-10 14:04:59 for UNKNOWN_PARENT (analysis window starts at 2021-03-10 14:05:59 (T2))
+4. Verify downstream dependencies of UNKNOWN_PARENT for cascading failures
+5. Check UNKNOWN layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

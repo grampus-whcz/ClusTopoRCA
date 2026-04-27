@@ -1,0 +1,59 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_25 | Window: 1530_1600
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 674
+## Anomaly Breakdown
+- **Metric App**: 11 anomalies
+- **Metric Container**: 585 anomalies
+- **Trace**: 7 anomalies
+- **Log**: 71 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-25 15:31:59 (T2) to 2021-03-25 15:35:59 (4 minutes)
+**Total Anomalies in Full Domain**: 674
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.87 (1.0 = highest)
+- **Anomaly Count**: 39
+- **Anomaly Attributes**: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(1 times), JVM-Memory_7778_JVM_Memory_HeapMemoryUsage(1 times), PatternID_1(1 times), PatternID_16(1 times), PatternID_17(1 times), PatternID_21(1 times), PatternID_31(1 times), PatternID_38(1 times), PatternID_43(1 times), PatternID_45(1 times), PatternID_51(1 times), PatternID_53(1 times), PatternID_60(1 times), PatternID_61(1 times), PatternID_65(1 times), PatternID_71(2 times), PatternID_76(1 times), PatternID_80(1 times), PatternID_98(2 times), PatternID_102(1 times), PatternID_121(1 times), PatternID_122(1 times), PatternID_148(1 times), PatternID_159(1 times), PatternID_160(1 times), PatternID_162(1 times), PatternID_163(1 times), PatternID_168(1 times), PatternID_174(1 times), OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT(1 times), PatternID_11(1 times), PatternID_52(1 times), PatternID_82(1 times), PatternID_88(1 times), PatternID_125(1 times), PatternID_131(1 times), PatternID_153(1 times)
+- **Earliest Anomaly Time**: 2021-03-25 15:30:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.67 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Mysql02** (Layer: DATABASE): Score = 0.58, Anomalies = 19, Attrs = Mysql-MySQL_3306_Bytes Received(1 times), Mysql-MySQL_3306_ThreadsRunning(1 times), OSLinux-CPU_CPU-0_SingleCpuUtil(1 times), OSLinux-CPU_CPU_CPUSysTime(1 times), OSLinux-CPU_CPU_CPUWio(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKPercentBusy(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times), Mysql-MySQL_3306_Handler Read First(1 times), Mysql-MySQL_3306_Innodb buffer pool reads(1 times), Mysql-MySQL_3306_Innodb os log fsyncs(1 times), Mysql-MySQL_3306_Key Reads(1 times), Mysql-MySQL_3306_MySQL  Queries(1 times), Mysql-MySQL_3306_Table Locks Immediate(1 times), OSLinux-OSLinux_FILESYSTEM_-mysql_FSAvailableSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqlbak_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-mysqldata_FSUsedSpace(1 times), OSLinux-OSLinux_FILESYSTEM_-tmp_FSAvailableSpace(1 times), OSLinux-OSLinux_FILE_-tmp-zabbix_agentd.log_FileSizeMB(1 times), OSLinux-OSLinux_MEMORY_MEMORY_NoCacheMemPerc(1 times)
+- **IG02** (Layer: GATEWAY): Score = 0.29, Anomalies = 3, Attrs = JVM-Memory_7778_JVM_Memory_HeapMemoryUsed(1 times), OSLinux-CPU_CPU_CPUSysTime(1 times), JVM-Memory_7778_JVM_Memory_HeapMemoryUsage(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: MG02, Mysql02, dockerA2, MG01, Tomcat02
+
+#### Layer-wise Impact Analysis
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKTps(1 times), JVM-Memory_7778_JVM_Memory_HeapMemoryUsage(1 times), PatternID_1(1 times), PatternID_16(1 times), PatternID_17(1 times), PatternID_21(1 times), PatternID_31(1 times), PatternID_38(1 times), PatternID_43(1 times), PatternID_45(1 times), PatternID_51(1 times), PatternID_53(1 times), PatternID_60(1 times), PatternID_61(1 times), PatternID_65(1 times), PatternID_71(2 times), PatternID_76(1 times), PatternID_80(1 times), PatternID_98(2 times), PatternID_102(1 times), PatternID_121(1 times), PatternID_122(1 times), PatternID_148(1 times), PatternID_159(1 times), PatternID_160(1 times), PatternID_162(1 times), PatternID_163(1 times), PatternID_168(1 times), PatternID_174(1 times), OSLinux-OSLinux_NETWORK_NETWORK_TCP-CLOSE-WAIT(1 times), PatternID_11(1 times), PatternID_52(1 times), PatternID_82(1 times), PatternID_88(1 times), PatternID_125(1 times), PatternID_131(1 times), PatternID_153(1 times)
+3. Investigate starting at 2021-03-25 15:30:00 (analysis window: 2021-03-25 15:31:59)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

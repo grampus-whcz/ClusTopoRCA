@@ -1,0 +1,61 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 1230_1300
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 240
+## Anomaly Breakdown
+- **Metric App**: 1 anomalies
+- **Metric Container**: 155 anomalies
+- **Trace**: 16 anomalies
+- **Log**: 68 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 12:32:00 (T2) to 2021-03-07 12:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 240
+
+#### Primary Root Cause Entity
+- **Entity**: Mysql02 (Layer: DATABASE)
+- **Confidence Score**: 0.76 (1.0 = highest)
+- **Anomaly Count**: 5
+- **Anomaly Attributes**: Mysql-MySQL_3306_LongestTrxActiveTime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times)
+- **Earliest Anomaly Time**: 2021-03-07 12:30:00
+- **Topology Impact**: 1 downstream entities affected
+
+#### Score Breakdown for Mysql02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.39 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **IG01** (Layer: GATEWAY): Score = 0.66, Anomalies = 4, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), PatternID_49(1 times), PatternID_90(1 times), PatternID_101(1 times)
+- **Mysql01** (Layer: DATABASE): Score = 0.61, Anomalies = 3, Attrs = Mysql-MySQL_3306_Innodb pages created(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times), Mysql-MySQL_3306_Innodb data fsyncs(1 times)
+- **Tomcat04** (Layer: BUSINESS): Score = 0.25, Anomalies = 2, Attrs = OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times)
+
+#### Dependency Impact Path
+- **Mysql02 has no direct downstream dependencies**
+
+#### Layer-wise Impact Analysis
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **BUSINESS Layer**: 1 entities affected (Weight: 0.9)
+
+#### RCA Recommendations
+1. Prioritize investigation of Mysql02 (global highest confidence)
+2. Check Mysql02 for anomalies on attributes: Mysql-MySQL_3306_LongestTrxActiveTime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKReadWrite(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKWrite(1 times)
+3. Investigate starting at 2021-03-07 12:30:00 (analysis window: 2021-03-07 12:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check DATABASE layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

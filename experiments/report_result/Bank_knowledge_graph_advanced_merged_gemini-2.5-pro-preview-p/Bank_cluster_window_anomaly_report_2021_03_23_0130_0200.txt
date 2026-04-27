@@ -1,0 +1,64 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_23 | Window: 0130_0200
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 819
+## Anomaly Breakdown
+- **Metric App**: 37 anomalies
+- **Metric Container**: 691 anomalies
+- **Trace**: 5 anomalies
+- **Log**: 86 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-23 01:32:00 (T2) to 2021-03-23 01:36:00 (4 minutes)
+**Total Anomalies in Full Domain**: 819
+
+#### Primary Root Cause Entity
+- **Entity**: apache02 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.67 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKBps(2 times)
+- **Earliest Anomaly Time**: 2021-03-23 01:30:00
+- **Topology Impact**: 5 downstream entities affected
+
+#### Score Breakdown for apache02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.89 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.04 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **MG02** (Layer: GOVERNANCE): Score = 0.57, Anomalies = 2, Attrs = OSLinux-CPU_CPU-3_SingleCpuidle(2 times)
+- **IG01** (Layer: GATEWAY): Score = 0.55, Anomalies = 48, Attrs = PatternID_0(1 times), PatternID_2(1 times), PatternID_20(1 times), PatternID_22(1 times), PatternID_23(1 times), PatternID_26(1 times), PatternID_27(1 times), PatternID_28(1 times), PatternID_30(1 times), PatternID_33(1 times), PatternID_34(1 times), PatternID_35(1 times), PatternID_40(1 times), PatternID_41(1 times), PatternID_49(1 times), PatternID_50(1 times), PatternID_56(1 times), PatternID_59(1 times), PatternID_63(1 times), PatternID_66(1 times), PatternID_73(1 times), PatternID_77(1 times), PatternID_80(1 times), PatternID_87(1 times), PatternID_89(1 times), PatternID_93(1 times), PatternID_95(1 times), PatternID_96(1 times), PatternID_97(1 times), PatternID_99(1 times), PatternID_102(1 times), PatternID_105(1 times), PatternID_106(1 times), PatternID_111(1 times), PatternID_117(1 times), PatternID_121(1 times), PatternID_123(1 times), PatternID_125(1 times), PatternID_134(1 times), PatternID_135(1 times), PatternID_142(1 times), PatternID_143(1 times), PatternID_149(1 times), PatternID_152(1 times), PatternID_155(1 times), PatternID_156(1 times), PatternID_158(1 times), PatternID_170(1 times)
+- **Tomcat01** (Layer: BUSINESS): Score = 0.46, Anomalies = 4, Attrs = OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-CPU_CPU-2_SingleCpuidle(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache02**: IG02, dockerA2, IG01, MG01, dockerB2
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **ENTRY_POINT Layer**: 2 entities affected (Weight: 0.5)
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **GOVERNANCE Layer**: 1 entities affected (Weight: 0.8)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **SERVICE_TEST Layer**: 1 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache02 (global highest confidence)
+2. Check apache02 for anomalies on attributes: OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKBps(2 times)
+3. Investigate starting at 2021-03-23 01:30:00 (analysis window: 2021-03-23 01:32:00)
+4. Verify cascading failures in downstream dependencies
+5. Check ENTRY_POINT layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

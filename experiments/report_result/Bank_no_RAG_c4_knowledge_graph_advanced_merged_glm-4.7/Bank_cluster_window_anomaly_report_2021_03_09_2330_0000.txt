@@ -1,0 +1,69 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_09 | Window: 2330_0000
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Found 1 anomaly clusters (DBSCAN: eps=60s, min_samples=4)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Cluster #1
+**Time Span**: 2021-03-09 23:30:00 CST → 2021-03-09 23:59:00 CST (Duration: 1740 seconds)
+**Total Anomalies**: 1106
+**Key Anomaly Patterns**: Error/Failure, Timeout, GC
+
+## Anomaly Breakdown
+- **Metric App**: 61 anomalies
+- **Metric Container**: 943 anomalies
+- **Trace**: 20 anomalies
+- **Log**: 82 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Root Cause Analysis Report - Cluster #1
+**Analysis Window**: 2021-03-09 23:32:00 (T2) to 2021-03-09 23:36:00 (3 minutes)
+**Total Anomalies**: 1106
+
+#### Primary Root Cause Entity
+- **Entity**: apache02 (Layer: ENTRY_POINT)
+- **Confidence Score**: 0.63 (1.0 = highest)
+- **Anomaly Count**: 10
+- **Anomaly Attributes**: OSLinux-OSLinux_FILESYSTEM_-apache_FSCapacity(3 times), OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(3 times), OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-OSLinux_FILESYSTEM_-home_FSUsedSpace(2 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+- **Earliest Anomaly Time**: 2021-03-09 23:30:00
+- **Topology Impact**: 12 downstream entities affected
+
+#### Score Breakdown for apache02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.80 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.04 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **apache01** (Layer: ENTRY_POINT): Score = 0.63, Anomalies = 7, Attrs = OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(3 times), OSLinux-OSLinux_FILESYSTEM_-home_FSInodeUsedPercent(3 times), OSLinux-OSLinux_FILESYSTEM_-apache_FSInodeUsedPercent(1 times)
+- **IG01** (Layer: GATEWAY): Score = 0.53, Anomalies = 30, Attrs = OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(2 times), OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(3 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity(3 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace(2 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSInodeUsedPercent(1 times), PatternID_40(1 times), PatternID_43(1 times), PatternID_47(1 times), PatternID_53(1 times), PatternID_79(1 times), PatternID_82(1 times), PatternID_88(1 times), PatternID_97(1 times), PatternID_98(1 times), PatternID_118(1 times), PatternID_131(1 times), PatternID_134(1 times), PatternID_145(1 times), PatternID_162(1 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), frequency(4 times)
+- **Tomcat04** (Layer: BUSINESS): Score = 0.53, Anomalies = 12, Attrs = OSLinux-OSLinux_FILESYSTEM_-tomcat_FSUsedSpace(3 times), OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSCapacity(1 times), frequency(6 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by apache02**: IG01, dockerB1, dockerA2, Tomcat04, Tomcat03
+
+#### Layer-wise Impact Analysis
+- **SERVICE_TEST Layer**: 11 entities affected (Weight: 0.5)
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **ENTRY_POINT Layer**: 2 entities affected (Weight: 0.5)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 2 entities affected (Weight: 0.95)
+- **CONTAINER Layer**: 2 entities affected (Weight: 0.7)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+
+#### RCA Recommendations
+1. Prioritize investigation of apache02 (highest confidence score)
+2. Check apache02 for 10.0 anomalies on attributes: OSLinux-OSLinux_FILESYSTEM_-apache_FSCapacity(3 times), OSLinux-OSLinux_FILESYSTEM_-home_FSCapacity(3 times), OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-OSLinux_FILESYSTEM_-home_FSUsedSpace(2 times), OSLinux-CPU_CPU-3_SingleCpuidle(1 times)
+3. Investigate anomalies starting at 2021-03-09 23:30:00 for apache02 (analysis window starts at 2021-03-09 23:32:00 (T2))
+4. Verify downstream dependencies of apache02 for cascading failures
+5. Check ENTRY_POINT layer infrastructure (network, resources, configuration)
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

@@ -1,0 +1,64 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 0300_0330
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 813
+## Anomaly Breakdown
+- **Metric App**: 19 anomalies
+- **Metric Container**: 530 anomalies
+- **Trace**: 209 anomalies
+- **Log**: 55 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 03:01:58 (T2) to 2021-03-07 03:05:58 (4 minutes)
+**Total Anomalies in Full Domain**: 813
+
+#### Primary Root Cause Entity
+- **Entity**: IG01 (Layer: GATEWAY)
+- **Confidence Score**: 0.85 (1.0 = highest)
+- **Anomaly Count**: 10
+- **Anomaly Attributes**: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(3 times), PatternID_66(1 times), frequency(6 times)
+- **Earliest Anomaly Time**: 2021-03-07 03:00:00
+- **Topology Impact**: 11 downstream entities affected
+
+#### Score Breakdown for IG01
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.84 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 0.71 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **MG02** (Layer: GOVERNANCE): Score = 0.72, Anomalies = 14, Attrs = OSLinux-CPU_CPU-0_SingleCpuidle(1 times), OSLinux-CPU_CPU-1_SingleCpuidle(1 times), OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(1 times), duration(1 times), frequency(10 times)
+- **MG01** (Layer: GOVERNANCE): Score = 0.65, Anomalies = 11, Attrs = OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(1 times), frequency(10 times)
+- **Tomcat01** (Layer: BUSINESS): Score = 0.65, Anomalies = 9, Attrs = OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(2 times), OSLinux-CPU_CPU-0_SingleCpuidle(1 times), frequency(6 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by IG01**: MG02, dockerA2, dockerA1, Tomcat04, Redis02
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **CONTAINER Layer**: 4 entities affected (Weight: 0.7)
+- **GATEWAY Layer**: 2 entities affected (Weight: 1.0)
+- **GOVERNANCE Layer**: 2 entities affected (Weight: 0.8)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+
+#### RCA Recommendations
+1. Prioritize investigation of IG01 (global highest confidence)
+2. Check IG01 for anomalies on attributes: OSLinux-OSLinux_FILESYSTEM_-_FSCapacity(3 times), PatternID_66(1 times), frequency(6 times)
+3. Investigate starting at 2021-03-07 03:00:00 (analysis window: 2021-03-07 03:01:58)
+4. Verify cascading failures in downstream dependencies
+5. Check GATEWAY layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

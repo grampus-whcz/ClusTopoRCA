@@ -1,0 +1,57 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_07 | Window: 1830_1900
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 371
+## Anomaly Breakdown
+- **Metric App**: 10 anomalies
+- **Metric Container**: 306 anomalies
+- **Trace**: 11 anomalies
+- **Log**: 44 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-07 01:40:00 (T2) to 2021-03-07 01:44:00 (4 minutes)
+**Total Anomalies in Full Domain**: 371
+
+#### Primary Root Cause Entity
+- **Entity**: ServiceTest2 (Layer: SERVICE_TEST)
+- **Confidence Score**: 0.73 (1.0 = highest)
+- **Anomaly Count**: 2
+- **Anomaly Attributes**: sr(2 times)
+- **Earliest Anomaly Time**: 2021-03-07 01:35:00
+- **Topology Impact**: 0 downstream entities affected
+
+#### Score Breakdown for ServiceTest2
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.33 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **ServiceTest4** (Layer: SERVICE_TEST): Score = 0.43, Anomalies = 2, Attrs = mrt(2 times)
+
+#### Dependency Impact Path
+- **ServiceTest2 not found in topology**
+
+#### Layer-wise Impact Analysis
+- **SERVICE_TEST Layer**: 2 entities affected (Weight: 0.5)
+
+#### RCA Recommendations
+1. Prioritize investigation of ServiceTest2 (global highest confidence)
+2. Check ServiceTest2 for anomalies on attributes: sr(2 times)
+3. Investigate starting at 2021-03-07 01:35:00 (analysis window: 2021-03-07 01:40:00)
+4. Verify cascading failures in downstream dependencies
+5. Check SERVICE_TEST layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)

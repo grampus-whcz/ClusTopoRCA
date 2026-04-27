@@ -1,0 +1,62 @@
+🔍 Anomaly Clustering and Root Cause Analysis Report
+📅 Date: 2021_03_04 | Window: 0100_0130
+⚙️  Analysis Start Timestamp Index: T2
+================================================================================
+
+📊 Analysis Mode: Full Time Domain (No Clustering)
+📈 Analysis Type: Dependency-based Root Cause Analysis (Topology + Time + Count)
+================================================================================
+
+# Global Anomaly Summary
+**Total Unique Anomalies**: 231
+## Anomaly Breakdown
+- **Metric App**: 17 anomalies
+- **Metric Container**: 128 anomalies
+- **Trace**: 2 anomalies
+- **Log**: 84 anomalies
+
+## Root Cause Analysis (Dependency-Based)
+### Global Root Cause Analysis Report (Full Time Domain)
+**Analysis Window**: 2021-03-04 01:02:00 (T2) to 2021-03-04 01:06:00 (4 minutes)
+**Total Anomalies in Full Domain**: 231
+
+#### Primary Root Cause Entity
+- **Entity**: Tomcat02 (Layer: BUSINESS)
+- **Confidence Score**: 0.82 (1.0 = highest)
+- **Anomaly Count**: 13
+- **Anomaly Attributes**: OSLinux-CPU_CPU_CPUUserTime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(2 times)
+- **Earliest Anomaly Time**: 2021-03-04 01:00:00
+- **Topology Impact**: 2 downstream entities affected
+
+#### Score Breakdown for Tomcat02
+- **Time Score**: 1.00 (earlier anomaly = higher score)
+- **Topology Score**: 0.56 (based on in-degree/out-degree/reachability)
+- **Anomaly Count Score**: 1.00 (more anomalies = higher score)
+
+#### Secondary Root Cause Candidates (Top 3)
+- **Tomcat01** (Layer: BUSINESS): Score = 0.59, Anomalies = 7, Attrs = OSLinux-CPU_CPU_CPUSysTime(1 times), OSLinux-CPU_CPU_CPUUserTime(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(2 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times)
+- **Tomcat04** (Layer: BUSINESS): Score = 0.55, Anomalies = 5, Attrs = OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times)
+- **Redis02** (Layer: CACHE): Score = 0.51, Anomalies = 2, Attrs = OSLinux-OSLinux_MEMORY_MEMORY_MEMTotalMem(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKTps(1 times)
+
+#### Dependency Impact Path
+- **Downstream Entities Affected by Tomcat02**: MG01, Redis02, Mysql02, MG02, dockerA2
+
+#### Layer-wise Impact Analysis
+- **BUSINESS Layer**: 4 entities affected (Weight: 0.9)
+- **CACHE Layer**: 1 entities affected (Weight: 0.6)
+- **GATEWAY Layer**: 1 entities affected (Weight: 1.0)
+- **DATABASE Layer**: 1 entities affected (Weight: 0.95)
+
+#### RCA Recommendations
+1. Prioritize investigation of Tomcat02 (global highest confidence)
+2. Check Tomcat02 for anomalies on attributes: OSLinux-CPU_CPU_CPUUserTime(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRTps(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sda_DSKRead(3 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRTps(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKRead(1 times), OSLinux-CPU_CPU_CPUCpuUtil(1 times), OSLinux-OSLinux_LOCALDISK_LOCALDISK-sdb_DSKReadWrite(1 times), OSLinux-OSLinux_FILESYSTEM_-tomcat_FSAvailableSpace(2 times)
+3. Investigate starting at 2021-03-04 01:00:00 (analysis window: 2021-03-04 01:02:00)
+4. Verify cascading failures in downstream dependencies
+5. Check BUSINESS layer infrastructure & configuration
+--------------------------------------------------------------------------------
+
+### Analysis Metadata
+- Time Zone: CST (UTC+8)
+- RCA Methodology: Weighted scoring (Time: 40%, Topology: 30%, Anomaly Count: 30%)
+- Analysis Start Timestamp Index: T2 (0=T0,1=T1,2=T2)
+- Topology Graph: Bank microservice call chain (apache → IG → Tomcat → MG → docker → mysql/redis)
