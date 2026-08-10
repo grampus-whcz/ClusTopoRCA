@@ -1,6 +1,6 @@
-from rca.baseline.rag_tool_multicandidate_agent.controller import control_loop
+from rca.baseline.rag_tool_multicandidate_agent.controller import control_loop # just clustering
 # from rca.baseline.rag_tool_multicandidate_agent.controller_rag import control_loop
-# from rca.baseline.rag_tool_multicandidate_agent.controller_graph import control_loop
+# from rca.baseline.rag_tool_multicandidate_agent.controller_graph import control_loop # ClusTopoRCA
 
 class RCA_Agent:
     def __init__(self, agent_prompt, basic_prompt) -> None:
