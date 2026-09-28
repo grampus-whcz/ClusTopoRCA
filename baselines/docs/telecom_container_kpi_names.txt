@@ -1,0 +1,9 @@
+container_cpu_used
+container_fgc
+container_fgct
+container_mem_used
+container_session_used
+container_thread_idle
+container_thread_running
+container_thread_total
+container_thread_used_pct

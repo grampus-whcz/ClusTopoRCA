@@ -130,17 +130,27 @@ def main(args, uid, dataset):
                 logger.info("=============================")
                 logger.info(f"groundtruth: {''.join([f'{col}: {gt_data.iloc[idx][col]}' for col in gt_data.columns if col != 'description'])}")
                 logger.info(f"Scoring Points: {scoring_points}")
-                for key, (passed_criteria, failed_criteria, score) in results.items():
-                    logger.info(f"Candidate {key}: Passed Criteria: {passed_criteria}")
-                    logger.info(f"Candidate {key}: Failed Criteria: {failed_criteria}")
-                    logger.info(f"Candidate {key}: Score: {score}")
-                    best_score = max(best_score, score)
+                if not results:
+                    # tolerate empty predictions (e.g. tool failure): score 0 and continue
+                    logger.warning(f"Empty prediction for idx {idx}; scoring as 0.")
+                    eval_df.loc[eval_df.index[-1], "passed"] = ""
+                    eval_df.loc[eval_df.index[-1], "failed"] = "empty prediction"
+                    eval_df.loc[eval_df.index[-1], "score"] = 0.0
+                    eval_df.to_csv(eval_file, 
+                                   index=False)
+                    best_score = 0.0
+                else:
+                    for key, (passed_criteria, failed_criteria, score) in results.items():
+                        logger.info(f"Candidate {key}: Passed Criteria: {passed_criteria}")
+                        logger.info(f"Candidate {key}: Failed Criteria: {failed_criteria}")
+                        logger.info(f"Candidate {key}: Score: {score}")
+                        best_score = max(best_score, score)
 
-                eval_df.loc[eval_df.index[-1], "passed"] = '\n'.join(passed_criteria)
-                eval_df.loc[eval_df.index[-1], "failed"] = '\n'.join(failed_criteria)
-                eval_df.loc[eval_df.index[-1], "score"] = score
-                eval_df.to_csv(eval_file, 
-                               index=False)
+                    eval_df.loc[eval_df.index[-1], "passed"] = '\n'.join(passed_criteria)
+                    eval_df.loc[eval_df.index[-1], "failed"] = '\n'.join(failed_criteria)
+                    eval_df.loc[eval_df.index[-1], "score"] = score
+                    eval_df.to_csv(eval_file, 
+                                   index=False)
                 
                 temp_scores = scores.copy()
                 temp_scores[catalog] += best_score

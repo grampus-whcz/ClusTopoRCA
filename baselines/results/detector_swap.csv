@@ -1,0 +1,5 @@
+dataset,n,hit@1_simple,hit@3_simple,hit@5_simple
+Bank,136,0.1176,0.2574,0.3897
+Telecom,51,0.0784,0.1765,0.2353
+Market-1,70,0.0429,0.0714,0.0714
+Market-2,78,0.0385,0.0769,0.1026

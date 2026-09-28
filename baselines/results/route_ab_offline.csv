@@ -1,0 +1,5 @@
+dataset,n,scorer_hit@1,scorer_hit@3,routeA_correct,routeA_partial,routeA_total
+Bank,136,0.4485,0.5809,20.59,13.97,34.56
+Telecom,51,0.2745,0.4902,7.84,27.45,35.29
+Market-1,70,0.0571,0.0714,0.0,7.14,7.14
+Market-2,78,0.2179,0.2308,2.56,11.54,14.1

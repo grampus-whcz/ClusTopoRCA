@@ -1,0 +1,57 @@
+dataset,method,n,top1,ci_lo,ci_hi
+Bank,MicroCause_gt,136,0.0368,0.0074,0.0735
+Bank,CIRCA_gt,136,0.4632,0.3824,0.5441
+Bank,CIRCA_det,136,0.2426,0.1691,0.3162
+Bank,mABC,136,0.0882,0.0441,0.1397
+Bank,FoA,136,0.2647,0.1912,0.3382
+Bank,ClusTopoRCA wo LLM,136,0.0956,0.0515,0.1471
+Bank,ClusTopoRCA+causal(0.3),136,0.3162,0.2353,0.3971
+Bank,ClusTopoRCA full (deepseek-r1-0528),136,0.0809,0.0368,0.125
+Bank,ClusTopoRCA full (gemini-2.5-pro-preview-p),136,0.0735,0.0294,0.1176
+Bank,ClusTopoRCA full (glm-4.5),136,0.1029,0.0515,0.1544
+Bank,ClusTopoRCA full (glm-4.6),136,0.125,0.0735,0.1838
+Bank,ClusTopoRCA full (glm-4.7),136,0.0735,0.0294,0.1176
+Bank,ClusTopoRCA full (gpt-4o),136,0.0882,0.0441,0.1397
+Bank,ClusTopoRCA full (qwen3-235b-a22b-instruct-2507),136,0.1103,0.0588,0.1618
+Telecom,MicroCause_gt,51,0.0196,0.0,0.0588
+Telecom,CIRCA_gt,51,0.1765,0.0784,0.2941
+Telecom,CIRCA_det,51,0.1569,0.0588,0.2549
+Telecom,mABC,51,0.0,0.0,0.0
+Telecom,FoA,51,0.0392,0.0,0.098
+Telecom,ClusTopoRCA wo LLM,51,0.2157,0.1176,0.3333
+Telecom,ClusTopoRCA+causal(0.3),51,0.2745,0.1569,0.3922
+Telecom,ClusTopoRCA full (deepseek-r1-0528),51,0.2157,0.1176,0.3333
+Telecom,ClusTopoRCA full (gemini-2.5-pro-preview-p),51,0.1765,0.0784,0.2745
+Telecom,ClusTopoRCA full (glm-4.5),51,0.1765,0.0784,0.2941
+Telecom,ClusTopoRCA full (glm-4.6),51,0.1373,0.0588,0.2353
+Telecom,ClusTopoRCA full (glm-4.7),51,0.2353,0.1176,0.3529
+Telecom,ClusTopoRCA full (gpt-4o),51,0.2549,0.1373,0.3725
+Telecom,ClusTopoRCA full (qwen3-235b-a22b-instruct-2507),51,0.1569,0.0588,0.2549
+Market-1,MicroCause_gt,70,0.0143,0.0,0.0429
+Market-1,CIRCA_gt,70,0.3286,0.2286,0.4429
+Market-1,CIRCA_det,70,0.1143,0.0429,0.1857
+Market-1,mABC,70,0.0143,0.0,0.0429
+Market-1,FoA,70,0.0857,0.0286,0.1571
+Market-1,ClusTopoRCA wo LLM,70,0.0,0.0,0.0
+Market-1,ClusTopoRCA+causal(0.3),70,0.0143,0.0,0.0429
+Market-1,ClusTopoRCA full (deepseek-r1-0528),70,0.0,0.0,0.0
+Market-1,ClusTopoRCA full (gemini-2.5-pro-preview-p),70,0.0143,0.0,0.0429
+Market-1,ClusTopoRCA full (glm-4.5),70,0.0,0.0,0.0
+Market-1,ClusTopoRCA full (glm-4.6),70,0.0,0.0,0.0
+Market-1,ClusTopoRCA full (glm-4.7),70,0.0,0.0,0.0
+Market-1,ClusTopoRCA full (gpt-4o),70,0.0,0.0,0.0
+Market-1,ClusTopoRCA full (qwen3-235b-a22b-instruct-2507),70,0.0,0.0,0.0
+Market-2,MicroCause_gt,78,0.0256,0.0,0.0641
+Market-2,CIRCA_gt,78,0.4615,0.3462,0.5769
+Market-2,CIRCA_det,78,0.1795,0.1026,0.2692
+Market-2,mABC,78,0.0128,0.0,0.0385
+Market-2,FoA,78,0.1795,0.1026,0.2692
+Market-2,ClusTopoRCA wo LLM,78,0.1282,0.0641,0.2051
+Market-2,ClusTopoRCA+causal(0.3),78,0.1538,0.0769,0.2436
+Market-2,ClusTopoRCA full (deepseek-r1-0528),78,0.0897,0.0385,0.1538
+Market-2,ClusTopoRCA full (gemini-2.5-pro-preview-p),78,0.1026,0.0385,0.1795
+Market-2,ClusTopoRCA full (glm-4.5),78,0.1026,0.0385,0.1795
+Market-2,ClusTopoRCA full (glm-4.6),78,0.1026,0.0385,0.1795
+Market-2,ClusTopoRCA full (glm-4.7),78,0.1026,0.0385,0.1795
+Market-2,ClusTopoRCA full (gpt-4o),78,0.1026,0.0385,0.1795
+Market-2,ClusTopoRCA full (qwen3-235b-a22b-instruct-2507),78,0.0769,0.0256,0.141

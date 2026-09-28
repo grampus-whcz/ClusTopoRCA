@@ -54,9 +54,9 @@ class LocalScriptToolAgent(BaseToolAgent):
         Executes a specific RCA pipeline script, or all four if pipeline_type == 'all'.
         If the expected anomaly report already exists, skips execution and returns the existing report.
         """
-        output_folder_name = "1215"
+        output_folder_name = "1215_causal"
         valid_pipelines = {
-            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3.py", # ClusTopoRCA version
+            "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3_causal.py", # ClusTopoRCA version (four-dim scorer)
             # "Market_cluster_window": "15.Market_cluster_window_analyze_anomalies_3.3_old.py", # just cluster version
         }
 
@@ -101,7 +101,9 @@ class LocalScriptToolAgent(BaseToolAgent):
             report_path = os.path.join(base_output_dir, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
 
             if p_type in ['Market_cluster_window']:
-                report_path = os.path.join(base_output_dir, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
+                # causal scripts write into the cloudbed subdirectory (c1/c2)
+                cb_sub = "c2" if str(cloudbed).lower() in ("c2", "cloudbed-2", "2") else "c1"
+                report_path = os.path.join(base_output_dir, cb_sub, f"{p_type}_anomaly_report_{date_online}_{output_suffix}.txt")
             else:
                 report_path = os.path.join(base_output_dir, f"Market_cluster_window_anomaly_report_{date_online}_{output_suffix}_llm_rca_summary.json")
 
@@ -134,6 +136,7 @@ class LocalScriptToolAgent(BaseToolAgent):
                     "--output_folder_name", output_folder_name,
                     "--output_suffix", output_suffix,
                     "--min_samples", min_samples,
+                    "--cloudbed", cloudbed,
                 ]
             elif p_type == "Market_knowledge_graph_RCA":
                 cmd = [

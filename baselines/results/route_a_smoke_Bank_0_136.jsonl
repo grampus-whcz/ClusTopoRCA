@@ -1,0 +1,136 @@
+{"idx": 0, "gt": "Mysql02", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 1, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high memory usage", "score": 1.0}
+{"idx": 2, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "high memory usage", "score": 1.0}
+{"idx": 3, "gt": "Tomcat02", "top1": "Mysql02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 4, "gt": "Tomcat04", "top1": "Tomcat02", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 5, "gt": "Tomcat03", "top1": "IG02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 6, "gt": "apache02", "top1": "apache01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 7, "gt": "Tomcat01", "top1": "Redis01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 8, "gt": "MG01", "top1": "IG01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 9, "gt": "MG02", "top1": "MG02", "reason_pred": "high disk I/O read usage", "score": 0.5}
+{"idx": 10, "gt": "Tomcat02", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 11, "gt": "MG01", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 12, "gt": "Tomcat04", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 13, "gt": "apache02", "top1": "Mysql01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 14, "gt": "Tomcat01", "top1": "MG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 15, "gt": "apache02", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 16, "gt": "IG02", "top1": "IG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 17, "gt": "Tomcat01", "top1": "MG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 18, "gt": "MG02", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 19, "gt": "MG02", "top1": "MG02", "reason_pred": "high disk I/O read usage", "score": 1.0}
+{"idx": 20, "gt": "Tomcat01", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 21, "gt": "MG02", "top1": "MG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 22, "gt": "Tomcat02", "top1": "MG02", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 23, "gt": "apache01", "top1": "Tomcat04", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 24, "gt": "apache01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 25, "gt": "apache02", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 26, "gt": "Tomcat01", "top1": "Redis01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 27, "gt": "apache02", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 28, "gt": "apache02", "top1": "Redis01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 29, "gt": "Tomcat01", "top1": "Tomcat03", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 30, "gt": "Tomcat03", "top1": "Tomcat03", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 31, "gt": "MG01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 32, "gt": "Tomcat01", "top1": "Mysql02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 33, "gt": "MG02", "top1": "MG02", "reason_pred": "high JVM CPU load", "score": 0.3333333333333333}
+{"idx": 34, "gt": "MG01", "top1": "MG01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 35, "gt": "apache02", "top1": "Mysql01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 36, "gt": "Tomcat03", "top1": "MG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 37, "gt": "apache02", "top1": "IG01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 38, "gt": "MG01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 39, "gt": "Tomcat04", "top1": "Tomcat01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 40, "gt": "MG01", "top1": "MG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 41, "gt": "Tomcat04", "top1": "Tomcat02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 42, "gt": "MG02", "top1": "IG02", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 43, "gt": "MG01", "top1": "Mysql01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 44, "gt": "Tomcat04", "top1": "Mysql01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 45, "gt": "MG02", "top1": "Redis01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 46, "gt": "MG02", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 47, "gt": "IG01", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 48, "gt": "MG02", "top1": "MG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 49, "gt": "MG02", "top1": "apache02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 50, "gt": "MG01", "top1": "MG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 51, "gt": "IG01", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 52, "gt": "Tomcat03", "top1": "Redis01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 53, "gt": "MG01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 54, "gt": "IG02", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 55, "gt": "Tomcat01", "top1": "Tomcat04", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 56, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.3333333333333333}
+{"idx": 57, "gt": "apache01", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 58, "gt": "IG02", "top1": "Redis01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 59, "gt": "Tomcat01", "top1": "Mysql01", "reason_pred": "high disk I/O read usage", "score": 0.5}
+{"idx": 60, "gt": "apache01", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 61, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 62, "gt": "Tomcat04", "top1": "Tomcat02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 63, "gt": "Tomcat02", "top1": "Tomcat02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 64, "gt": "apache02", "top1": "Redis02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 65, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.3333333333333333}
+{"idx": 66, "gt": "MG02", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 67, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 68, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 69, "gt": "Redis02", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 70, "gt": "Mysql01", "top1": "Mysql01", "reason_pred": "high CPU usage", "score": 0.6666666666666666}
+{"idx": 71, "gt": "IG01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 72, "gt": "Tomcat04", "top1": "Tomcat04", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 73, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 74, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 75, "gt": "Tomcat03", "top1": "Tomcat03", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 76, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 77, "gt": "IG01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 78, "gt": "Tomcat01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 79, "gt": "Tomcat04", "top1": "IG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 80, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 81, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 82, "gt": "Tomcat03", "top1": "apache01", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 83, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 84, "gt": "IG01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 85, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 86, "gt": "apache01", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 87, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 88, "gt": "MG01", "top1": "MG01", "reason_pred": "high memory usage", "score": 0.5}
+{"idx": 89, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 90, "gt": "Redis01", "top1": "Redis01", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 91, "gt": "Tomcat04", "top1": "Tomcat04", "reason_pred": "high memory usage", "score": 1.0}
+{"idx": 92, "gt": "Tomcat04", "top1": "apache01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 93, "gt": "Mysql01", "top1": "Mysql02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 94, "gt": "Tomcat01", "top1": "Tomcat03", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 95, "gt": "MG02", "top1": "MG01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 96, "gt": "Tomcat03", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 97, "gt": "Tomcat01", "top1": "IG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 98, "gt": "Tomcat02", "top1": "apache02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 99, "gt": "MG01", "top1": "MG01", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 100, "gt": "MG01", "top1": "MG01", "reason_pred": "high JVM CPU load", "score": 0.5}
+{"idx": 101, "gt": "MG02", "top1": "MG01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 102, "gt": "Tomcat03", "top1": "IG01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 103, "gt": "MG02", "top1": "IG01", "reason_pred": "JVM Out of Memory (OOM) Heap", "score": 0.0}
+{"idx": 104, "gt": "Tomcat03", "top1": "IG02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 105, "gt": "Tomcat03", "top1": "Mysql02", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 106, "gt": "Tomcat01", "top1": "Mysql02", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 107, "gt": "IG02", "top1": "Mysql02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 108, "gt": "Tomcat04", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 109, "gt": "MG01", "top1": "MG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 110, "gt": "apache01", "top1": "Mysql02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 111, "gt": "MG02", "top1": "IG02", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 112, "gt": "Tomcat02", "top1": "Tomcat04", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 113, "gt": "Tomcat02", "top1": "Tomcat02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 114, "gt": "Tomcat02", "top1": "Tomcat02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 115, "gt": "MG01", "top1": "MG01", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 116, "gt": "MG01", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 117, "gt": "Tomcat02", "top1": "Tomcat02", "reason_pred": "high memory usage", "score": 1.0}
+{"idx": 118, "gt": "MG02", "top1": "Mysql02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 119, "gt": "apache01", "top1": "Tomcat04", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 120, "gt": "apache01", "top1": "apache01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 121, "gt": "MG02", "top1": "MG02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 122, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 123, "gt": "Tomcat03", "top1": "IG01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 124, "gt": "Tomcat03", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 125, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 126, "gt": "apache02", "top1": "apache02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 127, "gt": "MG01", "top1": "apache02", "reason_pred": "high CPU usage", "score": 0.5}
+{"idx": 128, "gt": "Mysql02", "top1": "Mysql02", "reason_pred": "high disk I/O read usage", "score": 0.5}
+{"idx": 129, "gt": "Mysql02", "top1": "Mysql02", "reason_pred": "high CPU usage", "score": 1.0}
+{"idx": 130, "gt": "IG02", "top1": "IG02", "reason_pred": "high CPU usage", "score": 0.6666666666666666}
+{"idx": 131, "gt": "Tomcat04", "top1": "Tomcat04", "reason_pred": "high CPU usage", "score": 0.6666666666666666}
+{"idx": 132, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 133, "gt": "MG01", "top1": "Redis01", "reason_pred": "high memory usage", "score": 1.0}
+{"idx": 134, "gt": "Mysql02", "top1": "Tomcat01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 135, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high memory usage", "score": 0.5}

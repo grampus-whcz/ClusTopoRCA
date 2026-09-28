@@ -1,0 +1,3 @@
+dataset,strict_h1,relaxed_h1,strict_h3,relaxed_h3,strict_h5,relaxed_h5
+Market-1,0.0286,0.0571,0.0571,0.0714,0.0571,0.0714
+Market-2,0.1667,0.2179,0.2308,0.2308,0.2436,0.2564

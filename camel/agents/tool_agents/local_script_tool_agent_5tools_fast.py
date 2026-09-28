@@ -55,14 +55,14 @@ class LocalScriptToolAgent(BaseToolAgent):
         Executes a specific RCA pipeline script, or all four if pipeline_type == 'all'.
         If the expected anomaly report already exists, skips execution and returns the existing report.
         """
-        output_folder_name = "1204"
+        output_folder_name = "1204_ctrl"
         valid_pipelines = {
             "Bank_metric_container": "run_pipline_Bank_metric_container.py",
             "Bank_metric_app": "run_pipline_Bank_metric_app.py",
             "Bank_trace": "run_pipline_Bank_trace.py",
             "Bank_log": "run_pipline_Bank_log.py",
-            # "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_2.7.py", # ClusTopoRCA version
-            "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_ablation_2.7.py", # ClusTopoRCA ablation version (no clustering, only window-based anomaly detection)
+            "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_2.7.py", # ORIGINAL (control arm)
+            # "Bank_cluster_window": "Bank_cluster_window_analyze_anomalies_ablation_2.7.py", # ClusTopoRCA ablation version (no clustering, only window-based anomaly detection)
             # "Bank_cluster_window": "2.Bank_cluster_window_analyze_anomalies_old.py", # just cluster version
         }
 

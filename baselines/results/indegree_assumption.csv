@@ -1,0 +1,5 @@
+dataset,n,gt_in_pool,gt_indeg_pct_mean,gt_indeg_pct_median,frac_gt_below_median,hit@1_normal,hit@1_flipped,hit@3_normal,hit@3_flipped,hit@5_normal,hit@5_flipped
+Bank,136,116,0.786,0.833,0.172,0.0956,0.125,0.2794,0.2941,0.5368,0.5147
+Telecom,51,38,0.885,0.912,0.026,0.2157,0.2157,0.2745,0.2745,0.4118,0.3922
+Market-1,70,3,0.583,0.5,0.667,0.0,0.0,0.0286,0.0286,0.0571,0.0571
+Market-2,78,6,0.728,0.833,0.333,0.1282,0.1154,0.1923,0.1923,0.2308,0.2308

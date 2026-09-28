@@ -1,0 +1,30 @@
+{"idx": 0, "gt": "Mysql02", "top1": "MG02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 1, "gt": "Redis02", "top1": "Redis02", "reason_pred": "high memory usage", "score": 1.0}
+{"idx": 2, "gt": "Tomcat01", "top1": "Tomcat01", "reason_pred": "JVM Out of Memory (OOM) Heap", "score": 0.5}
+{"idx": 3, "gt": "Tomcat02", "top1": "Mysql02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 4, "gt": "Tomcat04", "top1": "Tomcat02", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 5, "gt": "Tomcat03", "top1": "IG02", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 6, "gt": "apache02", "top1": "apache01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 7, "gt": "Tomcat01", "top1": "Redis01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 8, "gt": "MG01", "top1": "IG01", "reason_pred": "high disk space usage", "score": 0.0}
+{"idx": 9, "gt": "MG02", "top1": "MG02", "reason_pred": "high disk I/O read usage", "score": 0.5}
+{"idx": 10, "gt": "Tomcat02", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 11, "gt": "MG01", "top1": "MG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 12, "gt": "Tomcat04", "top1": "MG02", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 13, "gt": "apache02", "top1": "Mysql01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 14, "gt": "Tomcat01", "top1": "MG02", "reason_pred": "network latency", "score": 0.0}
+{"idx": 15, "gt": "apache02", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 16, "gt": "IG02", "top1": "IG02", "reason_pred": "JVM Out of Memory (OOM) Heap", "score": 0.0}
+{"idx": 17, "gt": "Tomcat01", "top1": "MG01", "reason_pred": "high memory usage", "score": 0.0}
+{"idx": 18, "gt": "MG02", "top1": "MG02", "reason_pred": "network latency", "score": 0.5}
+{"idx": 19, "gt": "MG02", "top1": "MG02", "reason_pred": "high disk I/O read usage", "score": 1.0}
+{"idx": 20, "gt": "Tomcat01", "top1": "apache01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 21, "gt": "MG02", "top1": "MG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 22, "gt": "Tomcat02", "top1": "MG02", "reason_pred": "JVM Out of Memory (OOM) Heap", "score": 0.0}
+{"idx": 23, "gt": "apache01", "top1": "Tomcat04", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 24, "gt": "apache01", "top1": "IG01", "reason_pred": "high CPU usage", "score": 0.0}
+{"idx": 25, "gt": "apache02", "top1": "IG01", "reason_pred": "high JVM CPU load", "score": 0.0}
+{"idx": 26, "gt": "Tomcat01", "top1": "Redis01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 27, "gt": "apache02", "top1": "apache01", "reason_pred": "high disk I/O read usage", "score": 0.0}
+{"idx": 28, "gt": "apache02", "top1": "Redis01", "reason_pred": "network latency", "score": 0.0}
+{"idx": 29, "gt": "Tomcat01", "top1": "Tomcat03", "reason_pred": "high CPU usage", "score": 0.0}

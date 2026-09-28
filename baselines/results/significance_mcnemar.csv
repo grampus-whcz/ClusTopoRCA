@@ -1,0 +1,21 @@
+dataset,method_a,method_b,wins_a_only,wins_b_only,p_value
+Bank,ClusTopoRCA+causal(0.3),ClusTopoRCA wo LLM,32,2,6.938353180885315e-08
+Bank,ClusTopoRCA+causal(0.3),CIRCA_gt,9,29,0.0016580525261815637
+Bank,ClusTopoRCA+causal(0.3),CIRCA_det,28,18,0.18392482137699062
+Bank,CIRCA_gt,CIRCA_det,34,4,6.038535502739251e-07
+Bank,FoA,CIRCA_det,25,22,0.7708669945730263
+Telecom,ClusTopoRCA+causal(0.3),ClusTopoRCA wo LLM,4,1,0.375
+Telecom,ClusTopoRCA+causal(0.3),CIRCA_gt,8,3,0.2265625
+Telecom,ClusTopoRCA+causal(0.3),CIRCA_det,9,3,0.14599609375
+Telecom,CIRCA_gt,CIRCA_det,2,1,1.0
+Telecom,FoA,CIRCA_det,2,8,0.109375
+Market-1,ClusTopoRCA+causal(0.3),ClusTopoRCA wo LLM,1,0,1.0
+Market-1,ClusTopoRCA+causal(0.3),CIRCA_gt,0,22,4.76837158203125e-07
+Market-1,ClusTopoRCA+causal(0.3),CIRCA_det,1,8,0.0390625
+Market-1,CIRCA_gt,CIRCA_det,16,1,0.000274658203125
+Market-1,FoA,CIRCA_det,5,7,0.7744140625
+Market-2,ClusTopoRCA+causal(0.3),ClusTopoRCA wo LLM,3,1,0.625
+Market-2,ClusTopoRCA+causal(0.3),CIRCA_gt,2,26,3.032386302947998e-06
+Market-2,ClusTopoRCA+causal(0.3),CIRCA_det,10,12,0.8318119049072266
+Market-2,CIRCA_gt,CIRCA_det,22,0,4.76837158203125e-07
+Market-2,FoA,CIRCA_det,10,10,1.0

@@ -1,0 +1,78 @@
+{"idx": 0, "gt": "recommendationservice2-0", "top1": "node-6", "reason_pred": "node CPU load", "score": 0.0}
+{"idx": 1, "gt": "node-6", "top1": "node-6", "reason_pred": "node CPU load", "score": 1.0}
+{"idx": 2, "gt": "cartservice2-0", "top1": "cartservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 3, "gt": "productcatalogservice", "top1": "productcatalogservice", "reason_pred": "container CPU load", "score": 0.5}
+{"idx": 4, "gt": "currencyservice-0", "top1": "currencyservice-1", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 5, "gt": "node-4", "top1": "cartservice-1", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 6, "gt": "recommendationservice2-0", "top1": "node-3", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 7, "gt": "frontend-0", "top1": "frontend-0", "reason_pred": "container memory load", "score": 0.5}
+{"idx": 8, "gt": "adservice-1", "top1": "node-5", "reason_pred": "node disk read I/O consumption", "score": 0.0}
+{"idx": 9, "gt": "currencyservice", "top1": "node-5", "reason_pred": "node disk read I/O consumption", "score": 0.0}
+{"idx": 10, "gt": "shippingservice", "top1": "node-5", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 11, "gt": "node-4", "top1": "node-5", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 12, "gt": "node-5", "top1": "paymentservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 13, "gt": "checkoutservice", "top1": "checkoutservice-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 14, "gt": "emailservice-1", "top1": "recommendationservice-1", "reason_pred": "container process termination", "score": 0.0}
+{"idx": 15, "gt": "checkoutservice-0", "top1": "checkoutservice-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 16, "gt": "emailservice", "top1": "cartservice2-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 17, "gt": "node-2", "top1": "node-1", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 18, "gt": "node-6", "top1": "node-1", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 19, "gt": "emailservice-0", "top1": "cartservice-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 20, "gt": "node-2", "top1": "node-2", "reason_pred": "node memory consumption", "score": 0.5}
+{"idx": 21, "gt": "node-3", "top1": "node-2", "reason_pred": "node CPU load", "score": 0.0}
+{"idx": 22, "gt": "recommendationservice-2", "top1": "recommendationservice-2", "reason_pred": "container memory load", "score": 1.0}
+{"idx": 23, "gt": "productcatalogservice", "top1": "adservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 24, "gt": "node-6", "top1": "adservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 25, "gt": "node-6", "top1": "cartservice-2", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 26, "gt": "recommendationservice", "top1": "recommendationservice-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 27, "gt": "shippingservice", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 1.0}
+{"idx": 28, "gt": "node-6", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 29, "gt": "adservice2-0", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 30, "gt": "cartservice-0", "top1": "adservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 31, "gt": "recommendationservice", "top1": "recommendationservice-1", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 32, "gt": "node-2", "top1": "node-2", "reason_pred": "node disk write I/O consumption", "score": 0.0}
+{"idx": 33, "gt": "shippingservice-0", "top1": "node-2", "reason_pred": "node disk write I/O consumption", "score": 0.0}
+{"idx": 34, "gt": "frontend-2", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 35, "gt": "paymentservice-0", "top1": "node-4", "reason_pred": "node disk write I/O consumption", "score": 0.0}
+{"idx": 36, "gt": "node-2", "top1": "node-2", "reason_pred": "node CPU load", "score": 0.5}
+{"idx": 37, "gt": "cartservice", "top1": "cartservice-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 38, "gt": "node-5", "top1": "node-1", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 39, "gt": "emailservice", "top1": "emailservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 40, "gt": "cartservice", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 41, "gt": "productcatalogservice-0", "top1": "cartservice-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 42, "gt": "node-4", "top1": "frontend-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 43, "gt": "recommendationservice-1", "top1": "recommendationservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 44, "gt": "node-4", "top1": "checkoutservice-2", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 45, "gt": "productcatalogservice", "top1": "productcatalogservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 46, "gt": "node-6", "top1": "node-6", "reason_pred": "node disk write I/O consumption", "score": 1.0}
+{"idx": 47, "gt": "shippingservice-1", "top1": "node-6", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 48, "gt": "node-6", "top1": "adservice-1", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 49, "gt": "frontend", "top1": "frontend-0", "reason_pred": "container memory load", "score": 0.5}
+{"idx": 50, "gt": "adservice", "top1": "adservice-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 51, "gt": "checkoutservice", "top1": "node-1", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 52, "gt": "node-6", "top1": "currencyservice2-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 53, "gt": "node-5", "top1": "node-5", "reason_pred": "node disk write I/O consumption", "score": 1.0}
+{"idx": 54, "gt": "shippingservice-0", "top1": "checkoutservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 55, "gt": "shippingservice-2", "top1": "node-5", "reason_pred": "node disk read I/O consumption", "score": 0.0}
+{"idx": 56, "gt": "recommendationservice-0", "top1": "adservice2-0", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 57, "gt": "frontend-2", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 58, "gt": "productcatalogservice-1", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 59, "gt": "productcatalogservice2-0", "top1": "productcatalogservice2-0", "reason_pred": "container memory load", "score": 0.5}
+{"idx": 60, "gt": "frontend", "top1": "frontend-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 61, "gt": "node-1", "top1": "node-1", "reason_pred": "node disk read I/O consumption", "score": 0.3333333333333333}
+{"idx": 62, "gt": "checkoutservice", "top1": "frontend", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 63, "gt": "adservice", "top1": "frontend", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 64, "gt": "node-6", "top1": "cartservice-2", "reason_pred": "container memory load", "score": 0.0}
+{"idx": 65, "gt": "shippingservice", "top1": "shippingservice-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 66, "gt": "paymentservice", "top1": "frontend-0", "reason_pred": "container CPU load", "score": 0.3333333333333333}
+{"idx": 67, "gt": "checkoutservice-2", "top1": "frontend-0", "reason_pred": "container process termination", "score": 0.0}
+{"idx": 68, "gt": "node-2", "top1": "checkoutservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 69, "gt": "node-6", "top1": "node-6", "reason_pred": "node CPU spike", "score": 0.5}
+{"idx": 70, "gt": "frontend-2", "top1": "frontend-0", "reason_pred": "container process termination", "score": 0.0}
+{"idx": 71, "gt": "node-5", "top1": "adservice", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 72, "gt": "frontend", "top1": "node-5", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 73, "gt": "checkoutservice2-0", "top1": "adservice", "reason_pred": "container network packet retransmission", "score": 0.0}
+{"idx": 74, "gt": "frontend", "top1": "node-4", "reason_pred": "node CPU spike", "score": 0.0}
+{"idx": 75, "gt": "adservice-0", "top1": "adservice-0", "reason_pred": "container CPU load", "score": 0.5}
+{"idx": 76, "gt": "paymentservice", "top1": "paymentservice2-0", "reason_pred": "container CPU load", "score": 0.0}
+{"idx": 77, "gt": "recommendationservice-1", "top1": "recommendationservice-1", "reason_pred": "container CPU load", "score": 0.3333333333333333}

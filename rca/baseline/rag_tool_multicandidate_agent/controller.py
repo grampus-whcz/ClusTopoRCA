@@ -104,8 +104,13 @@ backgroud_Market=""""
 """
 
 # ==================== Helper: Extract time from text ====================
-def extract_time_from_context(context: str):
-    """Extract first HH:MM or HH:MM:SS from context string."""
+def extract_time_from_context(context):
+    """Extract first HH:MM or HH:MM:SS from context (tolerate non-string input)."""
+    if not isinstance(context, str):
+        try:
+            context = json.dumps(context, ensure_ascii=False)
+        except Exception:
+            context = str(context)
     time_match = re.search(r'\b(\d{1,2}:\d{2}:\d{2}|\d{1,2}:\d{2})\b', context)
     if time_match:
         time_str = time_match.group(1)
